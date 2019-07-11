@@ -42,7 +42,7 @@
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(23, 92);
+            this.lbTitulo.Location = new System.Drawing.Point(12, 70);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(119, 20);
             this.lbTitulo.TabIndex = 25;
@@ -51,17 +51,17 @@
             // tbTitulo
             // 
             this.tbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTitulo.Location = new System.Drawing.Point(148, 89);
+            this.tbTitulo.Location = new System.Drawing.Point(137, 67);
             this.tbTitulo.Name = "tbTitulo";
             this.tbTitulo.Size = new System.Drawing.Size(219, 26);
-            this.tbTitulo.TabIndex = 24;
+            this.tbTitulo.TabIndex = 0;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(175, 201);
+            this.btnSave.Location = new System.Drawing.Point(27, 164);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 50);
-            this.btnSave.TabIndex = 26;
+            this.btnSave.Size = new System.Drawing.Size(80, 50);
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
@@ -69,7 +69,7 @@
             // 
             this.lbDescricao.AutoSize = true;
             this.lbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescricao.Location = new System.Drawing.Point(26, 127);
+            this.lbDescricao.Location = new System.Drawing.Point(23, 96);
             this.lbDescricao.Name = "lbDescricao";
             this.lbDescricao.Size = new System.Drawing.Size(84, 20);
             this.lbDescricao.TabIndex = 28;
@@ -78,16 +78,17 @@
             // tbDescricao
             // 
             this.tbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescricao.Location = new System.Drawing.Point(148, 124);
+            this.tbDescricao.Location = new System.Drawing.Point(137, 96);
+            this.tbDescricao.Multiline = true;
             this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(219, 26);
-            this.tbDescricao.TabIndex = 27;
+            this.tbDescricao.Size = new System.Drawing.Size(219, 169);
+            this.tbDescricao.TabIndex = 1;
             // 
             // lbData
             // 
             this.lbData.AutoSize = true;
             this.lbData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbData.Location = new System.Drawing.Point(26, 21);
+            this.lbData.Location = new System.Drawing.Point(32, 25);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(116, 20);
             this.lbData.TabIndex = 30;
@@ -98,17 +99,17 @@
             this.btnAnexo.Location = new System.Drawing.Point(457, 21);
             this.btnAnexo.Name = "btnAnexo";
             this.btnAnexo.Size = new System.Drawing.Size(60, 30);
-            this.btnAnexo.TabIndex = 31;
+            this.btnAnexo.TabIndex = 2;
             this.btnAnexo.Text = "Anexo";
             this.btnAnexo.UseVisualStyleBackColor = true;
             // 
             // lsAnexos
             // 
             this.lsAnexos.HideSelection = false;
-            this.lsAnexos.Location = new System.Drawing.Point(401, 70);
+            this.lsAnexos.Location = new System.Drawing.Point(401, 67);
             this.lsAnexos.Name = "lsAnexos";
-            this.lsAnexos.Size = new System.Drawing.Size(168, 195);
-            this.lsAnexos.TabIndex = 32;
+            this.lsAnexos.Size = new System.Drawing.Size(168, 198);
+            this.lsAnexos.TabIndex = 3;
             this.lsAnexos.UseCompatibleStateImageBehavior = false;
             // 
             // CadastrarTicket

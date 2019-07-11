@@ -28,17 +28,17 @@ namespace GhostBusters_Infra.Repository
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
 
-        private T Cadastro(T obj)//Cadastrar um novo obj 
+        protected virtual T Cadastro(T obj)//Cadastrar um novo obj 
         {
             var objCadastro = context.Set<T>().Add(obj);
-            context.SaveChanges();
+            context.SendChanges();
             return objCadastro;
         }
-        private T Update(T obj)//Update Obj
+        protected virtual private T Update(T obj)//Update Obj
         {
             var objUpdated = context.Set<T>().Attach(obj);
             context.Entry(objUpdated).State = System.Data.Entity.EntityState.Modified;
-            context.SaveChanges();
+            context.SendChanges();
             return objUpdated;
         }
 
@@ -48,7 +48,7 @@ namespace GhostBusters_Infra.Repository
             if (obj != null)
             {
                 context.Set<T>().Remove(obj);
-                context.SaveChanges();
+                context.SendChanges();
             }
         }
 
