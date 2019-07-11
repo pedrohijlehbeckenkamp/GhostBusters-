@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureImagem = new System.Windows.Forms.PictureBox();
             this.linkLEdit = new System.Windows.Forms.LinkLabel();
-            this.btnTicket = new System.Windows.Forms.Button();
+            this.btnAdcTicket = new System.Windows.Forms.Button();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,13 +39,17 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblNomeUC = new System.Windows.Forms.Label();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureImagem
             // 
-            this.pictureImagem.Location = new System.Drawing.Point(36, 41);
+            this.pictureImagem.Location = new System.Drawing.Point(46, 58);
             this.pictureImagem.Margin = new System.Windows.Forms.Padding(4);
             this.pictureImagem.Name = "pictureImagem";
             this.pictureImagem.Size = new System.Drawing.Size(191, 139);
@@ -56,28 +60,30 @@
             // linkLEdit
             // 
             this.linkLEdit.AutoSize = true;
-            this.linkLEdit.Location = new System.Drawing.Point(33, 195);
+            this.linkLEdit.Location = new System.Drawing.Point(52, 212);
             this.linkLEdit.Name = "linkLEdit";
             this.linkLEdit.Size = new System.Drawing.Size(78, 17);
             this.linkLEdit.TabIndex = 35;
             this.linkLEdit.TabStop = true;
             this.linkLEdit.Text = "Alterar foto";
+            this.linkLEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLEdit_LinkClicked);
             // 
-            // btnTicket
+            // btnAdcTicket
             // 
-            this.btnTicket.Location = new System.Drawing.Point(36, 252);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(155, 48);
-            this.btnTicket.TabIndex = 36;
-            this.btnTicket.Text = "Adicionar Ticket";
-            this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnAdcTicket.Location = new System.Drawing.Point(46, 271);
+            this.btnAdcTicket.Name = "btnAdcTicket";
+            this.btnAdcTicket.Size = new System.Drawing.Size(155, 48);
+            this.btnAdcTicket.TabIndex = 36;
+            this.btnAdcTicket.Text = "Adicionar Ticket";
+            this.btnAdcTicket.UseVisualStyleBackColor = true;
+            this.btnAdcTicket.Click += new System.EventHandler(this.BtnAdcTicket_Click);
             // 
             // dgVisualizar
             // 
             this.dgVisualizar.AllowUserToDeleteRows = false;
             this.dgVisualizar.AllowUserToResizeColumns = false;
             this.dgVisualizar.AllowUserToResizeRows = false;
-            this.dgVisualizar.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.dgVisualizar.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -98,13 +104,13 @@
             this.Tecnico});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgVisualizar.Location = new System.Drawing.Point(257, 156);
+            this.dgVisualizar.Location = new System.Drawing.Point(258, 212);
             this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(625, 318);
+            this.dgVisualizar.Size = new System.Drawing.Size(743, 244);
             this.dgVisualizar.TabIndex = 37;
             // 
             // Data
@@ -151,13 +157,54 @@
             this.Tecnico.Name = "Tecnico";
             this.Tecnico.Width = 125;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(46, 346);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 48);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Editar Ticket";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // lblNomeUC
+            // 
+            this.lblNomeUC.AutoSize = true;
+            this.lblNomeUC.Location = new System.Drawing.Point(301, 58);
+            this.lblNomeUC.Name = "lblNomeUC";
+            this.lblNomeUC.Size = new System.Drawing.Size(49, 17);
+            this.lblNomeUC.TabIndex = 39;
+            this.lblNomeUC.Text = "NOME";
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(43, 21);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(38, 17);
+            this.lblDate.TabIndex = 40;
+            this.lblDate.Text = "Date";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(301, 95);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(48, 17);
+            this.lblEmail.TabIndex = 41;
+            this.lblEmail.Text = "EMAIL";
+            // 
             // InicUsuarioComum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 514);
+            this.ClientSize = new System.Drawing.Size(1013, 473);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblDate);
+            this.Controls.Add(this.lblNomeUC);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgVisualizar);
-            this.Controls.Add(this.btnTicket);
+            this.Controls.Add(this.btnAdcTicket);
             this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.pictureImagem);
             this.Name = "InicUsuarioComum";
@@ -174,7 +221,7 @@
 
         private System.Windows.Forms.PictureBox pictureImagem;
         private System.Windows.Forms.LinkLabel linkLEdit;
-        private System.Windows.Forms.Button btnTicket;
+        private System.Windows.Forms.Button btnAdcTicket;
         private System.Windows.Forms.DataGridView dgVisualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodTicket;
@@ -182,5 +229,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tecnico;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblNomeUC;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblEmail;
     }
 }

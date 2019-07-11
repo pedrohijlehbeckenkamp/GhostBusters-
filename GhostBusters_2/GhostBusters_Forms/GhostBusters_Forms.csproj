@@ -142,9 +142,6 @@
     <EmbeddedResource Include="View\Ticket\CadastrarTicket.resx">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuário Comum\TelaPUsuarioComumcs.resx">
-      <DependentUpon>TelaPUsuarioComumcs.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\Ticket\EditarTicket.resx">
       <DependentUpon>EditarTicket.cs</DependentUpon>
     </EmbeddedResource>
