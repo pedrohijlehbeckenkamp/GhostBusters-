@@ -255,7 +255,7 @@
             this.Controls.Add(this.tbNome);
             this.Name = "CadastroUsuario";
             this.Text = "CadastroUsuario";
-       
+            this.Load += new System.EventHandler(this.CadastroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

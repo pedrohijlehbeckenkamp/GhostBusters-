@@ -9,12 +9,20 @@ namespace GhostBusters_Infra.Repository
 {
     public class UsuarioRepository: BaseRepository<UsuarioEntity>
     {
+        public UsuarioEntity findbyLogin(string email)
+        {
+            return context.Set<UsuarioEntity>().FirstOrDefault(x => x.EMAIL == email);
+        }
+
         public override UsuarioEntity CadastroUpdate(UsuarioEntity obj)//Cadastra ou Update
         {
             if (obj == null)
             {
                 return null;
             }
+
+            obj.COD_PERFIL = obj.PERFIL.COD_PERFIL;
+            obj.COD_IMAGEM = obj.IMAGEM?.COD_IMAGEM;
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
 

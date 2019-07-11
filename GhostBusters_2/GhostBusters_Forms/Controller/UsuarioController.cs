@@ -15,5 +15,9 @@ namespace GhostBusters_Forms.Controller
         {
             return new UsuarioRepository().CadastroUpdate(usuario.MapUsuarioEntity()).MapUsuarioModel();
         }
+        public Usuario ValidaLogin(string nome )
+        {
+            return new UsuarioRepository().findbyLogin(nome).MapUsuarioModel();
+        }
     }
 }

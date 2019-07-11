@@ -28,15 +28,21 @@ namespace GhostBusters_Forms
 
         private void ButSave_Click(object sender, EventArgs e)
         {
-           if (Valida())
-           {
-                FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-                var imagem = new ImagemController().Cadastro(SalvarImagemBase64(file));
-                new UsuarioController().Cadastro(GetUsuario(imagem));
+            if (Valida())
+            {
+                Imagem image = null;
+                if (pictureImagem != null)
+                {
+                    FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+                    image = new ImagemController().Cadastro(SalvarImagemBase64(file));
+                    
+                }
+
+                new UsuarioController().Cadastro(GetUsuario(image));
                 MessageBox.Show("É nois");
-           }
-           
         }
+
+    }
 
         public Usuario GetUsuario(Imagem imagem) => new Usuario
         {
@@ -160,6 +166,11 @@ namespace GhostBusters_Forms
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastroUsuario_Load(object sender, EventArgs e)
         {
 
         }
