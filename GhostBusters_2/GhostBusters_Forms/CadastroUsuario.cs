@@ -30,7 +30,7 @@ namespace GhostBusters_Forms
         {
            if (Valida())
            {
-               // new UsuarioController().Cadastro(GetUsuario());
+                new UsuarioController().Cadastro(GetUsuario());
                 MessageBox.Show("É nois");
            }
            
@@ -151,8 +151,12 @@ namespace GhostBusters_Forms
 
         private void BtnNew_MouseDown(object sender, MouseEventArgs e)
         {
-            textBox1.Text = tbSenha.Text;
-            textBox1.Text = "";
+            /*textBox1.Text = tbSenha.Text;
+            if (btnNew.MouseDown)
+            {
+
+            }     
+            textBox1.Text = "";*/
         }
 
         private void BtnNew_Click(object sender, EventArgs e)
