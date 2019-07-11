@@ -83,6 +83,7 @@
             this.btnOpenBase.TabIndex = 37;
             this.btnOpenBase.Text = "Abrir Imagem";
             this.btnOpenBase.UseVisualStyleBackColor = true;
+            this.btnOpenBase.Click += new System.EventHandler(this.BtnOpenBase_Click);
             // 
             // AlteraPic
             // 
@@ -96,6 +97,7 @@
             this.Controls.Add(this.pictureImagem);
             this.Name = "AlteraPic";
             this.Text = "AlteraPic";
+            this.Load += new System.EventHandler(this.AlteraPic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
