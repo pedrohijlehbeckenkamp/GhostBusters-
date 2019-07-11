@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Categoria\CadastrarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Categoria\CadastrarCategoria.Designer.cs">
+      <DependentUpon>CadastrarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Usuário Comum\AlteraPic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
+      <DependentUpon>CadastrarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Usuário Comum\AlteraPic.resx">
       <DependentUpon>AlteraPic.cs</DependentUpon>
     </EmbeddedResource>

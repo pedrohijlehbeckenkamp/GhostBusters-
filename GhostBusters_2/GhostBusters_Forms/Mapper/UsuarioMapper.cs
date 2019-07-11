@@ -19,7 +19,7 @@ namespace GhostBusters_Forms.Mapper
                 EMAIL = usuario.Email,
                 SENHA = usuario.Senha,
                 PERFIL = usuario.perfil.MapPerfilEntity(),
-                IMAGEM = usuario.Imagem.MapImagemEntity(),
+                IMAGEM = usuario.Foto.MapImagemEntity(),
             };
         }
         public static Usuario MapUsuarioModel(this UsuarioEntity usuarioEntity)
@@ -30,7 +30,7 @@ namespace GhostBusters_Forms.Mapper
                 NomeUsuario = usuarioEntity.NOME,
                 Email = usuarioEntity.EMAIL,
                 Senha = usuarioEntity.SENHA,
-                Imagem = usuarioEntity.IMAGEM.MapImagemModel(),
+                Foto = usuarioEntity.IMAGEM.MapImagemModel(),
                 perfil = usuarioEntity.PERFIL.MapPerfilModel()
             };
         }
