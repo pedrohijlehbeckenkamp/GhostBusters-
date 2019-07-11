@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
             this.CodTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,16 +50,16 @@
             this.dgVisualizar.AllowUserToResizeColumns = false;
             this.dgVisualizar.AllowUserToResizeRows = false;
             this.dgVisualizar.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodTicket,
@@ -69,14 +69,14 @@
             this.Tecnico,
             this.Status,
             this.Data});
-            this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgVisualizar.Location = new System.Drawing.Point(49, 139);
+            this.dgVisualizar.MultiSelect = false;
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(702, 267);
-            this.dgVisualizar.TabIndex = 0;
+            this.dgVisualizar.TabIndex = 3;
             // 
             // CodTicket
             // 
@@ -121,7 +121,7 @@
             this.btnNewTicket.Location = new System.Drawing.Point(98, 49);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
-            this.btnNewTicket.TabIndex = 25;
+            this.btnNewTicket.TabIndex = 0;
             this.btnNewTicket.Text = "Abrir ticket";
             this.btnNewTicket.UseVisualStyleBackColor = true;
             this.btnNewTicket.Click += new System.EventHandler(this.BtnNewTicket_Click);
@@ -140,7 +140,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(239, 49);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(108, 44);
-            this.btnExcluir.TabIndex = 27;
+            this.btnExcluir.TabIndex = 1;
             this.btnExcluir.Text = "Excluir ticket";
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 

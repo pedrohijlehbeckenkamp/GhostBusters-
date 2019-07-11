@@ -59,13 +59,19 @@
     <Compile Include="View\Adm\TelaPrincipalAdm.Designer.cs">
       <DependentUpon>TelaPrincipalAdm.cs</DependentUpon>
     </Compile>
-	<Compile Include="View\Ticket\CadastrarTicket.cs">
+    <Compile Include="View\Status\CadastrarStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Status\CadastrarStatus.Designer.cs">
+      <DependentUpon>CadastrarStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ticket\CadastrarTicket.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Ticket\CadastrarTicket.Designer.cs">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
     </Compile>
-	<Compile Include="View\Ticket\EditarTicket.cs">
+    <Compile Include="View\Ticket\EditarTicket.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Ticket\EditarTicket.Designer.cs">
@@ -109,14 +115,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-	<EmbeddedResource Include="Usuário Comum\AcompanhamentoUsuario.resx">
+    <EmbeddedResource Include="Usuário Comum\AcompanhamentoUsuario.resx">
       <DependentUpon>AcompanhamentoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adm\TelaPrincipalAdm.resx">
+      <DependentUpon>TelaPrincipalAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Status\CadastrarStatus.resx">
+      <DependentUpon>CadastrarStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Ticket\CadastrarTicket.resx">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuário Comum\TelaPUsuarioComumcs.resx">
       <DependentUpon>TelaPUsuarioComumcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ticket\EditarTicket.resx">
+      <DependentUpon>EditarTicket.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
