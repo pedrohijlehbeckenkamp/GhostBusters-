@@ -20,7 +20,6 @@ namespace GhostBusters_Forms.Adm
 
         private void TelaPrincipalAdm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void BtnNewTicket_Click(object sender, EventArgs e)
