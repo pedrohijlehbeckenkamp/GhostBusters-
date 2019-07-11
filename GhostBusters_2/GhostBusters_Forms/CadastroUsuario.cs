@@ -30,18 +30,21 @@ namespace GhostBusters_Forms
         {
            if (Valida())
            {
-                new UsuarioController().Cadastro(GetUsuario());
+                FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+                var imagem = new ImagemController().Cadastro(SalvarImagemBase64(file));
+                new UsuarioController().Cadastro(GetUsuario(imagem));
                 MessageBox.Show("É nois");
            }
            
         }
 
-        public Usuario GetUsuario() => new Usuario
+        public Usuario GetUsuario(Imagem imagem) => new Usuario
         {
             NomeUsuario = tbNome.Text,
             Email = tbEmail.Text,
             Senha = tbSenha.Text,
-            perfil = new PerfilController().BuscaNome(labelUsuario.Text)
+            perfil = new PerfilController().BuscaNome(labelUsuario.Text),
+            Foto = imagem      
         };
 
         public bool Valida()
@@ -129,9 +132,9 @@ namespace GhostBusters_Forms
 
         private void Salvar_Click(object sender, EventArgs e)
         {
-            //FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-           // new ImagemController().Cadastro(SalvarImagemBase64(file));
-            pictureImagem.Dispose();
+            FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+            new ImagemController().Cadastro(SalvarImagemBase64(file));
+            //pictureImagem.Dispose();
         }
 
         private void CadastroUsuario_Load(object sender, EventArgs e)
@@ -141,7 +144,7 @@ namespace GhostBusters_Forms
 
         private void TbNome_TextChanged(object sender, EventArgs e)
         {
-          //  tbNome.PasswordChar = '*';
+        
         }
 
         private void TbSenha_TextChanged(object sender, EventArgs e)

@@ -109,6 +109,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adm\TelaPrincipalAdm.resx">
+      <DependentUpon>TelaPrincipalAdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Ticket\CadastrarTicket.resx">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
     </EmbeddedResource>

@@ -42,10 +42,9 @@ namespace GhostBusters_Forms
             // 
             this.btnCadastrar.AutoSize = true;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(561, 379);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastrar.Location = new System.Drawing.Point(421, 308);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(267, 58);
+            this.btnCadastrar.Size = new System.Drawing.Size(200, 47);
             this.btnCadastrar.TabIndex = 12;
             this.btnCadastrar.Text = "Cadastre-se";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -55,32 +54,30 @@ namespace GhostBusters_Forms
             // 
             this.btnLogin.AutoSize = true;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(316, 379);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogin.Location = new System.Drawing.Point(237, 308);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(141, 58);
+            this.btnLogin.Size = new System.Drawing.Size(106, 47);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click_1);
             // 
             // lbSenha
             // 
             this.lbSenha.AutoSize = true;
             this.lbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSenha.Location = new System.Drawing.Point(308, 245);
-            this.lbSenha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSenha.Location = new System.Drawing.Point(231, 199);
             this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(146, 46);
+            this.lbSenha.Size = new System.Drawing.Size(118, 37);
             this.lbSenha.TabIndex = 10;
             this.lbSenha.Text = "Senha:";
             // 
             // tbSenha
             // 
             this.tbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSenha.Location = new System.Drawing.Point(473, 245);
-            this.tbSenha.Margin = new System.Windows.Forms.Padding(4);
+            this.tbSenha.Location = new System.Drawing.Point(355, 199);
             this.tbSenha.Name = "tbSenha";
-            this.tbSenha.Size = new System.Drawing.Size(293, 53);
+            this.tbSenha.Size = new System.Drawing.Size(221, 44);
             this.tbSenha.TabIndex = 9;
             this.tbSenha.TextChanged += new System.EventHandler(this.TbSenha_TextChanged);
             // 
@@ -88,36 +85,33 @@ namespace GhostBusters_Forms
             // 
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.Location = new System.Drawing.Point(283, 122);
-            this.lbUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbUsuario.Location = new System.Drawing.Point(212, 99);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(169, 46);
+            this.lbUsuario.Size = new System.Drawing.Size(137, 37);
             this.lbUsuario.TabIndex = 8;
             this.lbUsuario.Text = "Usuário:";
             // 
             // tbUsuario
             // 
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.Location = new System.Drawing.Point(473, 118);
-            this.tbUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.tbUsuario.Location = new System.Drawing.Point(355, 96);
             this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(293, 53);
+            this.tbUsuario.Size = new System.Drawing.Size(221, 44);
             this.tbUsuario.TabIndex = 7;
             this.tbUsuario.TextChanged += new System.EventHandler(this.TbUsuario_TextChanged);
             // 
-            // login
+            // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lbSenha);
             this.Controls.Add(this.tbSenha);
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.tbUsuario);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "login";
+            this.Name = "Login";
             this.Text = "login";
             this.ResumeLayout(false);
             this.PerformLayout();
