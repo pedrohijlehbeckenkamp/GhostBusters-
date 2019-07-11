@@ -227,7 +227,7 @@
             this.textBox1.Location = new System.Drawing.Point(64, 94);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(219, 26);
-            this.textBox1.TabIndex = 35;
+            this.textBox1.TabIndex = 0;
             // 
             // CadastroUsuario
             // 
@@ -255,7 +255,7 @@
             this.Controls.Add(this.tbNome);
             this.Name = "CadastroUsuario";
             this.Text = "CadastroUsuario";
-            this.Load += new System.EventHandler(this.CadastroUsuario_Load);
+       
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

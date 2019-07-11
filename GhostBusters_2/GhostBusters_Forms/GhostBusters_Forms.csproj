@@ -53,11 +53,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Usuário Comum\AlteraPic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuário Comum\AlteraPic.Designer.cs">
+      <DependentUpon>AlteraPic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuário Comum\InicUsuarioComum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuário Comum\InicUsuarioComum.Designer.cs">
+      <DependentUpon>InicUsuarioComum.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Adm\TelaPrincipalAdm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Adm\TelaPrincipalAdm.Designer.cs">
       <DependentUpon>TelaPrincipalAdm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Status\CadastrarStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Status\CadastrarStatus.Designer.cs">
+      <DependentUpon>CadastrarStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Ticket\CadastrarTicket.cs">
       <SubType>Form</SubType>
@@ -109,11 +127,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Usuário Comum\AlteraPic.resx">
+      <DependentUpon>AlteraPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuário Comum\InicUsuarioComum.resx">
+      <DependentUpon>InicUsuarioComum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Adm\TelaPrincipalAdm.resx">
       <DependentUpon>TelaPrincipalAdm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Status\CadastrarStatus.resx">
+      <DependentUpon>CadastrarStatus.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Ticket\CadastrarTicket.resx">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuário Comum\TelaPUsuarioComumcs.resx">
+      <DependentUpon>TelaPUsuarioComumcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ticket\EditarTicket.resx">
+      <DependentUpon>EditarTicket.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

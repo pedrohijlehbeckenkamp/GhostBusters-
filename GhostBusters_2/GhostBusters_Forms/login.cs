@@ -72,9 +72,5 @@ namespace GhostBusters_Forms
             this.Hide();
         }
 
-        private void BtnLogin_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

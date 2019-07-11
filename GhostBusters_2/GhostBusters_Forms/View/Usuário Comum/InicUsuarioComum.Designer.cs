@@ -1,6 +1,6 @@
-﻿namespace GhostBusters_Forms.Adm
+﻿namespace GhostBusters_Forms.Usuário_Comum
 {
-    partial class TelaPrincipalAdm
+    partial class InicUsuarioComum
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,48 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pictureImagem = new System.Windows.Forms.PictureBox();
+            this.linkLEdit = new System.Windows.Forms.LinkLabel();
+            this.btnTicket = new System.Windows.Forms.Button();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNewTicket = new System.Windows.Forms.Button();
-            this.pbPerfil = new System.Windows.Forms.PictureBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureImagem
+            // 
+            this.pictureImagem.Location = new System.Drawing.Point(36, 41);
+            this.pictureImagem.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureImagem.Name = "pictureImagem";
+            this.pictureImagem.Size = new System.Drawing.Size(191, 139);
+            this.pictureImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureImagem.TabIndex = 34;
+            this.pictureImagem.TabStop = false;
+            // 
+            // linkLEdit
+            // 
+            this.linkLEdit.AutoSize = true;
+            this.linkLEdit.Location = new System.Drawing.Point(33, 195);
+            this.linkLEdit.Name = "linkLEdit";
+            this.linkLEdit.Size = new System.Drawing.Size(78, 17);
+            this.linkLEdit.TabIndex = 35;
+            this.linkLEdit.TabStop = true;
+            this.linkLEdit.Text = "Alterar foto";
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.Location = new System.Drawing.Point(36, 252);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(155, 48);
+            this.btnTicket.TabIndex = 36;
+            this.btnTicket.Text = "Adicionar Ticket";
+            this.btnTicket.UseVisualStyleBackColor = true;
             // 
             // dgVisualizar
             // 
@@ -50,7 +78,7 @@
             this.dgVisualizar.AllowUserToResizeColumns = false;
             this.dgVisualizar.AllowUserToResizeRows = false;
             this.dgVisualizar.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -62,117 +90,97 @@
             this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Data,
             this.CodTicket,
-            this.Categoria,
-            this.Usuario,
-            this.Descricao,
-            this.Tecnico,
             this.Status,
-            this.Data});
+            this.Categoria,
+            this.Descricao,
+            this.Tecnico});
+            this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgVisualizar.Location = new System.Drawing.Point(49, 139);
-            this.dgVisualizar.MultiSelect = false;
+            this.dgVisualizar.Location = new System.Drawing.Point(257, 156);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.RowHeadersVisible = false;
+            this.dgVisualizar.RowHeadersWidth = 51;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(702, 267);
-            this.dgVisualizar.TabIndex = 3;
-            // 
-            // CodTicket
-            // 
-            this.CodTicket.HeaderText = "Ticket";
-            this.CodTicket.Name = "CodTicket";
-            this.CodTicket.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CodTicket.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuário";
-            this.Usuario.Name = "Usuario";
-            // 
-            // Descricao
-            // 
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            // 
-            // Tecnico
-            // 
-            this.Tecnico.HeaderText = "Técnico";
-            this.Tecnico.Name = "Tecnico";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
+            this.dgVisualizar.Size = new System.Drawing.Size(625, 318);
+            this.dgVisualizar.TabIndex = 37;
             // 
             // Data
             // 
             this.Data.HeaderText = "Data de abertura";
+            this.Data.MinimumWidth = 6;
             this.Data.Name = "Data";
+            this.Data.Width = 125;
             // 
-            // btnNewTicket
+            // CodTicket
             // 
-            this.btnNewTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewTicket.Location = new System.Drawing.Point(98, 49);
-            this.btnNewTicket.Name = "btnNewTicket";
-            this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
-            this.btnNewTicket.TabIndex = 0;
-            this.btnNewTicket.Text = "Abrir ticket";
-            this.btnNewTicket.UseVisualStyleBackColor = true;
-            this.btnNewTicket.Click += new System.EventHandler(this.BtnNewTicket_Click);
+            this.CodTicket.HeaderText = "Ticket";
+            this.CodTicket.MinimumWidth = 6;
+            this.CodTicket.Name = "CodTicket";
+            this.CodTicket.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CodTicket.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CodTicket.Width = 125;
             // 
-            // pbPerfil
+            // Status
             // 
-            this.pbPerfil.Location = new System.Drawing.Point(598, 21);
-            this.pbPerfil.Name = "pbPerfil";
-            this.pbPerfil.Size = new System.Drawing.Size(108, 92);
-            this.pbPerfil.TabIndex = 26;
-            this.pbPerfil.TabStop = false;
+            this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.Width = 125;
             // 
-            // btnExcluir
+            // Categoria
             // 
-            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(239, 49);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(108, 44);
-            this.btnExcluir.TabIndex = 1;
-            this.btnExcluir.Text = "Excluir ticket";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.Width = 125;
             // 
-            // TelaPrincipalAdm
+            // Descricao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MinimumWidth = 6;
+            this.Descricao.Name = "Descricao";
+            this.Descricao.Width = 125;
+            // 
+            // Tecnico
+            // 
+            this.Tecnico.HeaderText = "Técnico";
+            this.Tecnico.MinimumWidth = 6;
+            this.Tecnico.Name = "Tecnico";
+            this.Tecnico.Width = 125;
+            // 
+            // InicUsuarioComum
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.pbPerfil);
-            this.Controls.Add(this.btnNewTicket);
+            this.ClientSize = new System.Drawing.Size(895, 514);
             this.Controls.Add(this.dgVisualizar);
-            this.Name = "TelaPrincipalAdm";
-            this.Text = "Tela principal do Adm";
+            this.Controls.Add(this.btnTicket);
+            this.Controls.Add(this.linkLEdit);
+            this.Controls.Add(this.pictureImagem);
+            this.Name = "InicUsuarioComum";
+            this.Text = "TelaUsuarioComum";
+            this.Load += new System.EventHandler(this.TelaUsuarioComum_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.PictureBox pictureImagem;
+        private System.Windows.Forms.LinkLabel linkLEdit;
+        private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.DataGridView dgVisualizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodTicket;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tecnico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.Button btnNewTicket;
-        private System.Windows.Forms.PictureBox pbPerfil;
-        private System.Windows.Forms.Button btnExcluir;
     }
 }
