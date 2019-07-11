@@ -11,6 +11,14 @@ namespace GhostBusters_Infra
     public class GhostBustersContext : DbContext 
     {
         public GhostBustersContext() : base("Ghostbusters") { }
+
+
+        public void SendChanges()
+        {
+            ChangeTracker.DetectChanges();
+            SaveChanges();
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

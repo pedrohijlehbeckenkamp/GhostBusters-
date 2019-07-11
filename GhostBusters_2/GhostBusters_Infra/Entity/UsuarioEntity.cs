@@ -19,12 +19,12 @@ namespace GhostBusters_Infra.Entity
         public string SENHA { get; set; }
 
         [ForeignKey("PERFIL")]
-        public int COD_PERFIL { get; set; }
+        public int COD_PERFIL { get { return PERFIL != null ? PERFIL.COD_PERFIL : 0;  } set { } }
 
         public virtual PerfilEntity PERFIL { get; set; }
 
         [ForeignKey("IMAGEM")]
-        public int COD_IMAGEM { get; set; }
+        public int? COD_IMAGEM { get { return IMAGEM?.COD_IMAGEM;  } set { } }
         public virtual Base64ImagemEntity IMAGEM { get; set; }
 
 
