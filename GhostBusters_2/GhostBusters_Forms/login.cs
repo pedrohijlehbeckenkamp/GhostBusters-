@@ -71,5 +71,6 @@ namespace GhostBusters_Forms
             menu.Show();
             this.Hide();
         }
+
     }
 }

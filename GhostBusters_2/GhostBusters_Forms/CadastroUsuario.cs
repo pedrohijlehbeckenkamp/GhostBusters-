@@ -134,10 +134,7 @@ namespace GhostBusters_Forms
             pictureImagem.Dispose();
         }
 
-        private void CadastroUsuario_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void TbNome_TextChanged(object sender, EventArgs e)
         {

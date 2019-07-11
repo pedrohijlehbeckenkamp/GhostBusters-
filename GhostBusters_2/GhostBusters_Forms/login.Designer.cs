@@ -62,6 +62,7 @@ namespace GhostBusters_Forms
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
             // lbSenha
             // 
@@ -105,7 +106,7 @@ namespace GhostBusters_Forms
             this.tbUsuario.TabIndex = 7;
             this.tbUsuario.TextChanged += new System.EventHandler(this.TbUsuario_TextChanged);
             // 
-            // login
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +118,7 @@ namespace GhostBusters_Forms
             this.Controls.Add(this.lbUsuario);
             this.Controls.Add(this.tbUsuario);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "login";
+            this.Name = "Login";
             this.Text = "login";
             this.ResumeLayout(false);
             this.PerformLayout();
