@@ -15,12 +15,29 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 {
     public partial class AlteraPic : Form
     {
-        int idImagem = 0;
-
+      
         OpenFileDialog openFileDialog = new OpenFileDialog();
-        public AlteraPic()
+
+        private Usuario usuario;
+        public AlteraPic(Usuario _usuario)
         {
             InitializeComponent();
+            usuario = _usuario;
+
+        }
+
+        public void AlteraPic_Load(object sender, EventArgs e)
+        {
+            if (usuario.Foto != null)
+            {
+                byte[] bytes = Convert.FromBase64String(usuario.Foto.BaseData);
+                using (MemoryStream memory = new MemoryStream(bytes))
+                {
+                    pictureImagem.Image = Image.FromStream(memory); 
+
+               }
+
+            }
         }
 
         private OpenFileDialog GetOpenFileDialog()
@@ -33,11 +50,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
             return null;
         }
 
-        private void AlteraPic_Load(object sender, EventArgs e)
-        {
-            
-        }
-
+      
       
    
         private void BtnOpenBase_Click(object sender, EventArgs e)
@@ -59,7 +72,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 
         private Imagem SalvarImagemBase64(FileInfo file) => new Imagem
         {
-           
+            codigo_imagem = usuario.Foto.codigo_imagem,
             nomeImagem = file.Name,
             BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName))
           
@@ -67,16 +80,18 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 
         private void BtnSaveBase_Click(object sender, EventArgs e)
         {
-            Imagem image = null;
+            //Imagem image = null;
             if (pictureImagem.ImageLocation != null)
             {
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-                image = new ImagemController().Cadastro(SalvarImagemBase64(file));
-
+                new ImagemController().Cadastro(SalvarImagemBase64(file));
             }
         }
 
-
-        
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            pictureImagem.Image.Dispose();
+            pictureImagem.Image = null;
+        }
     }
 }

@@ -46,7 +46,9 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            OpenFormAndHide<AlteraPic>();
+            AlteraPic alteraPic = new AlteraPic(usuario);
+            alteraPic.Show();
+
         }
         private void BtnAdcTicket_Click(object sender, EventArgs e)
         {

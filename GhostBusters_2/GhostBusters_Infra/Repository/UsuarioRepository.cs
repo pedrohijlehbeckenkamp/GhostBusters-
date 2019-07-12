@@ -39,9 +39,13 @@ namespace GhostBusters_Infra.Repository
         }
         protected override private UsuarioEntity Update(UsuarioEntity obj)//Update Obj
         {
+            var finded = FindById(obj.EntityKey);
+            context.Entry(finded).State = System.Data.Entity.EntityState.Detached;//ignorar a pk  e inserir 
+
             var objUpdated = context.Set<UsuarioEntity>().Attach(obj);
             context.Entry(objUpdated).State = System.Data.Entity.EntityState.Modified;
             context.SendChanges();
+
             return objUpdated;
         }
     }

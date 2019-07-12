@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureImagem = new System.Windows.Forms.PictureBox();
-            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSaveBase = new System.Windows.Forms.Button();
             this.btnOpenBase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
@@ -37,7 +37,7 @@
             // 
             // pictureImagem
             // 
-            this.pictureImagem.Location = new System.Drawing.Point(138, 64);
+            this.pictureImagem.Location = new System.Drawing.Point(141, 76);
             this.pictureImagem.Margin = new System.Windows.Forms.Padding(4);
             this.pictureImagem.Name = "pictureImagem";
             this.pictureImagem.Size = new System.Drawing.Size(246, 264);
@@ -45,14 +45,15 @@
             this.pictureImagem.TabIndex = 35;
             this.pictureImagem.TabStop = false;
             // 
-            // btnLoad
+            // btnAlterar
             // 
-            this.btnLoad.Location = new System.Drawing.Point(362, 361);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(133, 54);
-            this.btnLoad.TabIndex = 39;
-            this.btnLoad.Text = "Alterar";
-            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnAlterar.Location = new System.Drawing.Point(362, 361);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(133, 54);
+            this.btnAlterar.TabIndex = 39;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnSaveBase
             // 
@@ -79,7 +80,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 450);
-            this.Controls.Add(this.btnLoad);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSaveBase);
             this.Controls.Add(this.btnOpenBase);
             this.Controls.Add(this.pictureImagem);
@@ -94,7 +95,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureImagem;
-        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnSaveBase;
         private System.Windows.Forms.Button btnOpenBase;
     }

@@ -15,6 +15,7 @@ namespace GhostBusters_Infra.Entity
         {
             return COD_IMAGEM;
         }
+
         [Key]
         public int COD_IMAGEM { get; set; }
         public string NOME { get; set; } 
