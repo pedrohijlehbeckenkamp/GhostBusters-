@@ -1,4 +1,5 @@
-﻿using GhostBusters_Forms.View.Ticket;
+﻿using GhostBusters_Forms.Model;
+using GhostBusters_Forms.View.Ticket;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +14,16 @@ namespace GhostBusters_Forms.Adm
 {
     public partial class TelaPrincipalAdm : Form
     {
-        public TelaPrincipalAdm()
+        private Usuario usuario;
+        public TelaPrincipalAdm(Usuario _usuario)
         {
             InitializeComponent();
+            usuario = _usuario;
         }
 
         private void TelaPrincipalAdm_Load(object sender, EventArgs e)
         {
+            NomeAdimin.Text = usuario.NomeUsuario;
         }
 
         private void BtnNewTicket_Click(object sender, EventArgs e)

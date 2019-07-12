@@ -70,8 +70,9 @@ namespace GhostBusters_Forms
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            var login = new UsuarioController().ValidaLogin(GetLogin().Email);
-            var menuAdmin = new TelaPrincipalAdm();
+            var login = new UsuarioController().ValidaLogin(GetLogin().Email, GetLogin().Senha);
+
+            var menuAdmin = new TelaPrincipalAdm(login);
             var menuUsuario = new InicUsuarioComum();
             if (login.perfil.nomePerfil == "Admin")
             {

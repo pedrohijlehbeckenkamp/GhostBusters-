@@ -78,6 +78,7 @@ namespace GhostBusters_Forms
             this.tbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSenha.Location = new System.Drawing.Point(320, 218);
             this.tbSenha.Name = "tbSenha";
+            this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(221, 35);
             this.tbSenha.TabIndex = 1;
             this.tbSenha.TextChanged += new System.EventHandler(this.TbSenha_TextChanged);

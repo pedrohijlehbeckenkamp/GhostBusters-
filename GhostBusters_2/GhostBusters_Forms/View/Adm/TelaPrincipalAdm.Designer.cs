@@ -30,10 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
-            this.btnNewTicket = new System.Windows.Forms.Button();
-            this.pbPerfil = new System.Windows.Forms.PictureBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnConfig = new System.Windows.Forms.Button();
             this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CodTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +37,11 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNewTicket = new System.Windows.Forms.Button();
+            this.pbPerfil = new System.Windows.Forms.PictureBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnConfig = new System.Windows.Forms.Button();
+            this.NomeAdimin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +79,43 @@
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(702, 267);
             this.dgVisualizar.TabIndex = 3;
+            // 
+            // Data
+            // 
+            this.Data.HeaderText = "Data de abertura";
+            this.Data.Name = "Data";
+            // 
+            // CodTicket
+            // 
+            this.CodTicket.HeaderText = "Ticket";
+            this.CodTicket.Name = "CodTicket";
+            this.CodTicket.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.CodTicket.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuário";
+            this.Usuario.Name = "Usuario";
+            // 
+            // Descricao
+            // 
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            // 
+            // Tecnico
+            // 
+            this.Tecnico.HeaderText = "Técnico";
+            this.Tecnico.Name = "Tecnico";
             // 
             // btnNewTicket
             // 
@@ -118,48 +156,21 @@
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = true;
             // 
-            // Data
+            // NomeAdimin
             // 
-            this.Data.HeaderText = "Data de abertura";
-            this.Data.Name = "Data";
-            // 
-            // CodTicket
-            // 
-            this.CodTicket.HeaderText = "Ticket";
-            this.CodTicket.Name = "CodTicket";
-            this.CodTicket.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CodTicket.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuário";
-            this.Usuario.Name = "Usuario";
-            // 
-            // Descricao
-            // 
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            // 
-            // Tecnico
-            // 
-            this.Tecnico.HeaderText = "Técnico";
-            this.Tecnico.Name = "Tecnico";
+            this.NomeAdimin.AutoSize = true;
+            this.NomeAdimin.Location = new System.Drawing.Point(25, 9);
+            this.NomeAdimin.Name = "NomeAdimin";
+            this.NomeAdimin.Size = new System.Drawing.Size(35, 13);
+            this.NomeAdimin.TabIndex = 28;
+            this.NomeAdimin.Text = "label1";
             // 
             // TelaPrincipalAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.NomeAdimin);
             this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.pbPerfil);
@@ -167,9 +178,11 @@
             this.Controls.Add(this.dgVisualizar);
             this.Name = "TelaPrincipalAdm";
             this.Text = "Tela principal do Adm";
+            this.Load += new System.EventHandler(this.TelaPrincipalAdm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -187,5 +200,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tecnico;
+        private System.Windows.Forms.Label NomeAdimin;
     }
 }

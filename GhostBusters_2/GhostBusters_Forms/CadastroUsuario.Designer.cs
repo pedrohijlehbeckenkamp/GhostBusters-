@@ -41,12 +41,13 @@
             this.lbNome = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
-            this.labelUsuario = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureImagem = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.Salvar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.CbListarPerfil = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ClearImagem = new System.Windows.Forms.Button();
+            this.BtVisConfirmeSenha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             // 
             // butSave
             // 
-            this.butSave.Location = new System.Drawing.Point(419, 374);
+            this.butSave.Location = new System.Drawing.Point(369, 335);
             this.butSave.Name = "butSave";
             this.butSave.Size = new System.Drawing.Size(108, 44);
             this.butSave.TabIndex = 5;
@@ -95,14 +96,17 @@
             this.tbConfirmeSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbConfirmeSenha.Location = new System.Drawing.Point(309, 303);
             this.tbConfirmeSenha.Name = "tbConfirmeSenha";
+            this.tbConfirmeSenha.PasswordChar = '*';
             this.tbConfirmeSenha.Size = new System.Drawing.Size(219, 26);
             this.tbConfirmeSenha.TabIndex = 4;
+            this.tbConfirmeSenha.TextChanged += new System.EventHandler(this.TbConfirmeSenha_TextChanged);
             // 
             // tbSenha
             // 
             this.tbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSenha.Location = new System.Drawing.Point(309, 271);
             this.tbSenha.Name = "tbSenha";
+            this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(219, 26);
             this.tbSenha.TabIndex = 3;
             this.tbSenha.TextChanged += new System.EventHandler(this.TbSenha_TextChanged);
@@ -147,7 +151,7 @@
             // 
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(251, 170);
+            this.lbNome.Location = new System.Drawing.Point(250, 148);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(55, 20);
             this.lbNome.TabIndex = 23;
@@ -156,7 +160,7 @@
             // tbNome
             // 
             this.tbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNome.Location = new System.Drawing.Point(309, 167);
+            this.tbNome.Location = new System.Drawing.Point(308, 145);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(219, 26);
             this.tbNome.TabIndex = 0;
@@ -164,24 +168,14 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(534, 263);
+            this.btnNew.Location = new System.Drawing.Point(534, 271);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(108, 44);
+            this.btnNew.Size = new System.Drawing.Size(141, 26);
             this.btnNew.TabIndex = 30;
-            this.btnNew.Text = "New";
+            this.btnNew.Text = "Visualizar Senha ";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
             this.btnNew.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnNew_MouseDown);
-            // 
-            // labelUsuario
-            // 
-            this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUsuario.Location = new System.Drawing.Point(382, 144);
-            this.labelUsuario.Name = "labelUsuario";
-            this.labelUsuario.Size = new System.Drawing.Size(64, 20);
-            this.labelUsuario.TabIndex = 31;
-            this.labelUsuario.Text = "Usuario";
             // 
             // label4
             // 
@@ -203,43 +197,65 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(583, 204);
+            this.button1.Location = new System.Drawing.Point(588, 207);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 23);
+            this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Abrir imagem";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // Salvar
+            // CbListarPerfil
             // 
-            this.Salvar.Location = new System.Drawing.Point(686, 204);
-            this.Salvar.Name = "Salvar";
-            this.Salvar.Size = new System.Drawing.Size(102, 23);
-            this.Salvar.TabIndex = 34;
-            this.Salvar.Text = "Salvar Imagem";
-            this.Salvar.UseVisualStyleBackColor = true;
-            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
+            this.CbListarPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbListarPerfil.FormattingEnabled = true;
+            this.CbListarPerfil.Location = new System.Drawing.Point(309, 177);
+            this.CbListarPerfil.Name = "CbListarPerfil";
+            this.CbListarPerfil.Size = new System.Drawing.Size(218, 21);
+            this.CbListarPerfil.TabIndex = 35;
             // 
-            // textBox1
+            // label5
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(64, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 26);
-            this.textBox1.TabIndex = 0;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(251, 178);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Perfil:";
+            // 
+            // ClearImagem
+            // 
+            this.ClearImagem.Location = new System.Drawing.Point(682, 204);
+            this.ClearImagem.Name = "ClearImagem";
+            this.ClearImagem.Size = new System.Drawing.Size(84, 26);
+            this.ClearImagem.TabIndex = 37;
+            this.ClearImagem.Text = "Clear imagem";
+            this.ClearImagem.UseVisualStyleBackColor = true;
+            this.ClearImagem.Click += new System.EventHandler(this.ClearImagem_Click);
+            // 
+            // BtVisConfirmeSenha
+            // 
+            this.BtVisConfirmeSenha.Location = new System.Drawing.Point(534, 304);
+            this.BtVisConfirmeSenha.Name = "BtVisConfirmeSenha";
+            this.BtVisConfirmeSenha.Size = new System.Drawing.Size(141, 26);
+            this.BtVisConfirmeSenha.TabIndex = 38;
+            this.BtVisConfirmeSenha.Text = "Visualizar Senha ";
+            this.BtVisConfirmeSenha.UseVisualStyleBackColor = true;
+            this.BtVisConfirmeSenha.Click += new System.EventHandler(this.BtVisConfirmeSenha_Click);
             // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Salvar);
+            this.Controls.Add(this.BtVisConfirmeSenha);
+            this.Controls.Add(this.ClearImagem);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.CbListarPerfil);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureImagem);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.butSave);
@@ -277,11 +293,12 @@
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureImagem;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button Salvar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox CbListarPerfil;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ClearImagem;
+        private System.Windows.Forms.Button BtVisConfirmeSenha;
     }
 }

@@ -9,9 +9,9 @@ namespace GhostBusters_Infra.Repository
 {
     public class UsuarioRepository: BaseRepository<UsuarioEntity>
     {
-        public UsuarioEntity findbyLogin(string email)
+        public UsuarioEntity findbyLogin(string email, string senha)
         {
-            return context.Set<UsuarioEntity>().FirstOrDefault(x => x.EMAIL == email);
+            return context.Set<UsuarioEntity>().FirstOrDefault(x => x.EMAIL == email && x.SENHA == senha );
         }
 
         public override UsuarioEntity CadastroUpdate(UsuarioEntity obj)//Cadastra ou Update
