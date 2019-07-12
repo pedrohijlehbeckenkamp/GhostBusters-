@@ -19,11 +19,11 @@ namespace GhostBusters_Infra.Entity
         public DateTime DATA_CHAMADO { get; set; }
         public int COD_STATUS { get; set; }
 
-        [ForeignKey("_STATUS")]
+       /* //[ForeignKey("_STATUS")]
         public StatusEntity _STATUS { get; set; }
         public int COD_CATEGORIA { get; set; }
 
-        [ForeignKey("CATEGORIA")]
+        //[ForeignKey("CATEGORIA")]
         public CategoriaEntity CATEGORIA { get; set; }
         public int COD_OWNER { get; set; }
 
@@ -31,7 +31,7 @@ namespace GhostBusters_Infra.Entity
         public UsuarioEntity OWNER { get; set; }
 
         public int? COD_TECH { get; set; }
-        public UsuarioEntity TECNICO { get; set; }
+        public UsuarioEntity TECNICO { get; set; }*/
 
 
         public override int? EntityId()
