@@ -52,7 +52,9 @@
     <Compile Include="Entity\Base64ImagemEntity.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\PerfilEntity.cs" />
+    <Compile Include="Entity\ChamadoEntity.cs" />
     <Compile Include="Entity\UsuarioEntity.cs" />
+    <Compile Include="Entity\StatusEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BaseRepository.cs" />
     <Compile Include="Repository\ImagemRepository.cs" />

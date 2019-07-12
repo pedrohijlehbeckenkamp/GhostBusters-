@@ -35,6 +35,12 @@ namespace GhostBusters_Infra
 
             modelBuilder.Entity<UsuarioEntity>()
                 .HasOptional(imagem => imagem.IMAGEM);
+
+            modelBuilder.Entity<StatusEntity>()
+                .HasKey(x => x.COD_STATUS)
+                .HasOptional(perfil => perfil.PERFIL);
+
+
            
         }
     }
