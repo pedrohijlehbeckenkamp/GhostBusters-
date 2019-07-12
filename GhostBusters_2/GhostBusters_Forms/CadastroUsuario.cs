@@ -28,22 +28,28 @@ namespace GhostBusters_Forms
 
         private void ButSave_Click(object sender, EventArgs e)
         {
-           if (Valida())
-           {
-                FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-                var imagem = new ImagemController().Cadastro(SalvarImagemBase64(file));
-                new UsuarioController().Cadastro(GetUsuario(imagem));
-                MessageBox.Show("É nois");
-           }
-           
+            if (Valida())
+            {
+                Imagem image = null;
+                if (pictureImagem.ImageLocation != null)
+                {
+                     FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+                    image = new ImagemController().Cadastro(SalvarImagemBase64(file));
+                    
+                }
+
+                new UsuarioController().Cadastro(GetUsuario(image));
+               // MessageBox.Show("É nois");
         }
+
+    }
 
         public Usuario GetUsuario(Imagem imagem) => new Usuario
         {
             NomeUsuario = tbNome.Text,
             Email = tbEmail.Text,
             Senha = tbSenha.Text,
-            perfil = new PerfilController().BuscaNome(labelUsuario.Text),
+            //perfil = 
             Foto = imagem      
         };
 
@@ -77,7 +83,7 @@ namespace GhostBusters_Forms
                 // MessageBox.Show("email valido");
             }
 
-            if(string.IsNullOrEmpty(tbSenha.Text) || string.IsNullOrEmpty(tbConfirmeSenha.Text) || tbSenha.Text != tbConfirmeSenha.Text)
+            if(string.IsNullOrEmpty(tbSenha.Text) || string.IsNullOrEmpty(tbConfirmeSenha.Text) || tbSenha.Text != tbConfirmeSenha.Text || tbSenha.Text.Length <6)
             {
                 tbConfirmeSenha.BackColor = Color.Red;
                 tbSenha.BackColor = Color.Red;
@@ -130,38 +136,40 @@ namespace GhostBusters_Forms
             //pictureBoxBase64.Image = null;
         };
 
-        private void Salvar_Click(object sender, EventArgs e)
-        {
-            FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-            new ImagemController().Cadastro(SalvarImagemBase64(file));
-            //pictureImagem.Dispose();
-        }
-
-
-
-        private void TbNome_TextChanged(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void TbSenha_TextChanged(object sender, EventArgs e)
-        {
-            tbSenha.PasswordChar = '*';
-        }
-
         private void BtnNew_MouseDown(object sender, MouseEventArgs e)
         {
-            /*textBox1.Text = tbSenha.Text;
-            if (btnNew.MouseDown)
-            {
-
-            }     
-            textBox1.Text = "";*/
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+            
+        }
+        private void CadastroUsuario_Load(object sender, EventArgs e)
+        {
+            CbListarPerfil.DataSource = new PerfilController().FindAll();
+            CbListarPerfil.DisplayMember = "nomePerfil";
         }
 
+        private void ClearImagem_Click(object sender, EventArgs e)
+        {
+            pictureImagem.Image.Dispose();
+            pictureImagem.Image = null;
+        }
         private void BtnNew_Click(object sender, EventArgs e)
         {
 
+        }
+        private void TbNome_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void TbConfirmeSenha_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void TbSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtVisConfirmeSenha_Click(object sender, EventArgs e)
+        {
+            tbConfirmaEmail.PasswordChar = tbConfirmaEmail.PasswordChar == char.MinValue ? tbConfirmaEmail.PasswordChar = '*' : char.MinValue;
         }
     }
 }

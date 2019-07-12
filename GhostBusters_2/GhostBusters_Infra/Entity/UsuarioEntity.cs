@@ -18,13 +18,16 @@ namespace GhostBusters_Infra.Entity
         public string EMAIL { get; set; }
         public string SENHA { get; set; }
 
-        [ForeignKey("PERFIL")]
-        public int COD_PERFIL { get { return PERFIL != null ? PERFIL.COD_PERFIL : 0;  } set { } }
+        //[ForeignKey("PERFIL")]
+        public int COD_PERFIL { get; set; }
 
+        [ForeignKey("COD_PERFIL")]
         public virtual PerfilEntity PERFIL { get; set; }
 
-        [ForeignKey("IMAGEM")]
-        public int? COD_IMAGEM { get { return IMAGEM?.COD_IMAGEM;  } set { } }
+        //[ForeignKey("IMAGEM")]
+        public int? COD_IMAGEM { get; set; }
+
+        [ForeignKey("COD_IMAGEM")]
         public virtual Base64ImagemEntity IMAGEM { get; set; }
 
 

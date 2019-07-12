@@ -14,6 +14,10 @@ namespace GhostBusters_Forms.Controller
         public Perfil BuscaNome(string nome)
         {
             return new PerfilRepository().findbyName(nome).MapPerfilModel();
-        } 
+        }
+        public List<Perfil> FindAll()
+        {
+            return new PerfilRepository().FindALL().Select(perfil => perfil.MapPerfilModel()).ToList();
+        }
     }
 }
