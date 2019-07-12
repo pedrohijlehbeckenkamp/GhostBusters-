@@ -23,8 +23,9 @@ namespace GhostBusters_Forms.Usuário_Comum
         private void TelaUsuarioComum_Load(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
-
+            //referenciar de acordo com o obj
             lblNomeUC.Text = "AAAA";
+            lblEmail.Text = "BBB";
         }
        
         
@@ -38,7 +39,7 @@ namespace GhostBusters_Forms.Usuário_Comum
             OpenFormAndHide<CadastrarTicket>();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             OpenFormAndHide<EditarTicket>();
         }

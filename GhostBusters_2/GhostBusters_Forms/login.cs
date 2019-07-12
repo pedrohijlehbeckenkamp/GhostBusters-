@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GhostBusters_Forms.Adm;
+using GhostBusters_Forms.Usuário_Comum;
 
 namespace GhostBusters_Forms
 {

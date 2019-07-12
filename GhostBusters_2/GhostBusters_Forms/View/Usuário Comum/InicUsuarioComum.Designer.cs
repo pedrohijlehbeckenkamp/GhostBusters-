@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pictureImagem = new System.Windows.Forms.PictureBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.picBase64 = new System.Windows.Forms.PictureBox();
             this.linkLEdit = new System.Windows.Forms.LinkLabel();
             this.btnAdcTicket = new System.Windows.Forms.Button();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
@@ -39,23 +39,23 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.lblNomeUC = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBase64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureImagem
+            // picBase64
             // 
-            this.pictureImagem.Location = new System.Drawing.Point(46, 58);
-            this.pictureImagem.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureImagem.Name = "pictureImagem";
-            this.pictureImagem.Size = new System.Drawing.Size(191, 139);
-            this.pictureImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureImagem.TabIndex = 34;
-            this.pictureImagem.TabStop = false;
+            this.picBase64.Location = new System.Drawing.Point(46, 58);
+            this.picBase64.Margin = new System.Windows.Forms.Padding(4);
+            this.picBase64.Name = "picBase64";
+            this.picBase64.Size = new System.Drawing.Size(191, 139);
+            this.picBase64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBase64.TabIndex = 34;
+            this.picBase64.TabStop = false;
             // 
             // linkLEdit
             // 
@@ -86,14 +86,14 @@
             this.dgVisualizar.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Data,
@@ -157,15 +157,15 @@
             this.Tecnico.Name = "Tecnico";
             this.Tecnico.Width = 125;
             // 
-            // button1
+            // btnEditar
             // 
-            this.button1.Location = new System.Drawing.Point(46, 346);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 48);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "Editar Ticket";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnEditar.Location = new System.Drawing.Point(46, 346);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(155, 48);
+            this.btnEditar.TabIndex = 38;
+            this.btnEditar.Text = "Editar Ticket";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // lblNomeUC
             // 
@@ -202,15 +202,15 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblNomeUC);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgVisualizar);
             this.Controls.Add(this.btnAdcTicket);
             this.Controls.Add(this.linkLEdit);
-            this.Controls.Add(this.pictureImagem);
+            this.Controls.Add(this.picBase64);
             this.Name = "InicUsuarioComum";
             this.Text = "TelaUsuarioComum";
             this.Load += new System.EventHandler(this.TelaUsuarioComum_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBase64)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,7 +219,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureImagem;
+        private System.Windows.Forms.PictureBox picBase64;
         private System.Windows.Forms.LinkLabel linkLEdit;
         private System.Windows.Forms.Button btnAdcTicket;
         private System.Windows.Forms.DataGridView dgVisualizar;
@@ -229,7 +229,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tecnico;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblNomeUC;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblEmail;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,19 @@ namespace GhostBusters_Forms.View.Usuário_Comum
                 pictureImagem.Load();
 
             }
+        }
+
+        private Imagem SalvarImagemBase64(FileInfo file) => new Imagem
+        {
+           
+            nomeImagem = file.Name,
+            BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName))
+          
+        };
+
+        private void BtnSaveBase_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
