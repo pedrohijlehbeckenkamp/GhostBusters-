@@ -40,7 +40,7 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.btnNew = new System.Windows.Forms.Button();
+            this.BtViSenha = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureImagem = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -99,7 +99,6 @@
             this.tbConfirmeSenha.PasswordChar = '*';
             this.tbConfirmeSenha.Size = new System.Drawing.Size(219, 26);
             this.tbConfirmeSenha.TabIndex = 4;
-            this.tbConfirmeSenha.TextChanged += new System.EventHandler(this.TbConfirmeSenha_TextChanged);
             this.tbConfirmeSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbConfirmeSenha_KeyUp);
             // 
             // tbSenha
@@ -110,7 +109,6 @@
             this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(219, 26);
             this.tbSenha.TabIndex = 3;
-            this.tbSenha.TextChanged += new System.EventHandler(this.TbSenha_TextChanged);
             // 
             // tbConfirmaEmail
             // 
@@ -165,18 +163,15 @@
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(219, 26);
             this.tbNome.TabIndex = 0;
-            this.tbNome.TextChanged += new System.EventHandler(this.TbNome_TextChanged);
             // 
-            // btnNew
+            // BtViSenha
             // 
-            this.btnNew.Location = new System.Drawing.Point(534, 271);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(141, 26);
-            this.btnNew.TabIndex = 30;
-            this.btnNew.Text = "Visualizar Senha ";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
-            this.btnNew.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnNew_MouseDown);
+            this.BtViSenha.Location = new System.Drawing.Point(635, 376);
+            this.BtViSenha.Name = "BtViSenha";
+            this.BtViSenha.Size = new System.Drawing.Size(141, 26);
+            this.BtViSenha.TabIndex = 30;
+            this.BtViSenha.Text = "Visualizar Senha ";
+            this.BtViSenha.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -237,7 +232,7 @@
             // 
             // BtVisConfirmeSenha
             // 
-            this.BtVisConfirmeSenha.Location = new System.Drawing.Point(534, 304);
+            this.BtVisConfirmeSenha.Location = new System.Drawing.Point(534, 303);
             this.BtVisConfirmeSenha.Name = "BtVisConfirmeSenha";
             this.BtVisConfirmeSenha.Size = new System.Drawing.Size(141, 26);
             this.BtVisConfirmeSenha.TabIndex = 38;
@@ -257,7 +252,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureImagem);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.BtViSenha);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.butSave);
             this.Controls.Add(this.label2);
@@ -293,7 +288,7 @@
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button BtViSenha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureImagem;
         private System.Windows.Forms.Button button1;

@@ -33,14 +33,20 @@ namespace GhostBusters_Forms
                 Imagem image = null;
                 if (pictureImagem.ImageLocation != null)
                 {
-                     FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+                    FileInfo file = new FileInfo(pictureImagem.ImageLocation);
                     image = new ImagemController().Cadastro(SalvarImagemBase64(file));
-                    
+
+
                 }
 
                 new UsuarioController().Cadastro(GetUsuario(image));
-               // MessageBox.Show("É nois");
-        }
+                // MessageBox.Show("É nois");
+                this.Close();
+            }
+            //else
+            //{
+            //    MessageBox.Show("Insira os dados corretamente");
+            //}
 
     }
 
@@ -136,11 +142,6 @@ namespace GhostBusters_Forms
             //pictureBoxBase64.Image = null;
         };
 
-        private void BtnNew_MouseDown(object sender, MouseEventArgs e)
-        {
-            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
-            
-        }
         private void CadastroUsuario_Load(object sender, EventArgs e)
         {
             CbListarPerfil.DataSource = new PerfilController().FindAll();
@@ -152,24 +153,11 @@ namespace GhostBusters_Forms
             pictureImagem.Image.Dispose();
             pictureImagem.Image = null;
         }
-        private void BtnNew_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void TbNome_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void TbConfirmeSenha_TextChanged(object sender, EventArgs e)
-        {
-        }
-        private void TbSenha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtVisConfirmeSenha_Click(object sender, EventArgs e)
         {
-            tbConfirmaEmail.PasswordChar = tbConfirmaEmail.PasswordChar == char.MinValue ? tbConfirmaEmail.PasswordChar = '*' : char.MinValue;
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+            tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;
         }
 
         private void TbConfirmeSenha_KeyUp(object sender, KeyEventArgs e)

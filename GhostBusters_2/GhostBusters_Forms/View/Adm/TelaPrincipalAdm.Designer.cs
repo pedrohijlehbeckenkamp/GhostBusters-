@@ -42,7 +42,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
             this.NomeAdimin = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCadastrarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -131,7 +131,7 @@
             // 
             // pbPerfil
             // 
-            this.pbPerfil.Location = new System.Drawing.Point(598, 21);
+            this.pbPerfil.Location = new System.Drawing.Point(643, 22);
             this.pbPerfil.Name = "pbPerfil";
             this.pbPerfil.Size = new System.Drawing.Size(108, 92);
             this.pbPerfil.TabIndex = 26;
@@ -140,7 +140,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(190, 49);
+            this.btnExcluir.Location = new System.Drawing.Point(185, 49);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(108, 44);
             this.btnExcluir.TabIndex = 1;
@@ -150,7 +150,7 @@
             // btnConfig
             // 
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfig.Location = new System.Drawing.Point(471, 49);
+            this.btnConfig.Location = new System.Drawing.Point(497, 49);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(121, 44);
             this.btnConfig.TabIndex = 27;
@@ -166,23 +166,23 @@
             this.NomeAdimin.TabIndex = 28;
             this.NomeAdimin.Text = "label1";
             // 
-            // button1
+            // btnCadastrarUsuario
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(315, 49);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 44);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "Cadastro Usuario";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnCadastrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarUsuario.Location = new System.Drawing.Point(319, 49);
+            this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
+            this.btnCadastrarUsuario.Size = new System.Drawing.Size(150, 44);
+            this.btnCadastrarUsuario.TabIndex = 29;
+            this.btnCadastrarUsuario.Text = "Cadastro Usuario";
+            this.btnCadastrarUsuario.UseVisualStyleBackColor = true;
+            this.btnCadastrarUsuario.Click += new System.EventHandler(this.BtnCadastrarUsuario_Click);
             // 
             // TelaPrincipalAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCadastrarUsuario);
             this.Controls.Add(this.NomeAdimin);
             this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.btnExcluir);
@@ -214,6 +214,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tecnico;
         private System.Windows.Forms.Label NomeAdimin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCadastrarUsuario;
     }
 }

@@ -12,6 +12,10 @@ namespace GhostBusters_Forms.Mapper
     {
         public static UsuarioEntity MapUsuarioEntity(this Usuario usuario)
         {
+            if (usuario == null)
+            {
+                return null;
+            }
             return new UsuarioEntity()
             {
                 COD_USUARIO = usuario.Codigo_Usuario,
@@ -24,6 +28,10 @@ namespace GhostBusters_Forms.Mapper
         }
         public static Usuario MapUsuarioModel(this UsuarioEntity usuarioEntity)
         {
+            if (usuarioEntity == null)
+            {
+                return null;
+            }
             return new Usuario()
             {
                 Codigo_Usuario = usuarioEntity.COD_USUARIO,

@@ -70,31 +70,46 @@ namespace GhostBusters_Forms
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
+            Validar();    
+        }
+
+        private void TbSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Validar();
+            }
+        }
+
+        private void Validar()
+        {
             var login = new UsuarioController().ValidaLogin(GetLogin().Email, GetLogin().Senha);
 
             var menuAdmin = new TelaPrincipalAdm(login);
             var menuUsuario = new InicUsuarioComum(login);
-            if (login.perfil.nomePerfil == "Admin")
+            if (login != null)
             {
-                menuAdmin.FormClosed += (x, y) =>
+                if (login.perfil.nomePerfil == "Admin")
                 {
-                    this.Show();
-                };
+                    menuAdmin.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                    };
+                    menuAdmin.Show();
+                    this.Hide();
+                }//else MessageBox.Show("No Existe");
 
-                menuAdmin.Show();
-                this.Hide();
+                if (login.perfil.nomePerfil == "Usuario")
+                {
+                    menuUsuario.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                    };
+                    menuUsuario.Show();
+                    this.Hide();
+                }//else MessageBox.Show("No Existe"); 
             }
-          //  else MessageBox.Show("No Existe");
-            if (login.perfil.nomePerfil == "Usuario")
-            {
-                menuUsuario.FormClosed += (x, y) =>
-                {
-                    this.Show();
-                };
-
-                menuUsuario.Show();
-                this.Hide();
-            }//else MessageBox.Show("No Existe");          
+            else MessageBox.Show("Email e/ou senha errado!");
         }
     }
 }
