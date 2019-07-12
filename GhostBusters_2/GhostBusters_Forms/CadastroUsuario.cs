@@ -35,19 +35,11 @@ namespace GhostBusters_Forms
                 {
                     FileInfo file = new FileInfo(pictureImagem.ImageLocation);
                     image = new ImagemController().Cadastro(SalvarImagemBase64(file));
-
-
                 }
-
                 new UsuarioController().Cadastro(GetUsuario(image));
                 // MessageBox.Show("É nois");
                 this.Close();
             }
-            //else
-            //{
-            //    MessageBox.Show("Insira os dados corretamente");
-            //}
-
     }
 
         public Usuario GetUsuario(Imagem imagem) => new Usuario
