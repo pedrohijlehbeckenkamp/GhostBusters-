@@ -21,6 +21,17 @@ namespace GhostBusters_Infra.Entity
 
         [ForeignKey("_STATUS")]
         public StatusEntity _STATUS { get; set; }
+        public int COD_CATEGORIA { get; set; }
+
+        [ForeignKey("CATEGORIA")]
+        public CategoriaEntity CATEGORIA { get; set; }
+        public int COD_OWNER { get; set; }
+
+        [ForeignKey("USUARIO")]
+        public UsuarioEntity OWNER { get; set; }
+
+        public int? COD_TECH { get; set; }
+        public UsuarioEntity TECNICO { get; set; }
 
 
         public override int? EntityId()

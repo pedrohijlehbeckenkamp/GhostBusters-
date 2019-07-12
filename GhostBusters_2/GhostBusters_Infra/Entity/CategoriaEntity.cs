@@ -8,20 +8,16 @@ using System.Threading.Tasks;
 
 namespace GhostBusters_Infra.Entity
 {
-    [Table("_STATUS")]
-    public class StatusEntity: BaseEntity
+    [Table("CATEGORIA")]
+    public class CategoriaEntity: BaseEntity
     {
         [Key]
-        public int COD_STATUS { get; set; }
+        public int COD_CATEGORIA { get; set; }
         public string NOME { get; set; }
-        public int? COD_PERFIL { get; set; }
-
-        [ForeignKey("COD_PERFIL")]
-        public virtual PerfilEntity PERFIL { get; set; }
 
         public override int? EntityId()
         {
-            return COD_STATUS;
+            return COD_CATEGORIA;
         }
     }
 }

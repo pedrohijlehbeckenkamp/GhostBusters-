@@ -40,6 +40,21 @@ namespace GhostBusters_Infra
                 .HasKey(x => x.COD_STATUS)
                 .HasOptional(perfil => perfil.PERFIL);
 
+            modelBuilder.Entity<ChamadoEntity>()
+                .HasKey(x => x.COD_CHAMADO)
+                .HasRequired(x => x._STATUS);
+
+            modelBuilder.Entity<ChamadoEntity>()
+                .HasRequired(x => x.CATEGORIA);
+
+            modelBuilder.Entity<ChamadoEntity>()
+                .HasRequired(x => x.OWNER);
+
+            modelBuilder.Entity<ChamadoEntity>()
+                .HasOptional(x => x.TECNICO);
+
+ 
+
 
            
         }
