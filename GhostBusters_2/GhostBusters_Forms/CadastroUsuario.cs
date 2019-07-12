@@ -171,5 +171,13 @@ namespace GhostBusters_Forms
         {
             tbConfirmaEmail.PasswordChar = tbConfirmaEmail.PasswordChar == char.MinValue ? tbConfirmaEmail.PasswordChar = '*' : char.MinValue;
         }
+
+        private void TbConfirmeSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                MessageBox.Show("Passouuu");
+            }
+        }
     }
 }

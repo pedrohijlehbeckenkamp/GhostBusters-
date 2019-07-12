@@ -100,6 +100,7 @@
             this.tbConfirmeSenha.Size = new System.Drawing.Size(219, 26);
             this.tbConfirmeSenha.TabIndex = 4;
             this.tbConfirmeSenha.TextChanged += new System.EventHandler(this.TbConfirmeSenha_TextChanged);
+            this.tbConfirmeSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbConfirmeSenha_KeyUp);
             // 
             // tbSenha
             // 
