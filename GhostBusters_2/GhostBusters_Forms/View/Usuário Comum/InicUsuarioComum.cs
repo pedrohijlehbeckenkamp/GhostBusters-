@@ -10,22 +10,36 @@ using System.Windows.Forms;
 using GhostBusters_Forms.View.Ticket;
 using GhostBusters_Forms.View.Status;
 using GhostBusters_Forms.View.Usuário_Comum;
+using GhostBusters_Forms.Model;
+using System.IO;
 
 namespace GhostBusters_Forms.Usuário_Comum
 {
     public partial class InicUsuarioComum : Form
     {
-        public InicUsuarioComum()
+        private Usuario usuario;
+        public InicUsuarioComum(Usuario _usuario)
         {
             InitializeComponent();
+            usuario = _usuario;
         }
 
         private void TelaUsuarioComum_Load(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             //referenciar de acordo com o obj
-            lblNomeUC.Text = "AAAA";
-            lblEmail.Text = "BBB";
+            lblNomeUC.Text = usuario.NomeUsuario;
+            lblEmail.Text = usuario.Email;
+
+            if (usuario.Foto != null)
+            {
+                byte[] bytes = Convert.FromBase64String(usuario.Foto.BaseData);
+                using (MemoryStream ms = new MemoryStream(bytes))
+                {
+
+                    picBase64.Image = Image.FromStream(ms);
+                }
+            }
         }
        
         

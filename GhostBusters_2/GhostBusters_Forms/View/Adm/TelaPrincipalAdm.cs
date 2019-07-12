@@ -37,5 +37,17 @@ namespace GhostBusters_Forms.Adm
             menu.Show();
             this.Hide();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            var menu = new CadastroUsuario();
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+            };
+
+            menu.Show();
+            this.Hide();
+        }
     }
 }

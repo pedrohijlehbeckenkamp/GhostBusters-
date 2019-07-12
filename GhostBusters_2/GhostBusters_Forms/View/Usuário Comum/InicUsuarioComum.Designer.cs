@@ -49,10 +49,9 @@
             // 
             // picBase64
             // 
-            this.picBase64.Location = new System.Drawing.Point(46, 58);
-            this.picBase64.Margin = new System.Windows.Forms.Padding(4);
+            this.picBase64.Location = new System.Drawing.Point(14, 12);
             this.picBase64.Name = "picBase64";
-            this.picBase64.Size = new System.Drawing.Size(191, 139);
+            this.picBase64.Size = new System.Drawing.Size(58, 56);
             this.picBase64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBase64.TabIndex = 34;
             this.picBase64.TabStop = false;
@@ -60,9 +59,10 @@
             // linkLEdit
             // 
             this.linkLEdit.AutoSize = true;
-            this.linkLEdit.Location = new System.Drawing.Point(52, 212);
+            this.linkLEdit.Location = new System.Drawing.Point(11, 113);
+            this.linkLEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLEdit.Name = "linkLEdit";
-            this.linkLEdit.Size = new System.Drawing.Size(78, 17);
+            this.linkLEdit.Size = new System.Drawing.Size(58, 13);
             this.linkLEdit.TabIndex = 35;
             this.linkLEdit.TabStop = true;
             this.linkLEdit.Text = "Alterar foto";
@@ -70,9 +70,10 @@
             // 
             // btnAdcTicket
             // 
-            this.btnAdcTicket.Location = new System.Drawing.Point(46, 271);
+            this.btnAdcTicket.Location = new System.Drawing.Point(167, 113);
+            this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdcTicket.Name = "btnAdcTicket";
-            this.btnAdcTicket.Size = new System.Drawing.Size(155, 48);
+            this.btnAdcTicket.Size = new System.Drawing.Size(116, 39);
             this.btnAdcTicket.TabIndex = 36;
             this.btnAdcTicket.Text = "Adicionar Ticket";
             this.btnAdcTicket.UseVisualStyleBackColor = true;
@@ -104,13 +105,12 @@
             this.Tecnico});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgVisualizar.Location = new System.Drawing.Point(258, 212);
-            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.dgVisualizar.Location = new System.Drawing.Point(14, 157);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(743, 244);
+            this.dgVisualizar.Size = new System.Drawing.Size(737, 198);
             this.dgVisualizar.TabIndex = 37;
             // 
             // Data
@@ -159,9 +159,10 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(46, 346);
+            this.btnEditar.Location = new System.Drawing.Point(404, 113);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(155, 48);
+            this.btnEditar.Size = new System.Drawing.Size(116, 39);
             this.btnEditar.TabIndex = 38;
             this.btnEditar.Text = "Editar Ticket";
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -170,35 +171,38 @@
             // lblNomeUC
             // 
             this.lblNomeUC.AutoSize = true;
-            this.lblNomeUC.Location = new System.Drawing.Point(301, 58);
+            this.lblNomeUC.Location = new System.Drawing.Point(11, 71);
+            this.lblNomeUC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomeUC.Name = "lblNomeUC";
-            this.lblNomeUC.Size = new System.Drawing.Size(49, 17);
+            this.lblNomeUC.Size = new System.Drawing.Size(39, 13);
             this.lblNomeUC.TabIndex = 39;
             this.lblNomeUC.Text = "NOME";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(43, 21);
+            this.lblDate.Location = new System.Drawing.Point(719, 362);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(38, 17);
+            this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 40;
             this.lblDate.Text = "Date";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(301, 95);
+            this.lblEmail.Location = new System.Drawing.Point(11, 94);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 17);
+            this.lblEmail.Size = new System.Drawing.Size(39, 13);
             this.lblEmail.TabIndex = 41;
             this.lblEmail.Text = "EMAIL";
             // 
             // InicUsuarioComum
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 473);
+            this.ClientSize = new System.Drawing.Size(760, 384);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblNomeUC);
@@ -207,6 +211,7 @@
             this.Controls.Add(this.btnAdcTicket);
             this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.picBase64);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InicUsuarioComum";
             this.Text = "TelaUsuarioComum";
             this.Load += new System.EventHandler(this.TelaUsuarioComum_Load);
