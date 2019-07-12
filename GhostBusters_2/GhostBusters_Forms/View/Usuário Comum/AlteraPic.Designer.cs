@@ -37,7 +37,7 @@
             // 
             // pictureImagem
             // 
-            this.pictureImagem.Location = new System.Drawing.Point(135, 48);
+            this.pictureImagem.Location = new System.Drawing.Point(138, 64);
             this.pictureImagem.Margin = new System.Windows.Forms.Padding(4);
             this.pictureImagem.Name = "pictureImagem";
             this.pictureImagem.Size = new System.Drawing.Size(246, 264);
@@ -47,11 +47,11 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(379, 361);
+            this.btnLoad.Location = new System.Drawing.Point(362, 361);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(133, 54);
             this.btnLoad.TabIndex = 39;
-            this.btnLoad.Text = "Carregar";
+            this.btnLoad.Text = "Alterar";
             this.btnLoad.UseVisualStyleBackColor = true;
             // 
             // btnSaveBase
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 450);
+            this.ClientSize = new System.Drawing.Size(534, 450);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSaveBase);
             this.Controls.Add(this.btnOpenBase);

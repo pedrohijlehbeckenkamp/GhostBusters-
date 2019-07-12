@@ -49,7 +49,7 @@ namespace GhostBusters_Forms
             NomeUsuario = tbNome.Text,
             Email = tbEmail.Text,
             Senha = tbSenha.Text,
-            //perfil = 
+            perfil = new PerfilController().BuscaNome(CbListarPerfil.Text), 
             Foto = imagem      
         };
 

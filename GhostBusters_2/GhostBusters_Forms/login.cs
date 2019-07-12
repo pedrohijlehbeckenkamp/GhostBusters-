@@ -27,14 +27,14 @@ namespace GhostBusters_Forms
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            var menu = new CadastroUsuario();
+           /*var menu = new CadastroUsuario();
             menu.FormClosed += (x, y) =>
             {
                 this.Show();
             };
 
             menu.Show();
-            this.Hide();
+            this.Hide();*/
         }
 
 
@@ -73,7 +73,7 @@ namespace GhostBusters_Forms
             var login = new UsuarioController().ValidaLogin(GetLogin().Email, GetLogin().Senha);
 
             var menuAdmin = new TelaPrincipalAdm(login);
-            var menuUsuario = new InicUsuarioComum();
+            var menuUsuario = new InicUsuarioComum(login);
             if (login.perfil.nomePerfil == "Admin")
             {
                 menuAdmin.FormClosed += (x, y) =>
@@ -94,14 +94,7 @@ namespace GhostBusters_Forms
 
                 menuUsuario.Show();
                 this.Hide();
-            }//else MessageBox.Show("No Existe");
-            
-           
-        }
-
-        private void Login_Load_1(object sender, EventArgs e)
-        {
-            
+            }//else MessageBox.Show("No Existe");          
         }
     }
 }

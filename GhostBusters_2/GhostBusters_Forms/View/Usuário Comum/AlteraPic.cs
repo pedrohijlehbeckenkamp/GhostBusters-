@@ -15,6 +15,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 {
     public partial class AlteraPic : Form
     {
+        int idImagem = 0;
 
         OpenFileDialog openFileDialog = new OpenFileDialog();
         public AlteraPic()
@@ -34,9 +35,11 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 
         private void AlteraPic_Load(object sender, EventArgs e)
         {
-            // alterar
+            
         }
 
+      
+   
         private void BtnOpenBase_Click(object sender, EventArgs e)
         {
             AbrirImagem();
@@ -64,7 +67,16 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 
         private void BtnSaveBase_Click(object sender, EventArgs e)
         {
+            Imagem image = null;
+            if (pictureImagem.ImageLocation != null)
+            {
+                FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+                image = new ImagemController().Cadastro(SalvarImagemBase64(file));
 
+            }
         }
+
+
+        
     }
 }

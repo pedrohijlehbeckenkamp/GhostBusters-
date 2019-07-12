@@ -126,7 +126,7 @@ namespace GhostBusters_Forms
             this.Controls.Add(this.tbUsuario);
             this.Name = "Login";
             this.Text = "login";
-            this.Load += new System.EventHandler(this.Login_Load_1);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
