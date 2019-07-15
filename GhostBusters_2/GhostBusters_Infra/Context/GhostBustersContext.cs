@@ -13,7 +13,7 @@ namespace GhostBusters_Infra
         public GhostBustersContext() : base("Ghostbusters") { }
 
 
-        public void SendChanges()
+       public void SendChanges()
         {
             ChangeTracker.DetectChanges();
             SaveChanges();
@@ -35,6 +35,9 @@ namespace GhostBusters_Infra
 
             modelBuilder.Entity<UsuarioEntity>()
                 .HasOptional(imagem => imagem.IMAGEM);
+
+            modelBuilder.Entity<Base64AnexoEntity>()
+                .HasKey(anexo => anexo.COD_ANEXO);
 
             modelBuilder.Entity<StatusEntity>()
                 .HasKey(x => x.COD_STATUS)

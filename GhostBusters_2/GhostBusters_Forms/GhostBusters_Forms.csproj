@@ -53,6 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\AnexoController.cs" />
+    <Compile Include="Controller\CategoriaController.cs" />
+    <Compile Include="Controller\StatusController.cs" />
+    <Compile Include="Mapper\AnexoMapper.cs" />
+    <Compile Include="Mapper\CategoriaMapper.cs" />
+    <Compile Include="Mapper\ChamadoMapper.cs" />
+    <Compile Include="Mapper\StatusMapper.cs" />
+    <Compile Include="Model\Anexo.cs" />
+    <Compile Include="Model\CategoriaModel.cs" />
+    <Compile Include="Model\ChamadoModel.cs" />
+    <Compile Include="Model\StatusModel.cs" />
     <Compile Include="View\Categoria\CadastrarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +186,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tecnico\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxFOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="FOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

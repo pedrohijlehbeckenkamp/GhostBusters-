@@ -17,7 +17,11 @@ namespace GhostBusters_Infra.Entity
         public string TITULO { get; set; }
         public string DESCRICAO { get; set; }
         public DateTime DATA_CHAMADO { get; set; }
+        public DateTime DATA_CHAMADA_FINALIZADA { get; set; }
         public int COD_STATUS { get; set; }
+        public int COD_PERFIL { get; set; }
+        [ForeignKey("COD_PERFIL")]
+        public PerfilEntity PERFIL { get; set; }
 
         [ForeignKey("COD_STATUS")]
         public StatusEntity _STATUS { get; set; }

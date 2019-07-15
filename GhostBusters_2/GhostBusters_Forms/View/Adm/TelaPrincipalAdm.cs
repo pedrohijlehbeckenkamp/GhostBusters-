@@ -28,7 +28,7 @@ namespace GhostBusters_Forms.Adm
 
         private void BtnNewTicket_Click(object sender, EventArgs e)
         {
-            var menu = new CadastrarTicket();
+            var menu = new CadastrarTicket(usuario);
             menu.FormClosed += (x, y) =>
             {
                 this.Show();
