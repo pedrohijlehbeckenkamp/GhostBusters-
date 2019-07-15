@@ -80,7 +80,6 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 
         private void BtnSaveBase_Click(object sender, EventArgs e)
         {
-            //Imagem image = null;
             if (pictureImagem.ImageLocation != null)
             {
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);

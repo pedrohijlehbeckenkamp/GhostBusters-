@@ -59,10 +59,16 @@
     <Compile Include="View\Categoria\CadastrarCategoria.Designer.cs">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Usuário Comum\AlteraPic.cs">
+    <Compile Include="View\Tecnico\InicTecnico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Usuário Comum\AlteraPic.Designer.cs">
+    <Compile Include="View\Tecnico\InicTecnico.Designer.cs">
+      <DependentUpon>InicTecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Utilidades\AlteraPic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Utilidades\AlteraPic.Designer.cs">
       <DependentUpon>AlteraPic.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Usuário Comum\InicUsuarioComum.cs">
@@ -95,17 +101,17 @@
     <Compile Include="View\Ticket\EditarTicket.Designer.cs">
       <DependentUpon>EditarTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroUsuario.cs">
+    <Compile Include="View\Utilidades\CadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroUsuario.Designer.cs">
+    <Compile Include="View\Utilidades\CadastroUsuario.Designer.cs">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="View\Utilidades\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="View\Utilidades\Login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapper\ImagemMapper.cs" />
     <Compile Include="Mapper\PerfilMapper.cs" />
@@ -118,11 +124,14 @@
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CadastroUsuario.resx">
+    <EmbeddedResource Include="View\Tecnico\InicTecnico.resx">
+      <DependentUpon>InicTecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Utilidades\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="View\Utilidades\Login.resx">
+      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -136,7 +145,7 @@
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Usuário Comum\AlteraPic.resx">
+    <EmbeddedResource Include="View\Utilidades\AlteraPic.resx">
       <DependentUpon>AlteraPic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Usuário Comum\InicUsuarioComum.resx">
@@ -173,8 +182,6 @@
       <Name>GhostBusters_Infra</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tecnico\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

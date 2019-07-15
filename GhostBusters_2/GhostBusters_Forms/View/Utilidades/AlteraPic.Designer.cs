@@ -37,19 +37,20 @@
             // 
             // pictureImagem
             // 
-            this.pictureImagem.Location = new System.Drawing.Point(141, 76);
-            this.pictureImagem.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureImagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureImagem.Location = new System.Drawing.Point(106, 62);
             this.pictureImagem.Name = "pictureImagem";
-            this.pictureImagem.Size = new System.Drawing.Size(246, 264);
+            this.pictureImagem.Size = new System.Drawing.Size(184, 214);
             this.pictureImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureImagem.TabIndex = 35;
             this.pictureImagem.TabStop = false;
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(362, 361);
+            this.btnAlterar.Location = new System.Drawing.Point(272, 293);
+            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(133, 54);
+            this.btnAlterar.Size = new System.Drawing.Size(100, 44);
             this.btnAlterar.TabIndex = 39;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
@@ -57,9 +58,10 @@
             // 
             // btnSaveBase
             // 
-            this.btnSaveBase.Location = new System.Drawing.Point(194, 361);
+            this.btnSaveBase.Location = new System.Drawing.Point(146, 293);
+            this.btnSaveBase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSaveBase.Name = "btnSaveBase";
-            this.btnSaveBase.Size = new System.Drawing.Size(133, 54);
+            this.btnSaveBase.Size = new System.Drawing.Size(100, 44);
             this.btnSaveBase.TabIndex = 38;
             this.btnSaveBase.Text = "Salvar";
             this.btnSaveBase.UseVisualStyleBackColor = true;
@@ -67,9 +69,10 @@
             // 
             // btnOpenBase
             // 
-            this.btnOpenBase.Location = new System.Drawing.Point(29, 361);
+            this.btnOpenBase.Location = new System.Drawing.Point(22, 293);
+            this.btnOpenBase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnOpenBase.Name = "btnOpenBase";
-            this.btnOpenBase.Size = new System.Drawing.Size(133, 54);
+            this.btnOpenBase.Size = new System.Drawing.Size(100, 44);
             this.btnOpenBase.TabIndex = 37;
             this.btnOpenBase.Text = "Abrir Imagem";
             this.btnOpenBase.UseVisualStyleBackColor = true;
@@ -77,13 +80,14 @@
             // 
             // AlteraPic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 450);
+            this.ClientSize = new System.Drawing.Size(400, 366);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSaveBase);
             this.Controls.Add(this.btnOpenBase);
             this.Controls.Add(this.pictureImagem);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AlteraPic";
             this.Text = "AlteraPic";
             this.Load += new System.EventHandler(this.AlteraPic_Load);
