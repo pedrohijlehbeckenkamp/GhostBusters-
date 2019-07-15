@@ -284,7 +284,7 @@
             this.Controls.Add(this.tbNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CadastroUsuario";
-            this.Text = "CadastroUsuario";
+            this.Text = "Cadastro de usuario";
             this.Load += new System.EventHandler(this.CadastroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
             this.panel1.ResumeLayout(false);
