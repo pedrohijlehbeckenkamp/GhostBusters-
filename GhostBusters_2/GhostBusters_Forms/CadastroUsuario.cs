@@ -24,12 +24,10 @@ namespace GhostBusters_Forms
             CenterToParent();
         }
 
-
-
         private void ButSave_Click(object sender, EventArgs e)
         {
-            if (Valida())
-            {
+            //if (Valida())
+            //{
                 Imagem image = null;
                 if (pictureImagem.ImageLocation != null)
                 {
@@ -39,8 +37,10 @@ namespace GhostBusters_Forms
                 new UsuarioController().Cadastro(GetUsuario(image));
                 // MessageBox.Show("É nois");
                 this.Close();
-            }
-    }
+            //}
+
+
+        }
 
         public Usuario GetUsuario(Imagem imagem) => new Usuario
         {
@@ -58,7 +58,7 @@ namespace GhostBusters_Forms
             if (string.IsNullOrEmpty(tbNome.Text) || validaNome.IsMatch(tbNome.Text))
             {
                 tbNome.BackColor = Color.Red;
-                // MessageBox.Show("Erro nome");
+                MessageBox.Show("Erro nome");
                 //return false;
                 cont++;
             }else
@@ -77,6 +77,7 @@ namespace GhostBusters_Forms
             else
             {
                 tbEmail.BackColor = Color.White;
+                tbConfirmaEmail.BackColor = Color.White;
                 tbConfirmeSenha.BackColor = Color.AliceBlue;
                 // MessageBox.Show("email valido");
             }
@@ -109,7 +110,7 @@ namespace GhostBusters_Forms
             return null;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnAbrirImagem_Click(object sender, EventArgs e)
         {
             AbrirImagem();
         }
@@ -142,14 +143,15 @@ namespace GhostBusters_Forms
 
         private void ClearImagem_Click(object sender, EventArgs e)
         {
-            pictureImagem.Image.Dispose();
-            pictureImagem.Image = null;
-        }
-
-        private void BtVisConfirmeSenha_Click(object sender, EventArgs e)
-        {
-            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
-            tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;
+            if (pictureImagem.Image != null)
+            {
+                pictureImagem.Image.Dispose();
+                pictureImagem.Image = null;
+            }
+            else
+            {
+                MessageBox.Show("Sem imagem selecionada no momento!");
+            }       
         }
 
         private void TbConfirmeSenha_KeyUp(object sender, KeyEventArgs e)
@@ -157,7 +159,21 @@ namespace GhostBusters_Forms
             if(e.KeyCode == Keys.Enter)
             {
                 MessageBox.Show("Passouuu");
+                tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+                tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;
             }
+        }
+
+        private void BtVisConfirmeSenha_MouseEnter(object sender, EventArgs e)
+        {
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+            tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;
+        }
+
+        private void BtVisConfirmeSenha_MouseLeave(object sender, EventArgs e)
+        {
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+            tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;
         }
     }
 }

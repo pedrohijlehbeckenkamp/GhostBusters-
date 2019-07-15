@@ -40,42 +40,45 @@
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.lbNome = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
-            this.BtViSenha = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureImagem = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAbrirImagem = new System.Windows.Forms.Button();
             this.CbListarPerfil = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ClearImagem = new System.Windows.Forms.Button();
             this.BtVisConfirmeSenha = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(233, 29);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(258, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(316, 37);
+            this.label3.Size = new System.Drawing.Size(229, 31);
             this.label3.TabIndex = 29;
-            this.label3.Text = "Cadastro de usuario:";
+            this.label3.Text = "Cadastro de usuario";
             // 
             // butSave
             // 
-            this.butSave.Location = new System.Drawing.Point(369, 335);
+            this.butSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.butSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butSave.ForeColor = System.Drawing.Color.White;
+            this.butSave.Location = new System.Drawing.Point(316, 375);
             this.butSave.Name = "butSave";
             this.butSave.Size = new System.Drawing.Size(108, 44);
             this.butSave.TabIndex = 5;
             this.butSave.Text = "Save";
-            this.butSave.UseVisualStyleBackColor = true;
+            this.butSave.UseVisualStyleBackColor = false;
             this.butSave.Click += new System.EventHandler(this.ButSave_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(236, 277);
+            this.label2.Location = new System.Drawing.Point(110, 271);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 28;
@@ -85,7 +88,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(138, 309);
+            this.label1.Location = new System.Drawing.Point(12, 302);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 20);
             this.label1.TabIndex = 27;
@@ -94,7 +97,7 @@
             // tbConfirmeSenha
             // 
             this.tbConfirmeSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbConfirmeSenha.Location = new System.Drawing.Point(309, 303);
+            this.tbConfirmeSenha.Location = new System.Drawing.Point(176, 300);
             this.tbConfirmeSenha.Name = "tbConfirmeSenha";
             this.tbConfirmeSenha.PasswordChar = '*';
             this.tbConfirmeSenha.Size = new System.Drawing.Size(219, 26);
@@ -104,7 +107,7 @@
             // tbSenha
             // 
             this.tbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSenha.Location = new System.Drawing.Point(309, 271);
+            this.tbSenha.Location = new System.Drawing.Point(176, 268);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(219, 26);
@@ -113,7 +116,7 @@
             // tbConfirmaEmail
             // 
             this.tbConfirmaEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbConfirmaEmail.Location = new System.Drawing.Point(309, 239);
+            this.tbConfirmaEmail.Location = new System.Drawing.Point(176, 236);
             this.tbConfirmaEmail.Name = "tbConfirmaEmail";
             this.tbConfirmaEmail.Size = new System.Drawing.Size(219, 26);
             this.tbConfirmaEmail.TabIndex = 2;
@@ -122,7 +125,7 @@
             // 
             this.lbConfirmaEmail.AutoSize = true;
             this.lbConfirmaEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConfirmaEmail.Location = new System.Drawing.Point(155, 245);
+            this.lbConfirmaEmail.Location = new System.Drawing.Point(22, 239);
             this.lbConfirmaEmail.Name = "lbConfirmaEmail";
             this.lbConfirmaEmail.Size = new System.Drawing.Size(148, 20);
             this.lbConfirmaEmail.TabIndex = 26;
@@ -132,7 +135,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(251, 207);
+            this.lbEmail.Location = new System.Drawing.Point(118, 207);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(52, 20);
             this.lbEmail.TabIndex = 25;
@@ -141,7 +144,7 @@
             // tbEmail
             // 
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(309, 207);
+            this.tbEmail.Location = new System.Drawing.Point(176, 204);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(219, 26);
             this.tbEmail.TabIndex = 1;
@@ -150,7 +153,7 @@
             // 
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(250, 148);
+            this.lbNome.Location = new System.Drawing.Point(115, 148);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(55, 20);
             this.lbNome.TabIndex = 23;
@@ -159,24 +162,15 @@
             // tbNome
             // 
             this.tbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNome.Location = new System.Drawing.Point(308, 145);
+            this.tbNome.Location = new System.Drawing.Point(177, 145);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(219, 26);
             this.tbNome.TabIndex = 0;
             // 
-            // BtViSenha
-            // 
-            this.BtViSenha.Location = new System.Drawing.Point(635, 376);
-            this.BtViSenha.Name = "BtViSenha";
-            this.BtViSenha.Size = new System.Drawing.Size(141, 26);
-            this.BtViSenha.TabIndex = 30;
-            this.BtViSenha.Text = "Visualizar Senha ";
-            this.BtViSenha.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(632, 53);
+            this.label4.Location = new System.Drawing.Point(569, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 32;
@@ -184,28 +178,34 @@
             // 
             // pictureImagem
             // 
-            this.pictureImagem.Location = new System.Drawing.Point(605, 69);
+            this.pictureImagem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureImagem.Location = new System.Drawing.Point(539, 161);
             this.pictureImagem.Name = "pictureImagem";
             this.pictureImagem.Size = new System.Drawing.Size(161, 129);
             this.pictureImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureImagem.TabIndex = 33;
             this.pictureImagem.TabStop = false;
             // 
-            // button1
+            // btnAbrirImagem
             // 
-            this.button1.Location = new System.Drawing.Point(588, 207);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Abrir imagem";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnAbrirImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAbrirImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirImagem.ForeColor = System.Drawing.Color.White;
+            this.btnAbrirImagem.Location = new System.Drawing.Point(530, 300);
+            this.btnAbrirImagem.Name = "btnAbrirImagem";
+            this.btnAbrirImagem.Size = new System.Drawing.Size(87, 26);
+            this.btnAbrirImagem.TabIndex = 6;
+            this.btnAbrirImagem.Text = "Abrir imagem";
+            this.btnAbrirImagem.UseVisualStyleBackColor = false;
+            this.btnAbrirImagem.Click += new System.EventHandler(this.BtnAbrirImagem_Click);
             // 
             // CbListarPerfil
             // 
+            this.CbListarPerfil.BackColor = System.Drawing.Color.White;
             this.CbListarPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbListarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CbListarPerfil.FormattingEnabled = true;
-            this.CbListarPerfil.Location = new System.Drawing.Point(309, 177);
+            this.CbListarPerfil.Location = new System.Drawing.Point(177, 177);
             this.CbListarPerfil.Name = "CbListarPerfil";
             this.CbListarPerfil.Size = new System.Drawing.Size(218, 21);
             this.CbListarPerfil.TabIndex = 35;
@@ -214,7 +214,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(251, 178);
+            this.label5.Location = new System.Drawing.Point(122, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 36;
@@ -222,38 +222,55 @@
             // 
             // ClearImagem
             // 
-            this.ClearImagem.Location = new System.Drawing.Point(682, 204);
+            this.ClearImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClearImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearImagem.ForeColor = System.Drawing.Color.White;
+            this.ClearImagem.Location = new System.Drawing.Point(623, 300);
             this.ClearImagem.Name = "ClearImagem";
-            this.ClearImagem.Size = new System.Drawing.Size(84, 26);
+            this.ClearImagem.Size = new System.Drawing.Size(87, 26);
             this.ClearImagem.TabIndex = 37;
             this.ClearImagem.Text = "Clear imagem";
-            this.ClearImagem.UseVisualStyleBackColor = true;
+            this.ClearImagem.UseVisualStyleBackColor = false;
             this.ClearImagem.Click += new System.EventHandler(this.ClearImagem_Click);
             // 
             // BtVisConfirmeSenha
             // 
-            this.BtVisConfirmeSenha.Location = new System.Drawing.Point(534, 303);
+            this.BtVisConfirmeSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtVisConfirmeSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtVisConfirmeSenha.ForeColor = System.Drawing.Color.White;
+            this.BtVisConfirmeSenha.Location = new System.Drawing.Point(401, 300);
             this.BtVisConfirmeSenha.Name = "BtVisConfirmeSenha";
-            this.BtVisConfirmeSenha.Size = new System.Drawing.Size(141, 26);
+            this.BtVisConfirmeSenha.Size = new System.Drawing.Size(98, 26);
             this.BtVisConfirmeSenha.TabIndex = 38;
             this.BtVisConfirmeSenha.Text = "Visualizar Senha ";
-            this.BtVisConfirmeSenha.UseVisualStyleBackColor = true;
-            this.BtVisConfirmeSenha.Click += new System.EventHandler(this.BtVisConfirmeSenha_Click);
+            this.BtVisConfirmeSenha.UseVisualStyleBackColor = false;
+            this.BtVisConfirmeSenha.MouseEnter += new System.EventHandler(this.BtVisConfirmeSenha_MouseEnter);
+            this.BtVisConfirmeSenha.MouseLeave += new System.EventHandler(this.BtVisConfirmeSenha_MouseLeave);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(-1, 21);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(746, 82);
+            this.panel1.TabIndex = 39;
             // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(741, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtVisConfirmeSenha);
             this.Controls.Add(this.ClearImagem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CbListarPerfil);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAbrirImagem);
             this.Controls.Add(this.pictureImagem);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.BtViSenha);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.butSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -265,10 +282,12 @@
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.tbNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CadastroUsuario";
-            this.Text = "CadastroUsuario";
+            this.Text = "Cadastro de usuario";
             this.Load += new System.EventHandler(this.CadastroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,13 +307,13 @@
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.TextBox tbNome;
-        private System.Windows.Forms.Button BtViSenha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureImagem;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAbrirImagem;
         private System.Windows.Forms.ComboBox CbListarPerfil;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ClearImagem;
         private System.Windows.Forms.Button BtVisConfirmeSenha;
+        private System.Windows.Forms.Panel panel1;
     }
 }

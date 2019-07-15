@@ -52,7 +52,7 @@
             this.dgVisualizar.AllowUserToDeleteRows = false;
             this.dgVisualizar.AllowUserToResizeColumns = false;
             this.dgVisualizar.AllowUserToResizeRows = false;
-            this.dgVisualizar.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.dgVisualizar.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -120,17 +120,21 @@
             // 
             // btnNewTicket
             // 
+            this.btnNewTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewTicket.ForeColor = System.Drawing.Color.White;
             this.btnNewTicket.Location = new System.Drawing.Point(49, 49);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
             this.btnNewTicket.TabIndex = 0;
             this.btnNewTicket.Text = "Abrir ticket";
-            this.btnNewTicket.UseVisualStyleBackColor = true;
+            this.btnNewTicket.UseVisualStyleBackColor = false;
             this.btnNewTicket.Click += new System.EventHandler(this.BtnNewTicket_Click);
             // 
             // pbPerfil
             // 
+            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbPerfil.Location = new System.Drawing.Point(643, 22);
             this.pbPerfil.Name = "pbPerfil";
             this.pbPerfil.Size = new System.Drawing.Size(108, 92);
@@ -139,27 +143,34 @@
             // 
             // btnExcluir
             // 
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Location = new System.Drawing.Point(185, 49);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(108, 44);
             this.btnExcluir.TabIndex = 1;
             this.btnExcluir.Text = "Excluir ticket";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             // 
             // btnConfig
             // 
+            this.btnConfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.Location = new System.Drawing.Point(497, 49);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(121, 44);
+            this.btnConfig.Size = new System.Drawing.Size(125, 44);
             this.btnConfig.TabIndex = 27;
             this.btnConfig.Text = "Configurações";
-            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.UseVisualStyleBackColor = false;
             // 
             // NomeAdimin
             // 
             this.NomeAdimin.AutoSize = true;
+            this.NomeAdimin.ForeColor = System.Drawing.Color.Black;
             this.NomeAdimin.Location = new System.Drawing.Point(25, 9);
             this.NomeAdimin.Name = "NomeAdimin";
             this.NomeAdimin.Size = new System.Drawing.Size(35, 13);
@@ -168,19 +179,23 @@
             // 
             // btnCadastrarUsuario
             // 
+            this.btnCadastrarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCadastrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrarUsuario.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarUsuario.Location = new System.Drawing.Point(319, 49);
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
             this.btnCadastrarUsuario.Size = new System.Drawing.Size(150, 44);
             this.btnCadastrarUsuario.TabIndex = 29;
             this.btnCadastrarUsuario.Text = "Cadastro Usuario";
-            this.btnCadastrarUsuario.UseVisualStyleBackColor = true;
+            this.btnCadastrarUsuario.UseVisualStyleBackColor = false;
             this.btnCadastrarUsuario.Click += new System.EventHandler(this.BtnCadastrarUsuario_Click);
             // 
             // TelaPrincipalAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCadastrarUsuario);
             this.Controls.Add(this.NomeAdimin);
@@ -189,6 +204,8 @@
             this.Controls.Add(this.pbPerfil);
             this.Controls.Add(this.btnNewTicket);
             this.Controls.Add(this.dgVisualizar);
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TelaPrincipalAdm";
             this.Text = "Tela principal do Adm";
             this.Load += new System.EventHandler(this.TelaPrincipalAdm_Load);
