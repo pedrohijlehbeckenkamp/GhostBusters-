@@ -53,11 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Adm\ConfigAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adm\ConfigAdm.Designer.cs">
+      <DependentUpon>ConfigAdm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Categoria\CadastrarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Categoria\CadastrarCategoria.Designer.cs">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tecnico\InicTecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tecnico\InicTecnico.Designer.cs">
+      <DependentUpon>InicTecnico.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Utilidades\AlteraPic.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,9 @@
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Tecnico\InicTecnico.resx">
+      <DependentUpon>InicTecnico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Utilidades\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +148,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adm\ConfigAdm.resx">
+      <DependentUpon>ConfigAdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,8 +191,6 @@
       <Name>GhostBusters_Infra</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\Tecnico\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
