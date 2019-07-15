@@ -18,7 +18,7 @@ namespace GhostBusters_Forms.Model
         public Perfil perfil { get; set; }
         public Usuario Owner { get; set; }
         public Usuario Tech { get; set; }
-        public Categoria categoria { get; set; }
+        public CategoriaModel categoria { get; set; }
 
     }
 }

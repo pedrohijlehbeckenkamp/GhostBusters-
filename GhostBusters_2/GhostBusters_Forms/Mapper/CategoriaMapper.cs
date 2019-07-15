@@ -10,7 +10,7 @@ namespace GhostBusters_Forms.Mapper
 {
     public static class CategoriaMapper
     {
-        public static CategoriaEntity MapCategoriaEntity(this Categoria categoria)
+        public static CategoriaEntity MapCategoriaEntity(this CategoriaModel categoria)
         {
             if (categoria == null)
             {
@@ -23,14 +23,14 @@ namespace GhostBusters_Forms.Mapper
                 NOME = categoria.NomeCategoria
             };
         } 
-        public static Categoria MApCategoriaModel(this CategoriaEntity categoriaEntity)
+        public static CategoriaModel MApCategoriaModel(this CategoriaEntity categoriaEntity)
         {
             if (categoriaEntity == null)
             {
                 return null;
             }
 
-            return new Categoria()
+            return new CategoriaModel()
             {
                Codigo_categoria = categoriaEntity.COD_CATEGORIA,
                NomeCategoria = categoriaEntity.NOME 
