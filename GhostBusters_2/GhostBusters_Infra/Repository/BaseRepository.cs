@@ -55,7 +55,5 @@ namespace GhostBusters_Infra.Repository
                 context.SendChanges();
             }
         }
-
-
     }
 }

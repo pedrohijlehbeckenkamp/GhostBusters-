@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Adm\ConfigAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adm\ConfigAdm.Designer.cs">
+      <DependentUpon>ConfigAdm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Categoria\CadastrarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adm\ConfigAdm.resx">
+      <DependentUpon>ConfigAdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </EmbeddedResource>

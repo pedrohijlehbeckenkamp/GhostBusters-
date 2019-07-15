@@ -26,6 +26,8 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void TelaUsuarioComum_Load(object sender, EventArgs e)
         {
+            dgVisualizar.ReadOnly = true;
+            dgVisualizar.AutoGenerateColumns = false;
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             //referenciar de acordo com o obj
             lblNomeUC.Text = usuario.NomeUsuario;
@@ -81,7 +83,5 @@ namespace GhostBusters_Forms.Usuário_Comum
         {
             this.Show();
         }
-
-      
     }
 }
