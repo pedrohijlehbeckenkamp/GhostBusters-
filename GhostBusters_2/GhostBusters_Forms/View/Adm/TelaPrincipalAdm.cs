@@ -1,4 +1,5 @@
 ﻿using GhostBusters_Forms.Model;
+using GhostBusters_Forms.View.Adm;
 using GhostBusters_Forms.View.Ticket;
 using System;
 using System.Collections.Generic;
@@ -9,24 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GhostBusters_Forms.Adm;
-using GhostBusters_Forms.Controller;
-using GhostBusters_Forms.View.Usuário_Comum;
 
 namespace GhostBusters_Forms.Adm
 {
     public partial class TelaPrincipalAdm : Form
     {
-        private Usuario admin;
-        public TelaPrincipalAdm(Usuario _admin)
+        private Usuario usuario;
+        public TelaPrincipalAdm(Usuario _usuario)
         {
             InitializeComponent();
-           admin = _admin;
+            usuario = _usuario;
         }
 
         private void TelaPrincipalAdm_Load(object sender, EventArgs e)
         {
-            NomeAdimin.Text =admin.NomeUsuario;
+            dgVisualizar.ReadOnly = true;
+            dgVisualizar.AutoGenerateColumns = false;
+            NomeAdimin.Text = usuario.NomeUsuario;
         }
 
         private void BtnNewTicket_Click(object sender, EventArgs e)
@@ -53,11 +53,16 @@ namespace GhostBusters_Forms.Adm
             this.Hide();
         }
 
-
-        private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void BtnConfig_Click(object sender, EventArgs e)
         {
-            AlteraPic alteracao = new AlteraPic(admin);
-            alteracao.Show();
+            var menu = new ConfigAdm();
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+            };
+
+            menu.Show();
+            this.Hide();
         }
     }
 }
