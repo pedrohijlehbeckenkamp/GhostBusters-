@@ -28,51 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.tbNome = new System.Windows.Forms.TextBox();
+            this.btnSaveCategoria = new System.Windows.Forms.Button();
+            this.lbNomeCateg = new System.Windows.Forms.Label();
+            this.tbNomeCateg = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // btnSave
+            // btnSaveCategoria
             // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(170, 120);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 50);
-            this.btnSave.TabIndex = 29;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSaveCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSaveCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnSaveCategoria.Location = new System.Drawing.Point(433, 25);
+            this.btnSaveCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveCategoria.Name = "btnSaveCategoria";
+            this.btnSaveCategoria.Size = new System.Drawing.Size(107, 62);
+            this.btnSaveCategoria.TabIndex = 29;
+            this.btnSaveCategoria.Text = "Save";
+            this.btnSaveCategoria.UseVisualStyleBackColor = false;
+            this.btnSaveCategoria.Click += new System.EventHandler(this.BtnSaveCategoria_Click);
             // 
-            // lbNome
+            // lbNomeCateg
             // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(70, 63);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(55, 20);
-            this.lbNome.TabIndex = 30;
-            this.lbNome.Text = "Nome:";
+            this.lbNomeCateg.AutoSize = true;
+            this.lbNomeCateg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeCateg.Location = new System.Drawing.Point(37, 38);
+            this.lbNomeCateg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbNomeCateg.Name = "lbNomeCateg";
+            this.lbNomeCateg.Size = new System.Drawing.Size(70, 25);
+            this.lbNomeCateg.TabIndex = 30;
+            this.lbNomeCateg.Text = "Nome:";
             // 
-            // tbNome
+            // tbNomeCateg
             // 
-            this.tbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNome.Location = new System.Drawing.Point(130, 60);
-            this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(219, 26);
-            this.tbNome.TabIndex = 28;
+            this.tbNomeCateg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNomeCateg.Location = new System.Drawing.Point(115, 38);
+            this.tbNomeCateg.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNomeCateg.Name = "tbNomeCateg";
+            this.tbNomeCateg.Size = new System.Drawing.Size(240, 30);
+            this.tbNomeCateg.TabIndex = 28;
             // 
             // CadastrarCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(427, 202);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.lbNome);
-            this.Controls.Add(this.tbNome);
+            this.ClientSize = new System.Drawing.Size(569, 152);
+            this.Controls.Add(this.btnSaveCategoria);
+            this.Controls.Add(this.lbNomeCateg);
+            this.Controls.Add(this.tbNomeCateg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastrarCategoria";
             this.Text = "Cadastrar categoria";
             this.ResumeLayout(false);
@@ -82,8 +87,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label lbNome;
-        private System.Windows.Forms.TextBox tbNome;
+        private System.Windows.Forms.Button btnSaveCategoria;
+        private System.Windows.Forms.Label lbNomeCateg;
+        private System.Windows.Forms.TextBox tbNomeCateg;
     }
 }
