@@ -31,6 +31,8 @@
             this.lbNome = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CbListarPerfil = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbNome
@@ -38,18 +40,20 @@
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNome.ForeColor = System.Drawing.Color.Black;
-            this.lbNome.Location = new System.Drawing.Point(70, 63);
+            this.lbNome.Location = new System.Drawing.Point(53, 37);
+            this.lbNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(55, 20);
+            this.lbNome.Size = new System.Drawing.Size(70, 25);
             this.lbNome.TabIndex = 27;
             this.lbNome.Text = "Nome:";
             // 
             // tbNome
             // 
             this.tbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNome.Location = new System.Drawing.Point(130, 60);
+            this.tbNome.Location = new System.Drawing.Point(124, 37);
+            this.tbNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(219, 26);
+            this.tbNome.Size = new System.Drawing.Size(291, 30);
             this.tbNome.TabIndex = 0;
             // 
             // btnSave
@@ -57,25 +61,54 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(170, 120);
+            this.btnSave.Location = new System.Drawing.Point(191, 140);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(80, 50);
+            this.btnSave.Size = new System.Drawing.Size(107, 62);
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(53, 87);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 25);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Perfil:";
+            // 
+            // CbListarPerfil
+            // 
+            this.CbListarPerfil.BackColor = System.Drawing.Color.White;
+            this.CbListarPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbListarPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbListarPerfil.FormattingEnabled = true;
+            this.CbListarPerfil.Location = new System.Drawing.Point(126, 90);
+            this.CbListarPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.CbListarPerfil.Name = "CbListarPerfil";
+            this.CbListarPerfil.Size = new System.Drawing.Size(289, 24);
+            this.CbListarPerfil.TabIndex = 37;
             // 
             // CadastrarStatus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(427, 202);
+            this.ClientSize = new System.Drawing.Size(569, 249);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.CbListarPerfil);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.tbNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CadastrarStatus";
             this.Text = "Cadastrar status";
+            this.Load += new System.EventHandler(this.CadastrarStatus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,5 +119,7 @@
         private System.Windows.Forms.Label lbNome;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox CbListarPerfil;
     }
 }

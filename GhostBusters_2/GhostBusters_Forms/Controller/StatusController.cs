@@ -8,7 +8,9 @@ namespace GhostBusters_Forms.Controller
 {
     public class StatusController
     {
-
-
+        internal void Cadastro(object v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
