@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GhostBusters_Forms.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,18 @@ namespace GhostBusters_Forms.View.Status
 {
     public partial class CadastrarStatus : Form
     {
+
+        private StatusModel status;
         public CadastrarStatus()
         {
             InitializeComponent();
+        }
+
+        public CadastrarStatus(StatusModel _status)
+        {
+            InitializeComponent();
+            status = _status;
+            tbNome.Text = status.NomeStatus;
         }
     }
 }
