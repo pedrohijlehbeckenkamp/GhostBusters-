@@ -15,5 +15,15 @@ namespace GhostBusters_Forms.Controller
         {
             return new CategoriaRepository().FindALL().Select(categoria => categoria.MApCategoriaModel()).ToList();
         }
+
+       internal CategoriaModel Cadastro(CategoriaModel categoria)
+        {
+             return new CategoriaRepository().CadastroUpdate(categoria.MapCategoriaEntity()).MApCategoriaModel();
+        }
+
+        public void Excluir(CategoriaModel categoria)
+        {
+            new CategoriaRepository().Excluir(categoria.MapCategoriaEntity().COD_CATEGORIA);
+        }
     }
 }

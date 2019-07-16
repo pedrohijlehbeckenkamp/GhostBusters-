@@ -65,6 +65,12 @@
     <Compile Include="Model\CategoriaModel.cs" />
     <Compile Include="Model\ChamadoModel.cs" />
     <Compile Include="Model\StatusModel.cs" />
+    <Compile Include="View\Adm\ConfigAdm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adm\ConfigAdm.Designer.cs">
+      <DependentUpon>ConfigAdm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Categoria\CadastrarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Adm\ConfigAdm.resx">
+      <DependentUpon>ConfigAdm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,25 +196,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tecnico\" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="AxFOXITREADERLib">
-      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
-    <COMReference Include="FOXITREADERLib">
-      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

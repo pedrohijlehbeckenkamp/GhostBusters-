@@ -167,6 +167,7 @@
             this.btnConfig.TabIndex = 27;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.BtnConfig_Click);
             // 
             // NomeAdimin
             // 

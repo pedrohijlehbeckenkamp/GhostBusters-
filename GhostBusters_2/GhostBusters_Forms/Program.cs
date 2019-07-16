@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GhostBusters_Forms.View.Status;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace GhostBusters_Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login()); // Login
+            Application.Run(new CadastrarStatus()); // Login
         }
     }
 }
