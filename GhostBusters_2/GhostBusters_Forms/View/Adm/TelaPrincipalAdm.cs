@@ -1,5 +1,6 @@
 ﻿using GhostBusters_Forms.Controller;
 using GhostBusters_Forms.Model;
+using GhostBusters_Forms.View.Adm;
 using GhostBusters_Forms.View.Ticket;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,18 @@ namespace GhostBusters_Forms.Adm
         private void BtnCadastrarUsuario_Click(object sender, EventArgs e)
         {
             var menu = new CadastroUsuario();
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+            };
+
+            menu.Show();
+            this.Hide();
+        }
+
+        private void BtnConfig_Click(object sender, EventArgs e)
+        {
+            var menu = new ConfigAdm();
             menu.FormClosed += (x, y) =>
             {
                 this.Show();
