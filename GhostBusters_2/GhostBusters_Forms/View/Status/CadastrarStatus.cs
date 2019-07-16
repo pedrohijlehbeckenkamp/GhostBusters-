@@ -15,11 +15,19 @@ namespace GhostBusters_Forms.View.Status
 {
     public partial class CadastrarStatus : Form
     {
-       // private StatusModel status;
+        private StatusModel status;
         public CadastrarStatus()
         {
             InitializeComponent();
             CenterToParent();
+        }
+        public CadastrarStatus(StatusModel _status)
+        {
+            InitializeComponent();
+            CenterToParent();
+            status = _status;
+            tbNome.Text = status.NomeStatus;
+
         }
         public StatusModel GetCadastrarStatus() => new StatusModel
         {

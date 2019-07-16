@@ -1,4 +1,5 @@
-﻿using GhostBusters_Forms.Model;
+﻿using GhostBusters_Forms.Controller;
+using GhostBusters_Forms.Model;
 using GhostBusters_Forms.View.Categoria;
 using GhostBusters_Forms.View.Status;
 using System;
@@ -21,26 +22,36 @@ namespace GhostBusters_Forms.View.Adm
             InitializeComponent();
         }
 
+        private void ConfigAdm_Load(object sender, EventArgs e)
+        {
+            loadDataGrid();
+        }
+
         private void loadDataGrid()
         {
             if (operacao == "Categoria")
             {
-                //dgVisualizar.DataSource = new Controller().Consultar();
+                var lista = new CategoriaController().FindAll();
+                dgVisualizar.DataSource = lista;
             }
             else if (operacao == "Status")
             {
-                //dgVisualizar.DataSource = new Controller().Consultar();
+                //var lista = new StatusController().Consultar();
+                //dgVisualizar.DataSource = lista;
             }
         }
 
         private void BtnCategoria_Click(object sender, EventArgs e)
         {
             operacao = "Categoria";
+            loadDataGrid();
         }
 
         private void BtnStatus_Click(object sender, EventArgs e)
         {
             operacao = "Status";
+            dgVisualizar.Columns.Add("Ola", "Ola");
+            loadDataGrid();
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -53,6 +64,7 @@ namespace GhostBusters_Forms.View.Adm
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
+                    this.loadDataGrid();
                 };
                 
                 menu.Show();
@@ -66,6 +78,7 @@ namespace GhostBusters_Forms.View.Adm
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
+                    this.loadDataGrid();
                 };
 
                 menu.Show();
@@ -80,8 +93,6 @@ namespace GhostBusters_Forms.View.Adm
         private void BtnEditar_Click(object sender, EventArgs e)
         {   
 
-      
-
             if (operacao == "Categoria")
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
@@ -90,6 +101,7 @@ namespace GhostBusters_Forms.View.Adm
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
+                    this.loadDataGrid();
                 };
 
                 menu.Show();
@@ -99,10 +111,11 @@ namespace GhostBusters_Forms.View.Adm
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
-                var menu = new CadastrarStatus();
+                var menu = new CadastrarStatus((StatusModel)linha);
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
+                    this.loadDataGrid();
                 };
 
                 menu.Show();
@@ -118,14 +131,14 @@ namespace GhostBusters_Forms.View.Adm
         {
             var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
-            if (linha != null)
+            if (operacao == "Categoria")
             {
-                //new MetodoPagamentoController().Excluir((MetodoPagamento)linha);
-                //loadDataGrid();
+                new CategoriaController().Excluir((CategoriaModel)linha);
+                loadDataGrid();
             }
-            else
+            else if (operacao == "Status")
             {
-                MessageBox.Show("Selecione uma " + operacao + "!");
+                
             }
         }
     }

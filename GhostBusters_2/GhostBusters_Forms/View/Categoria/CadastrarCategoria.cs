@@ -22,7 +22,6 @@ namespace GhostBusters_Forms.View.Categoria
         {
             InitializeComponent();
             CenterToParent();
-          
         }
 
         public CadastrarCategoria (CategoriaModel _categoria)
@@ -30,8 +29,6 @@ namespace GhostBusters_Forms.View.Categoria
             InitializeComponent();
             categoria = _categoria;
             tbNomeCateg.Text = categoria.NomeCategoria;
-                
-
         }
 
 
@@ -43,46 +40,39 @@ namespace GhostBusters_Forms.View.Categoria
             {
                 tbNomeCateg.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir categoria!");
-                cont++;
+                return false;
+                //cont++;
             }
-
             return true;
-
         }
 
         private void BtnSaveCategoria_Click(object sender, EventArgs e)
         {
-            if (ValidaCategoria()) {
-
-                new CategoriaController().Cadastro(Cadastrar());
+            if (categoria != null)
+            {
+                if (ValidaCategoria())
+                {
+                    new CategoriaController().Cadastro(UpDateC());
+                    MessageBox.Show("Categoria cadastrada!");
+                    this.Close();
+                }
             }
             else
             {
-                new CategoriaController().Cadastro(UpDateC());
-            }
-            MessageBox.Show("Categoria cadastrada!");
+                new CategoriaController().Cadastro(GetCadastrar());
                 this.Close();
-
-
-            
+            }
         }
-
-        private void DataGridCateg_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
-
-        private Model.CategoriaModel Cadastrar() => new CategoriaModel
+        private CategoriaModel GetCadastrar() => new CategoriaModel()
         {
             NomeCategoria = tbNomeCateg.Text,
-            //Codigo_categoria = categoria.Codigo_categoria
         };
 
 
-        private Model.CategoriaModel UpDateC() => new CategoriaModel {
-
+        private CategoriaModel UpDateC() => new CategoriaModel()
+        {
+            Codigo_categoria = categoria.Codigo_categoria,
             NomeCategoria = tbNomeCateg.Text,
-
         };
     }
 }

@@ -11,8 +11,6 @@ namespace GhostBusters_Forms.Controller
 {
     public class CategoriaController
     {
-
-        
         public List<CategoriaModel> FindAll()
         {
             return new CategoriaRepository().FindALL().Select(categoria => categoria.MApCategoriaModel()).ToList();
@@ -21,6 +19,11 @@ namespace GhostBusters_Forms.Controller
        internal CategoriaModel Cadastro(CategoriaModel categoria)
         {
              return new CategoriaRepository().CadastroUpdate(categoria.MapCategoriaEntity()).MApCategoriaModel();
+        }
+
+        public void Excluir(CategoriaModel categoria)
+        {
+            new CategoriaRepository().Excluir(categoria.MapCategoriaEntity().COD_CATEGORIA);
         }
     }
 }

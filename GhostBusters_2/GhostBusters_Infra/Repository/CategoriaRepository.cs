@@ -10,7 +10,7 @@ namespace GhostBusters_Infra.Repository
     public class CategoriaRepository : BaseRepository<CategoriaEntity>
     {
 
-        public override CategoriaEntity CadastroUpdate(CategoriaEntity obj)
+       /* public override CategoriaEntity CadastroUpdate(CategoriaEntity obj)
         {
             if(obj == null)
             {
@@ -18,7 +18,7 @@ namespace GhostBusters_Infra.Repository
             }
 
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
-        }
+        }*/
 
         protected override CategoriaEntity Cadastro(CategoriaEntity obj)
         {
@@ -38,6 +38,30 @@ namespace GhostBusters_Infra.Repository
             context.SendChanges();
 
             return objUpdateC;
+        }
+
+        public virtual List<CategoriaEntity> Consultar()
+        {
+            return context.Set<CategoriaEntity>().ToList();
+        }
+
+        public virtual List<CategoriaEntity> FindAll()
+        {
+            return context.Set<CategoriaEntity>().ToList();
+        }
+
+        public virtual CategoriaEntity FindByID(int id)
+        {
+            return context.Set<CategoriaEntity>().Find(id);
+        }
+        public void Excluir(int id)
+        {
+            var obj = FindByID(id);
+            if (obj != null)
+            {
+                context.Set<CategoriaEntity>().Remove(obj);
+                context.SaveChanges();
+            }
         }
     }
 }
