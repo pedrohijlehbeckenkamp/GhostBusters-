@@ -37,7 +37,8 @@ namespace GhostBusters_Infra
                 .HasOptional(imagem => imagem.IMAGEM);
 
             modelBuilder.Entity<Base64AnexoEntity>()
-                .HasKey(anexo => anexo.COD_ANEXO);
+                .HasKey(anexo => anexo.COD_ANEXO)
+                .HasRequired(chamado => chamado.CHAMADO);
 
             modelBuilder.Entity<StatusEntity>()
                 .HasKey(x => x.COD_STATUS)
@@ -46,6 +47,8 @@ namespace GhostBusters_Infra
             modelBuilder.Entity<ChamadoEntity>()
                 .HasKey(x => x.COD_CHAMADO)
                 .HasRequired(x => x._STATUS);
+
+            //modelBuilder.Entity<ChamadoEntity>().HasRequired(perfil => perfil.PERFIL);
 
            modelBuilder.Entity<ChamadoEntity>()
                 .HasRequired(x => x.CATEGORIA);

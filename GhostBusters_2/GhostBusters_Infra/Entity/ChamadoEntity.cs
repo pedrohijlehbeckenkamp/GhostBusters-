@@ -19,9 +19,10 @@ namespace GhostBusters_Infra.Entity
         public DateTime DATA_CHAMADO { get; set; }
         public DateTime DATA_CHAMADA_FINALIZADA { get; set; }
         public int COD_STATUS { get; set; }
-        public int COD_PERFIL { get; set; }
-        [ForeignKey("COD_PERFIL")]
-        public PerfilEntity PERFIL { get; set; }
+        public int COD_ANEXO { get; set; }
+        // [ForeignKey("COD_ANEXO")]
+        //public Base64AnexoEntity ANEXO { get; set; }
+        public ICollection<Base64AnexoEntity> ANEXOS { get; set; } = new HashSet<Base64AnexoEntity>();
 
         [ForeignKey("COD_STATUS")]
         public StatusEntity _STATUS { get; set; }

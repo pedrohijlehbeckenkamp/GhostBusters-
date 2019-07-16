@@ -41,6 +41,8 @@
             this.butOpenAnexo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
+            this.dgAddAnexo = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgAddAnexo)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitulo
@@ -94,7 +96,7 @@
             // 
             this.lbData.AutoSize = true;
             this.lbData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbData.Location = new System.Drawing.Point(12, 9);
+            this.lbData.Location = new System.Drawing.Point(12, 387);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(116, 20);
             this.lbData.TabIndex = 30;
@@ -132,9 +134,9 @@
             // textNomeAnexo
             // 
             this.textNomeAnexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNomeAnexo.Location = new System.Drawing.Point(528, 158);
+            this.textNomeAnexo.Location = new System.Drawing.Point(484, 94);
             this.textNomeAnexo.Name = "textNomeAnexo";
-            this.textNomeAnexo.Size = new System.Drawing.Size(219, 26);
+            this.textNomeAnexo.Size = new System.Drawing.Size(311, 26);
             this.textNomeAnexo.TabIndex = 35;
             // 
             // butOpenAnexo
@@ -161,17 +163,26 @@
             // 
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUsuario.Location = new System.Drawing.Point(815, 9);
+            this.lbUsuario.Location = new System.Drawing.Point(12, 9);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(36, 20);
+            this.lbUsuario.Size = new System.Drawing.Size(64, 20);
             this.lbUsuario.TabIndex = 31;
-            this.lbUsuario.Text = "123";
+            this.lbUsuario.Text = "Usuario";
+            // 
+            // dgAddAnexo
+            // 
+            this.dgAddAnexo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAddAnexo.Location = new System.Drawing.Point(465, 158);
+            this.dgAddAnexo.Name = "dgAddAnexo";
+            this.dgAddAnexo.Size = new System.Drawing.Size(350, 142);
+            this.dgAddAnexo.TabIndex = 38;
             // 
             // CadastrarTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 429);
+            this.Controls.Add(this.dgAddAnexo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butOpenAnexo);
             this.Controls.Add(this.textNomeAnexo);
@@ -188,6 +199,7 @@
             this.Name = "CadastrarTicket";
             this.Text = "Cadastrar ticket";
             this.Load += new System.EventHandler(this.CadastrarTicket_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgAddAnexo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +220,6 @@
         private System.Windows.Forms.Button butOpenAnexo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbUsuario;
+        private System.Windows.Forms.DataGridView dgAddAnexo;
     }
 }

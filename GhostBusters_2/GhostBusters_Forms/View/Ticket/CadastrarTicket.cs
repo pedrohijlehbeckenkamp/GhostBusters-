@@ -17,6 +17,7 @@ namespace GhostBusters_Forms.View.Ticket
     {
         private OpenFileDialog openFileDialog = new OpenFileDialog();
         private Usuario usuarioLogin;
+        private BindingList<Anexo> listaAnexo = new BindingList<Anexo>();
         public CadastrarTicket(Usuario _usuario)
         {
             InitializeComponent();
@@ -29,6 +30,10 @@ namespace GhostBusters_Forms.View.Ticket
             lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
+            //dataGridPedidos.AutoGenerateColumns = false;
+            //dataGridPedidos.DataSource = produtoDTOs;
+            dgAddAnexo.AutoGenerateColumns = true;
+            dgAddAnexo.DataSource = listaAnexo;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -38,19 +43,21 @@ namespace GhostBusters_Forms.View.Ticket
 
         public void SaveChamado()
         {
-            Anexo anexo = null;
-            FileInfo file = new FileInfo(textNomeAnexo.Text);
-            anexo = new AnexoController().CadastroOrUpdate(GetAnexo(file));
-            new ChamadoController().Cadastro(GetChamado());
-
+            //Anexo anexo = null;
+            ChamadoModel chamado;
+            FileInfo file = new FileInfo(textNomeAnexo.Text);           
+            chamado = new ChamadoController().Cadastro(GetChamado());
+            new AnexoController().CadastroOrUpdate(GetAnexo(file));
         }
 
         public ChamadoModel GetChamado() => new ChamadoModel()
         {
             Data_Chamado = DateTime.Now,
+            Data_Chamado_finalizado = DateTime.Now.Date,
             Titulo = tbTitulo.Text,
             Descricao = tbDescricao.Text,
-            perfil = usuarioLogin.perfil,
+            //anexo = anexo,
+            statusModel = new StatusController().FindByName("Aguardando Atendimento"),
             categoria = (CategoriaModel)cbCategoria.SelectedItem,
             Owner = usuarioLogin            
         };
@@ -58,13 +65,14 @@ namespace GhostBusters_Forms.View.Ticket
         {
             nomeAnexo = file.Name,
             BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName)),
-            Extensao= file.Extension
+            Extensao= file.Extension,
+            chamadoModel = null,
         };
         private void butOpenAnexo_Click(object sender, EventArgs e)
         {
             if (textNomeAnexo.Text != null)
             {
-                System.Diagnostics.Process.Start(textNomeAnexo.Text);
+                System.Diagnostics.Process.Start(textNomeAnexo.Text);//Abre o anexo pelo o windows 
             }    
         }
 
@@ -79,6 +87,7 @@ namespace GhostBusters_Forms.View.Ticket
         private void ButAddAnexo_Click(object sender, EventArgs e)
         {
             AbrirAnexo();
+            //listaAnexo.Add()
         }
         private void AbrirAnexo()
         {

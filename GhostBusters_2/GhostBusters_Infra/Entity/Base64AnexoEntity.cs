@@ -16,6 +16,10 @@ namespace GhostBusters_Infra.Entity
        public string NOME { get; set; }
        public string BASE_64 { get; set; }
        public string EXTENSAO { get; set; }
+       public int COD_CHAMADO { get; set; }
+
+       [ForeignKey("COD_CHAMADO")]
+       public ChamadoEntity CHAMADO { get; set; }
 
         public override int? EntityId()
         {

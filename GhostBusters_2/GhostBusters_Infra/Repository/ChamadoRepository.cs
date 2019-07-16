@@ -16,11 +16,12 @@ namespace GhostBusters_Infra.Repository
                 return null;
             }
 
-            obj.COD_PERFIL = obj.PERFIL.COD_PERFIL;
             obj.COD_CATEGORIA = obj.CATEGORIA.COD_CATEGORIA;
             obj.COD_STATUS = obj._STATUS.COD_STATUS;
+           // obj.COD_ANEXO = obj.ANEXO.COD_ANEXO;
             obj.COD_OWNER = obj.OWNER.COD_USUARIO;
-            obj.COD_TECH = obj.TECNICO.COD_USUARIO;
+            obj.COD_TECH = obj.TECNICO?.COD_USUARIO;
+   
 
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
@@ -28,11 +29,20 @@ namespace GhostBusters_Infra.Repository
         protected override ChamadoEntity Cadastro(ChamadoEntity obj)//Cadastrar um novo obj 
         {
             var objCadastro = context.Set<ChamadoEntity>().Add(obj);
-            context.Entry(obj.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.CATEGORIA).State = System.Data.Entity.EntityState.Unchanged;
+            //context.Entry(obj.ANEXO).State = System.Data.Entity.EntityState.Unchanged;
+            context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
+            context.Entry(obj._STATUS.COD_STATUS).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER).State = System.Data.Entity.EntityState.Unchanged;
-            context.Entry(obj.TECNICO).State = System.Data.Entity.EntityState.Unchanged;
+            context.Entry(obj.OWNER.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
+
+            if (obj.TECNICO != null)
+            {
+                context.Entry(obj.TECNICO).State = System.Data.Entity.EntityState.Unchanged;
+                context.Entry(obj.TECNICO.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
+                context.Entry(obj.TECNICO.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;
+            }
             context.SendChanges();
             return objCadastro;
         }

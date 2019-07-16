@@ -12,5 +12,6 @@ namespace GhostBusters_Forms.Model
         public string nomeAnexo { get; set; }
         public string BaseData { get; set; }
         public string Extensao { get; set; }
+        public ChamadoModel chamadoModel { get; set; }
     }
 }
