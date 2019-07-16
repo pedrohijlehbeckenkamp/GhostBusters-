@@ -15,5 +15,9 @@ namespace GhostBusters_Forms.Controller
         {
             return new ImagemRepository().CadastroUpdate(imagem.MapImagemEntity()).MapImagemModel();
         }
+        public Imagem BuscaNome(string nome)
+        {
+            return new ImagemRepository().findbyName(nome).MapImagemModel();
+        }
     }
 }

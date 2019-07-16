@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace GhostBusters_Forms.Controller
 {
-    public class CategoriaController
+    public class ChamadoController
     {
-        public List<CategoriaModel> FindAll()
+        public ChamadoModel Cadastro(ChamadoModel chamado)
         {
-            return new CategoriaRepository().FindALL().Select(categoria => categoria.MApCategoriaModel()).ToList();
-        }
+            return new ChamadoRepository().CadastroUpdate(chamado.MapChamadaEntiy()).MapChamadaModel();
+        } 
     }
 }

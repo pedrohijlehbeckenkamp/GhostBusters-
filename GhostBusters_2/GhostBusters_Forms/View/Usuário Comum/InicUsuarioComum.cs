@@ -67,7 +67,7 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-           // OpenFormAndHide<EditarTicket>();
+            OpenFormAndHide<EditarTicket>();
         }
 
         private void OpenFormAndHide<U>() where U: Form, new()

@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Controller\AnexoController.cs" />
     <Compile Include="Controller\CategoriaController.cs" />
+    <Compile Include="Controller\ChamadoController.cs" />
     <Compile Include="Controller\StatusController.cs" />
     <Compile Include="Mapper\AnexoMapper.cs" />
     <Compile Include="Mapper\CategoriaMapper.cs" />

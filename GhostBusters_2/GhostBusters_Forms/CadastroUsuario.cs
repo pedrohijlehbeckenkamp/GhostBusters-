@@ -26,8 +26,8 @@ namespace GhostBusters_Forms
 
         private void ButSave_Click(object sender, EventArgs e)
         {
-            //if (Valida())
-            //{
+            if (Valida())
+            {
                 Imagem image = null;
                 if (pictureImagem.ImageLocation != null)
                 {
@@ -35,9 +35,9 @@ namespace GhostBusters_Forms
                     image = new ImagemController().Cadastro(SalvarImagemBase64(file));
                 }
                 new UsuarioController().Cadastro(GetUsuario(image));
-                // MessageBox.Show("É nois");
+                MessageBox.Show("Casdastro feito com sucesso");
                 this.Close();
-            //}
+            }
 
 
         }
@@ -78,8 +78,8 @@ namespace GhostBusters_Forms
             {
                 tbEmail.BackColor = Color.White;
                 tbConfirmaEmail.BackColor = Color.White;
-                tbConfirmeSenha.BackColor = Color.AliceBlue;
-                // MessageBox.Show("email valido");
+               // tbConfirmeSenha.BackColor = Color.White;
+               // MessageBox.Show("email valido");
             }
 
             if(string.IsNullOrEmpty(tbSenha.Text) || string.IsNullOrEmpty(tbConfirmeSenha.Text) || tbSenha.Text != tbConfirmeSenha.Text || tbSenha.Text.Length <6)
@@ -137,21 +137,24 @@ namespace GhostBusters_Forms
 
         private void CadastroUsuario_Load(object sender, EventArgs e)
         {
+            LoadImagem();
             CbListarPerfil.DataSource = new PerfilController().FindAll();
             CbListarPerfil.DisplayMember = "nomePerfil";
         }
 
+        private void LoadImagem()
+        {
+            var imagem = new ImagemController().BuscaNome("default.png");
+            byte[] bytes = Convert.FromBase64String(imagem.BaseData);
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+
+              pictureImagem.Image = Image.FromStream(ms);
+            }    
+        }
         private void ClearImagem_Click(object sender, EventArgs e)
         {
-            if (pictureImagem.Image != null)
-            {
-                pictureImagem.Image.Dispose();
-                pictureImagem.Image = null;
-            }
-            else
-            {
-                MessageBox.Show("Sem imagem selecionada no momento!");
-            }       
+            LoadImagem();//Recarrega imagem primaria
         }
 
         private void TbConfirmeSenha_KeyUp(object sender, KeyEventArgs e)

@@ -9,5 +9,9 @@ namespace GhostBusters_Infra.Repository
 {
     public class ImagemRepository: BaseRepository<Base64ImagemEntity>
     {
+        public Base64ImagemEntity findbyName(string name)
+        {
+            return this.context.Set<Base64ImagemEntity>().FirstOrDefault(x => x.NOME == name);
+        }
     }
 }

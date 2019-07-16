@@ -27,6 +27,8 @@ namespace GhostBusters_Forms.View.Ticket
         private void CadastrarTicket_Load(object sender, EventArgs e)
         {
             lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
+            cbCategoria.DataSource = new CategoriaController().FindAll();
+            cbCategoria.DisplayMember = "NomeCategoria";
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -39,6 +41,7 @@ namespace GhostBusters_Forms.View.Ticket
             Anexo anexo = null;
             FileInfo file = new FileInfo(textNomeAnexo.Text);
             anexo = new AnexoController().CadastroOrUpdate(GetAnexo(file));
+            new ChamadoController().Cadastro(GetChamado());
 
         }
 
@@ -49,7 +52,7 @@ namespace GhostBusters_Forms.View.Ticket
             Descricao = tbDescricao.Text,
             perfil = usuarioLogin.perfil,
             categoria = (CategoriaModel)cbCategoria.SelectedItem,
-            
+            Owner = usuarioLogin            
         };
         public Anexo GetAnexo(FileInfo file) => new Anexo()
         {
