@@ -1,4 +1,5 @@
-﻿using GhostBusters_Forms.View.Categoria;
+﻿using GhostBusters_Forms.Model;
+using GhostBusters_Forms.View.Categoria;
 using GhostBusters_Forms.View.Status;
 using System;
 using System.Collections.Generic;
@@ -77,12 +78,15 @@ namespace GhostBusters_Forms.View.Adm
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
-        {
+        {   
+
+      
+
             if (operacao == "Categoria")
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
-                var menu = new CadastrarCategoria();
+                var menu = new CadastrarCategoria((CategoriaModel)linha);
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
