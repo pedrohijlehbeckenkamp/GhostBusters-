@@ -66,6 +66,7 @@ namespace GhostBusters_Forms.View.Status
 
         private StatusModel UpDateS() => new StatusModel()
         {
+            codigo_status = status.codigo_status,
             NomeStatus = tbNomeS.Text,
             perfil = (Perfil)CbListarPerfil.SelectedItem
         };

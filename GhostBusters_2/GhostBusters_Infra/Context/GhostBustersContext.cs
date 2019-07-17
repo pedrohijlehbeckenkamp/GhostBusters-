@@ -19,7 +19,7 @@ namespace GhostBusters_Infra
             SaveChanges();
         }
 
-        public DbSet<Base64AnexoEntity> Posts { get; set; }
+        //public DbSet<Base64AnexoEntity> Posts { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -40,7 +40,9 @@ namespace GhostBusters_Infra
             modelBuilder.Entity<Base64AnexoEntity>()
                 .HasKey(anexo => anexo.COD_ANEXO);
 
-            modelBuilder.Entity<Base64AnexoEntity>().HasRequired(x => x.CHAMADO).WithMany(x => x.ANEXOS);
+            modelBuilder.Entity<Base64AnexoEntity>()
+                .HasRequired(x => x.CHAMADO)
+                .WithMany(x => x.ANEXOS);
 
 
             modelBuilder.Entity<StatusEntity>()

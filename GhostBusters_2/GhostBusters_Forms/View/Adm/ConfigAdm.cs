@@ -85,7 +85,7 @@ namespace GhostBusters_Forms.View.Adm
         {
             if (operacao == "Categoria")
             {
-                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+               // var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
                 var menu = new CadastrarCategoria();
                 menu.FormClosed += (x, y) =>
@@ -99,7 +99,7 @@ namespace GhostBusters_Forms.View.Adm
             }
             else if (operacao == "Status")
             {
-                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                //var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
                 var menu = new CadastrarStatus();
                 menu.FormClosed += (x, y) =>

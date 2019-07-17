@@ -39,6 +39,7 @@ namespace GhostBusters_Forms.View.Ticket
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SaveChamado();
+            this.Close();
         }
 
         public void SaveChamado()
@@ -46,6 +47,7 @@ namespace GhostBusters_Forms.View.Ticket
             //Anexo anexo = null;
            // ChamadoModel chamado;
             new ChamadoController().Cadastro(GetChamado());
+            
            // new AnexoController().AddChamado(chamado);
         }
 
@@ -69,10 +71,10 @@ namespace GhostBusters_Forms.View.Ticket
         };
         private void butOpenAnexo_Click(object sender, EventArgs e)
         {
-            if (textNomeAnexo.Text != null)
+           /* if (textNomeAnexo.Text != null)
             {
                 System.Diagnostics.Process.Start(textNomeAnexo.Text);//Abre o anexo pelo o windows 
-            }    
+            }    */
         }
 
         private OpenFileDialog GetOpenFileDialog()
@@ -103,7 +105,7 @@ namespace GhostBusters_Forms.View.Ticket
 
         private void ButClearAnexo_Click(object sender, EventArgs e)
         {
-            textNomeAnexo.Text = "";
+           // textNomeAnexo.Text = "";
         }
     }
 }

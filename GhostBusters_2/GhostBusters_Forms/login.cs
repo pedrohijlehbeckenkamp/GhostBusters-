@@ -85,5 +85,10 @@ namespace GhostBusters_Forms
             }
             else MessageBox.Show("Email e/ou senha errado!");
         }
+        public void limparLogin()
+        {
+            tbSenha.Text = "";
+            tbUsuario.Text = "";
+        }
     }
 }
