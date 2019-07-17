@@ -43,6 +43,7 @@
             this.btnConfig = new System.Windows.Forms.Button();
             this.NomeAdimin = new System.Windows.Forms.Label();
             this.btnCadastrarUsuario = new System.Windows.Forms.Button();
+            this.linkLEdit = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -73,50 +74,66 @@
             this.Descricao,
             this.Tecnico});
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgVisualizar.Location = new System.Drawing.Point(49, 139);
+            this.dgVisualizar.Location = new System.Drawing.Point(48, 193);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgVisualizar.MultiSelect = false;
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.RowHeadersVisible = false;
+            this.dgVisualizar.RowHeadersWidth = 51;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(702, 267);
+            this.dgVisualizar.Size = new System.Drawing.Size(877, 329);
             this.dgVisualizar.TabIndex = 3;
             // 
             // Data
             // 
             this.Data.HeaderText = "Data de abertura";
+            this.Data.MinimumWidth = 6;
             this.Data.Name = "Data";
+            this.Data.Width = 125;
             // 
             // CodTicket
             // 
             this.CodTicket.HeaderText = "Ticket";
+            this.CodTicket.MinimumWidth = 6;
             this.CodTicket.Name = "CodTicket";
             this.CodTicket.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.CodTicket.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CodTicket.Width = 125;
             // 
             // Categoria
             // 
             this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
             this.Categoria.Name = "Categoria";
+            this.Categoria.Width = 125;
             // 
             // Status
             // 
             this.Status.HeaderText = "Status";
+            this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
+            this.Status.Width = 125;
             // 
             // Usuario
             // 
             this.Usuario.HeaderText = "Usuário";
+            this.Usuario.MinimumWidth = 6;
             this.Usuario.Name = "Usuario";
+            this.Usuario.Width = 125;
             // 
             // Descricao
             // 
             this.Descricao.HeaderText = "Descrição";
+            this.Descricao.MinimumWidth = 6;
             this.Descricao.Name = "Descricao";
+            this.Descricao.Width = 125;
             // 
             // Tecnico
             // 
             this.Tecnico.HeaderText = "Técnico";
+            this.Tecnico.MinimumWidth = 6;
             this.Tecnico.Name = "Tecnico";
+            this.Tecnico.Width = 125;
             // 
             // btnNewTicket
             // 
@@ -124,9 +141,10 @@
             this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(49, 49);
+            this.btnNewTicket.Location = new System.Drawing.Point(781, 60);
+            this.btnNewTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewTicket.Name = "btnNewTicket";
-            this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
+            this.btnNewTicket.Size = new System.Drawing.Size(144, 54);
             this.btnNewTicket.TabIndex = 0;
             this.btnNewTicket.Text = "Abrir ticket";
             this.btnNewTicket.UseVisualStyleBackColor = false;
@@ -135,9 +153,10 @@
             // pbPerfil
             // 
             this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbPerfil.Location = new System.Drawing.Point(643, 22);
+            this.pbPerfil.Location = new System.Drawing.Point(48, 30);
+            this.pbPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbPerfil.Name = "pbPerfil";
-            this.pbPerfil.Size = new System.Drawing.Size(108, 92);
+            this.pbPerfil.Size = new System.Drawing.Size(143, 112);
             this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPerfil.TabIndex = 26;
             this.pbPerfil.TabStop = false;
@@ -148,9 +167,10 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(185, 49);
+            this.btnExcluir.Location = new System.Drawing.Point(199, 60);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(108, 44);
+            this.btnExcluir.Size = new System.Drawing.Size(144, 54);
             this.btnExcluir.TabIndex = 1;
             this.btnExcluir.Text = "Excluir ticket";
             this.btnExcluir.UseVisualStyleBackColor = false;
@@ -161,9 +181,10 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(497, 49);
+            this.btnConfig.Location = new System.Drawing.Point(600, 60);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(125, 44);
+            this.btnConfig.Size = new System.Drawing.Size(167, 54);
             this.btnConfig.TabIndex = 27;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
@@ -173,9 +194,10 @@
             // 
             this.NomeAdimin.AutoSize = true;
             this.NomeAdimin.ForeColor = System.Drawing.Color.Black;
-            this.NomeAdimin.Location = new System.Drawing.Point(25, 9);
+            this.NomeAdimin.Location = new System.Drawing.Point(45, 9);
+            this.NomeAdimin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NomeAdimin.Name = "NomeAdimin";
-            this.NomeAdimin.Size = new System.Drawing.Size(43, 13);
+            this.NomeAdimin.Size = new System.Drawing.Size(57, 17);
             this.NomeAdimin.TabIndex = 28;
             this.NomeAdimin.Text = "Usuario";
             // 
@@ -185,20 +207,35 @@
             this.btnCadastrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarUsuario.Location = new System.Drawing.Point(319, 49);
+            this.btnCadastrarUsuario.Location = new System.Drawing.Point(373, 60);
+            this.btnCadastrarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
-            this.btnCadastrarUsuario.Size = new System.Drawing.Size(150, 44);
+            this.btnCadastrarUsuario.Size = new System.Drawing.Size(200, 54);
             this.btnCadastrarUsuario.TabIndex = 29;
             this.btnCadastrarUsuario.Text = "Cadastro Usuario";
             this.btnCadastrarUsuario.UseVisualStyleBackColor = false;
             this.btnCadastrarUsuario.Click += new System.EventHandler(this.BtnCadastrarUsuario_Click);
             // 
+            // linkLEdit
+            // 
+            this.linkLEdit.AutoSize = true;
+            this.linkLEdit.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLEdit.LinkColor = System.Drawing.Color.Navy;
+            this.linkLEdit.Location = new System.Drawing.Point(54, 155);
+            this.linkLEdit.Name = "linkLEdit";
+            this.linkLEdit.Size = new System.Drawing.Size(78, 17);
+            this.linkLEdit.TabIndex = 36;
+            this.linkLEdit.TabStop = true;
+            this.linkLEdit.Text = "Alterar foto";
+            this.linkLEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLEdit_LinkClicked);
+            // 
             // TelaPrincipalAdm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1001, 554);
+            this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.btnCadastrarUsuario);
             this.Controls.Add(this.NomeAdimin);
             this.Controls.Add(this.btnConfig);
@@ -208,6 +245,7 @@
             this.Controls.Add(this.dgVisualizar);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TelaPrincipalAdm";
             this.Text = "Tela principal do Adm";
             this.Load += new System.EventHandler(this.TelaPrincipalAdm_Load);
@@ -234,5 +272,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tecnico;
         private System.Windows.Forms.Label NomeAdimin;
         private System.Windows.Forms.Button btnCadastrarUsuario;
+        private System.Windows.Forms.LinkLabel linkLEdit;
     }
 }
