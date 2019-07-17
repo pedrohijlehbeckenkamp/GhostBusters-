@@ -17,7 +17,7 @@ namespace GhostBusters_Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CadastrarStatus()); // Login
+            Application.Run(new Login()); // Login
         }
     }
 }

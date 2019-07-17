@@ -21,7 +21,6 @@ namespace GhostBusters_Infra.Repository
            // obj.COD_ANEXO = obj.ANEXO.COD_ANEXO;
             obj.COD_OWNER = obj.OWNER.COD_USUARIO;
             obj.COD_TECH = obj.TECNICO?.COD_USUARIO;
-   
 
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
@@ -29,11 +28,13 @@ namespace GhostBusters_Infra.Repository
         protected override ChamadoEntity Cadastro(ChamadoEntity obj)//Cadastrar um novo obj 
         {
             var objCadastro = context.Set<ChamadoEntity>().Add(obj);
+            //context.Entry(obj.ANEXOS).State = System.Data.Entity.EntityState.Added;
+
+            //obj.CATEGORIA = null;
             context.Entry(obj.CATEGORIA).State = System.Data.Entity.EntityState.Unchanged;
-            //context.Entry(obj.ANEXO).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
-            context.Entry(obj._STATUS.COD_STATUS).State = System.Data.Entity.EntityState.Unchanged;
+            //context.Entry(obj._STATUS.COD_STATUS).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
 

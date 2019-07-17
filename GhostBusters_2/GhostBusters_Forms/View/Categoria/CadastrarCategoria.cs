@@ -34,7 +34,7 @@ namespace GhostBusters_Forms.View.Categoria
 
         public bool ValidaCategoria()
         {
-            int cont = 0;
+            //int cont = 0;
             Regex validaNomeCategoria = new Regex(@"[0-9]");
             if(string.IsNullOrEmpty(tbNomeCateg.Text) || validaNomeCategoria.IsMatch(tbNomeCateg.Text))
             {

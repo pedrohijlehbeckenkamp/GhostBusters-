@@ -22,8 +22,9 @@ namespace GhostBusters_Forms.Mapper
                 COD_ANEXO = anexo.Codigo_Anexo,
                 NOME = anexo.nomeAnexo,
                 BASE_64 = anexo.BaseData,
-                EXTENSAO = anexo.Extensao,   
-                CHAMADO = anexo.chamadoModel.MapChamadaEntiy()
+                EXTENSAO = anexo.Extensao,
+                COD_CHAMADO = anexo.COD_CHAMADO,
+                //CHAMADO = anexo.chamadoModel.MapChamadaEntiy()
             };
         }
 
@@ -39,7 +40,8 @@ namespace GhostBusters_Forms.Mapper
                nomeAnexo = base64Anexo.NOME,
                BaseData = base64Anexo.BASE_64,
                Extensao = base64Anexo.EXTENSAO,
-               chamadoModel = base64Anexo.CHAMADO.MapChamadaModel()
+                COD_CHAMADO = base64Anexo.COD_CHAMADO,
+                //chamadoModel = base64Anexo.CHAMADO.MapChamadaModel()
             };
         }
     }

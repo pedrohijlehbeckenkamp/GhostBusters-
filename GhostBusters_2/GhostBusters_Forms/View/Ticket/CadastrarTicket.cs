@@ -44,10 +44,9 @@ namespace GhostBusters_Forms.View.Ticket
         public void SaveChamado()
         {
             //Anexo anexo = null;
-            ChamadoModel chamado;
-            FileInfo file = new FileInfo(textNomeAnexo.Text);           
-            chamado = new ChamadoController().Cadastro(GetChamado());
-            new AnexoController().CadastroOrUpdate(GetAnexo(file));
+           // ChamadoModel chamado;
+            new ChamadoController().Cadastro(GetChamado());
+           // new AnexoController().AddChamado(chamado);
         }
 
         public ChamadoModel GetChamado() => new ChamadoModel()
@@ -56,7 +55,7 @@ namespace GhostBusters_Forms.View.Ticket
             Data_Chamado_finalizado = DateTime.Now.Date,
             Titulo = tbTitulo.Text,
             Descricao = tbDescricao.Text,
-            //anexo = anexo,
+            anexos = listaAnexo.ToList(),
             statusModel = new StatusController().FindByName("Aguardando Atendimento"),
             categoria = (CategoriaModel)cbCategoria.SelectedItem,
             Owner = usuarioLogin            
@@ -65,8 +64,8 @@ namespace GhostBusters_Forms.View.Ticket
         {
             nomeAnexo = file.Name,
             BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName)),
-            Extensao= file.Extension,
-            chamadoModel = null,
+            Extensao= file.Extension
+           // chamadoModel = null,
         };
         private void butOpenAnexo_Click(object sender, EventArgs e)
         {
@@ -86,18 +85,20 @@ namespace GhostBusters_Forms.View.Ticket
         }
         private void ButAddAnexo_Click(object sender, EventArgs e)
         {
-            AbrirAnexo();
-            //listaAnexo.Add()
+            FileInfo file = new FileInfo(AbrirAnexo());
+            //var anexo = new AnexoController().CadastroOrUpdate(GetAnexo(file));
+            listaAnexo.Add(GetAnexo(file));
         }
-        private void AbrirAnexo()
+        private string AbrirAnexo()
         {
             var fileDialog = GetOpenFileDialog();
+            string location = "";
             if (fileDialog != null)
             {
-                string location = fileDialog.FileName;
-               // FileInfo file = new FileInfo(location);
-                textNomeAnexo.Text = location;
+                location = fileDialog.FileName;
+                return location;
             }
+            return location;
         }
 
         private void ButClearAnexo_Click(object sender, EventArgs e)

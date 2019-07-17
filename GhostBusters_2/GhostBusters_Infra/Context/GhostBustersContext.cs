@@ -19,6 +19,7 @@ namespace GhostBusters_Infra
             SaveChanges();
         }
 
+        public DbSet<Base64AnexoEntity> Posts { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -37,8 +38,10 @@ namespace GhostBusters_Infra
                 .HasOptional(imagem => imagem.IMAGEM);
 
             modelBuilder.Entity<Base64AnexoEntity>()
-                .HasKey(anexo => anexo.COD_ANEXO)
-                .HasRequired(chamado => chamado.CHAMADO);
+                .HasKey(anexo => anexo.COD_ANEXO);
+
+            modelBuilder.Entity<Base64AnexoEntity>().HasRequired(x => x.CHAMADO).WithMany(x => x.ANEXOS);
+
 
             modelBuilder.Entity<StatusEntity>()
                 .HasKey(x => x.COD_STATUS)
@@ -48,6 +51,7 @@ namespace GhostBusters_Infra
                 .HasKey(x => x.COD_CHAMADO)
                 .HasRequired(x => x._STATUS);
 
+           
             //modelBuilder.Entity<ChamadoEntity>().HasRequired(perfil => perfil.PERFIL);
 
            modelBuilder.Entity<ChamadoEntity>()

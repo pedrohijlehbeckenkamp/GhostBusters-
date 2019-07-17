@@ -53,12 +53,12 @@ namespace GhostBusters_Forms.View.Status
             if (ValidarStatus())
             {
 
-                new StatusController().Cadastro(GetCadastrarStatus());
+              //  new StatusController().Cadastro(GetCadastrarStatus());
             }
             else
             {
 
-                new StatusController().Cadastro(UpDateS());
+               // new StatusController().Cadastro(UpDateS());
             }
 
             MessageBox.Show("Status cadastrado!");
