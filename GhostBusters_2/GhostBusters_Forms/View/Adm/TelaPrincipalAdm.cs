@@ -2,6 +2,7 @@
 using GhostBusters_Forms.Model;
 using GhostBusters_Forms.View.Adm;
 using GhostBusters_Forms.View.Ticket;
+using GhostBusters_Forms.View.Usuário_Comum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,10 @@ namespace GhostBusters_Forms.Adm
         private void TelaPrincipalAdm_Load(object sender, EventArgs e)
         {
             LoadImagem();
-            NomeAdimin.Text = usuario.NomeUsuario;
+            lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
+            lblNomeAd.Text = usuario.NomeUsuario;
+            lblEmail.Text = usuario.Email;
+            
         }
         private void LoadImagem()
         {
@@ -64,21 +68,18 @@ namespace GhostBusters_Forms.Adm
             this.Hide();
         }
 
-        private void BtnConfig_Click(object sender, EventArgs e)
+        private void BtnConfig_Click(object sender, EventArgs e) /// MUDEEEEI
         {
-            var menu = new ConfigAdm();
-            menu.FormClosed += (x, y) =>
-            {
-                this.Show();
-            };
-
-            menu.Show();
-            this.Hide();
+            ConfigAdm formaC = new ConfigAdm(usuario);
+            formaC.Show();
         }
 
         private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            AlteraPic alteraPic = new AlteraPic(usuario);
+            alteraPic.Show();
         }
+
+
     }
 }

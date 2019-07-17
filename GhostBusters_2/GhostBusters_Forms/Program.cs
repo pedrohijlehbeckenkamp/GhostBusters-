@@ -1,4 +1,5 @@
 ﻿using GhostBusters_Forms.View.Status;
+using GhostBusters_Forms.View.Tech;
 using System;
 using System.Collections.Generic;
 using System.Linq;

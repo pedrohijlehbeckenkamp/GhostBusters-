@@ -37,8 +37,9 @@
             // 
             this.btnSaveCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSaveCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSaveCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnSaveCategoria.Location = new System.Drawing.Point(433, 25);
+            this.btnSaveCategoria.Location = new System.Drawing.Point(400, 22);
             this.btnSaveCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveCategoria.Name = "btnSaveCategoria";
             this.btnSaveCategoria.Size = new System.Drawing.Size(107, 62);
@@ -64,7 +65,7 @@
             this.tbNomeCateg.Location = new System.Drawing.Point(115, 38);
             this.tbNomeCateg.Margin = new System.Windows.Forms.Padding(4);
             this.tbNomeCateg.Name = "tbNomeCateg";
-            this.tbNomeCateg.Size = new System.Drawing.Size(240, 30);
+            this.tbNomeCateg.Size = new System.Drawing.Size(266, 30);
             this.tbNomeCateg.TabIndex = 28;
             // 
             // CadastrarCategoria
@@ -72,14 +73,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(569, 152);
+            this.ClientSize = new System.Drawing.Size(545, 146);
             this.Controls.Add(this.btnSaveCategoria);
             this.Controls.Add(this.lbNomeCateg);
             this.Controls.Add(this.tbNomeCateg);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CadastrarCategoria";
-            this.Text = "Cadastrar categoria";
+            this.Text = "Cadastro de categoria";
             this.ResumeLayout(false);
             this.PerformLayout();
 

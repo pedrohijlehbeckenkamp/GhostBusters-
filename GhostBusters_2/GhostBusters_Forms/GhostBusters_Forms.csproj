@@ -77,11 +77,11 @@
     <Compile Include="View\Categoria\CadastrarCategoria.Designer.cs">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Tech\InciTechcs.cs">
+    <Compile Include="View\Tech\IniciTech.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Tech\InciTechcs.Designer.cs">
-      <DependentUpon>InciTechcs.cs</DependentUpon>
+    <Compile Include="View\Tech\IniciTech.Designer.cs">
+      <DependentUpon>IniciTech.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Usuário Comum\AlteraPic.cs">
       <SubType>Form</SubType>
@@ -163,8 +163,8 @@
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Tech\InciTechcs.resx">
-      <DependentUpon>InciTechcs.cs</DependentUpon>
+    <EmbeddedResource Include="View\Tech\IniciTech.resx">
+      <DependentUpon>IniciTech.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Usuário Comum\AlteraPic.resx">
       <DependentUpon>AlteraPic.cs</DependentUpon>
