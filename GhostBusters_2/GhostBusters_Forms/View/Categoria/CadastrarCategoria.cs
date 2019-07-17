@@ -27,6 +27,7 @@ namespace GhostBusters_Forms.View.Categoria
         public CadastrarCategoria (CategoriaModel _categoria)
         {
             InitializeComponent();
+            CenterToParent();
             categoria = _categoria;
             tbNomeCateg.Text = categoria.NomeCategoria;
         }

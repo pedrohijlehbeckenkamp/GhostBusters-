@@ -27,7 +27,7 @@ namespace GhostBusters_Forms.View.Status
             CenterToParent();
             status = _status;
             tbNomeS.Text = status.NomeStatus;
-
+            CbListarPerfil.Text = status.perfil.nomePerfil;
         }
         public StatusModel GetCadastrarStatus() => new StatusModel
         {

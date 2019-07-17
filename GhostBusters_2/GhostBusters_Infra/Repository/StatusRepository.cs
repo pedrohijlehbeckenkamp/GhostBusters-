@@ -59,6 +59,5 @@ namespace GhostBusters_Infra.Repository
 
             return objUpdate;
         }
-
     }
 }

@@ -165,8 +165,8 @@ namespace GhostBusters_Forms.View.Adm
             }
             else if (operacao == "Status")
             {
-                //new StatusController().Excluir((StatusModel)linha);
-                //loadDataGrid();
+                new StatusController().Excluir((StatusModel)linha);
+                loadDataGrid();
             }
         }
     }
