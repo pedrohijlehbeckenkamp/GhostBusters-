@@ -9,6 +9,16 @@ namespace GhostBusters_Infra.Repository
 {
     public class AnexoRepository: BaseRepository<Base64AnexoEntity>
     {
+        public void AddChamadoAoAnexo(ChamadoEntity chamado)
+        {
+            //for (int  i = 0;  i < chamado.ANEXOS.Count;  i++)
+            //{
+            //    chamado.ANEXOS.ToArray()[i].CHAMADO = chamado;
+            //    //base64Anexos.ToArray()[i].CHAMADO = chamado;
+            //    CadastroUpdate(chamado.ANEXOS.ToArray()[i]);
+            //}
+
+        }
         public override Base64AnexoEntity CadastroUpdate(Base64AnexoEntity obj)//Cadastra ou Update
         {
             if (obj == null)

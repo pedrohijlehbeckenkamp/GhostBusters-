@@ -17,7 +17,6 @@ namespace GhostBusters_Forms.Model
         // public Anexo anexo { get; set; }
         public ICollection<Anexo> anexos { get; set; } = new HashSet<Anexo>();
         public StatusModel statusModel { get; set; }
-        public Perfil perfil { get; set; }
         public Usuario Owner { get; set; }
         public Usuario Tech { get; set; }
         public CategoriaModel categoria { get; set; }

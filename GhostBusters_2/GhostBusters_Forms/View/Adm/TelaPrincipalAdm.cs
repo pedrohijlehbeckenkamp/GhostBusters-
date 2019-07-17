@@ -75,5 +75,10 @@ namespace GhostBusters_Forms.Adm
             menu.Show();
             this.Hide();
         }
+
+        private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

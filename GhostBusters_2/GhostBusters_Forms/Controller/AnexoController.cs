@@ -14,6 +14,10 @@ namespace GhostBusters_Forms.Controller
         public Anexo CadastroOrUpdate(Anexo anexo)
         {
             return new AnexoRepository().CadastroUpdate(anexo.MapAnexoEntity()).MapAnexoModel();
-        }  
+        }
+        public void AddChamado(ChamadoModel chamadoModel)
+        {
+            new AnexoRepository().AddChamadoAoAnexo(chamadoModel.MapChamadaEntiy());
+        }
     }
 }
