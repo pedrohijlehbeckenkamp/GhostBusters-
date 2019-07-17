@@ -26,23 +26,24 @@ namespace GhostBusters_Forms.View.Status
             InitializeComponent();
             CenterToParent();
             status = _status;
-            tbNome.Text = status.NomeStatus;
+            tbNomeS.Text = status.NomeStatus;
+
         }
         public StatusModel GetCadastrarStatus() => new StatusModel
         {
-           NomeStatus = tbNome.Text,
-           perfil = (Perfil)CbListarPerfil.SelectedItem
+            NomeStatus = tbNomeS.Text,
+            perfil = (Perfil)CbListarPerfil.SelectedItem
         };
 
         public bool ValidarStatus()
         {
-            int cont = 0;
-            Regex validaNomeStatus = new Regex(@"[0-9]");
-            if(string.IsNullOrEmpty(tbNome.Text) || validaNomeStatus.IsMatch(tbNome.Text)){
 
-                tbNome.BackColor = Color.Red;
+            Regex validaNomeStatus = new Regex(@"[0-9]");
+            if (string.IsNullOrEmpty(tbNomeS.Text) || validaNomeStatus.IsMatch(tbNomeS.Text)) {
+
+                tbNomeS.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir status!");
-                cont++;
+
             }
             return true;
         }
@@ -50,27 +51,26 @@ namespace GhostBusters_Forms.View.Status
         {
             if (ValidarStatus())
             {
-                new StatusController().Cadastro(Cadastrar());
+
+                new StatusController().Cadastro(GetCadastrarStatus());
+                MessageBox.Show("Status cadastrado!");
+                this.Close();
             }
             else
             {
                 new StatusController().Cadastro(UpDateS());
+                this.Close();
             }
-            MessageBox.Show("Status cadastrado!");
-            this.Close();
+
         }
 
-        private StatusModel Cadastrar() => new StatusModel()
-        {
-            NomeStatus = tbNome.Text,
-            perfil = (Perfil)CbListarPerfil.SelectedItem
-        };
         private StatusModel UpDateS() => new StatusModel()
-        { 
-            codigo_status = status.codigo_status,
-            NomeStatus = tbNome.Text,
+        {
+            NomeStatus = tbNomeS.Text,
             perfil = (Perfil)CbListarPerfil.SelectedItem
         };
+
+   
 
         private void CadastrarStatus_Load(object sender, EventArgs e)
         {
