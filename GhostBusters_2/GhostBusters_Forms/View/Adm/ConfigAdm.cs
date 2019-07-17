@@ -17,13 +17,20 @@ namespace GhostBusters_Forms.View.Adm
     public partial class ConfigAdm : Form
     {
         String operacao = "";
-        public ConfigAdm()
+        public ConfigAdm(Usuario usuario)
         {
             InitializeComponent();
+
+            if (usuario.perfil.nomePerfil == "Técnico")
+            {
+                btnCadastrar.Enabled = false;
+                btnExcluir.Enabled = false;
+            }
         }
 
         private void ConfigAdm_Load(object sender, EventArgs e)
         {
+          
             loadDataGrid();
         }
 
