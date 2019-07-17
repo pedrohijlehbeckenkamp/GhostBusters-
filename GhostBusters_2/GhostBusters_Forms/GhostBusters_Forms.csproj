@@ -77,6 +77,12 @@
     <Compile Include="View\Categoria\CadastrarCategoria.Designer.cs">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Tech\InciTechcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tech\InciTechcs.Designer.cs">
+      <DependentUpon>InciTechcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Usuário Comum\AlteraPic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Tech\InciTechcs.resx">
+      <DependentUpon>InciTechcs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Usuário Comum\AlteraPic.resx">
       <DependentUpon>AlteraPic.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,8 +203,6 @@
       <Name>GhostBusters_Infra</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tecnico\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

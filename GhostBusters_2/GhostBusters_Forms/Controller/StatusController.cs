@@ -21,5 +21,12 @@ namespace GhostBusters_Forms.Controller
             return new StatusRepository().findbyName(nome).MapStatusModel();
         }
 
+
+
+        internal StatusModel Cadastro(StatusModel statusModel)
+        {
+            return new StatusRepository().CadastroUpdate(statusModel.MapStatusEntity()).MapStatusModel();
+        }
     }
-}
+ }
+
