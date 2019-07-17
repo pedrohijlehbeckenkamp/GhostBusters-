@@ -25,6 +25,20 @@ namespace GhostBusters_Infra.Repository
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
 
+        public IEnumerable<StatusEntity> GetAll()
+        {
+            var dbSet = context.Set<StatusEntity>();
+            var dbSetPerfil = context.Set<PerfilEntity>();
+
+            var result =
+                from status in dbSet
+                join perfil in dbSetPerfil on status.COD_PERFIL equals perfil.COD_PERFIL
+                select
+                    status;
+
+            return result.ToList();
+        }
+
         protected override StatusEntity Cadastro(StatusEntity obj)
         {
             var objStatus = context.Set<StatusEntity>().Add(obj);
