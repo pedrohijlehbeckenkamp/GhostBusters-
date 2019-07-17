@@ -13,13 +13,21 @@ namespace GhostBusters_Forms.Controller
     {
         public List<StatusModel> FindAll()
         {
-            return new StatusRepository().FindALL()
-                .Select(statusmodel => statusmodel.MapStatusModel()).ToList();
+            
+            return new StatusRepository().GetAll().Select(statusmodel => statusmodel.MapStatusModel()).ToList();
+            //return new StatusRepository().FindALL().Select(statusmodel => statusmodel.MapStatusModel()).ToList();
         }
         public StatusModel FindByName(string nome)
         {
             return new StatusRepository().findbyName(nome).MapStatusModel();
         }
 
+
+
+        internal StatusModel Cadastro(StatusModel statusModel)
+        {
+            return new StatusRepository().CadastroUpdate(statusModel.MapStatusEntity()).MapStatusModel();
+        }
     }
-}
+ }
+

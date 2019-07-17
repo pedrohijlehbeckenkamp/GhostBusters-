@@ -26,26 +26,25 @@ namespace GhostBusters_Forms.View.Status
             InitializeComponent();
             CenterToParent();
             status = _status;
-            tbNome.Text = status.NomeStatus;
+            tbNomeS.Text = status.NomeStatus;
 
         }
         public StatusModel GetCadastrarStatus() => new StatusModel
         {
-           NomeStatus = tbNome.Text,
-           perfil = (Perfil)CbListarPerfil.SelectedItem
+            NomeStatus = tbNomeS.Text,
+            perfil = (Perfil)CbListarPerfil.SelectedItem
         };
 
         public bool ValidarStatus()
         {
-            int cont = 0;
+
             Regex validaNomeStatus = new Regex(@"[0-9]");
-            if(string.IsNullOrEmpty(tbNome.Text) || validaNomeStatus.IsMatch(tbNome.Text)){
+            if (string.IsNullOrEmpty(tbNomeS.Text) || validaNomeStatus.IsMatch(tbNomeS.Text)) {
 
-                tbNome.BackColor = Color.Red;
+                tbNomeS.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir status!");
-                cont++;
-            }
 
+            }
             return true;
         }
         private void BtnSave_Click(object sender, EventArgs e)
@@ -53,27 +52,25 @@ namespace GhostBusters_Forms.View.Status
             if (ValidarStatus())
             {
 
-              //  new StatusController().Cadastro(GetCadastrarStatus());
+                new StatusController().Cadastro(GetCadastrarStatus());
+                MessageBox.Show("Status cadastrado!");
+                this.Close();
             }
             else
             {
-
-               // new StatusController().Cadastro(UpDateS());
+                new StatusController().Cadastro(UpDateS());
+                this.Close();
             }
 
-            MessageBox.Show("Status cadastrado!");
-            this.Close();
         }
 
-        private object UpDateS()
+        private StatusModel UpDateS() => new StatusModel()
         {
-            return false;
-        }
+            NomeStatus = tbNomeS.Text,
+            perfil = (Perfil)CbListarPerfil.SelectedItem
+        };
 
-        private object Cadastrar()
-        {
-            throw new NotImplementedException();
-        }
+   
 
         private void CadastrarStatus_Load(object sender, EventArgs e)
         {

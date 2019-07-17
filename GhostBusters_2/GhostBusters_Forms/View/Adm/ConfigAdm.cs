@@ -27,6 +27,14 @@ namespace GhostBusters_Forms.View.Adm
             loadDataGrid();
         }
 
+        //private class StatusDoGrid
+        //{
+        //    public int codigo_status { get; set; }
+        //    public int NomeStatus { get; set; }
+        //    public int perfil { get; set; }
+
+        //}
+
         private void loadDataGrid()
         {
             if (operacao == "Categoria")
@@ -36,8 +44,28 @@ namespace GhostBusters_Forms.View.Adm
             }
             else if (operacao == "Status")
             {
-                //var lista = new StatusController().Consultar();
-                //dgVisualizar.DataSource = lista;
+                var lista = new StatusController().FindAll();
+
+                //var minhaLista = new List<StatusDoGrid>();
+                //foreach (var item in lista)
+                //{
+                //    var statusDoGrid = new StatusDoGrid
+                //    {
+                //        codigo_status = lista.codigo_status,
+                //        NomeStatus = lista.NomeStatus,
+                //        perfil = lista.Perfil.nomePerfil,
+                //    };
+                //    minhaLista.Add(statusDoGrid);
+                //}
+                  
+                var meuNovoCara = lista.Select(x => new
+                {
+                    codigo_status = x.codigo_status,
+                    NomeStatus = x.NomeStatus,
+                    perfil = x.perfil.nomePerfil
+                }).ToList();
+
+                dgVisualizar.DataSource = meuNovoCara;
             }
         }
 
@@ -50,7 +78,6 @@ namespace GhostBusters_Forms.View.Adm
         private void BtnStatus_Click(object sender, EventArgs e)
         {
             operacao = "Status";
-            dgVisualizar.Columns.Add("Ola", "Ola");
             loadDataGrid();
         }
 
@@ -123,7 +150,7 @@ namespace GhostBusters_Forms.View.Adm
             }
             else if (operacao == "")
             {
-                MessageBox.Show("Escolha o tipo de visualizar e depois clique na operação desejada!");
+                MessageBox.Show("Escolha o tipo de visualização e depois clique na operação desejada!");
             }
         }
 
@@ -138,7 +165,8 @@ namespace GhostBusters_Forms.View.Adm
             }
             else if (operacao == "Status")
             {
-                
+                //new StatusController().Excluir((StatusModel)linha);
+                //loadDataGrid();
             }
         }
     }

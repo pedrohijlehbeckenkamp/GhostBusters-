@@ -30,12 +30,11 @@ namespace GhostBusters_Forms.Mapper
             {
                 return null;
             }
-
             return new StatusModel()
             {
                 codigo_status = statusEntity.COD_STATUS,
                 NomeStatus = statusEntity.NOME,
-                perfil = statusEntity.PERFIL.MapPerfilModel() 
+                perfil = statusEntity.PERFIL.MapPerfilModel()
             };
         }
     }
