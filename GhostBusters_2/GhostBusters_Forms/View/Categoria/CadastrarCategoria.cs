@@ -59,11 +59,11 @@ namespace GhostBusters_Forms.View.Categoria
             }
             else
             {
-                new CategoriaController().Cadastro(GetCadastrar());
+                new CategoriaController().Cadastro(Cadastrar());
                 this.Close();
             }
         }
-        private CategoriaModel GetCadastrar() => new CategoriaModel()
+        private CategoriaModel Cadastrar() => new CategoriaModel()
         {
             NomeCategoria = tbNomeCateg.Text,
         };

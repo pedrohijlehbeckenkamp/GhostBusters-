@@ -27,7 +27,6 @@ namespace GhostBusters_Forms.View.Status
             CenterToParent();
             status = _status;
             tbNome.Text = status.NomeStatus;
-
         }
         public StatusModel GetCadastrarStatus() => new StatusModel
         {
@@ -45,35 +44,33 @@ namespace GhostBusters_Forms.View.Status
                 MessageBox.Show("Erro ao inserir status!");
                 cont++;
             }
-
             return true;
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
             if (ValidarStatus())
             {
-
-                new StatusController().Cadastro(GetCadastrarStatus());
+                new StatusController().Cadastro(Cadastrar());
             }
             else
             {
-
                 new StatusController().Cadastro(UpDateS());
             }
-
             MessageBox.Show("Status cadastrado!");
             this.Close();
         }
 
-        private object UpDateS()
+        private StatusModel Cadastrar() => new StatusModel()
         {
-            return false;
-        }
-
-        private object Cadastrar()
-        {
-            throw new NotImplementedException();
-        }
+            NomeStatus = tbNome.Text,
+            perfil = (Perfil)CbListarPerfil.SelectedItem
+        };
+        private StatusModel UpDateS() => new StatusModel()
+        { 
+            codigo_status = status.codigo_status,
+            NomeStatus = tbNome.Text,
+            perfil = (Perfil)CbListarPerfil.SelectedItem
+        };
 
         private void CadastrarStatus_Load(object sender, EventArgs e)
         {

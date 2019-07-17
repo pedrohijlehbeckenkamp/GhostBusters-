@@ -13,5 +13,19 @@ namespace GhostBusters_Infra.Repository
         {
             return this.context.Set<StatusEntity>().FirstOrDefault(x => x.NOME == name);
         }
+
+        public IEnumerable<StatusEntity> GetAll()
+        {
+            var dbSet = context.Set<StatusEntity>();
+            var dbSetPerfil = context.Set<PerfilEntity>();
+
+            var result =
+                from status in dbSet
+                join perfil in dbSetPerfil on status.COD_PERFIL equals perfil.COD_PERFIL
+                select
+                    status;
+
+            return result.ToList();
+        }
     }
 }

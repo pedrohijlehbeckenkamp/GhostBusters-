@@ -46,7 +46,7 @@ namespace GhostBusters_Infra.Repository
             return objUpdated;
         }
 
-        public void Remove(int id)//Remover obj 
+        public void Excluir(int id)//Remover obj 
         {
             var obj = FindById(id);
             if (obj != null)

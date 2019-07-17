@@ -16,7 +16,6 @@ namespace GhostBusters_Forms.Mapper
             {
                 return null;
             }
-
             return new CategoriaEntity()
             {
                 COD_CATEGORIA = categoria.Codigo_categoria,
@@ -29,7 +28,6 @@ namespace GhostBusters_Forms.Mapper
             {
                 return null;
             }
-
             return new CategoriaModel()
             {
                Codigo_categoria = categoriaEntity.COD_CATEGORIA,
