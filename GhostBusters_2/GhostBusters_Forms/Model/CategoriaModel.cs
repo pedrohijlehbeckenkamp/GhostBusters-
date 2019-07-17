@@ -10,6 +10,5 @@ namespace GhostBusters_Forms.Model
     {
         public int Codigo_categoria { get; set; }
         public string NomeCategoria { get; set; }
-
     }
 }
