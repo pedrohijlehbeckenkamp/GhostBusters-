@@ -9,7 +9,10 @@ namespace GhostBusters_Infra.Repository
 {
     public class ChamadoRepository: BaseRepository<ChamadoEntity>
     {
-
+        public override List<ChamadoEntity> FindALL()
+        {
+            return context.Set<ChamadoEntity>().ToList();
+        }
         public override ChamadoEntity CadastroUpdate(ChamadoEntity obj)//Cadastra ou Update
         {
             if (obj == null)

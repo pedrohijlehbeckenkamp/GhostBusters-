@@ -46,7 +46,14 @@
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
             this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeTech = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.nomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -213,10 +220,17 @@
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigochamado,
-            this.Titulo});
+            this.NomeUsuario,
+            this.NomePerfil,
+            this.Titulo,
+            this.NomeTech,
+            this.nomeCategoria,
+            this.Nomestatus,
+            this.Data_Chamado,
+            this.Data_Chamado_finalizado});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgVisualizar.Location = new System.Drawing.Point(24, 189);
+            this.dgVisualizar.Location = new System.Drawing.Point(12, 189);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -234,8 +248,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(632, 220);
+            this.dgVisualizar.Size = new System.Drawing.Size(691, 220);
             this.dgVisualizar.TabIndex = 45;
+            this.dgVisualizar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentClick);
             // 
             // Codigochamado
             // 
@@ -244,12 +259,63 @@
             this.Codigochamado.Name = "Codigochamado";
             this.Codigochamado.ReadOnly = true;
             // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
+            this.NomeUsuario.HeaderText = "Usuario";
+            this.NomeUsuario.Name = "NomeUsuario";
+            this.NomeUsuario.ReadOnly = true;
+            // 
+            // NomePerfil
+            // 
+            this.NomePerfil.DataPropertyName = "NomePerfil";
+            this.NomePerfil.HeaderText = "Nome Perfil";
+            this.NomePerfil.Name = "NomePerfil";
+            this.NomePerfil.ReadOnly = true;
+            // 
             // Titulo
             // 
             this.Titulo.DataPropertyName = "Titulo";
             this.Titulo.HeaderText = "Titulo";
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
+            // 
+            // NomeTech
+            // 
+            this.NomeTech.DataPropertyName = "NomeTech";
+            this.NomeTech.HeaderText = "Tecnico";
+            this.NomeTech.Name = "NomeTech";
+            this.NomeTech.ReadOnly = true;
+            this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NomeTech.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // nomeCategoria
+            // 
+            this.nomeCategoria.DataPropertyName = "nomeCategoria";
+            this.nomeCategoria.HeaderText = "Categoria";
+            this.nomeCategoria.Name = "nomeCategoria";
+            this.nomeCategoria.ReadOnly = true;
+            // 
+            // Nomestatus
+            // 
+            this.Nomestatus.DataPropertyName = "Nomestatus";
+            this.Nomestatus.HeaderText = "Status";
+            this.Nomestatus.Name = "Nomestatus";
+            this.Nomestatus.ReadOnly = true;
+            // 
+            // Data_Chamado
+            // 
+            this.Data_Chamado.DataPropertyName = "Data_Chamado";
+            this.Data_Chamado.HeaderText = "Data Chamado";
+            this.Data_Chamado.Name = "Data_Chamado";
+            this.Data_Chamado.ReadOnly = true;
+            // 
+            // Data_Chamado_finalizado
+            // 
+            this.Data_Chamado_finalizado.DataPropertyName = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.HeaderText = "Finalizado ";
+            this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.ReadOnly = true;
             // 
             // TelaPrincipalAdm
             // 
@@ -297,6 +363,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridView dgVisualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomePerfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewButtonColumn NomeTech;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado_finalizado;
     }
 }

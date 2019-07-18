@@ -32,7 +32,7 @@ namespace GhostBusters_Forms.View.Ticket
             cbCategoria.DisplayMember = "NomeCategoria";
             //dataGridPedidos.AutoGenerateColumns = false;
             //dataGridPedidos.DataSource = produtoDTOs;
-            dgAddAnexo.AutoGenerateColumns = true;
+            dgAddAnexo.AutoGenerateColumns = false;
             dgAddAnexo.DataSource = listaAnexo;
         }
 
@@ -70,11 +70,7 @@ namespace GhostBusters_Forms.View.Ticket
         };
         private void butOpenAnexo_Click(object sender, EventArgs e)
         {
-           /* if (textNomeAnexo.Text != null)
-            {
-                System.Diagnostics.Process.Start(textNomeAnexo.Text);//Abre o anexo pelo o windows 
-            }    */
-        }
+         }
 
         private OpenFileDialog GetOpenFileDialog()
         {
@@ -104,21 +100,64 @@ namespace GhostBusters_Forms.View.Ticket
 
         private void ButClearAnexo_Click(object sender, EventArgs e)
         {
-           // textNomeAnexo.Text = "";
+            var anexoSelecionado = dgAddAnexo.CurrentRow.DataBoundItem;
+            var anexo = (Anexo)anexoSelecionado;
+            string message = "Deseija excluir esse anexo" + anexo.nomeAnexo;
+            const string caption = "Form Closing";
+            /*var result = MessageBox.Show(message, caption,
+                                         MessageBoxButtons.OK,//.YesNo,
+                                         MessageBoxIcon.Question);*/
+            var resultado = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+                listaAnexo.Remove(anexo);
+
+            dgAddAnexo.DataSource = listaAnexo;
+           
         }
 
         private void DgAddAnexo_DoubleClick(object sender, EventArgs e)
         {
-           /* var anexoSelecionado = dgAddAnexo.CurrentRow.DataBoundItem;
-            if (anexoSelecionado != null && anexoSelecionado is Anexo)
-            {
-                var anexo = (Anexo)anexoSelecionado;
-                System.Diagnostics.Process.Start(anexo);//Abre o anexo pelo o windows 
-            }
-            /* if (textNomeAnexo.Text != null)
-             {
-                System.Diagnostics.Process.Start(textNomeAnexo.Text);//Abre o anexo pelo o windows 
-             } */
+         //   /* const string message =
+         //"Are you sure that you would like to close the form?";
+         //    const string caption = "Form Closing";
+         //    var result = MessageBox.Show(message, caption,
+         //                                 MessageBoxButtons.OK,//.YesNo,
+         //                                 MessageBoxIcon.Question);
+
+         //   If the no button was pressed ...*/
+         //   if (result == DialogResult.No)
+         //   {
+         //       cancel the closure of the form.
+         //       e.Cancel = true;
+         //   }
+         //   var anexoSelecionado = dgAddAnexo.CurrentRow.DataBoundItem;
+         //   if (anexoSelecionado != null && anexoSelecionado is Anexo)
+         //   {
+         //       var anexo = (Anexo)anexoSelecionado;
+         //       byte[] bytes = Convert.FromBase64String(anexo.BaseData);
+         //       System.Diagnostics.Process myProcess = new System.Diagnostics.Process();
+         //       // var anexo = (Anexo)anexoSelecionado;
+         //       string decodeFileName = "";
+         //       try
+         //       {
+         //           decodeFileName = Encoding.UTF8.GetString(bytes);
+         //       }
+         //       catch
+         //       {
+         //           //decodeFileName = myEncodedPDF;
+         //       }
+
+         //       myProcess.StartInfo.FileName = decodeFileName;
+         //       myProcess.Start();
+         //       // byte[] bytes = Convert.FromBase64String(anexo.BaseData);
+         //       //using (FileStream stream = System.IO.File.Create("c:\\file.pdf"))
+         //       {
+         //           byte[] bytes = Convert.FromBase64String(anexo.BaseData);
+         //           stream.Write(bytes, 0, bytes.Length);
+         //       }
+         //       //System.Diagnostics.Process.Start(anexo.BaseData);//Abre o anexo pelo o windows 
+         //   }
+
         }
     }
 }

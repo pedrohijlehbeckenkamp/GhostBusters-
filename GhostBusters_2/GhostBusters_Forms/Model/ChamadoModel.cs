@@ -21,5 +21,12 @@ namespace GhostBusters_Forms.Model
         public Usuario Tech { get; set; }
         public CategoriaModel categoria { get; set; }
 
+        public string NomeUsuario2 { get { return Owner.NomeUsuario;  } }
+        public string NomeTech { get { return Tech != null ? Tech.NomeUsuario : "Escolha um Tecnico"; ; } }
+        public string NomePerfil {  get { return Owner.perfil.nomePerfil; } }
+        public string Nomestatus { get { return statusModel.NomeStatus; } }
+        public string nomeCategoria { get { return categoria.NomeCategoria; } }   
+        //public string NivelUsuarioModelNome { get { return NivelUsuarioModel?.NivelModel; } }
+
     }
 }

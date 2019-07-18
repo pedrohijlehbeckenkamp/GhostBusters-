@@ -15,5 +15,6 @@ namespace GhostBusters_Forms.Model
         public PerfilModel perfil { get; set; }
         public ImagemModel Foto { get; set; }
 
+        public string NomePerfil { get { return perfil.nomePerfil; } }
     }
 }
