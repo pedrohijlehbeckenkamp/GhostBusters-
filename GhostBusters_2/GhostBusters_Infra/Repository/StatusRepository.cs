@@ -42,7 +42,9 @@ namespace GhostBusters_Infra.Repository
         protected override StatusEntity Cadastro(StatusEntity obj)
         {
             var objStatus = context.Set<StatusEntity>().Add(obj);
-            context.Entry(obj.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
+
+            if (obj.COD_PERFIL != null)
+                context.Entry(obj.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
 
             context.SaveChanges();
             return objStatus;

@@ -17,13 +17,20 @@ namespace GhostBusters_Forms.View.Adm
     public partial class ConfigAdm : Form
     {
         String operacao = "";
-        public ConfigAdm()
+        public ConfigAdm(Usuario usuario)
         {
             InitializeComponent();
+
+            if (usuario.perfil.nomePerfil == "Técnico")
+            {
+                btnCadastrar.Enabled = false;
+                btnExcluir.Enabled = false;
+            }
         }
 
         private void ConfigAdm_Load(object sender, EventArgs e)
         {
+          
             loadDataGrid();
         }
 
@@ -85,7 +92,7 @@ namespace GhostBusters_Forms.View.Adm
         {
             if (operacao == "Categoria")
             {
-                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+               // var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
                 var menu = new CadastrarCategoria();
                 menu.FormClosed += (x, y) =>
@@ -99,7 +106,7 @@ namespace GhostBusters_Forms.View.Adm
             }
             else if (operacao == "Status")
             {
-                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                //var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
                 var menu = new CadastrarStatus();
                 menu.FormClosed += (x, y) =>

@@ -37,11 +37,12 @@
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.butAddAnexo = new System.Windows.Forms.Button();
             this.butClearAnexo = new System.Windows.Forms.Button();
-            this.textNomeAnexo = new System.Windows.Forms.TextBox();
             this.butOpenAnexo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.dgAddAnexo = new System.Windows.Forms.DataGridView();
+            this.nomeAnexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Extensao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAnexo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,7 +114,7 @@
             // 
             // butAddAnexo
             // 
-            this.butAddAnexo.Location = new System.Drawing.Point(511, 126);
+            this.butAddAnexo.Location = new System.Drawing.Point(540, 104);
             this.butAddAnexo.Name = "butAddAnexo";
             this.butAddAnexo.Size = new System.Drawing.Size(82, 26);
             this.butAddAnexo.TabIndex = 33;
@@ -123,7 +124,7 @@
             // 
             // butClearAnexo
             // 
-            this.butClearAnexo.Location = new System.Drawing.Point(599, 126);
+            this.butClearAnexo.Location = new System.Drawing.Point(628, 104);
             this.butClearAnexo.Name = "butClearAnexo";
             this.butClearAnexo.Size = new System.Drawing.Size(88, 26);
             this.butClearAnexo.TabIndex = 34;
@@ -131,17 +132,9 @@
             this.butClearAnexo.UseVisualStyleBackColor = true;
             this.butClearAnexo.Click += new System.EventHandler(this.ButClearAnexo_Click);
             // 
-            // textNomeAnexo
-            // 
-            this.textNomeAnexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNomeAnexo.Location = new System.Drawing.Point(484, 94);
-            this.textNomeAnexo.Name = "textNomeAnexo";
-            this.textNomeAnexo.Size = new System.Drawing.Size(311, 26);
-            this.textNomeAnexo.TabIndex = 35;
-            // 
             // butOpenAnexo
             // 
-            this.butOpenAnexo.Location = new System.Drawing.Point(693, 126);
+            this.butOpenAnexo.Location = new System.Drawing.Point(722, 104);
             this.butOpenAnexo.Name = "butOpenAnexo";
             this.butOpenAnexo.Size = new System.Drawing.Size(78, 26);
             this.butOpenAnexo.TabIndex = 36;
@@ -172,10 +165,25 @@
             // dgAddAnexo
             // 
             this.dgAddAnexo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAddAnexo.Location = new System.Drawing.Point(465, 158);
+            this.dgAddAnexo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomeAnexo,
+            this.Extensao});
+            this.dgAddAnexo.Location = new System.Drawing.Point(540, 136);
             this.dgAddAnexo.Name = "dgAddAnexo";
-            this.dgAddAnexo.Size = new System.Drawing.Size(350, 142);
+            this.dgAddAnexo.Size = new System.Drawing.Size(244, 142);
             this.dgAddAnexo.TabIndex = 38;
+            // 
+            // nomeAnexo
+            // 
+            this.nomeAnexo.DataPropertyName = "nomeAnexo";
+            this.nomeAnexo.HeaderText = "Nome Anexo";
+            this.nomeAnexo.Name = "nomeAnexo";
+            // 
+            // Extensao
+            // 
+            this.Extensao.DataPropertyName = "Extensao";
+            this.Extensao.HeaderText = "Extensao";
+            this.Extensao.Name = "Extensao";
             // 
             // CadastrarTicket
             // 
@@ -185,7 +193,6 @@
             this.Controls.Add(this.dgAddAnexo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butOpenAnexo);
-            this.Controls.Add(this.textNomeAnexo);
             this.Controls.Add(this.butClearAnexo);
             this.Controls.Add(this.butAddAnexo);
             this.Controls.Add(this.cbCategoria);
@@ -216,10 +223,11 @@
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Button butAddAnexo;
         private System.Windows.Forms.Button butClearAnexo;
-        private System.Windows.Forms.TextBox textNomeAnexo;
         private System.Windows.Forms.Button butOpenAnexo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.DataGridView dgAddAnexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeAnexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Extensao;
     }
 }

@@ -15,5 +15,9 @@ namespace GhostBusters_Forms.Controller
         {
             return new ChamadoRepository().CadastroUpdate(chamado.MapChamadaEntiy()).MapChamadaModel();
         } 
+        public List<ChamadoModel> Findall()
+        {
+            return new ChamadoRepository().FindALL().Select(Chamado => Chamado.MapChamadaModel()).ToList();
+        }
     }
 }

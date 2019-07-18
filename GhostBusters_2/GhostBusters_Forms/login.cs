@@ -12,6 +12,7 @@ using GhostBusters_Forms.Adm;
 using GhostBusters_Forms.Model;
 using GhostBusters_Forms.Controller;
 using GhostBusters_Forms.Usuário_Comum;
+using GhostBusters_Forms.View.Tech;
 
 namespace GhostBusters_Forms
 {
@@ -19,6 +20,7 @@ namespace GhostBusters_Forms
     {
         CadastroUsuario objLogin = new  CadastroUsuario();
 
+        
         public Login()
         {
             InitializeComponent();
@@ -61,6 +63,8 @@ namespace GhostBusters_Forms
 
             var menuAdmin = new TelaPrincipalAdm(login);
             var menuUsuario = new InicUsuarioComum(login);
+            var menuTech = new IniciTech(login);
+
             if (login != null)
             {
                 if (login.perfil.nomePerfil == "Admin")
@@ -82,8 +86,23 @@ namespace GhostBusters_Forms
                     menuUsuario.Show();
                     this.Hide();
                 }//else MessageBox.Show("No Existe"); 
+
+                if (login.perfil.nomePerfil == "Técnico")
+                {
+                    menuTech.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                    };
+                    menuTech.Show();
+                    this.Hide();
+                }//else MessageBox.Show("No Existe");
             }
             else MessageBox.Show("Email e/ou senha errado!");
+        }
+        public void limparLogin()
+        {
+            tbSenha.Text = "";
+            tbUsuario.Text = "";
         }
     }
 }
