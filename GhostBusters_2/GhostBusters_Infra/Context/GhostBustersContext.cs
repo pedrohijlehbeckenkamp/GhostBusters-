@@ -10,16 +10,14 @@ namespace GhostBusters_Infra
 {
     public class GhostBustersContext : DbContext 
     {
-        public GhostBustersContext() : base("Ghostbusters") { }
+        public GhostBustersContext() : base("Ghostbusters") {}
 
-
-       public void SendChanges()
+        public void SendChanges()
         {
             ChangeTracker.DetectChanges();
             SaveChanges();
         }
 
-        //public DbSet<Base64AnexoEntity> Posts { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -53,9 +51,6 @@ namespace GhostBusters_Infra
                 .HasKey(x => x.COD_CHAMADO)
                 .HasRequired(x => x._STATUS);
 
-           
-            //modelBuilder.Entity<ChamadoEntity>().HasRequired(perfil => perfil.PERFIL);
-
            modelBuilder.Entity<ChamadoEntity>()
                 .HasRequired(x => x.CATEGORIA);
 
@@ -63,12 +58,7 @@ namespace GhostBusters_Infra
                 .HasRequired(x => x.OWNER);
 
             modelBuilder.Entity<ChamadoEntity>()
-                .HasOptional(x => x.TECNICO);
-
- 
-
-
-           
+                .HasOptional(x => x.TECNICO);   
         }
     }
 }

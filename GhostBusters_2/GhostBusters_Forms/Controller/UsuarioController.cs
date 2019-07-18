@@ -11,6 +11,10 @@ namespace GhostBusters_Forms.Controller
 {
     public class UsuarioController
     {
+        public List<Usuario> indAll()
+        {
+            return new UsuarioRepository().FindALL().Select(usuario => usuario.MapUsuarioModel()).ToList();
+        }
         public Usuario Cadastro(Usuario usuario)
         {
             return new UsuarioRepository().CadastroUpdate(usuario.MapUsuarioEntity()).MapUsuarioModel();

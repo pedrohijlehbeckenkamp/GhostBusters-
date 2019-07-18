@@ -22,25 +22,24 @@ namespace GhostBusters_Infra.Entity
         //public int COD_ANEXO { get; set; }
         // [ForeignKey("COD_ANEXO")]
         //public Base64AnexoEntity ANEXO { get; set; }
-        public ICollection<Base64AnexoEntity> ANEXOS { get; set; } = new HashSet<Base64AnexoEntity>();
-
+        
         [ForeignKey("COD_STATUS")]
-        public StatusEntity _STATUS { get; set; }
-        public int COD_CATEGORIA { get; set; }
-
+        public virtual StatusEntity _STATUS { get; set; }
+       
         [ForeignKey("COD_CATEGORIA")]
-        public CategoriaEntity CATEGORIA { get; set; }
-        public int COD_OWNER { get; set; }
+        public virtual CategoriaEntity CATEGORIA { get; set; }
+        public int COD_CATEGORIA { get; set; }
+        
 
         [ForeignKey("COD_OWNER")]
-        public UsuarioEntity OWNER { get; set; }
-
-        public int? COD_TECH { get; set; }
+        public virtual UsuarioEntity OWNER { get; set; }
+        public int COD_OWNER { get; set; }
+        
 
         [ForeignKey("COD_TECH")]
-        public UsuarioEntity TECNICO { get; set; }
-
-
+        public virtual UsuarioEntity TECNICO { get; set; }
+        public int? COD_TECH { get; set; }
+        public virtual ICollection<Base64AnexoEntity> ANEXOS { get; set; } = new HashSet<Base64AnexoEntity>();
         public override int? EntityId()
         {
             return COD_CHAMADO;

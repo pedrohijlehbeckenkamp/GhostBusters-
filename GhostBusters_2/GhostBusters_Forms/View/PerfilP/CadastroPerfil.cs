@@ -27,16 +27,16 @@ namespace GhostBusters_Forms.View.PerfilP
             InitializeComponent();
             CenterToParent();
             perfil = _perfil;
-            tbNomeCateg.Text = perfil.nomePerfil;
+            tbNomePe.Text = perfil.nomePerfil;
         }
 
         public bool ValidacaoPerfil()
         {
 
             Regex validaNomePerfil = new Regex(@"[0-9]");
-            if (string.IsNullOrEmpty(tbNomeCateg.Text) || validaNomePerfil.IsMatch(tbNomeCateg.Text))
+            if (string.IsNullOrEmpty(tbNomePe.Text) || validaNomePerfil.IsMatch(tbNomePe.Text))
             {
-                tbNomeCateg.BackColor = Color.Red;
+                tbNomePe.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir perfil!");
                 return false;
             }
@@ -44,7 +44,7 @@ namespace GhostBusters_Forms.View.PerfilP
             return true;
         }
 
-        private void BtnSaveCategoria_Click(object sender, EventArgs e)
+        private void BtnSavePer_Click(object sender, EventArgs e)
         {
             if (perfil != null)
             {
@@ -66,14 +66,14 @@ namespace GhostBusters_Forms.View.PerfilP
         private PerfilModel UpDateP() => new PerfilModel()
         {
             Codigo = perfil.Codigo,
-            nomePerfil = tbNomeCateg.Text,
+            nomePerfil = tbNomePe.Text,
         };
 
         private PerfilModel Cadastrar() => new PerfilModel()
         {
 
            // Codigo = perfil.Codigo,
-            nomePerfil = tbNomeCateg.Text,
+            nomePerfil = tbNomePe.Text,
 
         };
 

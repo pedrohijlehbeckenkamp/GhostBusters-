@@ -32,7 +32,7 @@ namespace GhostBusters_Forms.Adm
             lblNomeAd.Text = usuario.NomeUsuario;
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
-            dgVisualizar.DataSource = new ChamadoController().Findall();
+            dgVisualizar.DataSource = new ChamadoController().Findall(); ;
             
         }
         private void LoadImagem()
@@ -82,6 +82,10 @@ namespace GhostBusters_Forms.Adm
             alteraPic.Show();
         }
 
-
+        private void DgVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            MessageBox.Show("Nois");
+        }
     }
 }

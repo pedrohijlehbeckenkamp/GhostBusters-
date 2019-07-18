@@ -94,16 +94,23 @@ INSERT INTO PERFIL(NOME)
 		('Usuario'),
 		('Técnico')
 	
-INSERT INTO USUARIO(NOME, EMAIL, SENHA, COD_PERFIL)
+INSERT INTO USUARIO(NOME, EMAIL, SENHA, COD_PERFIL, COD_IMAGEM)
 	VALUES
-		('Adimin','adimin@hotmail.com','adimin',1),
-		('Ghostbursters','Ghostbursters@hotmail.com','ghostbursters',1),
-		('Pedro hb', 'pedro@live.com', '123456', 2)
+		('AdiminEasy', 'adm', 'adm', 1,1),
+		('TechEasy', 'tech', 'tech', 3,1),
+		('UserEasy', 'user', 'user', 2,1)
+
+	--	('Adimin','adimin@hotmail.com','adimin',1),
+	--	('Ghostbursters','Ghostbursters@hotmail.com','ghostbursters',1),
+	--	('Pedro hb', 'pedro@live.com', '123456', 2)
 
 SELECT * FROM PERFIL
+SELECT * FROM IMAGEM
 SELECT * FROM USUARIO
-SELECT * FROM ANEXO
 SELECT * FROM CATEGORIA
+SELECT * FROM _STATUS
+SELECT * FROM ANEXO
+SELECT * FROM CHAMADO
 
 INSERT INTO CATEGORIA(NOME)
 	VALUES 
@@ -125,7 +132,7 @@ INSERT INTO _STATUS(NOME)
 --DROP TABLE CHAMADO 
 --DROP TABLE ANEXO
 
---UPDATE USUARIO
-	--SET COD_IMAGEM = 1
-	--WHERE COD_USUARIO IN(3,2,1)
+UPDATE USUARIO
+	SET COD_PERFIL = 2
+	WHERE COD_USUARIO = 9
 	
