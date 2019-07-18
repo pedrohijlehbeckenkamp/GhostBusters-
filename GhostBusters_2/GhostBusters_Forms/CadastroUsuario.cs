@@ -157,23 +157,13 @@ namespace GhostBusters_Forms
             LoadImagem();//Recarrega imagem primaria
         }
 
-        private void TbConfirmeSenha_KeyUp(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter)
-            {
-                MessageBox.Show("Passouuu");
-                tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
-                tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;
-            }
-        }
-
-        private void BtVisConfirmeSenha_MouseEnter(object sender, EventArgs e)
+        private void BtVisSenha_MouseEnter(object sender, EventArgs e)
         {
             tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
             tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;
         }
 
-        private void BtVisConfirmeSenha_MouseLeave(object sender, EventArgs e)
+        private void BtVisSenha_MouseLeave(object sender, EventArgs e)
         {
             tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
             tbConfirmeSenha.PasswordChar = tbConfirmeSenha.PasswordChar == char.MinValue ? tbConfirmeSenha.PasswordChar = '*' : char.MinValue;

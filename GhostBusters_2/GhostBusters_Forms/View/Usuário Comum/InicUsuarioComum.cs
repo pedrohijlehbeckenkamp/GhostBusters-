@@ -22,11 +22,15 @@ namespace GhostBusters_Forms.Usuário_Comum
         {
             InitializeComponent();
             usuario = _usuario;
+            LoadUsuario();
         }
 
         private void TelaUsuarioComum_Load(object sender, EventArgs e)
         {
-            dgVisualizar.ReadOnly = true;
+
+            LoadUsuario();
+
+            /*dgVisualizar.ReadOnly = true;
             dgVisualizar.AutoGenerateColumns = false;
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             //referenciar de acordo com o obj
@@ -38,19 +42,30 @@ namespace GhostBusters_Forms.Usuário_Comum
                 byte[] bytes = Convert.FromBase64String(usuario.Foto.BaseData);
                 using (MemoryStream ms = new MemoryStream(bytes))
                 {
-
                     picBase64.Image = Image.FromStream(ms);
                 }
-            }
+            }*/
         }
        
         
 
         private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AlteraPic alteraPic = new AlteraPic(usuario);
-            alteraPic.Show();
 
+
+            //AlteraPic alteraPic = new AlteraPic(usuario);
+            //alteraPic.Show();
+
+
+            var tela = new AlteraPic(usuario);
+            tela.FormClosed += (x, y) =>
+            {
+                this.Abrir();
+                LoadUsuario();
+            };
+            tela.Show();
+            Esconder();
+            
         }
         private void BtnAdcTicket_Click(object sender, EventArgs e)
         {
@@ -59,7 +74,6 @@ namespace GhostBusters_Forms.Usuário_Comum
             {
                 this.Abrir();
             };
-
             tela.Show();
             Esconder();
             //OpenFormAndHide<>();
@@ -77,7 +91,6 @@ namespace GhostBusters_Forms.Usuário_Comum
             {
                 this.Abrir();
             };
-
             tela.Show();
             Esconder();
         }
@@ -90,6 +103,25 @@ namespace GhostBusters_Forms.Usuário_Comum
         private void Abrir()
         {
             this.Show();
+        }
+
+        private void LoadUsuario()
+        {
+            dgVisualizar.ReadOnly = true;
+            dgVisualizar.AutoGenerateColumns = false;
+            lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
+            //referenciar de acordo com o obj
+            lblNomeUC.Text = usuario.NomeUsuario;
+            lblEmail.Text = usuario.Email;
+
+            if (usuario.Foto != null)
+            {
+                byte[] bytes = Convert.FromBase64String(usuario.Foto.BaseData);
+                using (MemoryStream ms = new MemoryStream(bytes))
+                {
+                    picBase64.Image = Image.FromStream(ms);
+                }
+            }
         }
     }
 }
