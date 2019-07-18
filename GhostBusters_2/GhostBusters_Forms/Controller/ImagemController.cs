@@ -11,11 +11,11 @@ namespace GhostBusters_Forms.Controller
 {
     public class ImagemController
     {
-        public Imagem Cadastro(Imagem imagem)
+        public ImagemModel Cadastro(ImagemModel imagem)
         {
             return new ImagemRepository().CadastroUpdate(imagem.MapImagemEntity()).MapImagemModel();
         }
-        public Imagem BuscaNome(string nome)
+        public ImagemModel BuscaNome(string nome)
         {
             return new ImagemRepository().findbyName(nome).MapImagemModel();
         }

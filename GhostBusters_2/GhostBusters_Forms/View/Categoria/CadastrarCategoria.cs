@@ -35,14 +35,14 @@ namespace GhostBusters_Forms.View.Categoria
 
         public bool ValidaCategoria()
         {
-            //int cont = 0;
+            
             Regex validaNomeCategoria = new Regex(@"[0-9]");
             if(string.IsNullOrEmpty(tbNomeCateg.Text) || validaNomeCategoria.IsMatch(tbNomeCateg.Text))
             {
                 tbNomeCateg.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir categoria!");
                 return false;
-                //cont++;
+                
             }
             return true;
         }
@@ -75,5 +75,6 @@ namespace GhostBusters_Forms.View.Categoria
             Codigo_categoria = categoria.Codigo_categoria,
             NomeCategoria = tbNomeCateg.Text,
         };
+
     }
 }

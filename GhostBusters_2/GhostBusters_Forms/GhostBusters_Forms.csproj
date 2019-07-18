@@ -77,6 +77,12 @@
     <Compile Include="View\Categoria\CadastrarCategoria.Designer.cs">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PerfilP\CadastroPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PerfilP\CadastroPerfil.Designer.cs">
+      <DependentUpon>CadastroPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Tech\IniciTech.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,8 +140,8 @@
     <Compile Include="Mapper\ImagemMapper.cs" />
     <Compile Include="Mapper\PerfilMapper.cs" />
     <Compile Include="Mapper\UsuarioMapper.cs" />
-    <Compile Include="Model\Imagem.cs" />
-    <Compile Include="Model\Perfil.cs" />
+    <Compile Include="Model\ImagemModel.cs" />
+    <Compile Include="Model\PerfilModel.cs" />
     <Compile Include="Model\Usuario.cs" />
     <Compile Include="Controller\ImagemController.cs" />
     <Compile Include="Controller\PerfilController.cs" />
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PerfilP\CadastroPerfil.resx">
+      <DependentUpon>CadastroPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tech\IniciTech.resx">
       <DependentUpon>IniciTech.cs</DependentUpon>

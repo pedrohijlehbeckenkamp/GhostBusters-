@@ -11,13 +11,18 @@ namespace GhostBusters_Forms.Controller
 {
     public class PerfilController
     {
-        public Perfil BuscaNome(string nome)
+        public PerfilModel BuscaNome(string nome)
         {
             return new PerfilRepository().findbyName(nome).MapPerfilModel();
         }
-        public List<Perfil> FindAll()
+        public List<PerfilModel> FindAll()
         {
             return new PerfilRepository().FindALL().Select(perfil => perfil.MapPerfilModel()).ToList();
+        }
+
+        internal void Cadastro(PerfilModel perfilModel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

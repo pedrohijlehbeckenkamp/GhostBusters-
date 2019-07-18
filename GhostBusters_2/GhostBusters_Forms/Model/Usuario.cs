@@ -12,8 +12,8 @@ namespace GhostBusters_Forms.Model
         public string NomeUsuario { get; set; }
         public  string Email { get; set; }
         public string Senha { get; set; }
-        public Perfil perfil { get; set; }
-        public Imagem Foto { get; set; }
+        public PerfilModel perfil { get; set; }
+        public ImagemModel Foto { get; set; }
 
     }
 }

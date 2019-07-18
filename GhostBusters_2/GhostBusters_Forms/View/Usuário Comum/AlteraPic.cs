@@ -70,7 +70,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
             }
         }
 
-        private Imagem SalvarImagemBase64(FileInfo file) => new Imagem
+        private ImagemModel SalvarImagemBase64(FileInfo file) => new ImagemModel
         {
             codigo_imagem = usuario.Foto.codigo_imagem,
             nomeImagem = file.Name,
@@ -80,7 +80,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 
         private void BtnSaveBase_Click(object sender, EventArgs e)
         {
-            //Imagem image = null;
+           
             if (pictureImagem.ImageLocation != null)
             {
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);
@@ -90,8 +90,15 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            pictureImagem.Image.Dispose();
-            pictureImagem.Image = null;
+            var imagem = new ImagemController().BuscaNome("default.png");
+            byte[] bytes = Convert.FromBase64String(imagem.BaseData);
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+
+                pictureImagem.Image = Image.FromStream(ms);
+            }
+
+
         }
     }
 }

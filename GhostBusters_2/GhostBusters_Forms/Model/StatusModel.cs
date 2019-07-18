@@ -10,6 +10,6 @@ namespace GhostBusters_Forms.Model
     {
         public int codigo_status { get; set; }
         public string NomeStatus { get; set; }
-        public Perfil perfil { get; set; }
+        public PerfilModel perfil { get; set; }
     }
 }

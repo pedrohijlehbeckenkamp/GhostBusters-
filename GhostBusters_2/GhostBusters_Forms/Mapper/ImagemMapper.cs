@@ -10,7 +10,7 @@ namespace GhostBusters_Forms.Mapper
 {
     public static class ImagemMapper
     {
-        public static Base64ImagemEntity MapImagemEntity(this Imagem imagem)
+        public static Base64ImagemEntity MapImagemEntity(this ImagemModel imagem)
         {
             if (imagem == null)
             {
@@ -24,13 +24,13 @@ namespace GhostBusters_Forms.Mapper
                 BASE_DATA = imagem.BaseData
             };
         } 
-        public static Imagem MapImagemModel(this Base64ImagemEntity imagem64)
+        public static ImagemModel MapImagemModel(this Base64ImagemEntity imagem64)
         {
             if (imagem64 == null)
             {
                 return null;
             }
-            return new Imagem()
+            return new ImagemModel()
             {
                 codigo_imagem = imagem64.COD_IMAGEM,
                 nomeImagem = imagem64.NOME,

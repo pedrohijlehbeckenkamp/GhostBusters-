@@ -10,7 +10,7 @@ namespace GhostBusters_Forms.Mapper
 {
     public static class PerfilMapper
     {
-        public static PerfilEntity MapPerfilEntity(this Perfil perfil)
+        public static PerfilEntity MapPerfilEntity(this PerfilModel perfil)
         {
             if (perfil == null)
             {
@@ -23,14 +23,14 @@ namespace GhostBusters_Forms.Mapper
                 NOME = perfil.nomePerfil
             };
         }
-        public static Perfil MapPerfilModel(this PerfilEntity entity)
+        public static PerfilModel MapPerfilModel(this PerfilEntity entity)
         {
             if (entity == null)
             {
                 return null;
             }
 
-            return new Perfil()
+            return new PerfilModel()
             {
                 Codigo = entity.COD_PERFIL,
                 nomePerfil = entity.NOME
