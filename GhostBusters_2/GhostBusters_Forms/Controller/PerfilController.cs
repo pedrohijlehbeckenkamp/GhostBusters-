@@ -20,9 +20,14 @@ namespace GhostBusters_Forms.Controller
             return new PerfilRepository().FindALL().Select(perfil => perfil.MapPerfilModel()).ToList();
         }
 
-        internal void Cadastro(PerfilModel perfilModel)
+        internal PerfilModel Cadastro(PerfilModel perfil)
         {
-            throw new NotImplementedException();
+            return new PerfilRepository().CadastroUpdate(perfil.MapPerfilEntity()).MapPerfilModel();
+        }
+
+        internal void Excluir(PerfilModel perfil)
+        {
+            new PerfilRepository().Excluir(perfil.MapPerfilEntity().COD_PERFIL);
         }
     }
 }

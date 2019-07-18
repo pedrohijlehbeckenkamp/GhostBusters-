@@ -24,18 +24,17 @@ namespace GhostBusters_Forms
         public Login()
         {
             InitializeComponent();
+            lbErro.Visible = false;
             CenterToParent();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            HabilitarCampos();
         }
 
-        public void HabilitarCampos()
+        public void HabilitarErro()
         {
-            tbSenha.Enabled = true;
-            tbUsuario.Enabled = true;
+            lbErro.Visible = true;
         }
 
         public Usuario GetLogin() => new Usuario
@@ -47,10 +46,18 @@ namespace GhostBusters_Forms
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             Validar();
-            limparLogin();
+            LimparLogin();
         }
 
         private void TbSenha_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Validar();
+            }
+        }
+
+        private void TbUsuario_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -97,13 +104,29 @@ namespace GhostBusters_Forms
                     menuTech.Show();
                     this.Hide();
                 }//else MessageBox.Show("No Existe");
+                lbErro.Visible = false;
+                LimparLogin();
             }
-            else MessageBox.Show("Email e/ou senha errado!");
+            else
+            {
+                HabilitarErro();
+                LimparLogin();
+            }
         }
-        public void limparLogin()
+        public void LimparLogin()
         {
             tbSenha.Text = "";
             tbUsuario.Text = "";
+        }
+
+        private void BtVisSenha_MouseLeave(object sender, EventArgs e)
+        {
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+        }
+
+        private void BtVisSenha_MouseEnter(object sender, EventArgs e)
+        {
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
         }
     }
 }

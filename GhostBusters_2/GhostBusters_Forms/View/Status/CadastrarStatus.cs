@@ -29,21 +29,15 @@ namespace GhostBusters_Forms.View.Status
             tbNomeS.Text = status.NomeStatus;
             CbListarPerfil.Text = status.perfil.nomePerfil;
         }
-        public StatusModel GetCadastrarStatus() => new StatusModel
-        {
-            NomeStatus = tbNomeS.Text,
-            perfil = (PerfilModel)CbListarPerfil.SelectedItem
-        };
+       
 
         public bool ValidarStatus()
         {
-
             Regex validaNomeStatus = new Regex(@"[0-9]");
             if (string.IsNullOrEmpty(tbNomeS.Text) || validaNomeStatus.IsMatch(tbNomeS.Text)) {
 
                 tbNomeS.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir status!");
-
             }
             return true;
         }
@@ -51,7 +45,6 @@ namespace GhostBusters_Forms.View.Status
         {
             if (ValidarStatus())
             {
-
                 new StatusController().Cadastro(GetCadastrarStatus());
                 MessageBox.Show("Status cadastrado!");
                 this.Close();
@@ -61,24 +54,23 @@ namespace GhostBusters_Forms.View.Status
                 new StatusController().Cadastro(UpDateS());
                 this.Close();
             }
-
         }
-
+        public StatusModel GetCadastrarStatus() => new StatusModel
+        {
+            NomeStatus = tbNomeS.Text,
+            perfil = (PerfilModel)CbListarPerfil.SelectedItem
+        };
         private StatusModel UpDateS() => new StatusModel()
         {
             codigo_status = status.codigo_status,
             NomeStatus = tbNomeS.Text,
             perfil = (PerfilModel)CbListarPerfil.SelectedItem
         };
-
-   
-
         private void CadastrarStatus_Load(object sender, EventArgs e)
         {
             MostrarPerfil();
             CbListarPerfil.SelectedItem = new PerfilController().FindAll();
         }
-
         private void MostrarPerfil()
         {
             CbListarPerfil.DataSource = new PerfilController().FindAll();

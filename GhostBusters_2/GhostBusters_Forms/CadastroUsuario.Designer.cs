@@ -46,7 +46,7 @@
             this.CbListarPerfil = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.ClearImagem = new System.Windows.Forms.Button();
-            this.BtVisConfirmeSenha = new System.Windows.Forms.Button();
+            this.BtVisSenha = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
             this.panel1.SuspendLayout();
@@ -102,7 +102,6 @@
             this.tbConfirmeSenha.PasswordChar = '*';
             this.tbConfirmeSenha.Size = new System.Drawing.Size(219, 26);
             this.tbConfirmeSenha.TabIndex = 4;
-            this.tbConfirmeSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbConfirmeSenha_KeyUp);
             // 
             // tbSenha
             // 
@@ -233,19 +232,19 @@
             this.ClearImagem.UseVisualStyleBackColor = false;
             this.ClearImagem.Click += new System.EventHandler(this.ClearImagem_Click);
             // 
-            // BtVisConfirmeSenha
+            // BtVisSenha
             // 
-            this.BtVisConfirmeSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtVisConfirmeSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtVisConfirmeSenha.ForeColor = System.Drawing.Color.White;
-            this.BtVisConfirmeSenha.Location = new System.Drawing.Point(401, 300);
-            this.BtVisConfirmeSenha.Name = "BtVisConfirmeSenha";
-            this.BtVisConfirmeSenha.Size = new System.Drawing.Size(98, 26);
-            this.BtVisConfirmeSenha.TabIndex = 38;
-            this.BtVisConfirmeSenha.Text = "Visualizar Senha ";
-            this.BtVisConfirmeSenha.UseVisualStyleBackColor = false;
-            this.BtVisConfirmeSenha.MouseEnter += new System.EventHandler(this.BtVisConfirmeSenha_MouseEnter);
-            this.BtVisConfirmeSenha.MouseLeave += new System.EventHandler(this.BtVisConfirmeSenha_MouseLeave);
+            this.BtVisSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtVisSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtVisSenha.ForeColor = System.Drawing.Color.White;
+            this.BtVisSenha.Location = new System.Drawing.Point(401, 300);
+            this.BtVisSenha.Name = "BtVisSenha";
+            this.BtVisSenha.Size = new System.Drawing.Size(98, 26);
+            this.BtVisSenha.TabIndex = 38;
+            this.BtVisSenha.Text = "Visualizar Senha ";
+            this.BtVisSenha.UseVisualStyleBackColor = false;
+            this.BtVisSenha.MouseEnter += new System.EventHandler(this.BtVisSenha_MouseEnter);
+            this.BtVisSenha.MouseLeave += new System.EventHandler(this.BtVisSenha_MouseLeave);
             // 
             // panel1
             // 
@@ -264,7 +263,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(741, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.BtVisConfirmeSenha);
+            this.Controls.Add(this.BtVisSenha);
             this.Controls.Add(this.ClearImagem);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CbListarPerfil);
@@ -313,7 +312,7 @@
         private System.Windows.Forms.ComboBox CbListarPerfil;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ClearImagem;
-        private System.Windows.Forms.Button BtVisConfirmeSenha;
+        private System.Windows.Forms.Button BtVisSenha;
         private System.Windows.Forms.Panel panel1;
     }
 }
