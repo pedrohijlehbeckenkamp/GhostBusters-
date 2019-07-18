@@ -45,12 +45,6 @@ namespace GhostBusters_Forms.View.Tech
             }
         }
 
-        private void BtnConfig_Click(object sender, EventArgs e)
-        {
-            ConfigAdm formC = new ConfigAdm(usuario);
-            formC.Show();
-        }
-
         private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             AlteraPic alteraPic = new AlteraPic(usuario);

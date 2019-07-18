@@ -23,7 +23,6 @@ namespace GhostBusters_Forms.View.Usuário_Comum
         {
             InitializeComponent();
             usuario = _usuario;
-
         }
 
         public void AlteraPic_Load(object sender, EventArgs e)
@@ -34,9 +33,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
                 using (MemoryStream memory = new MemoryStream(bytes))
                 {
                     pictureImagem.Image = Image.FromStream(memory); 
-
                }
-
             }
         }
 
@@ -46,13 +43,8 @@ namespace GhostBusters_Forms.View.Usuário_Comum
             {
                 return openFileDialog;
             }
-
             return null;
         }
-
-      
-      
-   
         private void BtnOpenBase_Click(object sender, EventArgs e)
         {
             AbrirImagem();
@@ -66,7 +58,6 @@ namespace GhostBusters_Forms.View.Usuário_Comum
                 string location = fileDialog.FileName;
                 pictureImagem.ImageLocation = location;
                 pictureImagem.Load();
-
             }
         }
 
@@ -75,17 +66,16 @@ namespace GhostBusters_Forms.View.Usuário_Comum
             codigo_imagem = usuario.Foto.codigo_imagem,
             nomeImagem = file.Name,
             BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName))
-          
         };
 
         private void BtnSaveBase_Click(object sender, EventArgs e)
         {
-           
             if (pictureImagem.ImageLocation != null)
             {
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);
                 new ImagemController().Cadastro(SalvarImagemBase64(file));
             }
+            this.Close();
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -94,11 +84,8 @@ namespace GhostBusters_Forms.View.Usuário_Comum
             byte[] bytes = Convert.FromBase64String(imagem.BaseData);
             using (MemoryStream ms = new MemoryStream(bytes))
             {
-
                 pictureImagem.Image = Image.FromStream(ms);
             }
-
-
         }
     }
 }

@@ -37,6 +37,8 @@ namespace GhostBusters_Forms
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.lbApresentacao = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbErro = new System.Windows.Forms.Label();
+            this.BtVisSenha = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@ namespace GhostBusters_Forms
             this.lbSenha.AutoSize = true;
             this.lbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSenha.ForeColor = System.Drawing.Color.Black;
-            this.lbSenha.Location = new System.Drawing.Point(252, 221);
+            this.lbSenha.Location = new System.Drawing.Point(252, 242);
             this.lbSenha.Name = "lbSenha";
             this.lbSenha.Size = new System.Drawing.Size(88, 29);
             this.lbSenha.TabIndex = 10;
@@ -69,7 +71,7 @@ namespace GhostBusters_Forms
             // tbSenha
             // 
             this.tbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSenha.Location = new System.Drawing.Point(346, 218);
+            this.tbSenha.Location = new System.Drawing.Point(346, 239);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(221, 35);
@@ -81,7 +83,7 @@ namespace GhostBusters_Forms
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lbUsuario.Location = new System.Drawing.Point(244, 142);
+            this.lbUsuario.Location = new System.Drawing.Point(242, 189);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(102, 29);
             this.lbUsuario.TabIndex = 8;
@@ -91,10 +93,11 @@ namespace GhostBusters_Forms
             // 
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUsuario.Location = new System.Drawing.Point(352, 140);
+            this.tbUsuario.Location = new System.Drawing.Point(350, 187);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(221, 35);
             this.tbUsuario.TabIndex = 0;
+            this.tbUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbUsuario_KeyUp);
             // 
             // lbApresentacao
             // 
@@ -117,6 +120,30 @@ namespace GhostBusters_Forms
             this.panel1.Size = new System.Drawing.Size(802, 82);
             this.panel1.TabIndex = 14;
             // 
+            // lbErro
+            // 
+            this.lbErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbErro.Location = new System.Drawing.Point(365, 161);
+            this.lbErro.Name = "lbErro";
+            this.lbErro.Size = new System.Drawing.Size(181, 23);
+            this.lbErro.TabIndex = 15;
+            this.lbErro.Text = "Email ou senha incorreta!";
+            // 
+            // BtVisSenha
+            // 
+            this.BtVisSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtVisSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtVisSenha.ForeColor = System.Drawing.Color.White;
+            this.BtVisSenha.Location = new System.Drawing.Point(573, 239);
+            this.BtVisSenha.Name = "BtVisSenha";
+            this.BtVisSenha.Size = new System.Drawing.Size(98, 35);
+            this.BtVisSenha.TabIndex = 39;
+            this.BtVisSenha.Text = "Visualizar Senha ";
+            this.BtVisSenha.UseVisualStyleBackColor = false;
+            this.BtVisSenha.MouseEnter += new System.EventHandler(this.BtVisSenha_MouseEnter);
+            this.BtVisSenha.MouseLeave += new System.EventHandler(this.BtVisSenha_MouseLeave);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +151,8 @@ namespace GhostBusters_Forms
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 386);
+            this.Controls.Add(this.BtVisSenha);
+            this.Controls.Add(this.lbErro);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lbSenha);
@@ -149,5 +178,7 @@ namespace GhostBusters_Forms
         private System.Windows.Forms.TextBox tbUsuario;
         private Label lbApresentacao;
         private Panel panel1;
+        private Label lbErro;
+        private Button BtVisSenha;
     }
 }
