@@ -31,6 +31,8 @@ namespace GhostBusters_Forms.Adm
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             lblNomeAd.Text = usuario.NomeUsuario;
             lblEmail.Text = usuario.Email;
+            dgVisualizar.AutoGenerateColumns = false;
+            dgVisualizar.DataSource = new ChamadoController().Findall();
             
         }
         private void LoadImagem()

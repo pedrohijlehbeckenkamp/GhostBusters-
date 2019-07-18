@@ -46,7 +46,8 @@ namespace GhostBusters_Forms
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            Validar();    
+            Validar();
+            limparLogin();
         }
 
         private void TbSenha_KeyUp(object sender, KeyEventArgs e)

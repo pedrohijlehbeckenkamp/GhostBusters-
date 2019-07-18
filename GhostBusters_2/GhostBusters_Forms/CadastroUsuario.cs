@@ -150,7 +150,7 @@ namespace GhostBusters_Forms
             {
 
               pictureImagem.Image = Image.FromStream(ms);
-            }    
+            }  
         }
         private void ClearImagem_Click(object sender, EventArgs e)
         {
