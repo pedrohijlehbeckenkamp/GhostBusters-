@@ -1,6 +1,7 @@
 ﻿using GhostBusters_Forms.Controller;
 using GhostBusters_Forms.Model;
 using GhostBusters_Forms.View.Categoria;
+using GhostBusters_Forms.View.PerfilP;
 using GhostBusters_Forms.View.Status;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,11 @@ namespace GhostBusters_Forms.View.Adm
                 var lista = new CategoriaController().FindAll();
                 dgVisualizar.DataSource = lista;
             }
+            else if (operacao == "Perfil")
+            {
+                var lista = new PerfilController().FindAll();
+                dgVisualizar.DataSource = lista;
+            }
             else if (operacao == "Status")
             {
                 var lista = new StatusController().FindAll();
@@ -87,6 +93,11 @@ namespace GhostBusters_Forms.View.Adm
             operacao = "Status";
             loadDataGrid();
         }
+        private void BtnPerfil_Click(object sender, EventArgs e)
+        {
+            operacao = "Perfil";
+            loadDataGrid();
+        }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
@@ -115,6 +126,18 @@ namespace GhostBusters_Forms.View.Adm
                     this.loadDataGrid();
                 };
 
+                menu.Show();
+                this.Hide();
+            }
+            else if (operacao == "Perfil")
+            {
+                var menu = new CadastroPerfil();
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    this.loadDataGrid();
+
+                };
                 menu.Show();
                 this.Hide();
             }
@@ -153,6 +176,21 @@ namespace GhostBusters_Forms.View.Adm
                 menu.Show();
                 this.Hide();
             }
+            else if(operacao == "Perfil")
+            {
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+
+                var menu = new CadastroPerfil((PerfilModel)linha);
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    this.loadDataGrid();
+                };
+
+                menu.Show();
+                this.Hide();
+
+            }
             else if (operacao == "")
             {
                 MessageBox.Show("Escolha o tipo de visualização e depois clique na operação desejada!");
@@ -173,6 +211,13 @@ namespace GhostBusters_Forms.View.Adm
                 new StatusController().Excluir((StatusModel)linha);
                 loadDataGrid();
             }
+            else if (operacao == "Perfil")
+            {
+                new PerfilController().Excluir((PerfilModel)linha);
+                loadDataGrid();
+            }
         }
+
+
     }
 }

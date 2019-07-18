@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
             this.btnCategoria = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnStatus = new System.Windows.Forms.Button();
+            this.btnPerfil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,18 +47,18 @@
             this.dgVisualizar.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgVisualizar.Location = new System.Drawing.Point(49, 96);
-            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4);
             this.dgVisualizar.MultiSelect = false;
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
@@ -74,9 +75,9 @@
             this.btnCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.White;
             this.btnCategoria.Location = new System.Drawing.Point(49, 15);
-            this.btnCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(169, 54);
+            this.btnCategoria.Size = new System.Drawing.Size(136, 54);
             this.btnCategoria.TabIndex = 5;
             this.btnCategoria.Text = "Visualizar categoria";
             this.btnCategoria.UseVisualStyleBackColor = false;
@@ -89,7 +90,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(455, 190);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(144, 54);
             this.btnEditar.TabIndex = 6;
@@ -104,7 +105,7 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(455, 96);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(144, 54);
             this.btnCadastrar.TabIndex = 9;
@@ -119,7 +120,7 @@
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Location = new System.Drawing.Point(455, 290);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(144, 54);
             this.btnExcluir.TabIndex = 10;
@@ -133,14 +134,29 @@
             this.btnStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStatus.ForeColor = System.Drawing.Color.White;
-            this.btnStatus.Location = new System.Drawing.Point(260, 15);
-            this.btnStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStatus.Location = new System.Drawing.Point(193, 15);
+            this.btnStatus.Margin = new System.Windows.Forms.Padding(4);
             this.btnStatus.Name = "btnStatus";
-            this.btnStatus.Size = new System.Drawing.Size(169, 54);
+            this.btnStatus.Size = new System.Drawing.Size(136, 54);
             this.btnStatus.TabIndex = 11;
             this.btnStatus.Text = "Visualizar status";
             this.btnStatus.UseVisualStyleBackColor = false;
             this.btnStatus.Click += new System.EventHandler(this.BtnStatus_Click);
+            // 
+            // btnPerfil
+            // 
+            this.btnPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPerfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.ForeColor = System.Drawing.Color.White;
+            this.btnPerfil.Location = new System.Drawing.Point(363, 15);
+            this.btnPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Size = new System.Drawing.Size(136, 54);
+            this.btnPerfil.TabIndex = 12;
+            this.btnPerfil.Text = "Visualizar perfil";
+            this.btnPerfil.UseVisualStyleBackColor = false;
+            this.btnPerfil.Click += new System.EventHandler(this.BtnPerfil_Click);
             // 
             // ConfigAdm
             // 
@@ -148,6 +164,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(644, 379);
+            this.Controls.Add(this.btnPerfil);
             this.Controls.Add(this.btnStatus);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
@@ -155,7 +172,7 @@
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.dgVisualizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConfigAdm";
             this.Text = "Configurações ";
             this.Load += new System.EventHandler(this.ConfigAdm_Load);
@@ -172,5 +189,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnStatus;
+        private System.Windows.Forms.Button btnPerfil;
     }
 }
