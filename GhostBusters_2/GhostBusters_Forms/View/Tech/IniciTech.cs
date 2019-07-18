@@ -50,5 +50,11 @@ namespace GhostBusters_Forms.View.Tech
             ConfigAdm formC = new ConfigAdm(usuario);
             formC.Show();
         }
+
+        private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AlteraPic alteraPic = new AlteraPic(usuario);
+            alteraPic.Show();
+        }
     }
 }

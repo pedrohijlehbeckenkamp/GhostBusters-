@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace GhostBusters_Forms.Model
 {
-    public class Perfil
+    public class ImagemModel
     {
-        public int Codigo { get; set; }
-        public string nomePerfil { get; set; }
+        public int codigo_imagem { get; set; }
+        public string nomeImagem { get; set; }
+        public string BaseData { get; set; }
+
     }
 }

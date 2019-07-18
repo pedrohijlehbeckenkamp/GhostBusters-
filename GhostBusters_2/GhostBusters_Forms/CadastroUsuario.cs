@@ -28,7 +28,7 @@ namespace GhostBusters_Forms
         {
             if (Valida())
             {
-                Imagem image = null;
+                ImagemModel image = null;
                 if (pictureImagem.ImageLocation != null)
                 {
                     FileInfo file = new FileInfo(pictureImagem.ImageLocation);
@@ -42,7 +42,7 @@ namespace GhostBusters_Forms
 
         }
 
-        public Usuario GetUsuario(Imagem imagem) => new Usuario
+        public Usuario GetUsuario(ImagemModel imagem) => new Usuario
         {
             NomeUsuario = tbNome.Text,
             Email = tbEmail.Text,
@@ -125,7 +125,7 @@ namespace GhostBusters_Forms
             }
 
         }
-        private Imagem SalvarImagemBase64(FileInfo file) => new Imagem
+        private ImagemModel SalvarImagemBase64(FileInfo file) => new ImagemModel
         {
             //Imagem image = new Imagem();
             nomeImagem = file.Name,

@@ -1,6 +1,6 @@
-﻿namespace GhostBusters_Forms.View.Categoria
+﻿namespace GhostBusters_Forms.View.PerfilP
 {
-    partial class CadastrarCategoria
+    partial class CadastroPerfil
     {
         /// <summary>
         /// Required designer variable.
@@ -39,11 +39,11 @@
             this.btnSaveCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSaveCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnSaveCategoria.Location = new System.Drawing.Point(404, 42);
+            this.btnSaveCategoria.Location = new System.Drawing.Point(417, 35);
             this.btnSaveCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveCategoria.Name = "btnSaveCategoria";
             this.btnSaveCategoria.Size = new System.Drawing.Size(107, 62);
-            this.btnSaveCategoria.TabIndex = 29;
+            this.btnSaveCategoria.TabIndex = 32;
             this.btnSaveCategoria.Text = "Save";
             this.btnSaveCategoria.UseVisualStyleBackColor = false;
             this.btnSaveCategoria.Click += new System.EventHandler(this.BtnSaveCategoria_Click);
@@ -52,23 +52,23 @@
             // 
             this.lbNomeCateg.AutoSize = true;
             this.lbNomeCateg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeCateg.Location = new System.Drawing.Point(41, 58);
+            this.lbNomeCateg.Location = new System.Drawing.Point(54, 51);
             this.lbNomeCateg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNomeCateg.Name = "lbNomeCateg";
             this.lbNomeCateg.Size = new System.Drawing.Size(70, 25);
-            this.lbNomeCateg.TabIndex = 30;
+            this.lbNomeCateg.TabIndex = 33;
             this.lbNomeCateg.Text = "Nome:";
             // 
             // tbNomeCateg
             // 
             this.tbNomeCateg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNomeCateg.Location = new System.Drawing.Point(119, 58);
+            this.tbNomeCateg.Location = new System.Drawing.Point(132, 51);
             this.tbNomeCateg.Margin = new System.Windows.Forms.Padding(4);
             this.tbNomeCateg.Name = "tbNomeCateg";
             this.tbNomeCateg.Size = new System.Drawing.Size(266, 30);
-            this.tbNomeCateg.TabIndex = 28;
+            this.tbNomeCateg.TabIndex = 31;
             // 
-            // CadastrarCategoria
+            // CadastroPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -77,10 +77,8 @@
             this.Controls.Add(this.btnSaveCategoria);
             this.Controls.Add(this.lbNomeCateg);
             this.Controls.Add(this.tbNomeCateg);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "CadastrarCategoria";
-            this.Text = "Cadastro de categoria";
+            this.Name = "CadastroPerfil";
+            this.Text = "CadastroPerfil";
             this.ResumeLayout(false);
             this.PerformLayout();
 

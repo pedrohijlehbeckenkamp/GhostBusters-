@@ -126,7 +126,6 @@ namespace GhostBusters_Forms.View.Adm
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {   
-
             if (operacao == "Categoria")
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
@@ -137,7 +136,6 @@ namespace GhostBusters_Forms.View.Adm
                     this.Show();
                     this.loadDataGrid();
                 };
-
                 menu.Show();
                 this.Hide();
             }
