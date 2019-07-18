@@ -67,7 +67,6 @@ namespace GhostBusters_Forms.View.Ticket
             nomeAnexo = file.Name,
             BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName)),
             Extensao= file.Extension
-           // chamadoModel = null,
         };
         private void butOpenAnexo_Click(object sender, EventArgs e)
         {
@@ -106,6 +105,20 @@ namespace GhostBusters_Forms.View.Ticket
         private void ButClearAnexo_Click(object sender, EventArgs e)
         {
            // textNomeAnexo.Text = "";
+        }
+
+        private void DgAddAnexo_DoubleClick(object sender, EventArgs e)
+        {
+           /* var anexoSelecionado = dgAddAnexo.CurrentRow.DataBoundItem;
+            if (anexoSelecionado != null && anexoSelecionado is Anexo)
+            {
+                var anexo = (Anexo)anexoSelecionado;
+                System.Diagnostics.Process.Start(anexo);//Abre o anexo pelo o windows 
+            }
+            /* if (textNomeAnexo.Text != null)
+             {
+                System.Diagnostics.Process.Start(textNomeAnexo.Text);//Abre o anexo pelo o windows 
+             } */
         }
     }
 }

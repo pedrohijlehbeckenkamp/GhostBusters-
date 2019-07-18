@@ -168,10 +168,11 @@
             this.dgAddAnexo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeAnexo,
             this.Extensao});
-            this.dgAddAnexo.Location = new System.Drawing.Point(540, 136);
+            this.dgAddAnexo.Location = new System.Drawing.Point(556, 136);
             this.dgAddAnexo.Name = "dgAddAnexo";
-            this.dgAddAnexo.Size = new System.Drawing.Size(244, 142);
+            this.dgAddAnexo.Size = new System.Drawing.Size(244, 147);
             this.dgAddAnexo.TabIndex = 38;
+            this.dgAddAnexo.DoubleClick += new System.EventHandler(this.DgAddAnexo_DoubleClick);
             // 
             // nomeAnexo
             // 
