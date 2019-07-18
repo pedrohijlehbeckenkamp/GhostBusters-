@@ -59,11 +59,6 @@ namespace GhostBusters_Forms.View.Status
                 this.Close();
             }
         }
-        public StatusModel GetCadastrarStatus() => new StatusModel
-        {
-            NomeStatus = tbNomeS.Text,
-            perfil = (Perfil)CbListarPerfil.SelectedItem
-        };
         private StatusModel UpDateS() => new StatusModel()
         {
             codigo_status = status.codigo_status,
