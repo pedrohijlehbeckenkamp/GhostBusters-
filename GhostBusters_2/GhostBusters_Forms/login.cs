@@ -69,12 +69,11 @@ namespace GhostBusters_Forms
         {
             var login = new UsuarioController().ValidaLogin(GetLogin().Email, GetLogin().Senha);
 
-            var menuAdmin = new TelaPrincipalAdm(login);
-            var menuUsuario = new InicUsuarioComum(login);
-            var menuTech = new IniciTech(login);
-
             if (login != null)
             {
+                var menuAdmin = new TelaPrincipalAdm(login);
+                var menuUsuario = new InicUsuarioComum(login);
+                var menuTech = new IniciTech(login);
                 if (login.perfil.nomePerfil == "Admin")
                 {
                     menuAdmin.FormClosed += (x, y) =>

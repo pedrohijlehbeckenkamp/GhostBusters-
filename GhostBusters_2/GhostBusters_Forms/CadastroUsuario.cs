@@ -29,20 +29,13 @@ namespace GhostBusters_Forms
             if (Valida())
             {
                 ImagemModel image = null;
-               // var imagem = new ImagemController().BuscaNome("default.png");
-                //byte[] bytes = Convert.FromBase64String(imagem.BaseData);
-                //File.WriteAllBytes("C:\\" + imagem.nomeImagem, bytes);
+
 
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-               // if (pictureImagem.ImageLocation != ("C:\\" + imagem.nomeImagem))
-                //{ 
-                   image = new ImagemController().Cadastro(SalvarImagemBase64(file));
-
-                //}else
-                  // image = new ImagemController().Cadastro(SalvarImagemBase64(file));
+                image = new ImagemController().Cadastro(SalvarImagemBase64(file));
 
                 new UsuarioController().Cadastro(GetUsuario(image));
-                File.Delete("C:\\default.png");
+                File.Delete("C:\\GhostBusters\\" + image.nomeImagem);
                 MessageBox.Show("Casdastro feito com sucesso");
                 this.Close();
             }
@@ -151,12 +144,13 @@ namespace GhostBusters_Forms
         {
             var imagem = new ImagemController().BuscaNome("default.png");
             byte[] bytes = Convert.FromBase64String(imagem.BaseData);
-            File.WriteAllBytes("C:\\" + imagem.nomeImagem, bytes);
-            pictureImagem.ImageLocation = ("C:\\" + imagem.nomeImagem);
-           // using (MemoryStream ms = new MemoryStream(bytes))
-           // {
-           //  pictureImagem.Image = Image.FromStream(ms);
-           //}  
+            File.WriteAllBytes("C:\\Teste\\" + imagem.nomeImagem, bytes);
+            pictureImagem.ImageLocation = ("C:\\Teste\\" + imagem.nomeImagem);
+
+            // using (MemoryStream ms = new MemoryStream(bytes))
+            // {
+            //  pictureImagem.Image = Image.FromStream(ms);
+            //}  
         }
         private void ClearImagem_Click(object sender, EventArgs e)
         {
