@@ -83,7 +83,6 @@ namespace GhostBusters_Forms.View.Ticket
         private void ButAddAnexo_Click(object sender, EventArgs e)
         {
             FileInfo file = new FileInfo(AbrirAnexo());
-            //var anexo = new AnexoController().CadastroOrUpdate(GetAnexo(file));
             listaAnexo.Add(GetAnexo(file));
         }
         private string AbrirAnexo()
@@ -119,10 +118,10 @@ namespace GhostBusters_Forms.View.Ticket
         {
             var fileanexo = (Anexo)dgAddAnexo.CurrentRow.DataBoundItem;
             byte[] bytes = Convert.FromBase64String(fileanexo.BaseData);
-            File.WriteAllBytes("C:\\GhostBusters\\" + fileanexo.nomeAnexo, bytes);
-            System.Diagnostics.Process.Start("C:\\GhostBusters\\" + fileanexo.nomeAnexo);
+            File.WriteAllBytes("C:\\Teste\\" + fileanexo.nomeAnexo, bytes);
+            System.Diagnostics.Process.Start("C:\\Teste\\" + fileanexo.nomeAnexo);
             MessageBox.Show("Abrindo arquivo");
-            File.Delete("C:\\GhostBusters\\" + fileanexo.nomeAnexo);
+            File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
 
         }
     }

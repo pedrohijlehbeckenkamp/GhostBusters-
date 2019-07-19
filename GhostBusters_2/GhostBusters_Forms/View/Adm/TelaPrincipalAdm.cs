@@ -28,6 +28,11 @@ namespace GhostBusters_Forms.Adm
 
         private void TelaPrincipalAdm_Load(object sender, EventArgs e)
         {
+
+            loadTelaprincipal();
+        }
+        public void loadTelaprincipal()
+        {
             LoadImagem();
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             lblNomeAd.Text = usuario.NomeUsuario;
@@ -43,6 +48,7 @@ namespace GhostBusters_Forms.Adm
             using (MemoryStream ms = new MemoryStream(bytes))
             {
                 pbPerfil.Image = Image.FromStream(ms);
+
             }
         }
 
@@ -52,6 +58,7 @@ namespace GhostBusters_Forms.Adm
             menu.FormClosed += (x, y) =>
             {
                 this.Show();
+                loadTelaprincipal();
             };
             menu.Show();
             this.Hide();
@@ -63,6 +70,7 @@ namespace GhostBusters_Forms.Adm
             menu.FormClosed += (x, y) =>
             {
                 this.Show();
+                loadTelaprincipal();
             };
             menu.Show();
             this.Hide();
@@ -83,6 +91,8 @@ namespace GhostBusters_Forms.Adm
             menu.FormClosed += (x, y) =>
             {
                 this.Show();
+                loadTelaprincipal();
+                //LoadImagem()
             };
             menu.Show();
             this.Hide();
