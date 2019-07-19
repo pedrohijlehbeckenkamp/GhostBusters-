@@ -29,17 +29,23 @@ namespace GhostBusters_Forms
             if (Valida())
             {
                 ImagemModel image = null;
-                if (pictureImagem.ImageLocation != null)
-                {
-                    FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-                    image = new ImagemController().Cadastro(SalvarImagemBase64(file));
-                }
+               // var imagem = new ImagemController().BuscaNome("default.png");
+                //byte[] bytes = Convert.FromBase64String(imagem.BaseData);
+                //File.WriteAllBytes("C:\\" + imagem.nomeImagem, bytes);
+
+                FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+               // if (pictureImagem.ImageLocation != ("C:\\" + imagem.nomeImagem))
+                //{ 
+                   image = new ImagemController().Cadastro(SalvarImagemBase64(file));
+
+                //}else
+                  // image = new ImagemController().Cadastro(SalvarImagemBase64(file));
+
                 new UsuarioController().Cadastro(GetUsuario(image));
+                File.Delete("C:\\default.png");
                 MessageBox.Show("Casdastro feito com sucesso");
                 this.Close();
             }
-
-
         }
 
         public Usuario GetUsuario(ImagemModel imagem) => new Usuario
@@ -47,8 +53,8 @@ namespace GhostBusters_Forms
             NomeUsuario = tbNome.Text,
             Email = tbEmail.Text,
             Senha = tbSenha.Text,
-            perfil = new PerfilController().BuscaNome(CbListarPerfil.Text), 
-            Foto = imagem      
+            perfil = new PerfilController().BuscaNome(CbListarPerfil.Text),
+            Foto = imagem
         };
 
         public bool Valida()
@@ -123,7 +129,6 @@ namespace GhostBusters_Forms
                 pictureImagem.ImageLocation = location;
                 pictureImagem.Load();
             }
-
         }
         private ImagemModel SalvarImagemBase64(FileInfo file) => new ImagemModel
         {
@@ -146,12 +151,12 @@ namespace GhostBusters_Forms
         {
             var imagem = new ImagemController().BuscaNome("default.png");
             byte[] bytes = Convert.FromBase64String(imagem.BaseData);
-            using (MemoryStream ms = new MemoryStream(bytes))
-            {
-
-              pictureImagem.Image = Image.FromStream(ms);
-                
-            }  
+            File.WriteAllBytes("C:\\" + imagem.nomeImagem, bytes);
+            pictureImagem.ImageLocation = ("C:\\" + imagem.nomeImagem);
+           // using (MemoryStream ms = new MemoryStream(bytes))
+           // {
+           //  pictureImagem.Image = Image.FromStream(ms);
+           //}  
         }
         private void ClearImagem_Click(object sender, EventArgs e)
         {
