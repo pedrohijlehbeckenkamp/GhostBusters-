@@ -57,6 +57,12 @@
     <Compile Include="Controller\CategoriaController.cs" />
     <Compile Include="Controller\ChamadoController.cs" />
     <Compile Include="Controller\StatusController.cs" />
+    <Compile Include="EditarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarUsuarios.Designer.cs">
+      <DependentUpon>EditarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mapper\AnexoMapper.cs" />
     <Compile Include="Mapper\CategoriaMapper.cs" />
     <Compile Include="Mapper\ChamadoMapper.cs" />
@@ -82,6 +88,12 @@
     </Compile>
     <Compile Include="View\PerfilP\CadastroPerfil.Designer.cs">
       <DependentUpon>CadastroPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tech\Finalizacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tech\Finalizacao.Designer.cs">
+      <DependentUpon>Finalizacao.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Tech\IniciTech.cs">
       <SubType>Form</SubType>
@@ -150,6 +162,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarUsuarios.resx">
+      <DependentUpon>EditarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

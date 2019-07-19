@@ -44,6 +44,7 @@
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tecnico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkAlteraSenha = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -54,19 +55,22 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(548, 110);
+            this.btnConfig.Location = new System.Drawing.Point(688, 144);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfig.Name = "btnConfig";
-            this.btnConfig.Size = new System.Drawing.Size(127, 44);
+            this.btnConfig.Size = new System.Drawing.Size(202, 66);
             this.btnConfig.TabIndex = 12;
-            this.btnConfig.Text = "Configurações";
+            this.btnConfig.Text = "Finalizar atendimento";
             this.btnConfig.UseVisualStyleBackColor = false;
+            this.btnConfig.Click += new System.EventHandler(this.BtnConfig_Click);
             // 
             // pbPerfil
             // 
             this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbPerfil.Location = new System.Drawing.Point(32, 26);
+            this.pbPerfil.Location = new System.Drawing.Point(43, 23);
+            this.pbPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbPerfil.Name = "pbPerfil";
-            this.pbPerfil.Size = new System.Drawing.Size(129, 128);
+            this.pbPerfil.Size = new System.Drawing.Size(171, 157);
             this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPerfil.TabIndex = 27;
             this.pbPerfil.TabStop = false;
@@ -76,10 +80,9 @@
             this.lblTextD.AllowDrop = true;
             this.lblTextD.AutoSize = true;
             this.lblTextD.ForeColor = System.Drawing.Color.Black;
-            this.lblTextD.Location = new System.Drawing.Point(473, 19);
-            this.lblTextD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTextD.Location = new System.Drawing.Point(594, 23);
             this.lblTextD.Name = "lblTextD";
-            this.lblTextD.Size = new System.Drawing.Size(118, 13);
+            this.lblTextD.Size = new System.Drawing.Size(156, 17);
             this.lblTextD.TabIndex = 48;
             this.lblTextD.Text = "Data e hora do acesso:";
             // 
@@ -87,10 +90,9 @@
             // 
             this.lblEmailTec.AutoSize = true;
             this.lblEmailTec.ForeColor = System.Drawing.Color.Black;
-            this.lblEmailTec.Location = new System.Drawing.Point(194, 71);
-            this.lblEmailTec.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmailTec.Location = new System.Drawing.Point(259, 87);
             this.lblEmailTec.Name = "lblEmailTec";
-            this.lblEmailTec.Size = new System.Drawing.Size(39, 13);
+            this.lblEmailTec.Size = new System.Drawing.Size(48, 17);
             this.lblEmailTec.TabIndex = 47;
             this.lblEmailTec.Text = "EMAIL";
             // 
@@ -98,20 +100,21 @@
             // 
             this.lblNomeTec.AutoSize = true;
             this.lblNomeTec.ForeColor = System.Drawing.Color.Black;
-            this.lblNomeTec.Location = new System.Drawing.Point(193, 34);
-            this.lblNomeTec.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNomeTec.Location = new System.Drawing.Point(257, 42);
             this.lblNomeTec.Name = "lblNomeTec";
-            this.lblNomeTec.Size = new System.Drawing.Size(39, 13);
+            this.lblNomeTec.Size = new System.Drawing.Size(49, 17);
             this.lblNomeTec.TabIndex = 46;
             this.lblNomeTec.Text = "NOME";
+    
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(616, 19);
+            this.lblDate.Location = new System.Drawing.Point(757, 23);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
+            this.lblDate.Size = new System.Drawing.Size(38, 17);
             this.lblDate.TabIndex = 45;
             this.lblDate.Text = "Date";
             // 
@@ -120,10 +123,9 @@
             this.linkLEdit.AutoSize = true;
             this.linkLEdit.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.linkLEdit.LinkColor = System.Drawing.Color.Navy;
-            this.linkLEdit.Location = new System.Drawing.Point(29, 157);
-            this.linkLEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLEdit.Location = new System.Drawing.Point(50, 193);
             this.linkLEdit.Name = "linkLEdit";
-            this.linkLEdit.Size = new System.Drawing.Size(58, 13);
+            this.linkLEdit.Size = new System.Drawing.Size(78, 17);
             this.linkLEdit.TabIndex = 49;
             this.linkLEdit.TabStop = true;
             this.linkLEdit.Text = "Alterar foto";
@@ -155,13 +157,14 @@
             this.Descricao,
             this.Tecnico});
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgVisualizar.Location = new System.Drawing.Point(32, 188);
+            this.dgVisualizar.Location = new System.Drawing.Point(43, 263);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgVisualizar.MultiSelect = false;
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(644, 251);
+            this.dgVisualizar.Size = new System.Drawing.Size(859, 277);
             this.dgVisualizar.TabIndex = 50;
             // 
             // Data
@@ -215,12 +218,26 @@
             this.Tecnico.Name = "Tecnico";
             this.Tecnico.Width = 125;
             // 
+            // linkAlteraSenha
+            // 
+            this.linkAlteraSenha.AutoSize = true;
+            this.linkAlteraSenha.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkAlteraSenha.LinkColor = System.Drawing.Color.Navy;
+            this.linkAlteraSenha.Location = new System.Drawing.Point(50, 230);
+            this.linkAlteraSenha.Name = "linkAlteraSenha";
+            this.linkAlteraSenha.Size = new System.Drawing.Size(93, 17);
+            this.linkAlteraSenha.TabIndex = 51;
+            this.linkAlteraSenha.TabStop = true;
+            this.linkAlteraSenha.Text = "Alterar senha";
+            this.linkAlteraSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkAlteraSenha_LinkClicked);
+            // 
             // IniciTech
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(715, 450);
+            this.ClientSize = new System.Drawing.Size(953, 554);
+            this.Controls.Add(this.linkAlteraSenha);
             this.Controls.Add(this.dgVisualizar);
             this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.lblTextD);
@@ -229,7 +246,7 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.pbPerfil);
             this.Controls.Add(this.btnConfig);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "IniciTech";
             this.Text = "Perfil Tecnico";
             this.Load += new System.EventHandler(this.InciTechcs_Load);
@@ -257,5 +274,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tecnico;
+        private System.Windows.Forms.LinkLabel linkAlteraSenha;
     }
 }

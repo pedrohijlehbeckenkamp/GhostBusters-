@@ -50,5 +50,18 @@ namespace GhostBusters_Forms.View.Tech
             AlteraPic alteraPic = new AlteraPic(usuario);
             alteraPic.Show();
         }
+
+        private void BtnConfig_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LinkAlteraSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EditarUsuarios form = new EditarUsuarios(usuario);
+            form.Show();
+        }
+
+
     }
 }
