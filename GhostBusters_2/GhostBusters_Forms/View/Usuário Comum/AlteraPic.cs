@@ -74,11 +74,29 @@ namespace GhostBusters_Forms.View.Usuário_Comum
             {
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);
                 new ImagemController().Cadastro(SalvarImagemBase64(file));
+                //new UsuarioController().Cadastro(AtualizarFoto(file));
             }
             this.Close();
         }
 
+        /*private Usuario AtualizarFoto(FileInfo file)
+        {
+            Usuario usu = new Usuario();
+
+            usu.Foto.BaseData = file;
+        }*/
+
         private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            var imagem = new ImagemController().BuscaNome("default.png");
+            byte[] bytes = Convert.FromBase64String(imagem.BaseData);
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                pictureImagem.Image = Image.FromStream(ms);
+            }
+        }
+
+        private void AlteraImagem()
         {
             var imagem = new ImagemController().BuscaNome("default.png");
             byte[] bytes = Convert.FromBase64String(imagem.BaseData);

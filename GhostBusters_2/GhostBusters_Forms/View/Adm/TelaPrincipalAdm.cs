@@ -42,7 +42,6 @@ namespace GhostBusters_Forms.Adm
             byte[] bytes = Convert.FromBase64String(imagem.BaseData);
             using (MemoryStream ms = new MemoryStream(bytes))
             {
-
                 pbPerfil.Image = Image.FromStream(ms);
             }
         }
@@ -54,7 +53,6 @@ namespace GhostBusters_Forms.Adm
             {
                 this.Show();
             };
-
             menu.Show();
             this.Hide();
         }
@@ -66,7 +64,6 @@ namespace GhostBusters_Forms.Adm
             {
                 this.Show();
             };
-
             menu.Show();
             this.Hide();
         }
@@ -79,8 +76,16 @@ namespace GhostBusters_Forms.Adm
 
         private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AlteraPic alteraPic = new AlteraPic(usuario);
-            alteraPic.Show();
+            /*AlteraPic alteraPic = new AlteraPic(usuario);
+            alteraPic.Show();*/
+
+            var menu = new AlteraPic(usuario);
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+            };
+            menu.Show();
+            this.Hide();
         }
 
         private void DgVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
