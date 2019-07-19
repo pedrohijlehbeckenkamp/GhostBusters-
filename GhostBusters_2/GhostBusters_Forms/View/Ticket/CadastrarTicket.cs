@@ -17,6 +17,7 @@ namespace GhostBusters_Forms.View.Ticket
     {
         private OpenFileDialog openFileDialog = new OpenFileDialog();
         private Usuario usuarioLogin;
+        private ChamadoModel Chamado;
         private BindingList<Anexo> listaAnexo = new BindingList<Anexo>();
         public CadastrarTicket(Usuario _usuario)
         {
@@ -25,7 +26,27 @@ namespace GhostBusters_Forms.View.Ticket
             usuarioLogin = _usuario;
         }
 
+        public CadastrarTicket(Usuario _usuario, ChamadoModel _ticket)
+        {
+            InitializeComponent();
+            CenterToParent();
+            usuarioLogin = _usuario;
+            Chamado = _ticket;
+
+            tbTitulo.Text = Chamado.Titulo;
+            tbDescricao.Text = Chamado.Descricao;
+            cbCategoria.DataSource = new CategoriaController().FindAll();
+            cbCategoria.DisplayMember = "NomeCategoria";
+            dgAddAnexo.AutoGenerateColumns = true; 
+            dgAddAnexo.DataSource = Chamado.anexos;
+        }
+
         private void CadastrarTicket_Load(object sender, EventArgs e)
+        {
+            LoadTicket();
+        }
+
+        private void LoadTicket()
         {
             lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             cbCategoria.DataSource = new CategoriaController().FindAll();
@@ -44,11 +65,19 @@ namespace GhostBusters_Forms.View.Ticket
 
         public void SaveChamado()
         {
+            if (Chamado != null)
+            {
+                new ChamadoController().Cadastro(GetChamado());
+                this.Close();
+            }
+            else
+            {
+                new ChamadoController().Cadastro(UpdateTicket());
+                this.Close();
+            }
             //Anexo anexo = null;
-           // ChamadoModel chamado;
-            new ChamadoController().Cadastro(GetChamado());
-            
-           // new AnexoController().AddChamado(chamado);
+            // ChamadoModel chamado;            
+            // new AnexoController().AddChamado(chamado);
         }
 
         public ChamadoModel GetChamado() => new ChamadoModel()
@@ -62,6 +91,17 @@ namespace GhostBusters_Forms.View.Ticket
             categoria = (CategoriaModel)cbCategoria.SelectedItem,
             Owner = usuarioLogin            
         };
+        public ChamadoModel UpdateTicket() => new ChamadoModel()
+        {
+            Data_Chamado = DateTime.Now,
+            Data_Chamado_finalizado = DateTime.Now.Date,
+            Titulo = tbTitulo.Text,
+            Descricao = tbDescricao.Text,
+            anexos = listaAnexo.ToList(),
+            statusModel = new StatusController().FindByName("Aguardando Atendimento"),
+            categoria = (CategoriaModel)cbCategoria.SelectedItem,
+            Owner = usuarioLogin
+        };
         public Anexo GetAnexo(FileInfo file) => new Anexo()
         {
             nomeAnexo = file.Name,
@@ -70,7 +110,8 @@ namespace GhostBusters_Forms.View.Ticket
         };
         private void butOpenAnexo_Click(object sender, EventArgs e)
         {
-         }
+
+        }
 
         private OpenFileDialog GetOpenFileDialog()
         {
@@ -122,7 +163,6 @@ namespace GhostBusters_Forms.View.Ticket
             System.Diagnostics.Process.Start("C:\\Teste\\" + fileanexo.nomeAnexo);
             MessageBox.Show("Abrindo arquivo");
             File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
-
         }
     }
 }

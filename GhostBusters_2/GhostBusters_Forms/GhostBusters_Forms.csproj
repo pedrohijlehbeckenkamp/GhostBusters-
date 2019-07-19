@@ -107,6 +107,12 @@
     <Compile Include="View\Ticket\AddTechChamado.Designer.cs">
       <DependentUpon>AddTechChamado.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Ticket\ExcluirChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ticket\ExcluirChamado.Designer.cs">
+      <DependentUpon>ExcluirChamado.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Usuário Comum\AlteraPic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     <EmbeddedResource Include="View\Ticket\AddTechChamado.resx">
       <DependentUpon>AddTechChamado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Ticket\ExcluirChamado.resx">
+      <DependentUpon>ExcluirChamado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Usuário Comum\AlteraPic.resx">
       <DependentUpon>AlteraPic.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +248,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AddChamadoTech.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExcluirChamado.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

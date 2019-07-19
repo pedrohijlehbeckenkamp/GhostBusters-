@@ -19,6 +19,7 @@ namespace GhostBusters_Forms.Adm
     public partial class TelaPrincipalAdm : Form
     {
         private Usuario usuario;
+        private ChamadoModel ticket;
         public TelaPrincipalAdm(Usuario _usuario)
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace GhostBusters_Forms.Adm
 
         private void TelaPrincipalAdm_Load(object sender, EventArgs e)
         {
-
             loadTelaprincipal();
         }
         public void loadTelaprincipal()
@@ -39,7 +39,6 @@ namespace GhostBusters_Forms.Adm
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
             dgVisualizar.DataSource = new ChamadoController().Findall(); ;
-
         }
         private void LoadImagem()
         {
@@ -48,7 +47,6 @@ namespace GhostBusters_Forms.Adm
             using (MemoryStream ms = new MemoryStream(bytes))
             {
                 pbPerfil.Image = Image.FromStream(ms);
-
             }
         }
 
@@ -115,6 +113,24 @@ namespace GhostBusters_Forms.Adm
             }
         }
 
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            ExcluirChamado excluir = new ExcluirChamado();
+            excluir.Show();
+        }
 
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            var linha = dgVisualizar.CurrentRow.DataBoundItem;
+
+            var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
+            {
+                this.Show();
+                loadTelaprincipal();
+                //LoadImagem()
+            };
+            menu.Show();
+            this.Hide();
+        }
     }
 }

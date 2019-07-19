@@ -34,17 +34,9 @@ namespace GhostBusters_Forms.View.Ticket
         {
             try
             {
-
-                /*if (chamado.Tech != null)
-                {
-                    chamado.Tech = null;
-                    new ChamadoController().Cadastro(chamado);
-                }*/
                 chamado.Tech = (Usuario)cbBoxDisponiveis.SelectedItem;
                 new ChamadoController().Cadastro(chamado);
                 this.Close();
-
-
             }
             catch (Exception ex)
             {

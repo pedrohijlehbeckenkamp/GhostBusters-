@@ -19,5 +19,9 @@ namespace GhostBusters_Forms.Controller
         {
             new AnexoRepository().AddChamadoAoAnexo(chamadoModel.MapChamadaEntiy());
         }
+        public void ExcluirAnexo(int id)
+        {
+            new AnexoRepository().Excluir(id);
+        }
     }
 }

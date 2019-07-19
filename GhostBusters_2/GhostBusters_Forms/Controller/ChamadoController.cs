@@ -19,5 +19,13 @@ namespace GhostBusters_Forms.Controller
         {
             return new ChamadoRepository().FindALL().Select(Chamado => Chamado.MapChamadaModel()).ToList();
         }
+        public void ExcluirChamado(ChamadoModel chamado)
+        {
+            for (int i = 0; i < chamado.anexos.Count; i++)
+            {
+                new AnexoController().ExcluirAnexo(chamado.anexos.ToArray()[i].Codigo_Anexo);
+            }
+            new ChamadoRepository().Excluir(chamado.Codigo_chamado);
+        }
     }
 }

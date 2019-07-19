@@ -50,7 +50,7 @@ namespace GhostBusters_Forms
             if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == usuario.Email))
                 || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == usuario.Email))
             {
-                tb
+                //tb
                 //MessageBox.Show("merdaaaa");
 
             }

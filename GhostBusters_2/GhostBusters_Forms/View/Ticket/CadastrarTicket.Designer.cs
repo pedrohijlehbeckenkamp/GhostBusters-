@@ -163,7 +163,7 @@
             this.dgAddAnexo.Name = "dgAddAnexo";
             this.dgAddAnexo.ReadOnly = true;
             this.dgAddAnexo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgAddAnexo.Size = new System.Drawing.Size(244, 147);
+            this.dgAddAnexo.Size = new System.Drawing.Size(243, 144);
             this.dgAddAnexo.TabIndex = 38;
             this.dgAddAnexo.DoubleClick += new System.EventHandler(this.DgAddAnexo_DoubleClick);
             // 
@@ -172,17 +172,20 @@
             this.nomeAnexo.DataPropertyName = "nomeAnexo";
             this.nomeAnexo.HeaderText = "Nome Anexo";
             this.nomeAnexo.Name = "nomeAnexo";
+            this.nomeAnexo.ReadOnly = true;
             // 
             // Extensao
             // 
             this.Extensao.DataPropertyName = "Extensao";
             this.Extensao.HeaderText = "Extensao";
             this.Extensao.Name = "Extensao";
+            this.Extensao.ReadOnly = true;
             // 
             // CadastrarTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(863, 429);
             this.Controls.Add(this.dgAddAnexo);
             this.Controls.Add(this.label1);
