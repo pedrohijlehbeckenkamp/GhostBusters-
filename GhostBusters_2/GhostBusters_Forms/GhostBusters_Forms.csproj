@@ -89,6 +89,12 @@
     <Compile Include="View\Tech\IniciTech.Designer.cs">
       <DependentUpon>IniciTech.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Ticket\AddTechChamado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ticket\AddTechChamado.Designer.cs">
+      <DependentUpon>AddTechChamado.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Usuário Comum\AlteraPic.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\Adm\ConfigAdm.resx">
       <DependentUpon>ConfigAdm.cs</DependentUpon>
@@ -174,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Tech\IniciTech.resx">
       <DependentUpon>IniciTech.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ticket\AddTechChamado.resx">
+      <DependentUpon>AddTechChamado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Usuário Comum\AlteraPic.resx">
       <DependentUpon>AlteraPic.cs</DependentUpon>
@@ -212,6 +222,8 @@
       <Name>GhostBusters_Infra</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\AddChamadoTech.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

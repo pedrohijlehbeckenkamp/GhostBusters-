@@ -19,6 +19,8 @@ namespace GhostBusters_Forms.Mapper
             return new UsuarioEntity()
             {
                 COD_USUARIO = usuario.Codigo_Usuario,
+                COD_IMAGEM= usuario.Codigo_imagem,
+                COD_PERFIL= usuario.Codigo_perfil,
                 NOME = usuario.NomeUsuario,
                 EMAIL = usuario.Email,
                 SENHA = usuario.Senha,
@@ -35,6 +37,8 @@ namespace GhostBusters_Forms.Mapper
             return new Usuario()
             {
                 Codigo_Usuario = usuarioEntity.COD_USUARIO,
+                Codigo_imagem = usuarioEntity.COD_IMAGEM,
+                Codigo_perfil = usuarioEntity.COD_PERFIL,
                 NomeUsuario = usuarioEntity.NOME,
                 Email = usuarioEntity.EMAIL,
                 Senha = usuarioEntity.SENHA,

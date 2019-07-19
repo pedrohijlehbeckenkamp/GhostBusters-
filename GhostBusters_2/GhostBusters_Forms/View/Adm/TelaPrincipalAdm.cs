@@ -22,6 +22,7 @@ namespace GhostBusters_Forms.Adm
         public TelaPrincipalAdm(Usuario _usuario)
         {
             InitializeComponent();
+            CenterToParent();
             usuario = _usuario;
         }
 
@@ -33,7 +34,7 @@ namespace GhostBusters_Forms.Adm
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
             dgVisualizar.DataSource = new ChamadoController().Findall(); ;
-            
+
         }
         private void LoadImagem()
         {
@@ -84,8 +85,19 @@ namespace GhostBusters_Forms.Adm
 
         private void DgVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            MessageBox.Show("Nois");
+            try
+            {
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+
+                AddTechChamado addTech = new AddTechChamado((ChamadoModel)item);
+                addTech.Show();
+                // MessageBox.Show("Nois");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Deu ruim");
+            }
         }
     }
 }

@@ -9,7 +9,9 @@ namespace GhostBusters_Forms.Model
     public class ChamadoModel
     {
         public int Codigo_chamado { get; set; }
-
+        public int codigo_categoria { get; set; }
+        public int codigo_Owner { get; set; }
+        public int? codigo_tech { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public DateTime Data_Chamado { get; set; }

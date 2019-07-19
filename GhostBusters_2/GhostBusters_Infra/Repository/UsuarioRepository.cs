@@ -11,7 +11,11 @@ namespace GhostBusters_Infra.Repository
     {
         public UsuarioEntity findbyLogin(string email, string senha)
         {
-            return context.Set<UsuarioEntity>().FirstOrDefault(x => x.EMAIL == email && x.SENHA == senha );
+            return context.Set<UsuarioEntity>().AsNoTracking().FirstOrDefault(x => x.EMAIL == email && x.SENHA == senha );
+        }
+        public List<UsuarioEntity> findbyPerfil(string perfil)
+        {
+            return context.Set<UsuarioEntity>().AsNoTracking().Where(x => x.PERFIL.NOME == perfil).ToList();
         }
 
         public override UsuarioEntity CadastroUpdate(UsuarioEntity obj)//Cadastra ou Update
@@ -22,7 +26,7 @@ namespace GhostBusters_Infra.Repository
             }
 
             obj.COD_PERFIL = obj.PERFIL.COD_PERFIL;
-            obj.COD_IMAGEM = obj.IMAGEM?.COD_IMAGEM;
+            obj.COD_IMAGEM = obj.IMAGEM.COD_IMAGEM;
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
 

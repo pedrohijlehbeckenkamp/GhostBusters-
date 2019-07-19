@@ -117,46 +117,12 @@ namespace GhostBusters_Forms.View.Ticket
 
         private void DgAddAnexo_DoubleClick(object sender, EventArgs e)
         {
-         //   /* const string message =
-         //"Are you sure that you would like to close the form?";
-         //    const string caption = "Form Closing";
-         //    var result = MessageBox.Show(message, caption,
-         //                                 MessageBoxButtons.OK,//.YesNo,
-         //                                 MessageBoxIcon.Question);
-
-         //   If the no button was pressed ...*/
-         //   if (result == DialogResult.No)
-         //   {
-         //       cancel the closure of the form.
-         //       e.Cancel = true;
-         //   }
-         //   var anexoSelecionado = dgAddAnexo.CurrentRow.DataBoundItem;
-         //   if (anexoSelecionado != null && anexoSelecionado is Anexo)
-         //   {
-         //       var anexo = (Anexo)anexoSelecionado;
-         //       byte[] bytes = Convert.FromBase64String(anexo.BaseData);
-         //       System.Diagnostics.Process myProcess = new System.Diagnostics.Process();
-         //       // var anexo = (Anexo)anexoSelecionado;
-         //       string decodeFileName = "";
-         //       try
-         //       {
-         //           decodeFileName = Encoding.UTF8.GetString(bytes);
-         //       }
-         //       catch
-         //       {
-         //           //decodeFileName = myEncodedPDF;
-         //       }
-
-         //       myProcess.StartInfo.FileName = decodeFileName;
-         //       myProcess.Start();
-         //       // byte[] bytes = Convert.FromBase64String(anexo.BaseData);
-         //       //using (FileStream stream = System.IO.File.Create("c:\\file.pdf"))
-         //       {
-         //           byte[] bytes = Convert.FromBase64String(anexo.BaseData);
-         //           stream.Write(bytes, 0, bytes.Length);
-         //       }
-         //       //System.Diagnostics.Process.Start(anexo.BaseData);//Abre o anexo pelo o windows 
-         //   }
+            var fileanexo = (Anexo)dgAddAnexo.CurrentRow.DataBoundItem;
+            byte[] bytes = Convert.FromBase64String(fileanexo.BaseData);
+            File.WriteAllBytes("C:\\GhostBusters\\" + fileanexo.nomeAnexo, bytes);
+            System.Diagnostics.Process.Start("C:\\GhostBusters\\" + fileanexo.nomeAnexo);
+            MessageBox.Show("Abrindo arquivo");
+            File.Delete("C:\\GhostBusters\\" + fileanexo.nomeAnexo);
 
         }
     }
