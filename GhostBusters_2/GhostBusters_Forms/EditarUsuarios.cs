@@ -1,4 +1,5 @@
-﻿using GhostBusters_Forms.Model;
+﻿using GhostBusters_Forms.Controller;
+using GhostBusters_Forms.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace GhostBusters_Forms
     public partial class EditarUsuarios : Form
     {
 
-        private Usuario usuario; // ou CAD
+        private Usuario usuario;
 
         public EditarUsuarios(Usuario _usuario)
         {
@@ -39,27 +40,8 @@ namespace GhostBusters_Forms
                 lbNome.Text = usuario.NomeUsuario;
                 lbPerfil.Text = usuario.NomePerfil;
                 lbEmail.Text = usuario.Email;
-
             }
 
-        }
-
-        private void TbSenha_TextChanged(object sender, EventArgs e)
-        {
-
-            if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == usuario.Email))
-                || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == usuario.Email))
-            {
-                tb
-                //MessageBox.Show("merdaaaa");
-
-            }
-            //else 
-            //{
-            //    MessageBox.Show("Senha incorreta");
-            //    tbSenha.BackColor = Color.Red;
-
-            //}
         }
 
         private bool ValidaSenha()
@@ -79,15 +61,39 @@ namespace GhostBusters_Forms
             return true;
         }
 
-        //private void ButSave_Click(object sender, EventArgs e)
-        //{
-        //    if (ValidaSenha)
-        //    {
-        //        new EditarController().UpDateE()
-        //    }
-        //}
+        private void ButSave_Click(object sender, EventArgs e)
+        {
+
+            if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == tbSenha.Text))
+               || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == tbSenha.Text))
+            {
+                if (tbNovaSenha.Text == tbConfSenha.Text)
+                {
+                    
+                    new UsuarioController().Cadastro(Update());
+                    
+                   MessageBox.Show(tbConfSenha.Text);
+                }
+                else
+                {
+                    MessageBox.Show("merdaaaa");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Senha incorreta");
+                tbSenha.BackColor = Color.Red;
+            }
+        }
+
+        private Usuario Update() 
+        {
+            Usuario Upusuario = usuario;
+            Upusuario.Senha = tbConfSenha.Text;
+            return Upusuario;
+
+        }
 
 
-            
-    }
+}
 }

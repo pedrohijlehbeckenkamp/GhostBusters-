@@ -77,6 +77,12 @@
     <Compile Include="View\Adm\ConfigAdm.Designer.cs">
       <DependentUpon>ConfigAdm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Adm\EditarCadCompleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Adm\EditarCadCompleto.Designer.cs">
+      <DependentUpon>EditarCadCompleto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Categoria\CadastrarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </Compile>
     <EmbeddedResource Include="View\Adm\ConfigAdm.resx">
       <DependentUpon>ConfigAdm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Adm\EditarCadCompleto.resx">
+      <DependentUpon>EditarCadCompleto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
