@@ -9,6 +9,8 @@ namespace GhostBusters_Forms.Model
     public class Usuario
     {
         public int Codigo_Usuario { get; set; }
+        public int? Codigo_imagem { get; set; }
+        public int Codigo_perfil { get; set; }
         public string NomeUsuario { get; set; }
         public  string Email { get; set; }
         public string Senha { get; set; }

@@ -19,7 +19,10 @@ namespace GhostBusters_Forms.Mapper
 
             return new ChamadoEntity()
             {
+                COD_TECH = chamadoModel.codigo_tech,
                 COD_CHAMADO = chamadoModel.Codigo_chamado,
+                COD_OWNER = chamadoModel.codigo_Owner,
+                COD_CATEGORIA = chamadoModel.codigo_categoria,
                 TITULO = chamadoModel.Titulo,
                 DESCRICAO = chamadoModel.Descricao,
                 DATA_CHAMADO = chamadoModel.Data_Chamado,
@@ -43,6 +46,9 @@ namespace GhostBusters_Forms.Mapper
             return new ChamadoModel()
             {
                 Codigo_chamado = chamadoEntity.COD_CHAMADO,
+                codigo_tech = chamadoEntity.COD_TECH,
+                codigo_Owner = chamadoEntity.COD_OWNER,
+                codigo_categoria = chamadoEntity.COD_CATEGORIA,
                 Titulo = chamadoEntity.TITULO,
                 Descricao = chamadoEntity.DESCRICAO,
                 Data_Chamado = chamadoEntity.DATA_CHAMADO,

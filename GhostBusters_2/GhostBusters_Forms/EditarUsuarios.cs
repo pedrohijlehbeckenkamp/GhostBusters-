@@ -50,7 +50,7 @@ namespace GhostBusters_Forms
             if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == usuario.Email))
                 || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == usuario.Email))
             {
-                
+                tb
                 //MessageBox.Show("merdaaaa");
 
             }
@@ -64,16 +64,16 @@ namespace GhostBusters_Forms
 
         private bool ValidaSenha()
         {
-            if(string.IsNullOrEmpty(txtNovaSenha.Text) || string.IsNullOrEmpty(txtConf.Text) || txtNovaSenha.Text != txtConf.Text || txtNovaSenha.Text.Length <6)
+            if(string.IsNullOrEmpty(tbNovaSenha.Text) || string.IsNullOrEmpty(tbConfSenha.Text) || tbNovaSenha.Text != tbConfSenha.Text || tbNovaSenha.Text.Length <6)
             {
-                txtConf.BackColor = Color.White;
-                txtNovaSenha.BackColor = Color.White;
+                tbConfSenha.BackColor = Color.White;
+                tbNovaSenha.BackColor = Color.White;
 
             }
             else
             {
-                txtConf.BackColor = Color.White;
-                txtNovaSenha.BackColor = Color.White;
+                tbConfSenha.BackColor = Color.White;
+                tbNovaSenha.BackColor = Color.White;
             }
 
             return true;
