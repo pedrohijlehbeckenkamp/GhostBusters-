@@ -29,7 +29,7 @@ namespace GhostBusters_Forms.View.Adm
             // GridUsuarios();
         }
 
-        private void GridUsuarios() {
+        /*private void GridUsuarios() {
 
             var menu = new Usuario().Codigo_perfil;
             menu.FormClosed += (x, y) =>
@@ -37,6 +37,6 @@ namespace GhostBusters_Forms.View.Adm
                    
             
 
-        }
+        }*/
     }
 }
