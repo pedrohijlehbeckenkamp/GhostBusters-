@@ -30,7 +30,7 @@
         {
             this.cbBoxDisponiveis = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbNomeChamado = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,12 +55,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Tecnicos:";
             // 
-            // textBox1
+            // tbNomeChamado
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(163, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbNomeChamado.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.tbNomeChamado.Location = new System.Drawing.Point(131, 98);
+            this.tbNomeChamado.Name = "tbNomeChamado";
+            this.tbNomeChamado.Size = new System.Drawing.Size(163, 20);
+            this.tbNomeChamado.TabIndex = 2;
             // 
             // label2
             // 
@@ -74,12 +75,14 @@
             // 
             // btSave
             // 
+            this.btSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btSave.Location = new System.Drawing.Point(494, 93);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 23);
             this.btSave.TabIndex = 4;
             this.btSave.Text = "Save";
-            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.UseVisualStyleBackColor = false;
             this.btSave.Click += new System.EventHandler(this.BtSave_Click);
             // 
             // label3
@@ -106,12 +109,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(621, 384);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbNomeChamado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbBoxDisponiveis);
             this.Name = "AddTechChamado";
@@ -127,7 +131,7 @@
 
         private System.Windows.Forms.ComboBox cbBoxDisponiveis;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbNomeChamado;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.Label label3;

@@ -26,7 +26,8 @@ namespace GhostBusters_Forms.View.Ticket
         {
             cbBoxDisponiveis.DataSource = new UsuarioController().FindbyPerfil("Técnico");
             cbBoxDisponiveis.DisplayMember = "NomeUsuario";
-            textBox1.Text = chamado.Titulo;
+            tbNomeChamado.Text = chamado.Titulo;
+            tbNomeChamado.Enabled = false;
 
         }
 

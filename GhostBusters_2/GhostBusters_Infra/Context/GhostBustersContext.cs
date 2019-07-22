@@ -49,7 +49,7 @@ namespace GhostBusters_Infra
 
             modelBuilder.Entity<ChamadoEntity>()
                 .HasKey(x => x.COD_CHAMADO)
-                .HasRequired(x => x._STATUS);
+                .HasOptional(x => x._STATUS);
 
            modelBuilder.Entity<ChamadoEntity>()
                 .HasRequired(x => x.CATEGORIA);

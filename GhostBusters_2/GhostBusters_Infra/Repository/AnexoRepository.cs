@@ -13,14 +13,16 @@ namespace GhostBusters_Infra.Repository
         {
             return context.Set<Base64AnexoEntity>().Where(x => x.COD_CHAMADO == codigo_chamado).ToList();
         }
-        public void AddChamadoAoAnexo(ChamadoEntity chamado)
+        public void AddChamadoAoAnexo(List<Base64AnexoEntity> AddAnexoChamado,int codigo_chamado)
         {
-            //for (int  i = 0;  i < chamado.ANEXOS.Count;  i++)
-            //{
-            //    chamado.ANEXOS.ToArray()[i].CHAMADO = chamado;
-            //    //base64Anexos.ToArray()[i].CHAMADO = chamado;
-            //    CadastroUpdate(chamado.ANEXOS.ToArray()[i]);
-            //}
+            for (int i = 0; i < AddAnexoChamado.Count; i++)
+            {
+                if (AddAnexoChamado[i].COD_CHAMADO == 0)
+                {
+                    AddAnexoChamado[i].COD_CHAMADO = codigo_chamado;
+                    Cadastro(AddAnexoChamado[i]);
+                }
+            }
 
         }
         public override Base64AnexoEntity CadastroUpdate(Base64AnexoEntity obj)//Cadastra ou Update
@@ -37,8 +39,12 @@ namespace GhostBusters_Infra.Repository
         protected override Base64AnexoEntity Cadastro(Base64AnexoEntity obj)//Cadastrar um novo obj 
         {
             var objCadastro = context.Set<Base64AnexoEntity>().Add(obj);
-            context.Entry(obj.CHAMADO).State = System.Data.Entity.EntityState.Unchanged;//Nao duplica
 
+            if (obj.CHAMADO != null)
+            {
+                context.Entry(obj.CHAMADO).State = System.Data.Entity.EntityState.Unchanged;//Nao duplica
+            }
+         
             context.SendChanges();
             return objCadastro;
         }

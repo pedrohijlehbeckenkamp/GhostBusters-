@@ -35,7 +35,6 @@ namespace GhostBusters_Forms
                 image = new ImagemController().Cadastro(SalvarImagemBase64(file));
 
                 new UsuarioController().Cadastro(GetUsuario(image));
-                File.Delete("C:\\GhostBusters\\" + image.nomeImagem);
                 MessageBox.Show("Casdastro feito com sucesso");
                 this.Close();
             }

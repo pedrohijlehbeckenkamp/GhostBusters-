@@ -15,9 +15,9 @@ namespace GhostBusters_Forms.Controller
         {
             return new AnexoRepository().CadastroUpdate(anexo.MapAnexoEntity()).MapAnexoModel();
         }
-        public void AddChamado(ChamadoModel chamadoModel)
+        public void AddChamado(List<Anexo> anexonew, int codigo_chamado)
         {
-            new AnexoRepository().AddChamadoAoAnexo(chamadoModel.MapChamadaEntiy());
+            new AnexoRepository().AddChamadoAoAnexo(anexonew.Select(x => x.MapAnexoEntity()).ToList(), codigo_chamado);
         }
         public void ExcluirAnexo(int id)
         {
