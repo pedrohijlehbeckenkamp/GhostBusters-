@@ -42,7 +42,6 @@ namespace GhostBusters_Forms.View.Categoria
                 tbNomeCateg.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir categoria!");
                 return false;
-                
             }
             return true;
         }
@@ -75,6 +74,5 @@ namespace GhostBusters_Forms.View.Categoria
             Codigo_categoria = categoria.Codigo_categoria,
             NomeCategoria = tbNomeCateg.Text,
         };
-
     }
 }

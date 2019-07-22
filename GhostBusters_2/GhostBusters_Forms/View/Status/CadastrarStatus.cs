@@ -16,6 +16,7 @@ namespace GhostBusters_Forms.View.Status
     public partial class CadastrarStatus : Form
     {
         private StatusModel status;
+        //private PerfilModel perfil;
         public CadastrarStatus()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace GhostBusters_Forms.View.Status
             InitializeComponent();
             CenterToParent();
             status = _status;
+            //perfil = _perfil;
             tbNomeS.Text = status.NomeStatus;
             CbListarPerfil.Text = status.perfil.nomePerfil;
         }
@@ -49,14 +51,21 @@ namespace GhostBusters_Forms.View.Status
         {
             if (ValidarStatus())
             {
-                new StatusController().Cadastro(GetCadastrarStatus());
-                MessageBox.Show("Status cadastrado!");
-                this.Close();
+                if (status != null)
+                {
+                    new StatusController().Cadastro(UpDateS());
+                    this.Close();
+                }
+                else
+                {
+                    new StatusController().Cadastro(GetCadastrarStatus());
+                    MessageBox.Show("Status cadastrado!");
+                    this.Close();
+                }
             }
             else
             {
-                new StatusController().Cadastro(UpDateS());
-                this.Close();
+                MessageBox.Show("Erro");
             }
         }
         private StatusModel UpDateS() => new StatusModel()

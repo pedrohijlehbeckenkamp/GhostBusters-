@@ -42,7 +42,6 @@ namespace GhostBusters_Infra
                 .HasRequired(x => x.CHAMADO)
                 .WithMany(x => x.ANEXOS);
 
-
             modelBuilder.Entity<StatusEntity>()
                 .HasKey(x => x.COD_STATUS)
                 .HasOptional(perfil => perfil.PERFIL);
