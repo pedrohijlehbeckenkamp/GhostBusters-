@@ -38,7 +38,7 @@ namespace GhostBusters_Forms.Adm
             lblNomeAd.Text = usuario.NomeUsuario;
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
-            dgVisualizar.DataSource = new ChamadoController().Findall(); ;
+            dgVisualizar.DataSource = new ChamadoController().Findall();
         }
         private void LoadImagem()
         {
@@ -96,27 +96,17 @@ namespace GhostBusters_Forms.Adm
             this.Hide();
         }
 
-        private void DgVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                var item = dgVisualizar.CurrentRow.DataBoundItem;
-
-                AddTechChamado addTech = new AddTechChamado((ChamadoModel)item);
-                addTech.Show();
-                // MessageBox.Show("Nois");
-            }
-            catch (Exception)
-            {
-
-                MessageBox.Show("Deu ruim");
-            }
-        }
-
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             ExcluirChamado excluir = new ExcluirChamado();
             excluir.Show();
+            excluir.FormClosed += (x, y) =>
+            {
+                this.Show();
+                loadTelaprincipal();
+            };
+            excluir.Show();
+            this.Hide();
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -130,6 +120,20 @@ namespace GhostBusters_Forms.Adm
                 loadTelaprincipal();
             };
             menu.Show();
+            this.Hide();
+        }
+
+        private void ButAddTecnico_Click(object sender, EventArgs e)
+        {
+            var item = dgVisualizar.CurrentRow.DataBoundItem;
+
+            AddTechChamado addTech = new AddTechChamado((ChamadoModel)item);
+            addTech.FormClosed += (x, y) =>
+            {
+                this.Show();
+                loadTelaprincipal();
+            };
+            addTech.Show();
             this.Hide();
         }
     }

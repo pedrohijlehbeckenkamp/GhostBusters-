@@ -33,10 +33,10 @@ namespace GhostBusters_Forms.View.Ticket
             usuarioLogin = _usuario;
             Chamado = _ticket;
 
-            tbTitulo.Text = Chamado.Titulo;
-            tbDescricao.Text = Chamado.Descricao;
-            cbCategoria.DataSource = new CategoriaController().FindAll();
-            cbCategoria.DisplayMember = "NomeCategoria";
+            //tbTitulo.Text = Chamado.Titulo;
+            //tbDescricao.Text = Chamado.Descricao;
+            //cbCategoria.DataSource = new CategoriaController().FindAll();
+            //cbCategoria.DisplayMember = "NomeCategoria";
 
         }
 
@@ -52,10 +52,21 @@ namespace GhostBusters_Forms.View.Ticket
         {
             tbTitulo.Text = Chamado.Titulo;
             tbDescricao.Text = Chamado.Descricao;
+             
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
+            AddListaAnexo();
             dgAddAnexo.AutoGenerateColumns = false;
-            dgAddAnexo.DataSource = new AnexoController().FindbyChamado(Chamado.Codigo_chamado);
+            dgAddAnexo.DataSource = listaAnexo;
+            //tbTitulo.Visible = false;
+        }
+        private void AddListaAnexo()
+        {
+           var listanexos = new AnexoController().FindbyChamado(Chamado.Codigo_chamado);
+            for (int i = 0; i < listanexos.Count; i++)
+            {
+                listaAnexo.Add(listanexos[i]);
+            }          
         }
         private void LoadTicketCadastro()
         {
@@ -64,52 +75,66 @@ namespace GhostBusters_Forms.View.Ticket
             cbCategoria.DisplayMember = "NomeCategoria";
             dgAddAnexo.AutoGenerateColumns = false;
             dgAddAnexo.DataSource = listaAnexo;
+            tbTitulo.Enabled = true;
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SaveChamado();
-            this.Close();
         }
 
         public void SaveChamado()
         {
-            if (Chamado != null)
-            {
-                new ChamadoController().Cadastro(UpdateTicket());
-                this.Close();
-            }
-            else
-            {
-                new ChamadoController().Cadastro(GetChamado());
-                this.Close();
-            }
-            //Anexo anexo = null;
-            // ChamadoModel chamado;            
-            // new AnexoController().AddChamado(chamado);
+           if (Valida())
+           {
+              if (Chamado != null)
+              {
+                 new ChamadoController().Cadastro(UpdateTicket());
+                 new AnexoController().AddChamado(listaAnexo.ToList(), Chamado.Codigo_chamado);
+                 this.Close();
+              }
+              else
+              {
+                   new ChamadoController().Cadastro(GetChamado());
+                   this.Close();
+              }
+           }
+      
         }
+        private bool Valida()
+        {
+            int cont = 0; 
+            if (Validacoes.ValidaCamponull(tbTitulo.Text))
+            {
+                cont++;
+                tbTitulo.BackColor = Color.Red;
+                //MessageBox.Show("Campo Titulo vazio");
+            }
+            else tbTitulo.BackColor = Color.White;
 
+            if (Validacoes.ValidaCamponull(tbDescricao.Text))
+            {
+                cont++;
+                tbDescricao.BackColor = Color.Red;
+                MessageBox.Show("Campo Titulo vazio");
+            }
+            else tbDescricao.BackColor = Color.White;
+
+            if (cont > 0)
+            {
+                return false;
+            }
+            return true;
+        }
         public ChamadoModel GetChamado() => new ChamadoModel()
         {
             Data_Chamado = DateTime.Now,
             Titulo = tbTitulo.Text,
             Descricao = tbDescricao.Text,
             anexos = listaAnexo.ToList(),
-            statusModel = new StatusController().FindByName("Aguardando Atendimento"),
             categoria = (CategoriaModel)cbCategoria.SelectedItem,
             Owner = usuarioLogin            
         };
-        //public ChamadoModel UpdateTicket() => new ChamadoModel()
-        //{
-        //    Data_Chamado = DateTime.Now,
-        //    Data_Chamado_finalizado = DateTime.Now.Date,
-        //    Titulo = tbTitulo.Text,
-        //    Descricao = tbDescricao.Text,
-        //    anexos = listaAnexo.ToList(),
-        //    statusModel = new StatusController().FindByName("Aguardando Atendimento"),
-        //    categoria = (CategoriaModel)cbCategoria.SelectedItem,
-        //    Owner = usuarioLogin
-        //};
         private ChamadoModel UpdateTicket()
         {
             ChamadoModel UpChamado = Chamado;
@@ -131,13 +156,18 @@ namespace GhostBusters_Forms.View.Ticket
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 return openFileDialog;
-            }
+            }else
             return null;
         }
         private void ButAddAnexo_Click(object sender, EventArgs e)
         {
-            FileInfo file = new FileInfo(AbrirAnexo());
-            listaAnexo.Add(GetAnexo(file));
+            var location = AbrirAnexo();
+            if (location != "")
+            {
+                FileInfo file = new FileInfo(location);
+                listaAnexo.Add(GetAnexo(file));
+            }
+
         }
         private string AbrirAnexo()
         {
@@ -151,31 +181,47 @@ namespace GhostBusters_Forms.View.Ticket
             return location;
         }
 
-        private void ButClearAnexo_Click(object sender, EventArgs e)
+        private void ButExcluirAnexo_Click(object sender, EventArgs e)
         {
+           //Exclui o anexo 
             var anexoSelecionado = dgAddAnexo.CurrentRow.DataBoundItem;
             var anexo = (Anexo)anexoSelecionado;
-            string message = "Deseija excluir esse anexo" + anexo.nomeAnexo;
+            string message = "Deseija excluir o Anexo " + anexo.nomeAnexo;
             const string caption = "Form Closing";
             /*var result = MessageBox.Show(message, caption,
                                          MessageBoxButtons.OK,//.YesNo,
                                          MessageBoxIcon.Question);*/
             var resultado = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
             if (resultado == DialogResult.Yes)
-                listaAnexo.Remove(anexo);
-
-            dgAddAnexo.DataSource = listaAnexo;
-           
+            {
+                if (anexo.Codigo_Anexo == 0) listaAnexo.Remove(anexo);
+                else
+                {
+                    new AnexoController().ExcluirAnexo(anexo.Codigo_Anexo);
+                    listaAnexo.Remove(anexo);
+                   // LoadTicketEditar();//Load apos excluir  
+                }
+            }
+            dgAddAnexo.DataSource = listaAnexo;      
         }
 
         private void DgAddAnexo_DoubleClick(object sender, EventArgs e)
         {
+            //Visualizar Chamado 
             var fileanexo = (Anexo)dgAddAnexo.CurrentRow.DataBoundItem;
             byte[] bytes = Convert.FromBase64String(fileanexo.BaseData);
             File.WriteAllBytes("C:\\Teste\\" + fileanexo.nomeAnexo, bytes);
             System.Diagnostics.Process.Start("C:\\Teste\\" + fileanexo.nomeAnexo);
             MessageBox.Show("Abrindo arquivo");
             File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
+        }
+
+        private void TbDescricao_TextChanged(object sender, EventArgs e)
+        {
+            if (tbDescricao.TextLength <= 300)
+                tbResultado.Text = tbDescricao.TextLength.ToString();
+            else MessageBox.Show("Maximo de caracteres atingido");
         }
     }
 }

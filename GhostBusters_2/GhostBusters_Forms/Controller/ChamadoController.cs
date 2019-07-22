@@ -15,10 +15,22 @@ namespace GhostBusters_Forms.Controller
         {
             return new ChamadoRepository().CadastroUpdate(chamado.MapChamadaEntiy()).MapChamadaModel();
         } 
+
         public List<ChamadoModel> Findall()
         {
             return new ChamadoRepository().FindALL().Select(Chamado => Chamado.MapChamadaModel()).ToList();
         }
+
+        public List<ChamadoModel> FindByOwner(int codigo_owner)
+        {
+            return new ChamadoRepository().FindByOwner(codigo_owner).Select(owner => owner.MapChamadaModel()).ToList();
+        }
+
+        public List<ChamadoModel> FindByTecnico(int codigo_tecnico)
+        {
+            return new ChamadoRepository().FindByTecnico(codigo_tecnico).Select(tecnico => tecnico.MapChamadaModel()).ToList();
+        }
+
         public void ExcluirChamado(ChamadoModel chamado)
         {
             for (int i = 0; i < chamado.anexos.Count; i++)

@@ -13,6 +13,16 @@ namespace GhostBusters_Infra.Repository
         {
             return context.Set<ChamadoEntity>().AsNoTracking().ToList();
         }
+        public List<ChamadoEntity> FindByOwner(int codigo)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(codigo_owner => codigo_owner.OWNER.COD_USUARIO == codigo).ToList();
+        }
+        public List<ChamadoEntity> FindByTecnico(int codigo)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(codigo_owner => codigo_owner.TECNICO.COD_USUARIO == codigo).ToList();
+        }
         public override ChamadoEntity CadastroUpdate(ChamadoEntity obj)//Cadastra ou Update
         {
             if (obj == null)
@@ -21,7 +31,7 @@ namespace GhostBusters_Infra.Repository
             }
 
             obj.COD_CATEGORIA = obj.CATEGORIA.COD_CATEGORIA;
-            obj.COD_STATUS = obj._STATUS.COD_STATUS;
+            obj.COD_STATUS = obj._STATUS?.COD_STATUS;
             obj.COD_OWNER = obj.OWNER.COD_USUARIO;
             obj.COD_TECH = obj.TECNICO?.COD_USUARIO;
 
@@ -35,8 +45,7 @@ namespace GhostBusters_Infra.Repository
 
             //obj.CATEGORIA = null;
             context.Entry(obj.CATEGORIA).State = System.Data.Entity.EntityState.Unchanged;
-            context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;
-            context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
+            context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;           
             //context.Entry(obj._STATUS.COD_STATUS).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
@@ -46,6 +55,7 @@ namespace GhostBusters_Infra.Repository
                 context.Entry(obj.TECNICO).State = System.Data.Entity.EntityState.Unchanged;
                 context.Entry(obj.TECNICO.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
                 context.Entry(obj.TECNICO.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;
+                context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
             }
             context.SendChanges();
             return objCadastro;
@@ -55,17 +65,6 @@ namespace GhostBusters_Infra.Repository
 
             var finded = FindById(obj.EntityKey);
             context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
-
-            //var findbyimagem = new ImagemRepository().FindById(obj.OWNER.IMAGEM.EntityKey);
-            //var findbyimagem1 = new ImagemRepository().FindById(obj.TECNICO.IMAGEM.EntityKey);
-            //var findbyimagem2 = new UsuarioRepository().FindById(obj.OWNER.EntityKey);
-            //var findbyimagem4 = new UsuarioRepository().FindById(obj.TECNICO.EntityKey);
-            //ignorar a pk  e inserir 
-
-            //context.Entry(findbyimagem).State = System.Data.Entity.EntityState.Detached;
-            //context.Entry(findbyimagem1).State = System.Data.Entity.EntityState.Detached;
-            //context.Entry(findbyimagem2).State = System.Data.Entity.EntityState.Detached;
-            //context.Entry(findbyimagem4).State = System.Data.Entity.EntityState.Detached;
 
             var objUpdated = context.Set<ChamadoEntity>().Attach(obj);
             context.Entry(objUpdated).State = System.Data.Entity.EntityState.Modified;

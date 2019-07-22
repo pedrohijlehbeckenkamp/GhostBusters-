@@ -42,6 +42,9 @@
             this.dgAddAnexo = new System.Windows.Forms.DataGridView();
             this.nomeAnexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Extensao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbResultado = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAnexo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +60,7 @@
             // 
             // tbTitulo
             // 
+            this.tbTitulo.Enabled = false;
             this.tbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTitulo.Location = new System.Drawing.Point(202, 136);
             this.tbTitulo.Name = "tbTitulo";
@@ -68,7 +72,7 @@
             this.btnSave.Location = new System.Drawing.Point(261, 328);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 50);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
@@ -87,10 +91,12 @@
             // 
             this.tbDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDescricao.Location = new System.Drawing.Point(172, 223);
+            this.tbDescricao.MaxLength = 300;
             this.tbDescricao.Multiline = true;
             this.tbDescricao.Name = "tbDescricao";
             this.tbDescricao.Size = new System.Drawing.Size(256, 99);
-            this.tbDescricao.TabIndex = 1;
+            this.tbDescricao.TabIndex = 2;
+            this.tbDescricao.TextChanged += new System.EventHandler(this.TbDescricao_TextChanged);
             // 
             // lbData
             // 
@@ -110,27 +116,27 @@
             this.cbCategoria.Location = new System.Drawing.Point(202, 179);
             this.cbCategoria.Name = "cbCategoria";
             this.cbCategoria.Size = new System.Drawing.Size(226, 28);
-            this.cbCategoria.TabIndex = 32;
+            this.cbCategoria.TabIndex = 1;
             // 
             // butAddAnexo
             // 
-            this.butAddAnexo.Location = new System.Drawing.Point(568, 104);
+            this.butAddAnexo.Location = new System.Drawing.Point(575, 118);
             this.butAddAnexo.Name = "butAddAnexo";
             this.butAddAnexo.Size = new System.Drawing.Size(82, 26);
-            this.butAddAnexo.TabIndex = 33;
+            this.butAddAnexo.TabIndex = 3;
             this.butAddAnexo.Text = "Add Anexo ";
             this.butAddAnexo.UseVisualStyleBackColor = true;
             this.butAddAnexo.Click += new System.EventHandler(this.ButAddAnexo_Click);
             // 
             // butClearAnexo
             // 
-            this.butClearAnexo.Location = new System.Drawing.Point(680, 104);
+            this.butClearAnexo.Location = new System.Drawing.Point(687, 118);
             this.butClearAnexo.Name = "butClearAnexo";
             this.butClearAnexo.Size = new System.Drawing.Size(88, 26);
-            this.butClearAnexo.TabIndex = 34;
+            this.butClearAnexo.TabIndex = 4;
             this.butClearAnexo.Text = "Deleta Anexo";
             this.butClearAnexo.UseVisualStyleBackColor = true;
-            this.butClearAnexo.Click += new System.EventHandler(this.ButClearAnexo_Click);
+            this.butClearAnexo.Click += new System.EventHandler(this.ButExcluirAnexo_Click);
             // 
             // label1
             // 
@@ -159,12 +165,12 @@
             this.dgAddAnexo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomeAnexo,
             this.Extensao});
-            this.dgAddAnexo.Location = new System.Drawing.Point(538, 136);
+            this.dgAddAnexo.Location = new System.Drawing.Point(546, 150);
             this.dgAddAnexo.Name = "dgAddAnexo";
             this.dgAddAnexo.ReadOnly = true;
             this.dgAddAnexo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgAddAnexo.Size = new System.Drawing.Size(243, 144);
-            this.dgAddAnexo.TabIndex = 38;
+            this.dgAddAnexo.Size = new System.Drawing.Size(244, 172);
+            this.dgAddAnexo.TabIndex = 5;
             this.dgAddAnexo.DoubleClick += new System.EventHandler(this.DgAddAnexo_DoubleClick);
             // 
             // nomeAnexo
@@ -181,12 +187,44 @@
             this.Extensao.Name = "Extensao";
             this.Extensao.ReadOnly = true;
             // 
+            // tbResultado
+            // 
+            this.tbResultado.AutoSize = true;
+            this.tbResultado.Location = new System.Drawing.Point(415, 325);
+            this.tbResultado.Name = "tbResultado";
+            this.tbResultado.Size = new System.Drawing.Size(13, 13);
+            this.tbResultado.TabIndex = 39;
+            this.tbResultado.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(77, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.TabIndex = 41;
+            this.label2.Text = "Status";
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Location = new System.Drawing.Point(202, 102);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(226, 28);
+            this.cbStatus.TabIndex = 40;
+            // 
             // CadastrarTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(863, 429);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cbStatus);
+            this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.dgAddAnexo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.butClearAnexo);
@@ -224,5 +262,8 @@
         private System.Windows.Forms.DataGridView dgAddAnexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeAnexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Extensao;
+        private System.Windows.Forms.Label tbResultado;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbStatus;
     }
 }

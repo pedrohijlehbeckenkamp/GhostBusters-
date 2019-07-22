@@ -23,6 +23,7 @@ namespace GhostBusters_Forms.View.Tech
         public IniciTech(Usuario _usuario)
         {
             InitializeComponent();
+            CenterToParent();
             usuario = _usuario;
         }
 
@@ -32,6 +33,8 @@ namespace GhostBusters_Forms.View.Tech
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToShortTimeString();
             lblNomeTec.Text = usuario.NomeUsuario;
             lblEmailTec.Text = usuario.Email;
+            dgVisualizar.AutoGenerateColumns = false;
+            dgVisualizar.DataSource = new ChamadoController().FindByTecnico(usuario.Codigo_Usuario);
         }
 
         private void LoadImagem()

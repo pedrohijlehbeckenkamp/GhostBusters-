@@ -12,6 +12,7 @@ using GhostBusters_Forms.View.Status;
 using GhostBusters_Forms.View.Usuário_Comum;
 using GhostBusters_Forms.Model;
 using System.IO;
+using GhostBusters_Forms.Controller;
 
 namespace GhostBusters_Forms.Usuário_Comum
 {
@@ -23,40 +24,20 @@ namespace GhostBusters_Forms.Usuário_Comum
             InitializeComponent();
             usuario = _usuario;
             LoadUsuario();
+            CenterToParent();
         }
 
         private void TelaUsuarioComum_Load(object sender, EventArgs e)
         {
-
             LoadUsuario();
-
-            /*dgVisualizar.ReadOnly = true;
-            dgVisualizar.AutoGenerateColumns = false;
-            lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
-            //referenciar de acordo com o obj
-            lblNomeUC.Text = usuario.NomeUsuario;
-            lblEmail.Text = usuario.Email;
-
-            if (usuario.Foto != null)
-            {
-                byte[] bytes = Convert.FromBase64String(usuario.Foto.BaseData);
-                using (MemoryStream ms = new MemoryStream(bytes))
-                {
-                    picBase64.Image = Image.FromStream(ms);
-                }
-            }*/
         }
        
         
 
         private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
-
             //AlteraPic alteraPic = new AlteraPic(usuario);
             //alteraPic.Show();
-
-
             var tela = new AlteraPic(usuario);
             tela.FormClosed += (x, y) =>
             {
@@ -73,6 +54,7 @@ namespace GhostBusters_Forms.Usuário_Comum
             tela.FormClosed += (x, y) =>
             {
                 this.Abrir();
+                LoadUsuario();
             };
             tela.Show();
             Esconder();
@@ -81,18 +63,7 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            OpenFormAndHide<EditarTicket>();
-        }
-
-        private void OpenFormAndHide<U>() where U: Form, new()
-        {
-            var tela = new U();
-            tela.FormClosed += (x, y) =>
-            {
-                this.Abrir();
-            };
-            tela.Show();
-            Esconder();
+           
         }
 
         private void Esconder()
@@ -109,6 +80,7 @@ namespace GhostBusters_Forms.Usuário_Comum
         {
             dgVisualizar.ReadOnly = true;
             dgVisualizar.AutoGenerateColumns = false;
+            dgVisualizar.DataSource = new ChamadoController().FindByOwner(usuario.Codigo_Usuario);
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             //referenciar de acordo com o obj
             lblNomeUC.Text = usuario.NomeUsuario;

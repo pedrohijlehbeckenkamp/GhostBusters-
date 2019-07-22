@@ -17,6 +17,7 @@ namespace GhostBusters_Forms.View.Ticket
         public ExcluirChamado()
         {
             InitializeComponent();
+            CenterToParent();
         }
         
         public void loadExcluirChamado()
@@ -42,6 +43,7 @@ namespace GhostBusters_Forms.View.Ticket
             try
             {
                 new ChamadoController().ExcluirChamado(chamado);
+                this.Close();
             }
             catch (Exception ex)
             {
