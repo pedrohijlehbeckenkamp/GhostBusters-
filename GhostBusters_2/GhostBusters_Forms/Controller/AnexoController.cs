@@ -23,5 +23,10 @@ namespace GhostBusters_Forms.Controller
         {
             new AnexoRepository().Excluir(id);
         }
+        public List<Anexo> FindbyChamado(int codigo_chamado)
+        {
+            return new AnexoRepository().FindByChamado(codigo_chamado).Select(codigo => codigo.MapAnexoModel()).ToList();
+        }
+
     }
 }

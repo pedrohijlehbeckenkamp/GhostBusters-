@@ -15,7 +15,7 @@ namespace GhostBusters_Forms.Model
         public string Titulo { get; set; }
         public string Descricao { get; set; }
         public DateTime Data_Chamado { get; set; }
-        public DateTime Data_Chamado_finalizado { get; set; }
+        public DateTime? Data_Chamado_finalizado { get; set; }
         // public Anexo anexo { get; set; }
         public ICollection<Anexo> anexos { get; set; } = new HashSet<Anexo>();
         public StatusModel statusModel { get; set; }

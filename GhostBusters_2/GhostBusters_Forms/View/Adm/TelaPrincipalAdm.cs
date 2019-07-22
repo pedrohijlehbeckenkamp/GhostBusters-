@@ -124,10 +124,10 @@ namespace GhostBusters_Forms.Adm
             var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
             var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
+            menu.FormClosed += (x, y) => 
             {
                 this.Show();
                 loadTelaprincipal();
-                //LoadImagem()
             };
             menu.Show();
             this.Hide();

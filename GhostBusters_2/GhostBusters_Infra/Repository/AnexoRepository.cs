@@ -9,6 +9,10 @@ namespace GhostBusters_Infra.Repository
 {
     public class AnexoRepository: BaseRepository<Base64AnexoEntity>
     {
+        public List<Base64AnexoEntity> FindByChamado(int codigo_chamado)
+        {
+            return context.Set<Base64AnexoEntity>().Where(x => x.COD_CHAMADO == codigo_chamado).ToList();
+        }
         public void AddChamadoAoAnexo(ChamadoEntity chamado)
         {
             //for (int  i = 0;  i < chamado.ANEXOS.Count;  i++)

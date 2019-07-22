@@ -37,22 +37,31 @@ namespace GhostBusters_Forms.View.Ticket
             tbDescricao.Text = Chamado.Descricao;
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
-            dgAddAnexo.AutoGenerateColumns = true; 
-            dgAddAnexo.DataSource = Chamado.anexos;
+
         }
 
         private void CadastrarTicket_Load(object sender, EventArgs e)
         {
-            LoadTicket();
-        }
+            if (Chamado != null)
+                LoadTicketEditar();
+            else
+                LoadTicketCadastro();
 
-        private void LoadTicket()
+        }
+        private void LoadTicketEditar()
+        {
+            tbTitulo.Text = Chamado.Titulo;
+            tbDescricao.Text = Chamado.Descricao;
+            cbCategoria.DataSource = new CategoriaController().FindAll();
+            cbCategoria.DisplayMember = "NomeCategoria";
+            dgAddAnexo.AutoGenerateColumns = false;
+            dgAddAnexo.DataSource = new AnexoController().FindbyChamado(Chamado.Codigo_chamado);
+        }
+        private void LoadTicketCadastro()
         {
             lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
-            //dataGridPedidos.AutoGenerateColumns = false;
-            //dataGridPedidos.DataSource = produtoDTOs;
             dgAddAnexo.AutoGenerateColumns = false;
             dgAddAnexo.DataSource = listaAnexo;
         }
@@ -67,12 +76,12 @@ namespace GhostBusters_Forms.View.Ticket
         {
             if (Chamado != null)
             {
-                new ChamadoController().Cadastro(GetChamado());
+                new ChamadoController().Cadastro(UpdateTicket());
                 this.Close();
             }
             else
             {
-                new ChamadoController().Cadastro(UpdateTicket());
+                new ChamadoController().Cadastro(GetChamado());
                 this.Close();
             }
             //Anexo anexo = null;
@@ -83,7 +92,6 @@ namespace GhostBusters_Forms.View.Ticket
         public ChamadoModel GetChamado() => new ChamadoModel()
         {
             Data_Chamado = DateTime.Now,
-            Data_Chamado_finalizado = DateTime.Now.Date,
             Titulo = tbTitulo.Text,
             Descricao = tbDescricao.Text,
             anexos = listaAnexo.ToList(),
@@ -91,27 +99,32 @@ namespace GhostBusters_Forms.View.Ticket
             categoria = (CategoriaModel)cbCategoria.SelectedItem,
             Owner = usuarioLogin            
         };
-        public ChamadoModel UpdateTicket() => new ChamadoModel()
+        //public ChamadoModel UpdateTicket() => new ChamadoModel()
+        //{
+        //    Data_Chamado = DateTime.Now,
+        //    Data_Chamado_finalizado = DateTime.Now.Date,
+        //    Titulo = tbTitulo.Text,
+        //    Descricao = tbDescricao.Text,
+        //    anexos = listaAnexo.ToList(),
+        //    statusModel = new StatusController().FindByName("Aguardando Atendimento"),
+        //    categoria = (CategoriaModel)cbCategoria.SelectedItem,
+        //    Owner = usuarioLogin
+        //};
+        private ChamadoModel UpdateTicket()
         {
-            Data_Chamado = DateTime.Now,
-            Data_Chamado_finalizado = DateTime.Now.Date,
-            Titulo = tbTitulo.Text,
-            Descricao = tbDescricao.Text,
-            anexos = listaAnexo.ToList(),
-            statusModel = new StatusController().FindByName("Aguardando Atendimento"),
-            categoria = (CategoriaModel)cbCategoria.SelectedItem,
-            Owner = usuarioLogin
-        };
+            ChamadoModel UpChamado = Chamado;
+            UpChamado.Titulo = tbTitulo.Text;
+            UpChamado.Descricao = tbDescricao.Text;
+            UpChamado.categoria = (CategoriaModel)cbCategoria.SelectedItem;
+            return UpChamado;
+
+        }
         public Anexo GetAnexo(FileInfo file) => new Anexo()
         {
             nomeAnexo = file.Name,
             BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName)),
             Extensao= file.Extension
         };
-        private void butOpenAnexo_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private OpenFileDialog GetOpenFileDialog()
         {
