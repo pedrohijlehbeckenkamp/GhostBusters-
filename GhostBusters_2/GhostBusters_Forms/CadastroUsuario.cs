@@ -17,26 +17,34 @@ namespace GhostBusters_Forms
     public partial class CadastroUsuario : Form
     {
         private OpenFileDialog openFileDialog = new OpenFileDialog();
-
+        
         public CadastroUsuario()
         {
             InitializeComponent();
             CenterToParent();
         }
-
+        private void CadastroUsuario_Load(object sender, EventArgs e)
+        {
+            LoadImagem();
+            CbListarPerfil.DataSource = new PerfilController().FindAll();
+            CbListarPerfil.DisplayMember = "nomePerfil";
+            lbEmailErro.Visible = false;
+            lbErroConfEmail.Visible = false;
+            lbNomeErro.Visible = false;
+        }
         private void ButSave_Click(object sender, EventArgs e)
         {
             if (Valida())
             {
-                ImagemModel image = null;
+                MessageBox.Show("UHUL");
+                //ImagemModel image = null;
 
+                //FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+                //image = new ImagemController().Cadastro(SalvarImagemBase64(file));
 
-                FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-                image = new ImagemController().Cadastro(SalvarImagemBase64(file));
-
-                new UsuarioController().Cadastro(GetUsuario(image));
-                MessageBox.Show("Casdastro feito com sucesso");
-                this.Close();
+                //new UsuarioController().Cadastro(GetUsuario(image));
+                //MessageBox.Show("Casdastro feito com sucesso");
+               // this.Close();
             }
         }
 
@@ -52,51 +60,109 @@ namespace GhostBusters_Forms
         public bool Valida()
         {
             int cont = 0;
-            Regex validaNome = new Regex(@"[0-9]");
-            if (string.IsNullOrEmpty(tbNome.Text) || validaNome.IsMatch(tbNome.Text))
+            if (!Validacoes.ValidaCamponull(tbNome.Text))
             {
-                tbNome.BackColor = Color.Red;
-                MessageBox.Show("Erro nome");
-                //return false;
+                if (Validacoes.ValidaNome(tbNome.Text))
+                {
+                    lbNomeErro.BackColor = Color.Red;
+                    lbNomeErro.Visible = true;
+                    lbNomeErro.Text = "Nome Invalido";
+                    cont++;
+                }
+                else
+                {
+                    lbNomeErro.BackColor = Color.White;
+                    lbNomeErro.Visible = false;
+                }
+            }
+            else
+            {
+                lbNomeErro.Visible = true;
+                lbNomeErro.Text = "Nome Invalido";
                 cont++;
+            }
+
+            if (!Validacoes.ValidaCamponull(tbEmail.Text))
+            {
+                if (Validacoes.ValidaEmail(tbEmail.Text))
+                {
+                    tbEmail.BackColor = Color.Red;
+                    lbEmailErro.Visible = true;
+                    lbEmailErro.Text = "Email invalido";
+                    cont++;
+                }
+                else
+                {
+                    tbEmail.BackColor = Color.White;
+                    lbEmailErro.Visible = false;
+                }
             }else
             {
-                tbNome.BackColor = Color.White;
-            }
-
-            Regex validaEmail = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");//
-            if (!validaEmail.IsMatch(tbEmail.Text) || string.IsNullOrEmpty(tbEmail.Text) || tbConfirmaEmail.Text != tbEmail.Text)
-            {
                 tbEmail.BackColor = Color.Red;
-                tbConfirmaEmail.BackColor = Color.Red;
-               // MessageBox.Show("email invalido");
+                lbEmailErro.Visible = true;
+                lbEmailErro.Text = "Campo null";
                 cont++;
-            }
-            else
-            {
-                tbEmail.BackColor = Color.White;
-                tbConfirmaEmail.BackColor = Color.White;
-               // tbConfirmeSenha.BackColor = Color.White;
-               // MessageBox.Show("email valido");
             }
 
-            if(string.IsNullOrEmpty(tbSenha.Text) || string.IsNullOrEmpty(tbConfirmeSenha.Text) || tbSenha.Text != tbConfirmeSenha.Text || tbSenha.Text.Length <6)
+            if (!Validacoes.ValidaCamponull(tbConfirmaEmail.Text))
             {
-                tbConfirmeSenha.BackColor = Color.Red;
-                tbSenha.BackColor = Color.Red;
-                cont++;
+                if (Validacoes.ValidaConfirmaEmail(tbEmail.Text, tbConfirmaEmail.Text))
+                {
+                    tbConfirmaEmail.BackColor = Color.Red;
+                    lbErroConfEmail.Visible = true;
+                    lbErroConfEmail.Text = "Email Difrentes";
+                    cont++;
+                }
+                else
+                {
+                    tbConfirmaEmail.BackColor = Color.White;
+                    lbErroConfEmail.Visible = false;
+                }
             }
             else
             {
-                tbConfirmeSenha.BackColor = Color.White;
-                tbSenha.BackColor = Color.White;
+                tbConfirmaEmail.BackColor = Color.Red;
+                lbErroConfEmail.Visible = true;
+                lbErroConfEmail.Text = "Campo null";
+                cont++;
             }
             
-            if (cont > 0) 
+
+            if (cont > 0)
             {
                 return false;
             }
             return true;
+            //int cont = 0;
+            //Regex validaNome = new Regex(@"[0-9]");
+            //if (string.IsNullOrEmpty(tbNome.Text) || validaNome.IsMatch(tbNome.Text))
+            //{
+            //    tbNome.BackColor = Color.Red;
+            //    MessageBox.Show("Erro nome");
+            //    //return false;
+            //    cont++;
+            //}else
+            //{
+            //    tbNome.BackColor = Color.White;
+            //}
+
+            //if(string.IsNullOrEmpty(tbSenha.Text) || string.IsNullOrEmpty(tbConfirmeSenha.Text) || tbSenha.Text != tbConfirmeSenha.Text || tbSenha.Text.Length <6)
+            //{
+            //    tbConfirmeSenha.BackColor = Color.Red;
+            //    tbSenha.BackColor = Color.Red;
+            //    cont++;
+            //}
+            //else
+            //{
+            //    tbConfirmeSenha.BackColor = Color.White;
+            //    tbSenha.BackColor = Color.White;
+            //}
+
+            //if (cont > 0)
+            //{
+            //    return false;
+            //}
+            //return true;
         }
         private OpenFileDialog GetOpenFileDialog()
         {
@@ -132,12 +198,7 @@ namespace GhostBusters_Forms
             //pictureBoxBase64.Image = null;
         };
 
-        private void CadastroUsuario_Load(object sender, EventArgs e)
-        {
-            LoadImagem();
-            CbListarPerfil.DataSource = new PerfilController().FindAll();
-            CbListarPerfil.DisplayMember = "nomePerfil";
-        }
+
 
         private void LoadImagem()
         {

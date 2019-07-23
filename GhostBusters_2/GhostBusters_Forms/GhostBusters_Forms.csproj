@@ -102,10 +102,6 @@
     <Compile Include="View\PerfilP\CadastroPerfil.Designer.cs">
       <DependentUpon>CadastroPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Tech\Finalizacao.cs" />
-    <Compile Include="View\Tech\Finalizacao.Designer.cs">
-      <DependentUpon>Finalizacao.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Tech\IniciTech.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -48,6 +48,9 @@
             this.ClearImagem = new System.Windows.Forms.Button();
             this.BtVisSenha = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbEmailErro = new System.Windows.Forms.Label();
+            this.lbErroConfEmail = new System.Windows.Forms.Label();
+            this.lbNomeErro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -169,7 +172,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(569, 139);
+            this.label4.Location = new System.Drawing.Point(582, 139);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 32;
@@ -178,7 +181,7 @@
             // pictureImagem
             // 
             this.pictureImagem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureImagem.Location = new System.Drawing.Point(539, 161);
+            this.pictureImagem.Location = new System.Drawing.Point(549, 155);
             this.pictureImagem.Name = "pictureImagem";
             this.pictureImagem.Size = new System.Drawing.Size(161, 129);
             this.pictureImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,7 +193,7 @@
             this.btnAbrirImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAbrirImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrirImagem.ForeColor = System.Drawing.Color.White;
-            this.btnAbrirImagem.Location = new System.Drawing.Point(530, 300);
+            this.btnAbrirImagem.Location = new System.Drawing.Point(540, 294);
             this.btnAbrirImagem.Name = "btnAbrirImagem";
             this.btnAbrirImagem.Size = new System.Drawing.Size(87, 26);
             this.btnAbrirImagem.TabIndex = 6;
@@ -224,7 +227,7 @@
             this.ClearImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClearImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ClearImagem.ForeColor = System.Drawing.Color.White;
-            this.ClearImagem.Location = new System.Drawing.Point(623, 300);
+            this.ClearImagem.Location = new System.Drawing.Point(633, 294);
             this.ClearImagem.Name = "ClearImagem";
             this.ClearImagem.Size = new System.Drawing.Size(87, 26);
             this.ClearImagem.TabIndex = 37;
@@ -256,12 +259,45 @@
             this.panel1.Size = new System.Drawing.Size(746, 82);
             this.panel1.TabIndex = 39;
             // 
+            // lbEmailErro
+            // 
+            this.lbEmailErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmailErro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbEmailErro.Location = new System.Drawing.Point(398, 207);
+            this.lbEmailErro.Name = "lbEmailErro";
+            this.lbEmailErro.Size = new System.Drawing.Size(145, 23);
+            this.lbEmailErro.TabIndex = 40;
+            this.lbEmailErro.Text = "Email ou senha incorreta!";
+            // 
+            // lbErroConfEmail
+            // 
+            this.lbErroConfEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErroConfEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbErroConfEmail.Location = new System.Drawing.Point(398, 239);
+            this.lbErroConfEmail.Name = "lbErroConfEmail";
+            this.lbErroConfEmail.Size = new System.Drawing.Size(145, 23);
+            this.lbErroConfEmail.TabIndex = 41;
+            this.lbErroConfEmail.Text = "Email ou senha incorreta!";
+            // 
+            // lbNomeErro
+            // 
+            this.lbNomeErro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeErro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbNomeErro.Location = new System.Drawing.Point(398, 148);
+            this.lbNomeErro.Name = "lbNomeErro";
+            this.lbNomeErro.Size = new System.Drawing.Size(145, 23);
+            this.lbNomeErro.TabIndex = 42;
+            this.lbNomeErro.Text = "Email ou senha incorreta!";
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(741, 450);
+            this.Controls.Add(this.lbNomeErro);
+            this.Controls.Add(this.lbErroConfEmail);
+            this.Controls.Add(this.lbEmailErro);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtVisSenha);
             this.Controls.Add(this.ClearImagem);
@@ -314,5 +350,8 @@
         private System.Windows.Forms.Button ClearImagem;
         private System.Windows.Forms.Button BtVisSenha;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbEmailErro;
+        private System.Windows.Forms.Label lbErroConfEmail;
+        private System.Windows.Forms.Label lbNomeErro;
     }
 }
