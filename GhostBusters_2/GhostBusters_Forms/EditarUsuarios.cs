@@ -70,13 +70,11 @@ namespace GhostBusters_Forms
 
         private void ButSave_Click(object sender, EventArgs e)
         {
-
             if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == tbSenha.Text))
                || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == tbSenha.Text))
             {
                 if (tbNovaSenha.Text == tbConfSenha.Text)
                 {
-                    
                     new UsuarioController().Cadastro(Update());
                     
                     MessageBox.Show(tbConfSenha.Text);

@@ -37,7 +37,7 @@
             this.lblNomeTec = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.linkLEdit = new System.Windows.Forms.LinkLabel();
-            this.linkAlteraSenha = new System.Windows.Forms.LinkLabel();
+            this.linkPerfil = new System.Windows.Forms.LinkLabel();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
             this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -134,19 +134,19 @@
             this.linkLEdit.Text = "Alterar foto";
             this.linkLEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLEdit_LinkClicked);
             // 
-            // linkAlteraSenha
+            // linkPerfil
             // 
-            this.linkAlteraSenha.AutoSize = true;
-            this.linkAlteraSenha.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkAlteraSenha.LinkColor = System.Drawing.Color.Navy;
-            this.linkAlteraSenha.Location = new System.Drawing.Point(38, 187);
-            this.linkAlteraSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkAlteraSenha.Name = "linkAlteraSenha";
-            this.linkAlteraSenha.Size = new System.Drawing.Size(69, 13);
-            this.linkAlteraSenha.TabIndex = 51;
-            this.linkAlteraSenha.TabStop = true;
-            this.linkAlteraSenha.Text = "Alterar senha";
-            this.linkAlteraSenha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkAlteraSenha_LinkClicked);
+            this.linkPerfil.AutoSize = true;
+            this.linkPerfil.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkPerfil.LinkColor = System.Drawing.Color.Navy;
+            this.linkPerfil.Location = new System.Drawing.Point(38, 179);
+            this.linkPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkPerfil.Name = "linkPerfil";
+            this.linkPerfil.Size = new System.Drawing.Size(76, 13);
+            this.linkPerfil.TabIndex = 51;
+            this.linkPerfil.TabStop = true;
+            this.linkPerfil.Text = "Visualizar perfil";
+            this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPerfil_LinkClicked);
             // 
             // dgVisualizar
             // 
@@ -278,7 +278,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(715, 450);
             this.Controls.Add(this.dgVisualizar);
-            this.Controls.Add(this.linkAlteraSenha);
+            this.Controls.Add(this.linkPerfil);
             this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.lblTextD);
             this.Controls.Add(this.lblEmailTec);
@@ -286,7 +286,7 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.pbPerfil);
             this.Controls.Add(this.btnConfig);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IniciTech";
             this.Text = "Perfil Tecnico";
             this.Load += new System.EventHandler(this.InciTechcs_Load);
@@ -306,7 +306,7 @@
         private System.Windows.Forms.Label lblNomeTec;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.LinkLabel linkLEdit;
-        private System.Windows.Forms.LinkLabel linkAlteraSenha;
+        private System.Windows.Forms.LinkLabel linkPerfil;
         private System.Windows.Forms.DataGridView dgVisualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;

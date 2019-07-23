@@ -54,7 +54,7 @@
             this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.linkAlteraSenha = new System.Windows.Forms.LinkLabel();
+            this.linkPerfil = new System.Windows.Forms.LinkLabel();
             this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.butAddTecnico = new System.Windows.Forms.Button();
@@ -341,18 +341,19 @@
             this.Data_Chamado_finalizado.ReadOnly = true;
             this.Data_Chamado_finalizado.Width = 125;
             // 
-            // linkAlteraSenha
+            // linkPerfil
             // 
-            this.linkAlteraSenha.AutoSize = true;
-            this.linkAlteraSenha.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkAlteraSenha.LinkColor = System.Drawing.Color.Navy;
-            this.linkAlteraSenha.Location = new System.Drawing.Point(34, 162);
-            this.linkAlteraSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkAlteraSenha.Name = "linkAlteraSenha";
-            this.linkAlteraSenha.Size = new System.Drawing.Size(69, 13);
-            this.linkAlteraSenha.TabIndex = 52;
-            this.linkAlteraSenha.TabStop = true;
-            this.linkAlteraSenha.Text = "Alterar senha";
+            this.linkPerfil.AutoSize = true;
+            this.linkPerfil.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkPerfil.LinkColor = System.Drawing.Color.Navy;
+            this.linkPerfil.Location = new System.Drawing.Point(34, 162);
+            this.linkPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkPerfil.Name = "linkPerfil";
+            this.linkPerfil.Size = new System.Drawing.Size(76, 13);
+            this.linkPerfil.TabIndex = 52;
+            this.linkPerfil.TabStop = true;
+            this.linkPerfil.Text = "Visualizar perfil";
+            this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPerfil_LinkClicked);
             // 
             // pbPerfil
             // 
@@ -402,7 +403,7 @@
             this.ClientSize = new System.Drawing.Size(715, 450);
             this.Controls.Add(this.butAddTecnico);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.linkAlteraSenha);
+            this.Controls.Add(this.linkPerfil);
             this.Controls.Add(this.dgVisualizar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblEmail);
@@ -443,7 +444,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridView dgVisualizar;
-        private System.Windows.Forms.LinkLabel linkAlteraSenha;
+        private System.Windows.Forms.LinkLabel linkPerfil;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button butAddTecnico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;

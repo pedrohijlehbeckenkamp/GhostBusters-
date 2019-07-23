@@ -59,12 +59,10 @@ namespace GhostBusters_Forms.View.Tech
 
         }
 
-        private void LinkAlteraSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             EditarUsuarios form = new EditarUsuarios(usuario);
             form.Show();
         }
-
-
     }
 }

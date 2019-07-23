@@ -48,6 +48,7 @@
             this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.linkPerfil = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.picBase64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -270,12 +271,26 @@
             this.Data_Chamado_finalizado.ReadOnly = true;
             this.Data_Chamado_finalizado.Width = 125;
             // 
+            // linkPerfil
+            // 
+            this.linkPerfil.AutoSize = true;
+            this.linkPerfil.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkPerfil.LinkColor = System.Drawing.Color.Navy;
+            this.linkPerfil.Location = new System.Drawing.Point(62, 165);
+            this.linkPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkPerfil.Name = "linkPerfil";
+            this.linkPerfil.Size = new System.Drawing.Size(76, 13);
+            this.linkPerfil.TabIndex = 47;
+            this.linkPerfil.TabStop = true;
+            this.linkPerfil.Text = "Visualizar perfil";
+            // 
             // InicUsuarioComum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(715, 450);
+            this.Controls.Add(this.linkPerfil);
             this.Controls.Add(this.dgVisualizar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblEmail);
@@ -317,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado_finalizado;
+        private System.Windows.Forms.LinkLabel linkPerfil;
     }
 }

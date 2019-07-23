@@ -136,5 +136,10 @@ namespace GhostBusters_Forms.Adm
             addTech.Show();
             this.Hide();
         }
+
+        private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
