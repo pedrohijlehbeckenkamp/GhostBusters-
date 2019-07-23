@@ -42,7 +42,7 @@ namespace GhostBusters_Forms.Adm
         }
         private void LoadImagem()
         {
-            var imagem = usuario.Foto;
+            var imagem = new ImagemController().FindById(usuario.Codigo_imagem); ;
             byte[] bytes = Convert.FromBase64String(imagem.BaseData);
             using (MemoryStream ms = new MemoryStream(bytes))
             {

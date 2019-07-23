@@ -17,6 +17,7 @@ namespace GhostBusters_Infra.Entity
         }
 
         [Key]
+       // [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int COD_IMAGEM { get; set; }
         public string NOME { get; set; } 
         public string BASE_DATA { get; set; }

@@ -12,6 +12,7 @@ namespace GhostBusters_Infra.Entity
     public class UsuarioEntity: BaseEntity
     {
         [Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int COD_USUARIO { get; set; }
 
         public string NOME { get; set; }

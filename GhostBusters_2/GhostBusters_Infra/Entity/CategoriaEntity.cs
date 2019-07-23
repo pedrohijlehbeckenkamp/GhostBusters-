@@ -12,6 +12,7 @@ namespace GhostBusters_Infra.Entity
     public class CategoriaEntity: BaseEntity
     {
         [Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int COD_CATEGORIA { get; set; }
         public string NOME { get; set; }
 

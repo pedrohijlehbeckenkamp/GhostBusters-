@@ -15,7 +15,7 @@ namespace GhostBusters_Infra.Repository
         {
             return context.Set<T>().ToList();
         }
-        public virtual T FindById(int id)
+        public virtual T FindById(int? id)
         {
             return context.Set<T>().Find(id);
         }

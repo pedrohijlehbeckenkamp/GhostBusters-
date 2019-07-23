@@ -22,6 +22,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
         public AlteraPic(Usuario _usuario)
         {
             InitializeComponent();
+            CenterToParent();
             usuario = _usuario;
         }
 
@@ -29,7 +30,8 @@ namespace GhostBusters_Forms.View.Usuário_Comum
         {
             if (usuario.Foto != null)
             {
-                byte[] bytes = Convert.FromBase64String(usuario.Foto.BaseData);
+                var imagem = new ImagemController().FindById(usuario.Codigo_imagem);
+                byte[] bytes = Convert.FromBase64String(imagem.BaseData);
                 using (MemoryStream memory = new MemoryStream(bytes))
                 {
                     pictureImagem.Image = Image.FromStream(memory); 
