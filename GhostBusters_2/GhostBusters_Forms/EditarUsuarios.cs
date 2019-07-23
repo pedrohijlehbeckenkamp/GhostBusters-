@@ -79,7 +79,7 @@ namespace GhostBusters_Forms
                     
                     new UsuarioController().Cadastro(Update());
                     
-                   MessageBox.Show(tbConfSenha.Text);
+                    MessageBox.Show(tbConfSenha.Text);
                 }
                 else
                 {
