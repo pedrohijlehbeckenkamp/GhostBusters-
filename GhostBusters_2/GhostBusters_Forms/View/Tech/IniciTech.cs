@@ -20,22 +20,13 @@ namespace GhostBusters_Forms.View.Tech
     public partial class IniciTech : Form
     {
         private Usuario usuario;
+        private List<ChamadoModel> chamadoModel;
         public IniciTech(Usuario _usuario)
         {
             InitializeComponent();
             CenterToParent();
             usuario = _usuario;
         }
-        private void Esconder()
-        {
-            this.Hide();
-        }
-
-        private void Abrir()
-        {
-            this.Show();
-        }
-
         private void InciTechcs_Load(object sender, EventArgs e)
         {
             LoadTech();
@@ -47,8 +38,8 @@ namespace GhostBusters_Forms.View.Tech
             lblNomeTec.Text = usuario.NomeUsuario;
             lblEmailTec.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
-            var itens = new ChamadoController().FindByTecnico(usuario.Codigo_Usuario);
-            dgVisualizar.DataSource = itens;
+            chamadoModel = new ChamadoController().FindByTecnico(usuario.Codigo_Usuario);
+            dgVisualizar.DataSource = chamadoModel;
         }
 
         private void LoadImagem()
@@ -93,7 +84,7 @@ namespace GhostBusters_Forms.View.Tech
         private void BtnAdcTicket_Click(object sender, EventArgs e)
         {
            // var linha = dgVisualizar.CurrentRow.DataBoundItem;
-            if (dgVisualizar != null)
+            if (chamadoModel.Count != 0)
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
                 var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
