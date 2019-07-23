@@ -33,7 +33,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
                 using (MemoryStream memory = new MemoryStream(bytes))
                 {
                     pictureImagem.Image = Image.FromStream(memory); 
-               }
+                }
             }
         }
 

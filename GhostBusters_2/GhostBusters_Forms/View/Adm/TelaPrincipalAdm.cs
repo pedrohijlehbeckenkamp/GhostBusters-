@@ -89,8 +89,8 @@ namespace GhostBusters_Forms.Adm
             menu.FormClosed += (x, y) =>
             {
                 this.Show();
-                loadTelaprincipal();
-                //LoadImagem()
+                //loadTelaprincipal();
+                LoadImagem();
             };
             menu.Show();
             this.Hide();

@@ -172,6 +172,7 @@
             this.Codigo.HeaderText = "Cod Categoria";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 60;
             // 
             // NomeCategoria
             // 
@@ -186,6 +187,7 @@
             this.CodigoStatus.HeaderText = "Cod Status";
             this.CodigoStatus.Name = "CodigoStatus";
             this.CodigoStatus.ReadOnly = true;
+            this.CodigoStatus.Width = 60;
             // 
             // NomeStatus
             // 
@@ -207,6 +209,7 @@
             this.CodPerfil.HeaderText = "Cod Perfil";
             this.CodPerfil.Name = "CodPerfil";
             this.CodPerfil.ReadOnly = true;
+            this.CodPerfil.Width = 60;
             // 
             // Perfil
             // 
