@@ -31,6 +31,16 @@ namespace GhostBusters_Forms.Adm
         {
             loadTelaprincipal();
         }
+        private void Esconder()
+        {
+            this.Hide();
+        }
+
+        private void Abrir()
+        {
+            this.Show();
+        }
+
         public void loadTelaprincipal()
         {
             LoadImagem();
@@ -139,7 +149,14 @@ namespace GhostBusters_Forms.Adm
 
         private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var tela = new AlterarSenha(usuario);
+            tela.FormClosed += (x, y) =>
+            {
+                this.Abrir();
+                loadTelaprincipal();
+            };
+            tela.Show();
+            Esconder(); ;
         }
     }
 }

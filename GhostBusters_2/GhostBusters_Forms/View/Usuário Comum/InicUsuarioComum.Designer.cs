@@ -56,9 +56,10 @@
             // picBase64
             // 
             this.picBase64.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.picBase64.Location = new System.Drawing.Point(64, 13);
+            this.picBase64.Location = new System.Drawing.Point(85, 16);
+            this.picBase64.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBase64.Name = "picBase64";
-            this.picBase64.Size = new System.Drawing.Size(129, 128);
+            this.picBase64.Size = new System.Drawing.Size(171, 157);
             this.picBase64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBase64.TabIndex = 34;
             this.picBase64.TabStop = false;
@@ -68,10 +69,9 @@
             this.linkLEdit.AutoSize = true;
             this.linkLEdit.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.linkLEdit.LinkColor = System.Drawing.Color.Navy;
-            this.linkLEdit.Location = new System.Drawing.Point(62, 144);
-            this.linkLEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkLEdit.Location = new System.Drawing.Point(83, 177);
             this.linkLEdit.Name = "linkLEdit";
-            this.linkLEdit.Size = new System.Drawing.Size(58, 13);
+            this.linkLEdit.Size = new System.Drawing.Size(78, 17);
             this.linkLEdit.TabIndex = 35;
             this.linkLEdit.TabStop = true;
             this.linkLEdit.Text = "Alterar foto";
@@ -83,10 +83,10 @@
             this.btnAdcTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdcTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnAdcTicket.ForeColor = System.Drawing.Color.White;
-            this.btnAdcTicket.Location = new System.Drawing.Point(207, 102);
-            this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdcTicket.Location = new System.Drawing.Point(276, 126);
+            this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAdcTicket.Name = "btnAdcTicket";
-            this.btnAdcTicket.Size = new System.Drawing.Size(141, 39);
+            this.btnAdcTicket.Size = new System.Drawing.Size(188, 48);
             this.btnAdcTicket.TabIndex = 36;
             this.btnAdcTicket.Text = "Adicionar Ticket";
             this.btnAdcTicket.UseVisualStyleBackColor = false;
@@ -98,10 +98,10 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(352, 102);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Location = new System.Drawing.Point(469, 126);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(116, 39);
+            this.btnEditar.Size = new System.Drawing.Size(155, 48);
             this.btnEditar.TabIndex = 38;
             this.btnEditar.Text = "Editar Ticket";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -110,30 +110,27 @@
             // lblNomeUC
             // 
             this.lblNomeUC.AutoSize = true;
-            this.lblNomeUC.Location = new System.Drawing.Point(205, 28);
-            this.lblNomeUC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNomeUC.Location = new System.Drawing.Point(273, 34);
             this.lblNomeUC.Name = "lblNomeUC";
-            this.lblNomeUC.Size = new System.Drawing.Size(39, 13);
+            this.lblNomeUC.Size = new System.Drawing.Size(49, 17);
             this.lblNomeUC.TabIndex = 39;
             this.lblNomeUC.Text = "NOME";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(632, 7);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Location = new System.Drawing.Point(843, 9);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
+            this.lblDate.Size = new System.Drawing.Size(38, 17);
             this.lblDate.TabIndex = 40;
             this.lblDate.Text = "Date";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(205, 67);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Location = new System.Drawing.Point(273, 82);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(39, 13);
+            this.lblEmail.Size = new System.Drawing.Size(48, 17);
             this.lblEmail.TabIndex = 41;
             this.lblEmail.Text = "EMAIL";
             // 
@@ -141,10 +138,9 @@
             // 
             this.label1.AllowDrop = true;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(482, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(643, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.Size = new System.Drawing.Size(156, 17);
             this.label1.TabIndex = 45;
             this.label1.Text = "Data e hora do acesso:";
             // 
@@ -167,7 +163,8 @@
             this.Data_Chamado_finalizado});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgVisualizar.Location = new System.Drawing.Point(12, 192);
+            this.dgVisualizar.Location = new System.Drawing.Point(16, 236);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -186,7 +183,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(691, 220);
+            this.dgVisualizar.Size = new System.Drawing.Size(921, 271);
             this.dgVisualizar.TabIndex = 46;
             // 
             // Codigochamado
@@ -276,20 +273,20 @@
             this.linkPerfil.AutoSize = true;
             this.linkPerfil.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.linkPerfil.LinkColor = System.Drawing.Color.Navy;
-            this.linkPerfil.Location = new System.Drawing.Point(62, 165);
-            this.linkPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkPerfil.Location = new System.Drawing.Point(83, 203);
             this.linkPerfil.Name = "linkPerfil";
-            this.linkPerfil.Size = new System.Drawing.Size(76, 13);
+            this.linkPerfil.Size = new System.Drawing.Size(104, 17);
             this.linkPerfil.TabIndex = 47;
             this.linkPerfil.TabStop = true;
             this.linkPerfil.Text = "Visualizar perfil";
+            this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPerfil_LinkClicked);
             // 
             // InicUsuarioComum
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(715, 450);
+            this.ClientSize = new System.Drawing.Size(953, 554);
             this.Controls.Add(this.linkPerfil);
             this.Controls.Add(this.dgVisualizar);
             this.Controls.Add(this.label1);
@@ -301,7 +298,7 @@
             this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.picBase64);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "InicUsuarioComum";
             this.Text = "Perfil Usuário";
             this.Load += new System.EventHandler(this.TelaUsuarioComum_Load);

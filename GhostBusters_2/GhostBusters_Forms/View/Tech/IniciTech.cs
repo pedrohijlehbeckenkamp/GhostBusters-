@@ -26,6 +26,15 @@ namespace GhostBusters_Forms.View.Tech
             CenterToParent();
             usuario = _usuario;
         }
+        private void Esconder()
+        {
+            this.Hide();
+        }
+
+        private void Abrir()
+        {
+            this.Show();
+        }
 
         private void InciTechcs_Load(object sender, EventArgs e)
         {
@@ -66,14 +75,11 @@ namespace GhostBusters_Forms.View.Tech
             this.Hide();
         }
 
-        private void BtnConfig_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            EditarUsuarios form = new EditarUsuarios(usuario);
+            AlterarSenha form = new AlterarSenha(usuario);
             form.Show();
             form.FormClosed += (x, y) =>
             {

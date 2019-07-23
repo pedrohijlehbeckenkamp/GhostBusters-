@@ -57,11 +57,11 @@
     <Compile Include="Controller\CategoriaController.cs" />
     <Compile Include="Controller\ChamadoController.cs" />
     <Compile Include="Controller\StatusController.cs" />
-    <Compile Include="EditarUsuarios.cs">
+    <Compile Include="AlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarUsuarios.Designer.cs">
-      <DependentUpon>EditarUsuarios.cs</DependentUpon>
+    <Compile Include="AlterarSenha.Designer.cs">
+      <DependentUpon>AlterarSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="Mapper\AnexoMapper.cs" />
     <Compile Include="Mapper\CategoriaMapper.cs" />
@@ -96,9 +96,7 @@
     <Compile Include="View\PerfilP\CadastroPerfil.Designer.cs">
       <DependentUpon>CadastroPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Tech\Finalizacao.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="View\Tech\Finalizacao.cs" />
     <Compile Include="View\Tech\Finalizacao.Designer.cs">
       <DependentUpon>Finalizacao.cs</DependentUpon>
     </Compile>
@@ -176,8 +174,8 @@
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarUsuarios.resx">
-      <DependentUpon>EditarUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="AlterarSenha.resx">
+      <DependentUpon>AlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
