@@ -64,12 +64,12 @@ namespace GhostBusters_Infra.Repository
 
             var finded = FindById(obj.EntityKey);
             var Findowner = new PerfilRepository().FindById(obj.OWNER.PERFIL.EntityKey);
-            var FindStatus = new PerfilRepository().FindById(obj._STATUS.PERFIL.EntityKey);
+            //var FindStatus = new PerfilRepository().FindById(obj._STATUS.PERFIL.EntityKey);
 
 
             context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
             context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
-            context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
+            //context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
 
             if (obj.TECNICO != null)
             {

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -67,6 +68,8 @@ namespace GhostBusters_Forms.View.Ticket
             {
                 LoadComboBox();
                 cbCategoria.DataSource = new CategoriaController().FindAll();
+                lbStatus.Visible = true;
+                cbStatus.Visible = true;
                 tbNomeCategoria.Visible = false;
                 cbCategoria.DisplayMember = "NomeCategoria";
                 cbCategoria.SelectedIndex = cbCategoria.FindStringExact(Chamado.categoria.NomeCategoria);
@@ -84,6 +87,8 @@ namespace GhostBusters_Forms.View.Ticket
             if (usuarioLogin.perfil.nomePerfil == "Usuario")
             {
                 LoadComboBox();
+                lbStatus.Visible = true;
+                cbStatus.Visible = true;
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
@@ -94,6 +99,8 @@ namespace GhostBusters_Forms.View.Ticket
             if (usuarioLogin.perfil.nomePerfil == "Técnico")
             {
                 LoadComboBox();
+                lbStatus.Visible = true;
+                cbStatus.Visible = true;
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
@@ -112,6 +119,8 @@ namespace GhostBusters_Forms.View.Ticket
         private void LoadTicketCadastro()
         {
             lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
+            lbStatus.Visible = false;
+            cbStatus.Visible = false;
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
             dgAddAnexo.AutoGenerateColumns = false;
@@ -123,6 +132,93 @@ namespace GhostBusters_Forms.View.Ticket
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SaveChamado();
+
+            if (Chamado.nomeCategoria == "Reprovado" && Chamado.NomePerfil == "Usuario")
+            {
+                try
+                {
+                    MailMessage mail = new MailMessage();
+
+                    SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
+
+                    mail.From = new MailAddress("cliente1@gmail.com");
+                    mail.To.Add(Chamado.Tech.Email);
+                    mail.Subject = tbTitulo.Text = Chamado.Titulo;
+                    mail.Body = tbDescricao.Text = Chamado.Descricao;
+
+
+                    SmtpServer.Port = 2525;
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
+                    SmtpServer.EnableSsl = true;
+
+                    SmtpServer.Send(mail);
+                    MessageBox.Show("Email de Reprovação enviado!");
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Não foi enviado!");
+                }
+
+            }
+            else if (Chamado.nomeCategoria == "Aprovado" && Chamado.NomePerfil == "Usuario")
+            {
+                try
+                {
+                    MailMessage mail = new MailMessage();
+
+                    SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
+
+                    mail.From = new MailAddress("cliente1@gmail.com");
+                    mail.To.Add(Chamado.Tech.Email);
+                    mail.Subject = tbTitulo.Text = Chamado.Titulo;
+                    mail.Body = tbDescricao.Text = Chamado.Descricao;
+
+
+
+                    SmtpServer.Port = 2525;
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
+                    SmtpServer.EnableSsl = true;
+
+                    SmtpServer.Send(mail);
+                    MessageBox.Show("Email de Reprovação enviado!");
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Não foi enviado!");
+                }
+            }
+            else if (Chamado.nomeCategoria == "Finalizado" && Chamado.NomePerfil == "Tecnico")
+            {
+                try
+                {
+                    MailMessage mail = new MailMessage();
+
+                    SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
+
+                    mail.From = new MailAddress("cliente1@gmail.com");
+                    mail.To.Add(Chamado.Owner.Email);
+                    mail.Subject = tbTitulo.Text = Chamado.Titulo;
+                    mail.Body = tbDescricao.Text = Chamado.Descricao;
+
+
+                    SmtpServer.Port = 2525;
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
+                    SmtpServer.EnableSsl = true;
+
+                    SmtpServer.Send(mail);
+                    MessageBox.Show("Email de Reprovação enviado!");
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Não foi enviado!");
+                }
+
+            }
+
+            
         }
 
         public void SaveChamado()
