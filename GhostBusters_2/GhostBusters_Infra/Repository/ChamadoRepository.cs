@@ -68,8 +68,8 @@ namespace GhostBusters_Infra.Repository
 
 
             context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
-            //context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
-            ////context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
+            context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
+            //context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
 
             //if (obj.TECNICO != null)
             //{
