@@ -10,7 +10,9 @@ namespace GhostBusters_Infra
 {
     public class GhostBustersContext : DbContext 
     {
-        public GhostBustersContext() : base("Ghostbusters") {}
+        public GhostBustersContext() : base("Ghostbusters") {
+            this.Configuration.AutoDetectChangesEnabled = false;
+        }
 
         public void SendChanges()
         {

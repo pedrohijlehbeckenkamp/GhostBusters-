@@ -97,7 +97,8 @@ namespace GhostBusters_Forms.Usuário_Comum
 
             if (usuario.Foto != null)
             {
-                byte[] bytes = Convert.FromBase64String(usuario.Foto.BaseData);
+                var imagem = new ImagemController().FindById(usuario.Codigo_imagem);
+                byte[] bytes = Convert.FromBase64String(imagem.BaseData);
                 using (MemoryStream ms = new MemoryStream(bytes))
                 {
                     picBase64.Image = Image.FromStream(ms);
@@ -107,7 +108,14 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var tela = new AlterarSenha(usuario);
+            tela.FormClosed += (x, y) =>
+            {
+                this.Abrir();
+                LoadUsuario();
+            };
+            tela.Show();
+            Esconder(); ;
         }
     }
 }

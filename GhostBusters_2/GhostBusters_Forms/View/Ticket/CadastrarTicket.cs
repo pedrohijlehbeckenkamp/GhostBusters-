@@ -65,20 +65,25 @@ namespace GhostBusters_Forms.View.Ticket
         {
             if (usuarioLogin.perfil.nomePerfil == "Admin")
             {
-                cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
-                cbStatus.DisplayMember = "NomeStatus";
+                LoadComboBox();
                 cbCategoria.DataSource = new CategoriaController().FindAll();
                 tbNomeCategoria.Visible = false;
                 cbCategoria.DisplayMember = "NomeCategoria";
+                cbCategoria.SelectedIndex = cbCategoria.FindStringExact(Chamado.categoria.NomeCategoria);
                 tbTitulo.Enabled = true;
             }
+        }
+        private void LoadComboBox()
+        {
+            cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
+            cbStatus.DisplayMember = "NomeStatus";
+            cbStatus.SelectedIndex = cbStatus.FindStringExact(Chamado.Nomestatus);
         }
         private void LoadOwner()
         {
             if (usuarioLogin.perfil.nomePerfil == "Usuario")
             {
-                cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
-                cbStatus.DisplayMember = "NomeStatus";
+                LoadComboBox();
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
@@ -88,8 +93,7 @@ namespace GhostBusters_Forms.View.Ticket
         {
             if (usuarioLogin.perfil.nomePerfil == "Técnico")
             {
-                cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
-                cbStatus.DisplayMember = "NomeStatus";
+                LoadComboBox();
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;

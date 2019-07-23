@@ -12,6 +12,7 @@ namespace GhostBusters_Infra.Entity
     public class StatusEntity: BaseEntity
     {
         [Key]
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int COD_STATUS { get; set; }
         public string NOME { get; set; }
         public int? COD_PERFIL { get; set; }

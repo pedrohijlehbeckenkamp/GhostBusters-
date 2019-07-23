@@ -12,6 +12,7 @@ namespace GhostBusters_Infra.Entity
     public class ChamadoEntity: BaseEntity
     {
         [Key]
+       // [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int COD_CHAMADO { get; set; }
         
         public string TITULO { get; set; }

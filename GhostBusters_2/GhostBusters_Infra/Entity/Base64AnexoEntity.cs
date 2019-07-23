@@ -12,7 +12,8 @@ namespace GhostBusters_Infra.Entity
     public class Base64AnexoEntity: BaseEntity
     {
        [Key]
-       public int COD_ANEXO { get; set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int COD_ANEXO { get; set; }
        public string NOME { get; set; }
        public string BASE_64 { get; set; }
        public string EXTENSAO { get; set; }

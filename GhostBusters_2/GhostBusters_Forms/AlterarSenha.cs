@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace GhostBusters_Forms
 {
-    public partial class EditarUsuarios : Form
+    public partial class AlterarSenha : Form
     {
 
         private Usuario usuario;
 
-        public EditarUsuarios(Usuario _usuario)
+        public AlterarSenha(Usuario _usuario)
         {
             InitializeComponent();
             CenterToParent();
@@ -39,13 +39,20 @@ namespace GhostBusters_Forms
                 lbNome.Text = usuario.NomeUsuario;
                 lbPerfil.Text = usuario.NomePerfil;
                 lbEmail.Text = usuario.Email;
+            }
+            else if (usuario.perfil.nomePerfil == "Admin")
+            {
+                lbNome.Text = usuario.NomeUsuario;
+                lbPerfil.Text = usuario.NomePerfil;
+                lbEmail.Text = usuario.Email;
             };
         }
 
         private void TbSenha_TextChanged(object sender, EventArgs e)
         {
             if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == usuario.Email))
-                || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == usuario.Email))
+                || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == usuario.Email)
+                || (usuario.perfil.nomePerfil == "Admin") && (usuario.Senha == usuario.Email))
             {
                 //tb
                 //MessageBox.Show("merdaaaa");
@@ -70,18 +77,19 @@ namespace GhostBusters_Forms
 
         private void ButSave_Click(object sender, EventArgs e)
         {
-            if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == tbSenha.Text))
-               || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == tbSenha.Text))
+            if ((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == tbSenha.Text)
+               || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == tbSenha.Text)
+               || (usuario.perfil.nomePerfil == "Admin") && (usuario.Senha == tbSenha.Text))
             {
                 if (tbNovaSenha.Text == tbConfSenha.Text)
                 {
                     new UsuarioController().Cadastro(Update());
                     
-                    MessageBox.Show(tbConfSenha.Text);
+                    MessageBox.Show("Senha alterada!!!");
                 }
                 else
                 {
-                    MessageBox.Show("merdaaaa");
+                    MessageBox.Show("Insira os dados corretamente");
                 }
             }
             else

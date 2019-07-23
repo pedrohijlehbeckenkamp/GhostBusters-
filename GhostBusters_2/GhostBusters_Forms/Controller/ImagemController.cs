@@ -19,5 +19,9 @@ namespace GhostBusters_Forms.Controller
         {
             return new ImagemRepository().findbyName(nome).MapImagemModel();
         }
+        public ImagemModel FindById(int? id)
+        {
+            return new ImagemRepository().FindById(id).MapImagemModel();
+        }
     }
 }

@@ -33,6 +33,16 @@ namespace GhostBusters_Forms.Adm
         {
             loadTelaprincipal();
         }
+        private void Esconder()
+        {
+            this.Hide();
+        }
+
+        private void Abrir()
+        {
+            this.Show();
+        }
+
         public void loadTelaprincipal()
         {
             LoadImagem();
@@ -44,7 +54,7 @@ namespace GhostBusters_Forms.Adm
         }
         private void LoadImagem()
         {
-            var imagem = usuario.Foto;
+            var imagem = new ImagemController().FindById(usuario.Codigo_imagem); ;
             byte[] bytes = Convert.FromBase64String(imagem.BaseData);
             using (MemoryStream ms = new MemoryStream(bytes))
             {
@@ -141,7 +151,14 @@ namespace GhostBusters_Forms.Adm
 
         private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            var tela = new AlterarSenha(usuario);
+            tela.FormClosed += (x, y) =>
+            {
+                this.Abrir();
+                loadTelaprincipal();
+            };
+            tela.Show();
+            Esconder(); ;
         }
 
         private void BtnEditarUsuario_Click(object sender, EventArgs e)
