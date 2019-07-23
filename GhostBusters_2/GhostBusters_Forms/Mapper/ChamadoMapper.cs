@@ -23,14 +23,14 @@ namespace GhostBusters_Forms.Mapper
                 COD_CHAMADO = chamadoModel.Codigo_chamado,
                 COD_OWNER = chamadoModel.codigo_Owner,
                 COD_CATEGORIA = chamadoModel.codigo_categoria,
+                COD_STATUS = chamadoModel.codigo_status,
                 TITULO = chamadoModel.Titulo,
                 DESCRICAO = chamadoModel.Descricao,
                 DATA_CHAMADO = chamadoModel.Data_Chamado,
                 DATA_CHAMADA_FINALIZADA = chamadoModel.Data_Chamado_finalizado,
                 ANEXOS = chamadoModel.anexos.Select(anexo => anexo.MapAnexoEntity()).ToList(),
-               // ANEXO = chamadoModel.anexo.MapAnexoEntity(),
                 CATEGORIA = chamadoModel.categoria.MapCategoriaEntity(),
-                _STATUS = chamadoModel.statusModel.MapStatusEntity(),
+                _STATUS = chamadoModel.StatusChamado.MapStatusEntity(),
                 OWNER = chamadoModel.Owner.MapUsuarioEntity(),
                 TECNICO = chamadoModel.Tech.MapUsuarioEntity()               
             };
@@ -49,14 +49,14 @@ namespace GhostBusters_Forms.Mapper
                 codigo_tech = chamadoEntity.COD_TECH,
                 codigo_Owner = chamadoEntity.COD_OWNER,
                 codigo_categoria = chamadoEntity.COD_CATEGORIA,
+                codigo_status = chamadoEntity.COD_STATUS,
                 Titulo = chamadoEntity.TITULO,
                 Descricao = chamadoEntity.DESCRICAO,
                 Data_Chamado = chamadoEntity.DATA_CHAMADO,
                 Data_Chamado_finalizado = chamadoEntity.DATA_CHAMADA_FINALIZADA,
                 anexos = chamadoEntity.ANEXOS.Select(ANEXOS => ANEXOS.MapAnexoModel()).ToList(),
-                //anexo =  chamadoEntity.ANEXO.MapAnexoModel(),
                 categoria = chamadoEntity.CATEGORIA.MApCategoriaModel(),
-                statusModel =  chamadoEntity._STATUS.MapStatusModel(),
+                StatusChamado =  chamadoEntity._STATUS.MapStatusModel(),
                 Owner = chamadoEntity.OWNER.MapUsuarioModel(),
                 Tech = chamadoEntity.TECNICO.MapUsuarioModel()
             };

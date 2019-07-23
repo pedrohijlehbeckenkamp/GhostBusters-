@@ -13,6 +13,11 @@ namespace GhostBusters_Infra.Repository
         {
             return this.context.Set<StatusEntity>().FirstOrDefault(x => x.NOME == name);
         }
+        public List<StatusEntity> FindByStatusPerfil(int codigo_perfil)
+        {
+            return this.context.Set<StatusEntity>()
+                .Where(status => status.COD_PERFIL == codigo_perfil || status.COD_PERFIL == null).ToList();
+        }
 
         public override StatusEntity CadastroUpdate(StatusEntity obj)
         {

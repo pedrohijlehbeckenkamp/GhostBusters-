@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNewTicket = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -49,10 +49,11 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.butAddTecnico = new System.Windows.Forms.Button();
             this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,10 +219,11 @@
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigochamado,
-            this.NomeUsuario,
-            this.NomePerfil,
             this.Titulo,
+            this.Descricao,
+            this.NomeUsuario,
             this.NomeTech,
+            this.NomePerfil,
             this.nomeCategoria,
             this.Nomestatus,
             this.Data_Chamado,
@@ -232,20 +234,20 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(691, 220);
             this.dgVisualizar.TabIndex = 45;
@@ -312,24 +314,6 @@
             this.Codigochamado.ReadOnly = true;
             this.Codigochamado.Width = 125;
             // 
-            // NomeUsuario
-            // 
-            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
-            this.NomeUsuario.HeaderText = "Usuario";
-            this.NomeUsuario.MinimumWidth = 6;
-            this.NomeUsuario.Name = "NomeUsuario";
-            this.NomeUsuario.ReadOnly = true;
-            this.NomeUsuario.Width = 125;
-            // 
-            // NomePerfil
-            // 
-            this.NomePerfil.DataPropertyName = "NomePerfil";
-            this.NomePerfil.HeaderText = "Nome Perfil";
-            this.NomePerfil.MinimumWidth = 6;
-            this.NomePerfil.Name = "NomePerfil";
-            this.NomePerfil.ReadOnly = true;
-            this.NomePerfil.Width = 125;
-            // 
             // Titulo
             // 
             this.Titulo.DataPropertyName = "Titulo";
@@ -338,6 +322,22 @@
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
             this.Titulo.Width = 125;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
+            this.NomeUsuario.HeaderText = "Usuario";
+            this.NomeUsuario.MinimumWidth = 6;
+            this.NomeUsuario.Name = "NomeUsuario";
+            this.NomeUsuario.ReadOnly = true;
+            this.NomeUsuario.Width = 125;
             // 
             // NomeTech
             // 
@@ -348,6 +348,15 @@
             this.NomeTech.ReadOnly = true;
             this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.NomeTech.Width = 125;
+            // 
+            // NomePerfil
+            // 
+            this.NomePerfil.DataPropertyName = "NomePerfil";
+            this.NomePerfil.HeaderText = "Nome Perfil";
+            this.NomePerfil.MinimumWidth = 6;
+            this.NomePerfil.Name = "NomePerfil";
+            this.NomePerfil.ReadOnly = true;
+            this.NomePerfil.Width = 125;
             // 
             // nomeCategoria
             // 
@@ -438,10 +447,11 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button butAddTecnico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomePerfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeTech;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomePerfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;

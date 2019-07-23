@@ -19,6 +19,7 @@ namespace GhostBusters_Forms.Mapper
             return new StatusEntity()
             {
                 COD_STATUS = statusModel.codigo_status,
+                COD_PERFIL = statusModel.codigo_perfil,
                 NOME = statusModel.NomeStatus,
                 PERFIL = statusModel.perfil.MapPerfilEntity()
             };
@@ -33,6 +34,7 @@ namespace GhostBusters_Forms.Mapper
             return new StatusModel()
             {
                 codigo_status = statusEntity.COD_STATUS,
+                codigo_perfil = statusEntity.COD_PERFIL,
                 NomeStatus = statusEntity.NOME,
                 perfil = statusEntity.PERFIL.MapPerfilModel()
             };
