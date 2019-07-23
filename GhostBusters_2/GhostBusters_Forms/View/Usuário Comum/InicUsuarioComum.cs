@@ -104,5 +104,10 @@ namespace GhostBusters_Forms.Usuário_Comum
                 }
             }
         }
+
+        private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }

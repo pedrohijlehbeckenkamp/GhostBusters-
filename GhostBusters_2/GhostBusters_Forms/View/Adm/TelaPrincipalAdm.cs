@@ -1,6 +1,8 @@
 ﻿using GhostBusters_Forms.Controller;
 using GhostBusters_Forms.Model;
+using GhostBusters_Forms.View;
 using GhostBusters_Forms.View.Adm;
+using GhostBusters_Forms.View.Categoria;
 using GhostBusters_Forms.View.Ticket;
 using GhostBusters_Forms.View.Usuário_Comum;
 using System;
@@ -140,6 +142,17 @@ namespace GhostBusters_Forms.Adm
         private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void BtnEditarUsuario_Click(object sender, EventArgs e)
+        {
+            var menu = new VisualizarUsuarios();
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+            };
+            menu.Show();
+            this.Hide();
         }
     }
 }

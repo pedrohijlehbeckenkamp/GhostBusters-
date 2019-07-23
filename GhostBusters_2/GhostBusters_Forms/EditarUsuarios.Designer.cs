@@ -165,9 +165,9 @@
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.butSave);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditarUsuarios";
-            this.Text = "Alterar senha";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.EditarUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

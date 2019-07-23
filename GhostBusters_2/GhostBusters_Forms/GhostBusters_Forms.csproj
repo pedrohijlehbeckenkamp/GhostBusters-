@@ -90,6 +90,12 @@
     <Compile Include="View\Categoria\CadastrarCategoria.Designer.cs">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PerfilP\CadastroPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,12 @@
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\VisualizarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VisualizarUsuarios.Designer.cs">
+      <DependentUpon>VisualizarUsuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +213,9 @@
     <EmbeddedResource Include="View\Categoria\CadastrarCategoria.resx">
       <DependentUpon>CadastrarCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PerfilP\CadastroPerfil.resx">
       <DependentUpon>CadastroPerfil.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Ticket\CadastrarTicket.resx">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VisualizarUsuarios.resx">
+      <DependentUpon>VisualizarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
