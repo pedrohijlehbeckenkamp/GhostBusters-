@@ -13,6 +13,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -45,6 +46,10 @@ namespace GhostBusters_Forms.Adm
 
         public void loadTelaprincipal()
         {
+            //cbStatus.DataSource = new StatusController().FindByName();
+            cbStatus.DisplayMember = "NomeStatus";
+            cbStatus.Visible = false;
+            maskedCod.Visible = false;
             LoadImagem();
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             lblNomeAd.Text = usuario.NomeUsuario;
@@ -170,6 +175,79 @@ namespace GhostBusters_Forms.Adm
             };
             menu.Show();
             this.Hide();
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (cbOrderBy.Text == "Código ticket")
+            {
+                int Id = Convert.ToInt32(maskedCod.Text);
+
+                var byId = new ChamadoController().FindByID(Id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = byId;
+            }
+            else if (cbOrderBy.Text == "Conteúdo")
+            {
+                //string padrao = "--(.+?)--";
+                //string replacement = "($1)";
+                //string input = "He said--decisively--that the time--whatever time it was--had come.";
+                //foreach (Match match in Regex.Matches(input, padrao))
+                //{
+                //    string result = match.Result(replacement);
+                //    Console.WriteLine(result);
+                //}
+
+                //MessageBox.Show("Conteúdo");
+                //dgVisualizar.AutoGenerateColumns = false;
+                //dgVisualizar.DataSource = new ChamadoController().Findall();
+            }
+            //else if (cbOrderBy.Text == "Data")
+            //{
+            //    //MessageBox.Show("Data");
+            //    dgVisualizar.AutoGenerateColumns = false;
+            //    dgVisualizar.DataSource = new ChamadoController().Findall();
+            //}
+            else if (cbOrderBy.Text == "Status")
+            {
+                //MessageBox.Show("Status");
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = new ChamadoController().Findall();
+            }
+        }
+
+        private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbOrderBy.Text == "Código ticket")
+            {
+                maskedCod.Visible = true;
+            }else
+            {
+                maskedCod.Visible = false;
+            }
+
+
+            if (cbOrderBy.Text == "Status")
+            {
+                cbStatus.Visible = true;
+            }
+            else
+            {
+                cbStatus.Visible = false;
+            }
+        }
+
+        private void CbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (cbOrderBy.Text == "Conteúdo")
+            //{
+            //    cbStatus.Visible = true;
+            //}
+            //else
+            //{
+            //    cbStatus.Visible = false;
+            //}
         }
     }
 }

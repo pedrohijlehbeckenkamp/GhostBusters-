@@ -23,6 +23,13 @@ namespace GhostBusters_Infra.Repository
             return context.Set<ChamadoEntity>().
                     Where(codigo_owner => codigo_owner.TECNICO.COD_USUARIO == codigo).ToList();
         }
+
+        public List<ChamadoEntity> FindById(int codigo)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(codigo_chamado => codigo_chamado.COD_CHAMADO == codigo).ToList();
+        }
+
         public override ChamadoEntity CadastroUpdate(ChamadoEntity obj)//Cadastra ou Update
         {
             if (obj == null)

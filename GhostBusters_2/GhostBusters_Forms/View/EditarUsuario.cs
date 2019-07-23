@@ -30,7 +30,6 @@ namespace GhostBusters_Forms.View
                 this.Close();
         }
 
-
         private Usuario Update()
         {
             Usuario u = usuario;

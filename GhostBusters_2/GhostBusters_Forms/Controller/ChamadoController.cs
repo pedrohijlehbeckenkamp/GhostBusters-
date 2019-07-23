@@ -26,6 +26,11 @@ namespace GhostBusters_Forms.Controller
             return new ChamadoRepository().FindByOwner(codigo_owner).Select(owner => owner.MapChamadaModel()).ToList();
         }
 
+        public List<ChamadoModel> FindByID(int codigo_chamado)
+        {
+            return new ChamadoRepository().FindById(codigo_chamado).Select(chamado => chamado.MapChamadaModel()).ToList();
+        }
+
         public List<ChamadoModel> FindByTecnico(int codigo_tecnico)
         {
             return new ChamadoRepository().FindByTecnico(codigo_tecnico).Select(tecnico => tecnico.MapChamadaModel()).ToList();
