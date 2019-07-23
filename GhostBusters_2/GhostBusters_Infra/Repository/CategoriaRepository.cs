@@ -10,7 +10,7 @@ namespace GhostBusters_Infra.Repository
     public class CategoriaRepository : BaseRepository<CategoriaEntity>
     {
 
-       /* public override CategoriaEntity CadastroUpdate(CategoriaEntity obj)
+        public override CategoriaEntity CadastroUpdate(CategoriaEntity obj)
         {
             if(obj == null)
             {
@@ -18,7 +18,7 @@ namespace GhostBusters_Infra.Repository
             }
 
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
-        }*/
+        }
 
         protected override CategoriaEntity Cadastro(CategoriaEntity obj)
         {

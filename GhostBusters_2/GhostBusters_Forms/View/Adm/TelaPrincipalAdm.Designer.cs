@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNewTicket = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -44,19 +44,20 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
-            this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkAlteraSenha = new System.Windows.Forms.LinkLabel();
             this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.butAddTecnico = new System.Windows.Forms.Button();
+            this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -110,7 +111,7 @@
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(587, 11);
+            this.lblDate.Location = new System.Drawing.Point(603, 11);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 28;
@@ -218,10 +219,11 @@
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigochamado,
-            this.NomeUsuario,
-            this.NomePerfil,
             this.Titulo,
+            this.Descricao,
+            this.NomeUsuario,
             this.NomeTech,
+            this.NomePerfil,
             this.nomeCategoria,
             this.Nomestatus,
             this.Data_Chamado,
@@ -232,23 +234,76 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(691, 220);
             this.dgVisualizar.TabIndex = 45;
+            // 
+            // linkAlteraSenha
+            // 
+            this.linkAlteraSenha.AutoSize = true;
+            this.linkAlteraSenha.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkAlteraSenha.LinkColor = System.Drawing.Color.Navy;
+            this.linkAlteraSenha.Location = new System.Drawing.Point(34, 162);
+            this.linkAlteraSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.linkAlteraSenha.Name = "linkAlteraSenha";
+            this.linkAlteraSenha.Size = new System.Drawing.Size(69, 13);
+            this.linkAlteraSenha.TabIndex = 52;
+            this.linkAlteraSenha.TabStop = true;
+            this.linkAlteraSenha.Text = "Alterar senha";
+            // 
+            // pbPerfil
+            // 
+            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbPerfil.Location = new System.Drawing.Point(36, 11);
+            this.pbPerfil.Name = "pbPerfil";
+            this.pbPerfil.Size = new System.Drawing.Size(129, 128);
+            this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPerfil.TabIndex = 26;
+            this.pbPerfil.TabStop = false;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(326, 162);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(108, 44);
+            this.btnEditar.TabIndex = 53;
+            this.btnEditar.Text = "Editar ticket";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // butAddTecnico
+            // 
+            this.butAddTecnico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.butAddTecnico.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.butAddTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.butAddTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butAddTecnico.ForeColor = System.Drawing.Color.White;
+            this.butAddTecnico.Location = new System.Drawing.Point(170, 162);
+            this.butAddTecnico.Name = "butAddTecnico";
+            this.butAddTecnico.Size = new System.Drawing.Size(151, 44);
+            this.butAddTecnico.TabIndex = 54;
+            this.butAddTecnico.Text = "Adicionar Tecnico ticket";
+            this.butAddTecnico.UseVisualStyleBackColor = false;
+            this.butAddTecnico.Click += new System.EventHandler(this.ButAddTecnico_Click);
             // 
             // Codigochamado
             // 
@@ -259,24 +314,6 @@
             this.Codigochamado.ReadOnly = true;
             this.Codigochamado.Width = 125;
             // 
-            // NomeUsuario
-            // 
-            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
-            this.NomeUsuario.HeaderText = "Usuario";
-            this.NomeUsuario.MinimumWidth = 6;
-            this.NomeUsuario.Name = "NomeUsuario";
-            this.NomeUsuario.ReadOnly = true;
-            this.NomeUsuario.Width = 125;
-            // 
-            // NomePerfil
-            // 
-            this.NomePerfil.DataPropertyName = "NomePerfil";
-            this.NomePerfil.HeaderText = "Nome Perfil";
-            this.NomePerfil.MinimumWidth = 6;
-            this.NomePerfil.Name = "NomePerfil";
-            this.NomePerfil.ReadOnly = true;
-            this.NomePerfil.Width = 125;
-            // 
             // Titulo
             // 
             this.Titulo.DataPropertyName = "Titulo";
@@ -285,6 +322,22 @@
             this.Titulo.Name = "Titulo";
             this.Titulo.ReadOnly = true;
             this.Titulo.Width = 125;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "Descricao";
+            this.Descricao.HeaderText = "Descricao";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
+            this.NomeUsuario.HeaderText = "Usuario";
+            this.NomeUsuario.MinimumWidth = 6;
+            this.NomeUsuario.Name = "NomeUsuario";
+            this.NomeUsuario.ReadOnly = true;
+            this.NomeUsuario.Width = 125;
             // 
             // NomeTech
             // 
@@ -295,6 +348,15 @@
             this.NomeTech.ReadOnly = true;
             this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.NomeTech.Width = 125;
+            // 
+            // NomePerfil
+            // 
+            this.NomePerfil.DataPropertyName = "NomePerfil";
+            this.NomePerfil.HeaderText = "Nome Perfil";
+            this.NomePerfil.MinimumWidth = 6;
+            this.NomePerfil.Name = "NomePerfil";
+            this.NomePerfil.ReadOnly = true;
+            this.NomePerfil.Width = 125;
             // 
             // nomeCategoria
             // 
@@ -331,59 +393,6 @@
             this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
             this.Data_Chamado_finalizado.ReadOnly = true;
             this.Data_Chamado_finalizado.Width = 125;
-            // 
-            // linkAlteraSenha
-            // 
-            this.linkAlteraSenha.AutoSize = true;
-            this.linkAlteraSenha.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkAlteraSenha.LinkColor = System.Drawing.Color.Navy;
-            this.linkAlteraSenha.Location = new System.Drawing.Point(34, 162);
-            this.linkAlteraSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkAlteraSenha.Name = "linkAlteraSenha";
-            this.linkAlteraSenha.Size = new System.Drawing.Size(69, 13);
-            this.linkAlteraSenha.TabIndex = 52;
-            this.linkAlteraSenha.TabStop = true;
-            this.linkAlteraSenha.Text = "Alterar senha";
-            // 
-            // pbPerfil
-            // 
-            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbPerfil.Location = new System.Drawing.Point(36, 11);
-            this.pbPerfil.Name = "pbPerfil";
-            this.pbPerfil.Size = new System.Drawing.Size(129, 128);
-            this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPerfil.TabIndex = 26;
-            this.pbPerfil.TabStop = false;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(381, 156);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(108, 44);
-            this.btnEditar.TabIndex = 53;
-            this.btnEditar.Text = "Editar ticket";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
-            // 
-            // butAddTecnico
-            // 
-            this.butAddTecnico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.butAddTecnico.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.butAddTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.butAddTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butAddTecnico.ForeColor = System.Drawing.Color.White;
-            this.butAddTecnico.Location = new System.Drawing.Point(181, 156);
-            this.butAddTecnico.Name = "butAddTecnico";
-            this.butAddTecnico.Size = new System.Drawing.Size(194, 44);
-            this.butAddTecnico.TabIndex = 54;
-            this.butAddTecnico.Text = "Adicionar Tecnico ticket";
-            this.butAddTecnico.UseVisualStyleBackColor = false;
-            this.butAddTecnico.Click += new System.EventHandler(this.ButAddTecnico_Click);
             // 
             // TelaPrincipalAdm
             // 
@@ -438,10 +447,11 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button butAddTecnico;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomePerfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeTech;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomePerfil;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;

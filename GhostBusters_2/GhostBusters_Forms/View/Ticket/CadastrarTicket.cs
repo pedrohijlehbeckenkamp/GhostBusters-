@@ -52,13 +52,50 @@ namespace GhostBusters_Forms.View.Ticket
         {
             tbTitulo.Text = Chamado.Titulo;
             tbDescricao.Text = Chamado.Descricao;
-             
-            cbCategoria.DataSource = new CategoriaController().FindAll();
-            cbCategoria.DisplayMember = "NomeCategoria";
+            LoadTecnico();
+            LoadOwner();
+            LoadAdmin();
             AddListaAnexo();
             dgAddAnexo.AutoGenerateColumns = false;
             dgAddAnexo.DataSource = listaAnexo;
             //tbTitulo.Visible = false;
+
+        }
+        private void LoadAdmin()
+        {
+            if (usuarioLogin.perfil.nomePerfil == "Admin")
+            {
+                cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
+                cbStatus.DisplayMember = "NomeStatus";
+                cbCategoria.DataSource = new CategoriaController().FindAll();
+                tbNomeCategoria.Visible = false;
+                cbCategoria.DisplayMember = "NomeCategoria";
+                tbTitulo.Enabled = true;
+            }
+        }
+        private void LoadOwner()
+        {
+            if (usuarioLogin.perfil.nomePerfil == "Usuario")
+            {
+                cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
+                cbStatus.DisplayMember = "NomeStatus";
+                tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
+                cbCategoria.Visible = false;
+                tbTitulo.Enabled = false;
+            }
+        }
+        private void LoadTecnico()
+        {
+            if (usuarioLogin.perfil.nomePerfil == "Técnico")
+            {
+                cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
+                cbStatus.DisplayMember = "NomeStatus";
+                tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
+                cbCategoria.Visible = false;
+                tbTitulo.Enabled = false;
+                tbDescricao.Enabled = false;
+                butClearAnexo.Enabled = false;
+            }
         }
         private void AddListaAnexo()
         {
@@ -74,6 +111,7 @@ namespace GhostBusters_Forms.View.Ticket
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
             dgAddAnexo.AutoGenerateColumns = false;
+            tbNomeCategoria.Visible = false;
             dgAddAnexo.DataSource = listaAnexo;
             tbTitulo.Enabled = true;
         }
@@ -138,12 +176,14 @@ namespace GhostBusters_Forms.View.Ticket
         private ChamadoModel UpdateTicket()
         {
             ChamadoModel UpChamado = Chamado;
+            UpChamado.StatusChamado = (StatusModel)cbStatus.SelectedItem;
             UpChamado.Titulo = tbTitulo.Text;
             UpChamado.Descricao = tbDescricao.Text;
-            UpChamado.categoria = (CategoriaModel)cbCategoria.SelectedItem;
+            if (usuarioLogin.perfil.nomePerfil == "Admin")
+                UpChamado.categoria = (CategoriaModel)cbCategoria.SelectedItem;
             return UpChamado;
-
         }
+
         public Anexo GetAnexo(FileInfo file) => new Anexo()
         {
             nomeAnexo = file.Name,
@@ -222,6 +262,11 @@ namespace GhostBusters_Forms.View.Ticket
             if (tbDescricao.TextLength <= 300)
                 tbResultado.Text = tbDescricao.TextLength.ToString();
             else MessageBox.Show("Maximo de caracteres atingido");
+        }
+
+        private void TbTitulo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

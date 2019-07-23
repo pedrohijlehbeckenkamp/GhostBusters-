@@ -63,7 +63,16 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-           
+            var linha = dgVisualizar.CurrentRow.DataBoundItem;
+
+            var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+                LoadUsuario();
+            };
+            menu.Show();
+            this.Hide();
         }
 
         private void Esconder()

@@ -46,7 +46,6 @@ namespace GhostBusters_Infra.Repository
             //obj.CATEGORIA = null;
             context.Entry(obj.CATEGORIA).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;           
-            //context.Entry(obj._STATUS.COD_STATUS).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
 
@@ -64,7 +63,9 @@ namespace GhostBusters_Infra.Repository
         {
 
             var finded = FindById(obj.EntityKey);
+            //var FindId = new PerfilRepository().FindById(obj.OWNER.PERFIL.EntityKey);
             context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
+            //context.Entry(FindId).State = System.Data.Entity.EntityState.Detached;
 
             var objUpdated = context.Set<ChamadoEntity>().Attach(obj);
             context.Entry(objUpdated).State = System.Data.Entity.EntityState.Modified;
