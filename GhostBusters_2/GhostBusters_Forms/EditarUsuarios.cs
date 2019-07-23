@@ -26,7 +26,6 @@ namespace GhostBusters_Forms
 
         private void EditarUsuarios_Load(object sender, EventArgs e)
         {
-
             ValidaSenha();
 
             if (usuario.perfil.nomePerfil == "Técnico")
@@ -40,20 +39,16 @@ namespace GhostBusters_Forms
                 lbNome.Text = usuario.NomeUsuario;
                 lbPerfil.Text = usuario.NomePerfil;
                 lbEmail.Text = usuario.Email;
-
-            }
-
+            };
         }
 
         private void TbSenha_TextChanged(object sender, EventArgs e)
         {
-
             if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == usuario.Email))
                 || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == usuario.Email))
             {
                 //tb
                 //MessageBox.Show("merdaaaa");
-
             }
 
         }
@@ -64,14 +59,12 @@ namespace GhostBusters_Forms
             {
                 tbConfSenha.BackColor = Color.White;
                 tbNovaSenha.BackColor = Color.White;
-
             }
             else
             {
                 tbConfSenha.BackColor = Color.White;
                 tbNovaSenha.BackColor = Color.White;
             }
-
             return true;
         }
 
@@ -105,9 +98,6 @@ namespace GhostBusters_Forms
             Usuario Upusuario = usuario;
             Upusuario.Senha = tbConfSenha.Text;
             return Upusuario;
-
         }
-
-
-}
+    }
 }

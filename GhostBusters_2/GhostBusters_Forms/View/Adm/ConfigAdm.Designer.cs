@@ -36,6 +36,13 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnStatus = new System.Windows.Forms.Button();
             this.btnPerfil = new System.Windows.Forms.Button();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodigoStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodPerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Perfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,6 +63,14 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgVisualizar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.NomeCategoria,
+            this.CodigoStatus,
+            this.NomeStatus,
+            this.NomePerfil,
+            this.CodPerfil,
+            this.Perfil});
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgVisualizar.Location = new System.Drawing.Point(37, 78);
             this.dgVisualizar.MultiSelect = false;
@@ -151,6 +166,55 @@
             this.btnPerfil.UseVisualStyleBackColor = false;
             this.btnPerfil.Click += new System.EventHandler(this.BtnPerfil_Click);
             // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo_categoria";
+            this.Codigo.HeaderText = "Cod Categoria";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // NomeCategoria
+            // 
+            this.NomeCategoria.DataPropertyName = "NomeCategoria";
+            this.NomeCategoria.HeaderText = "Categoria";
+            this.NomeCategoria.Name = "NomeCategoria";
+            this.NomeCategoria.ReadOnly = true;
+            // 
+            // CodigoStatus
+            // 
+            this.CodigoStatus.DataPropertyName = "codigo_status";
+            this.CodigoStatus.HeaderText = "Cod Status";
+            this.CodigoStatus.Name = "CodigoStatus";
+            this.CodigoStatus.ReadOnly = true;
+            // 
+            // NomeStatus
+            // 
+            this.NomeStatus.DataPropertyName = "NomeStatus";
+            this.NomeStatus.HeaderText = "Status";
+            this.NomeStatus.Name = "NomeStatus";
+            this.NomeStatus.ReadOnly = true;
+            // 
+            // NomePerfil
+            // 
+            this.NomePerfil.DataPropertyName = "NomePerfil";
+            this.NomePerfil.HeaderText = "Perfil";
+            this.NomePerfil.Name = "NomePerfil";
+            this.NomePerfil.ReadOnly = true;
+            // 
+            // CodPerfil
+            // 
+            this.CodPerfil.DataPropertyName = "Codigo";
+            this.CodPerfil.HeaderText = "Cod Perfil";
+            this.CodPerfil.Name = "CodPerfil";
+            this.CodPerfil.ReadOnly = true;
+            // 
+            // Perfil
+            // 
+            this.Perfil.DataPropertyName = "nomePerfil";
+            this.Perfil.HeaderText = "Perfil";
+            this.Perfil.Name = "Perfil";
+            this.Perfil.ReadOnly = true;
+            // 
             // ConfigAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,5 +246,12 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnStatus;
         private System.Windows.Forms.Button btnPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomePerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodPerfil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Perfil;
     }
 }

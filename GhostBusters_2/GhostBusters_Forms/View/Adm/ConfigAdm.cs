@@ -18,6 +18,7 @@ namespace GhostBusters_Forms.View.Adm
     public partial class ConfigAdm : Form
     {
         String operacao = "";
+        //private PerfilModel Perfil;
         public ConfigAdm(Usuario usuario)
         {
             InitializeComponent();
@@ -31,7 +32,6 @@ namespace GhostBusters_Forms.View.Adm
 
         private void ConfigAdm_Load(object sender, EventArgs e)
         {
-          
             loadDataGrid();
         }
 
@@ -45,19 +45,36 @@ namespace GhostBusters_Forms.View.Adm
 
         private void loadDataGrid()
         {
+            //EsconderColunas();
             if (operacao == "Categoria")
             {
+                EsconderColunasStatus();
+                EsconderColunasPerfil();
+                MostrarColunasCategoria();
                 var lista = new CategoriaController().FindAll();
+
+                dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = lista;
             }
             else if (operacao == "Perfil")
             {
+                EsconderColunasStatus();
+                EsconderColunasCategoria();
+                MostrarColunasPerfil();
                 var lista = new PerfilController().FindAll();
+
+                dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = lista;
             }
             else if (operacao == "Status")
             {
+                EsconderColunasCategoria();
+                EsconderColunasPerfil();
+                MostrarColunasStatus();
                 var lista = new StatusController().FindAll();
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = lista;
 
                 //var minhaLista = new List<StatusDoGrid>();
                 //foreach (var item in lista)
@@ -70,17 +87,55 @@ namespace GhostBusters_Forms.View.Adm
                 //    };
                 //    minhaLista.Add(statusDoGrid);
                 //}
-                  
-                var meuNovoCara = lista.Select(x => new
-                {
-                    codigo_status = x.codigo_status,
-                    NomeStatus = x.NomeStatus,
-                    perfil = x.perfil.nomePerfil
-                }).ToList();
 
-                dgVisualizar.DataSource = meuNovoCara;
+                //var meuNovoCara = lista.Select(x => new
+                //{
+                //    codigo_status = x.codigo_status,
+                //    NomeStatus = x.NomeStatus,
+                //    perfil = x.perfil.nomePerfil
+                //}).ToList();
             }
         }
+
+        private void EsconderColunasCategoria()
+        {
+            dgVisualizar.Columns[0].Visible = false;
+            dgVisualizar.Columns[1].Visible = false;
+        }
+        private void MostrarColunasCategoria()
+        {
+            dgVisualizar.Columns[0].Visible = true;
+            dgVisualizar.Columns[1].Visible = true;
+        }
+
+        ////////////////////////////////////////////////
+
+        private void EsconderColunasStatus()
+        {
+            dgVisualizar.Columns[2].Visible = false;
+            dgVisualizar.Columns[3].Visible = false;
+            dgVisualizar.Columns[4].Visible = false;
+        }
+        private void MostrarColunasStatus()
+        {
+            dgVisualizar.Columns[2].Visible = true;
+            dgVisualizar.Columns[3].Visible = true;
+            dgVisualizar.Columns[4].Visible = true;
+        }
+        
+        ////////////////////////////////////////////////
+
+        private void EsconderColunasPerfil()
+        {
+            dgVisualizar.Columns[5].Visible = false;
+            dgVisualizar.Columns[6].Visible = false;
+        }
+        private void MostrarColunasPerfil()
+        {
+            dgVisualizar.Columns[5].Visible = true;
+            dgVisualizar.Columns[6].Visible = true;
+        }
+
 
         private void BtnCategoria_Click(object sender, EventArgs e)
         {
@@ -102,30 +157,24 @@ namespace GhostBusters_Forms.View.Adm
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
             if (operacao == "Categoria")
-            {
-               // var linha = dgVisualizar.CurrentRow.DataBoundItem;
-
+            { 
                 var menu = new CadastrarCategoria();
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
                     this.loadDataGrid();
                 };
-                
                 menu.Show();
                 this.Hide();
             }
             else if (operacao == "Status")
             {
-                //var linha = dgVisualizar.CurrentRow.DataBoundItem;
-
                 var menu = new CadastrarStatus();
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
                     this.loadDataGrid();
                 };
-
                 menu.Show();
                 this.Hide();
             }
@@ -136,7 +185,6 @@ namespace GhostBusters_Forms.View.Adm
                 {
                     this.Show();
                     this.loadDataGrid();
-
                 };
                 menu.Show();
                 this.Hide();
@@ -165,14 +213,12 @@ namespace GhostBusters_Forms.View.Adm
             else if (operacao == "Status")
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
-
                 var menu = new CadastrarStatus((StatusModel)linha);
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
                     this.loadDataGrid();
                 };
-
                 menu.Show();
                 this.Hide();
             }
@@ -186,10 +232,8 @@ namespace GhostBusters_Forms.View.Adm
                     this.Show();
                     this.loadDataGrid();
                 };
-
                 menu.Show();
                 this.Hide();
-
             }
             else if (operacao == "")
             {
@@ -217,7 +261,5 @@ namespace GhostBusters_Forms.View.Adm
                 loadDataGrid();
             }
         }
-
-
     }
 }
