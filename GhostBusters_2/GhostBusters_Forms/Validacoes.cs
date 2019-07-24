@@ -23,36 +23,28 @@ namespace GhostBusters_Forms
         }
         public static bool ValidaNome(string nome)
         {
-            if (!Regex.IsMatch(nome, @"^[ a-zA-Z á]*$"))
-            {
+            if (!Regex.IsMatch(nome, @"^[ a-zA-Z záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]*$"))
                 return true;
-            }
             return false;
         }
         public static bool ValidaEmail(string email)
         {
             Regex validaEmail = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
             if (!validaEmail.IsMatch(email))
-            {
-                return true;
-            }
-            return false;
-        }
-        public static bool ValidaConfirmaEmail(string email, string confirmaEmail)
-        {
-            if (confirmaEmail != email)
                 return true;
             return false;
         }
-        public static bool ValidaSenha(string senha, string confirmaSenha)
+        public static bool ValidaNomesDiferentes(string Nome, string confirmaNome)
         {
-            if (string.IsNullOrEmpty(senha) || string.IsNullOrEmpty(confirmaSenha)
-                || senha != confirmaSenha || senha.Length < 6)
+            if (confirmaNome != Nome)
                 return true;
-
-           return false;
+            return false;
         }
-
-
+        public static bool ValidaTamanhaSenha(string senha)
+        {
+            if (senha.Length <6)
+                return true;
+            return false;
+        }
     }
 }

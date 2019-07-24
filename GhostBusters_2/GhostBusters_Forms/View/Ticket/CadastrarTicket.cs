@@ -33,12 +33,6 @@ namespace GhostBusters_Forms.View.Ticket
             CenterToParent();
             usuarioLogin = _usuario;
             Chamado = _ticket;
-
-            //tbTitulo.Text = Chamado.Titulo;
-            //tbDescricao.Text = Chamado.Descricao;
-            //cbCategoria.DataSource = new CategoriaController().FindAll();
-            //cbCategoria.DisplayMember = "NomeCategoria";
-
         }
 
         private void CadastrarTicket_Load(object sender, EventArgs e)
@@ -227,9 +221,13 @@ namespace GhostBusters_Forms.View.Ticket
            {
               if (Chamado != null)
               {
+                if (Chamado.Owner.Codigo_perfil == Chamado.StatusChamado.codigo_perfil)
+                     new StatusController().Cadastro(UpdateNullStatus());                   
                  new ChamadoController().Cadastro(UpdateTicket());
                  new AnexoController().AddChamado(listaAnexo.ToList(), Chamado.Codigo_chamado);
-                 this.Close();
+                    if (Chamado.Owner.Codigo_perfil == Chamado.StatusChamado.codigo_perfil)
+                        new StatusController().Cadastro(UpdateCodigoPrefilStatus());
+                this.Close();
               }
               else
               {
@@ -238,6 +236,19 @@ namespace GhostBusters_Forms.View.Ticket
               }
            }
       
+        }
+
+        private StatusModel UpdateNullStatus()
+        {
+            StatusModel status = Chamado.StatusChamado;
+            status.codigo_perfil = null;
+            return status;
+        }
+        private StatusModel UpdateCodigoPrefilStatus()
+        {
+            StatusModel status = Chamado.StatusChamado;
+          //  status.codigo_perfil = null;
+            return status;
         }
         private bool Valida()
         {

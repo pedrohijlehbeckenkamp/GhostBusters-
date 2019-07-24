@@ -51,6 +51,8 @@
             this.lbEmailErro = new System.Windows.Forms.Label();
             this.lbErroConfEmail = new System.Windows.Forms.Label();
             this.lbNomeErro = new System.Windows.Forms.Label();
+            this.lbErroConfSenha = new System.Windows.Forms.Label();
+            this.lbErroSenha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -289,12 +291,34 @@
             this.lbNomeErro.TabIndex = 42;
             this.lbNomeErro.Text = "Email ou senha incorreta!";
             // 
+            // lbErroConfSenha
+            // 
+            this.lbErroConfSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErroConfSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbErroConfSenha.Location = new System.Drawing.Point(221, 329);
+            this.lbErroConfSenha.Name = "lbErroConfSenha";
+            this.lbErroConfSenha.Size = new System.Drawing.Size(132, 16);
+            this.lbErroConfSenha.TabIndex = 43;
+            this.lbErroConfSenha.Text = "Senha incorreta!";
+            // 
+            // lbErroSenha
+            // 
+            this.lbErroSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbErroSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbErroSenha.Location = new System.Drawing.Point(401, 271);
+            this.lbErroSenha.Name = "lbErroSenha";
+            this.lbErroSenha.Size = new System.Drawing.Size(132, 16);
+            this.lbErroSenha.TabIndex = 44;
+            this.lbErroSenha.Text = "Senha incorreta!";
+            // 
             // CadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(741, 450);
+            this.Controls.Add(this.lbErroSenha);
+            this.Controls.Add(this.lbErroConfSenha);
             this.Controls.Add(this.lbNomeErro);
             this.Controls.Add(this.lbErroConfEmail);
             this.Controls.Add(this.lbEmailErro);
@@ -353,5 +377,7 @@
         private System.Windows.Forms.Label lbEmailErro;
         private System.Windows.Forms.Label lbErroConfEmail;
         private System.Windows.Forms.Label lbNomeErro;
+        private System.Windows.Forms.Label lbErroConfSenha;
+        private System.Windows.Forms.Label lbErroSenha;
     }
 }
