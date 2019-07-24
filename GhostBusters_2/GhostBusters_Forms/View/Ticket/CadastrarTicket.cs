@@ -33,12 +33,6 @@ namespace GhostBusters_Forms.View.Ticket
             CenterToParent();
             usuarioLogin = _usuario;
             Chamado = _ticket;
-
-            //tbTitulo.Text = Chamado.Titulo;
-            //tbDescricao.Text = Chamado.Descricao;
-            //cbCategoria.DataSource = new CategoriaController().FindAll();
-            //cbCategoria.DisplayMember = "NomeCategoria";
-
         }
 
         private void CadastrarTicket_Load(object sender, EventArgs e)
@@ -133,103 +127,45 @@ namespace GhostBusters_Forms.View.Ticket
         {
             SaveChamado();
 
-            if (Chamado.nomeCategoria == "Reprovado" && Chamado.NomePerfil == "Usuario")
-            {
-                try
-                {
-                    MailMessage mail = new MailMessage();
-
-                    SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
-
-                    mail.From = new MailAddress("cliente1@gmail.com");
-                    mail.To.Add(Chamado.Tech.Email);
-                    mail.Subject = tbTitulo.Text = Chamado.Titulo;
-                    mail.Body = tbDescricao.Text = Chamado.Descricao;
-
-
-                    SmtpServer.Port = 2525;
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
-                    SmtpServer.EnableSsl = true;
-
-                    SmtpServer.Send(mail);
-                    MessageBox.Show("Email de Reprovação enviado!");
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Não foi enviado!");
-                }
-
-            }
-            else if (Chamado.nomeCategoria == "Aprovado" && Chamado.NomePerfil == "Usuario")
-            {
-                try
-                {
-                    MailMessage mail = new MailMessage();
-
-                    SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
-
-                    mail.From = new MailAddress("cliente1@gmail.com");
-                    mail.To.Add(Chamado.Tech.Email);
-                    mail.Subject = tbTitulo.Text = Chamado.Titulo;
-                    mail.Body = tbDescricao.Text = Chamado.Descricao;
-
-
-
-                    SmtpServer.Port = 2525;
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
-                    SmtpServer.EnableSsl = true;
-
-                    SmtpServer.Send(mail);
-                    MessageBox.Show("Email de Reprovação enviado!");
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Não foi enviado!");
-                }
-            }
-            else if (Chamado.nomeCategoria == "Finalizado" && Chamado.NomePerfil == "Tecnico")
-            {
-                try
-                {
-                    MailMessage mail = new MailMessage();
-
-                    SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
-
-                    mail.From = new MailAddress("cliente1@gmail.com");
-                    mail.To.Add(Chamado.Owner.Email);
-                    mail.Subject = tbTitulo.Text = Chamado.Titulo;
-                    mail.Body = tbDescricao.Text = Chamado.Descricao;
-
-
-                    SmtpServer.Port = 2525;
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
-                    SmtpServer.EnableSsl = true;
-
-                    SmtpServer.Send(mail);
-                    MessageBox.Show("Email de Reprovação enviado!");
-
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Não foi enviado!");
-                }
-
-            }
-
-            
+            if (Chamado.StatusChamado.NomeStatus == "Reprovado" && Chamado.NomePerfil == "Usuario")
+                EnviarEmail();
+            if (Chamado.nomeCategoria == "Aprovado" && Chamado.NomePerfil == "Usuario")
+                EnviarEmail();
+            if (Chamado.nomeCategoria == "Finalizado" && Chamado.NomePerfil == "Tecnico")
+                EnviarEmail();
         }
+        private void EnviarEmail()
+        {
+            try
+            {
+                new ChamadoController().EnviarEmail(Chamado);
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi enviado! " + ex);
+            }
+        }
         public void SaveChamado()
         {
+            int cont = 0;
+            var statusitem = (StatusModel)cbStatus.SelectedItem;
            if (Valida())
            {
               if (Chamado != null)
               {
+                 if (Chamado.Owner.Codigo_perfil == statusitem.codigo_perfil)
+                    {
+                        new StatusController().Cadastro(UpdateNullStatus());
+                        cont++;
+                    }
+                                  
                  new ChamadoController().Cadastro(UpdateTicket());
                  new AnexoController().AddChamado(listaAnexo.ToList(), Chamado.Codigo_chamado);
-                 this.Close();
+
+                 if (cont > 0)
+                      new StatusController().Cadastro(UpdateCodigoPrefilStatus());
+                this.Close();
               }
               else
               {
@@ -238,6 +174,21 @@ namespace GhostBusters_Forms.View.Ticket
               }
            }
       
+        }
+
+        private StatusModel UpdateNullStatus()
+        {
+            StatusModel status = (StatusModel)cbStatus.SelectedItem;
+            status.codigo_perfil = null;
+            status.perfil = null;
+            return status;
+        }
+        private StatusModel UpdateCodigoPrefilStatus()
+        {
+            StatusModel status = Chamado.StatusChamado;
+            status.codigo_perfil = Chamado.Owner.Codigo_perfil;
+            status.perfil = Chamado.Owner.perfil;
+            return status;
         }
         private bool Valida()
         {
@@ -283,7 +234,6 @@ namespace GhostBusters_Forms.View.Ticket
                 UpChamado.categoria = (CategoriaModel)cbCategoria.SelectedItem;
             return UpChamado;
         }
-
         public Anexo GetAnexo(FileInfo file) => new Anexo()
         {
             nomeAnexo = file.Name,
@@ -320,7 +270,6 @@ namespace GhostBusters_Forms.View.Ticket
             }
             return location;
         }
-
         private void ButExcluirAnexo_Click(object sender, EventArgs e)
         {
            //Exclui o anexo 
@@ -345,7 +294,6 @@ namespace GhostBusters_Forms.View.Ticket
             }
             dgAddAnexo.DataSource = listaAnexo;      
         }
-
         private void DgAddAnexo_DoubleClick(object sender, EventArgs e)
         {
             //Visualizar Chamado 
@@ -356,7 +304,6 @@ namespace GhostBusters_Forms.View.Ticket
             MessageBox.Show("Abrindo arquivo");
             File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
         }
-
         private void TbDescricao_TextChanged(object sender, EventArgs e)
         {
             if (tbDescricao.TextLength <= 300)

@@ -23,10 +23,16 @@ namespace GhostBusters_Forms.Controller
         {
             return new UsuarioRepository().findbyLogin(email, senha).MapUsuarioModel();
         }
+        public Usuario ValidaEmailUnique(string email)
+        {
+            return new UsuarioRepository().findbyEmail(email).MapUsuarioModel();
+        }
         public List<Usuario> FindbyPerfil(string perfil)
         {
             return new UsuarioRepository().findbyPerfil(perfil).Select(usuario => usuario.MapUsuarioModel()).ToList();
         }
+
+
 
     }
 }

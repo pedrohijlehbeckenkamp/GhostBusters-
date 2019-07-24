@@ -25,26 +25,38 @@ namespace GhostBusters_Forms
         }
         private void CadastroUsuario_Load(object sender, EventArgs e)
         {
+            LoadCadastroUsuario();
+            //LoadImagem();
+            //CbListarPerfil.DataSource = new PerfilController().FindAll();
+            //CbListarPerfil.DisplayMember = "nomePerfil";
+            //lbEmailErro.Visible = false;
+            //lbErroConfEmail.Visible = false;
+            //lbNomeErro.Visible = false;
+        }
+        private void LoadCadastroUsuario()
+        {
             LoadImagem();
             CbListarPerfil.DataSource = new PerfilController().FindAll();
             CbListarPerfil.DisplayMember = "nomePerfil";
             lbEmailErro.Visible = false;
             lbErroConfEmail.Visible = false;
             lbNomeErro.Visible = false;
+            lbErroSenha.Visible = false;
+            lbErroConfSenha.Visible = false;
         }
         private void ButSave_Click(object sender, EventArgs e)
         {
             if (Valida())
             {
                 MessageBox.Show("UHUL");
-                //ImagemModel image = null;
+                ImagemModel image = null;
 
-                //FileInfo file = new FileInfo(pictureImagem.ImageLocation);
-                //image = new ImagemController().Cadastro(SalvarImagemBase64(file));
+                FileInfo file = new FileInfo(pictureImagem.ImageLocation);
+                image = new ImagemController().Cadastro(SalvarImagemBase64(file));
 
-                //new UsuarioController().Cadastro(GetUsuario(image));
-                //MessageBox.Show("Casdastro feito com sucesso");
-               // this.Close();
+                new UsuarioController().Cadastro(GetUsuario(image));
+                MessageBox.Show("Casdastro feito com sucesso");
+                this.Close();
             }
         }
 
@@ -60,110 +72,61 @@ namespace GhostBusters_Forms
         public bool Valida()
         {
             int cont = 0;
-            if (!Validacoes.ValidaCamponull(tbNome.Text))
-            {
-                if (Validacoes.ValidaNome(tbNome.Text))
-                {
-                    lbNomeErro.BackColor = Color.Red;
-                    lbNomeErro.Visible = true;
-                    lbNomeErro.Text = "Nome Invalido";
-                    cont++;
-                }
-                else
-                {
-                    lbNomeErro.BackColor = Color.White;
-                    lbNomeErro.Visible = false;
-                }
-            }
-            else
-            {
-                lbNomeErro.Visible = true;
-                lbNomeErro.Text = "Nome Invalido";
-                cont++;
-            }
-
-            if (!Validacoes.ValidaCamponull(tbEmail.Text))
-            {
-                if (Validacoes.ValidaEmail(tbEmail.Text))
-                {
-                    tbEmail.BackColor = Color.Red;
-                    lbEmailErro.Visible = true;
-                    lbEmailErro.Text = "Email invalido";
-                    cont++;
-                }
-                else
-                {
-                    tbEmail.BackColor = Color.White;
-                    lbEmailErro.Visible = false;
-                }
-            }else
-            {
-                tbEmail.BackColor = Color.Red;
-                lbEmailErro.Visible = true;
-                lbEmailErro.Text = "Campo null";
-                cont++;
-            }
-
-            if (!Validacoes.ValidaCamponull(tbConfirmaEmail.Text))
-            {
-                if (Validacoes.ValidaConfirmaEmail(tbEmail.Text, tbConfirmaEmail.Text))
-                {
-                    tbConfirmaEmail.BackColor = Color.Red;
-                    lbErroConfEmail.Visible = true;
-                    lbErroConfEmail.Text = "Email Difrentes";
-                    cont++;
-                }
-                else
-                {
-                    tbConfirmaEmail.BackColor = Color.White;
-                    lbErroConfEmail.Visible = false;
-                }
-            }
-            else
-            {
-                tbConfirmaEmail.BackColor = Color.Red;
-                lbErroConfEmail.Visible = true;
-                lbErroConfEmail.Text = "Campo null";
-                cont++;
-            }
+            var validaEmail = new UsuarioController().ValidaEmailUnique(tbEmail.Text);
+            cont += ValidacoesCampos(Validacoes.ValidaNome(tbNome.Text)
+                                , tbNome, lbNomeErro, "Nome Invalido");
+           
+            cont += ValidacoesCampos(Validacoes.ValidaEmail(tbEmail.Text)
+                               , tbEmail, lbEmailErro, "Email invalido");
             
+            cont += ValidacoesCampos(Validacoes.ValidaNomesDiferentes(tbEmail.Text, tbConfirmaEmail.Text)
+                              , tbConfirmaEmail, lbErroConfEmail, "Email Difrentes");
+            if (validaEmail != null)
+            {
+                ValidacoesCampos(true, tbEmail, lbEmailErro, "Email Existente");
+            }  
+            cont += ValidacoesCampos(Validacoes.ValidaTamanhaSenha(tbSenha.Text)
+                             , tbSenha, lbErroSenha, "Senha Invalida");
+
+            cont += ValidacoesCampos( Validacoes.ValidaNomesDiferentes(tbSenha.Text, tbConfirmeSenha.Text)
+                               , tbConfirmeSenha, lbErroConfSenha, "Senha Difrentes");
 
             if (cont > 0)
             {
                 return false;
             }
             return true;
-            //int cont = 0;
-            //Regex validaNome = new Regex(@"[0-9]");
-            //if (string.IsNullOrEmpty(tbNome.Text) || validaNome.IsMatch(tbNome.Text))
-            //{
-            //    tbNome.BackColor = Color.Red;
-            //    MessageBox.Show("Erro nome");
-            //    //return false;
-            //    cont++;
-            //}else
-            //{
-            //    tbNome.BackColor = Color.White;
-            //}
-
-            //if(string.IsNullOrEmpty(tbSenha.Text) || string.IsNullOrEmpty(tbConfirmeSenha.Text) || tbSenha.Text != tbConfirmeSenha.Text || tbSenha.Text.Length <6)
-            //{
-            //    tbConfirmeSenha.BackColor = Color.Red;
-            //    tbSenha.BackColor = Color.Red;
-            //    cont++;
-            //}
-            //else
-            //{
-            //    tbConfirmeSenha.BackColor = Color.White;
-            //    tbSenha.BackColor = Color.White;
-            //}
-
-            //if (cont > 0)
-            //{
-            //    return false;
-            //}
-            //return true;
         }
+
+
+        private int ValidacoesCampos(bool test2, TextBox textBox, Label label, string messagem)
+        {
+            int cont = 0;
+            if (!Validacoes.ValidaCamponull(textBox.Text))
+            {
+                if (test2)
+                {
+                    textBox.BackColor = Color.Red;
+                    label.Visible = true;
+                    label.Text = messagem;
+                    cont++;
+                }
+                else
+                {
+                    textBox.BackColor = Color.White;
+                    label.Visible = false;
+                }
+            }
+            else
+            {
+                textBox.BackColor = Color.Red;
+                label.Visible = true;
+                label.Text = "Campo Null";
+                cont++;
+            }
+            return cont;
+        }
+
         private OpenFileDialog GetOpenFileDialog()
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -188,17 +151,12 @@ namespace GhostBusters_Forms
                 pictureImagem.Load();
             }
         }
+
         private ImagemModel SalvarImagemBase64(FileInfo file) => new ImagemModel
         {
-            //Imagem image = new Imagem();
             nomeImagem = file.Name,
             BaseData = Convert.ToBase64String(File.ReadAllBytes(file.FullName))
-            //base64Repository.CreateOrUpdate(image);
-            //pictureBoxBase64.Image.Dispose();
-            //pictureBoxBase64.Image = null;
         };
-
-
 
         private void LoadImagem()
         {

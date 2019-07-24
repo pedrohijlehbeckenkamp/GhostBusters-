@@ -13,6 +13,10 @@ namespace GhostBusters_Infra.Repository
         {
             return context.Set<UsuarioEntity>().AsNoTracking().FirstOrDefault(x => x.EMAIL == email && x.SENHA == senha );
         }
+        public UsuarioEntity findbyEmail(string email)
+        {
+            return context.Set<UsuarioEntity>().AsNoTracking().FirstOrDefault(x => x.EMAIL == email);
+        }
         public List<UsuarioEntity> findbyPerfil(string perfil)
         {
             return context.Set<UsuarioEntity>().AsNoTracking().Where(x => x.PERFIL.NOME == perfil).ToList();
