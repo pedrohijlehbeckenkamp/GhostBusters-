@@ -27,7 +27,7 @@ namespace GhostBusters_Infra.Repository
                 return null;
             }
 
-            obj.COD_PERFIL = obj.PERFIL.COD_PERFIL;
+            obj.COD_PERFIL = obj.PERFIL?.COD_PERFIL;
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
 

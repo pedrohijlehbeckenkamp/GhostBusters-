@@ -4,6 +4,7 @@ using GhostBusters_Infra.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,9 +27,9 @@ namespace GhostBusters_Forms.Controller
             return new ChamadoRepository().FindByOwner(codigo_owner).Select(owner => owner.MapChamadaModel()).ToList();
         }
 
-        public List<ChamadoModel> FindByID(int codigo_chamado)
+        public ChamadoModel FindByID(int codigo_chamado)
         {
-            return new ChamadoRepository().FindById(codigo_chamado).Select(chamado => chamado.MapChamadaModel()).ToList();
+            return new ChamadoRepository().FindById(codigo_chamado).MapChamadaModel();
         }
 
         public List<ChamadoModel> FindByTecnico(int codigo_tecnico)
@@ -43,6 +44,26 @@ namespace GhostBusters_Forms.Controller
                 new AnexoController().ExcluirAnexo(chamado.anexos.ToArray()[i].Codigo_Anexo);
             }
             new ChamadoRepository().Excluir(chamado.Codigo_chamado);
+        }
+
+        public void EnviarEmail(ChamadoModel Chamado)
+        {          
+                MailMessage mail = new MailMessage();
+
+                SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
+
+                mail.From = new MailAddress("cliente1@gmail.com");
+                mail.To.Add(Chamado.Tech.Email);
+                mail.Subject =  Chamado.Titulo;
+                mail.Body = Chamado.Descricao;
+
+
+
+                SmtpServer.Port = 2525;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
+                SmtpServer.EnableSsl = true;
+
+                SmtpServer.Send(mail); 
         }
     }
 }

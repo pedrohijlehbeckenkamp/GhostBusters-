@@ -24,10 +24,9 @@ namespace GhostBusters_Infra.Repository
                     Where(codigo_owner => codigo_owner.TECNICO.COD_USUARIO == codigo).ToList();
         }
 
-        public List<ChamadoEntity> FindById(int codigo)
+        public ChamadoEntity FindById(int codigo)
         {
-            return context.Set<ChamadoEntity>().
-                    Where(codigo_chamado => codigo_chamado.COD_CHAMADO == codigo).ToList();
+            return context.Set<ChamadoEntity>().Find(codigo);
         }
 
         public override ChamadoEntity CadastroUpdate(ChamadoEntity obj)//Cadastra ou Update
@@ -70,12 +69,12 @@ namespace GhostBusters_Infra.Repository
         {
 
             var finded = FindById(obj.EntityKey);
-            var Findowner = new PerfilRepository().FindById(obj.OWNER.PERFIL.EntityKey);
+            //var Findowner = new PerfilRepository().FindById(obj.OWNER.PERFIL.EntityKey);
             //var FindStatus = new PerfilRepository().FindById(obj._STATUS.PERFIL.EntityKey);
 
 
-            context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
-            context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
+           context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
+           // context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
             //context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
 
             //if (obj.TECNICO != null)
