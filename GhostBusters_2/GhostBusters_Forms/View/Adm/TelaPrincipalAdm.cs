@@ -192,10 +192,7 @@ namespace GhostBusters_Forms.Adm
             {
                 string padrao = tbConteudo.Text;
 
-                //string replacement = "($1)";
-                //string input = "he said--decisively--that the time--whatever time it was--had come.";
-
-                var ChamadosModel = new ChamadoModel();
+                //var ChamadosModel = new ChamadoModel();
 
                 var Chamados = new ChamadoController().Findall();
 
