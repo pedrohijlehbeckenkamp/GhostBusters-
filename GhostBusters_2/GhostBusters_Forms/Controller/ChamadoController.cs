@@ -42,9 +42,19 @@ namespace GhostBusters_Forms.Controller
             return new ChamadoRepository().FindById(codigo_chamado).MapChamadaModel();
         }
 
+        public List<ChamadoModel> FindChamadoByID(int IdChamado)
+        {
+            return new ChamadoRepository().FindChamadoById(IdChamado).Select(id => id.MapChamadaModel()).ToList();
+        }
+
         public List<ChamadoModel> FindByTecnico(int codigo_tecnico)
         {
             return new ChamadoRepository().FindByTecnico(codigo_tecnico).Select(tecnico => tecnico.MapChamadaModel()).ToList();
+        }
+
+        public List<ChamadoModel> FindByTech(int codigo_tecnico)
+        {
+            return new ChamadoRepository().FindByTech(codigo_tecnico).Select(tecnico => tecnico.MapChamadaModel()).ToList();
         }
 
         public void ExcluirChamado(ChamadoModel chamado)

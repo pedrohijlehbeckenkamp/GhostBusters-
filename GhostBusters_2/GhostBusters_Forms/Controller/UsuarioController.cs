@@ -31,8 +31,5 @@ namespace GhostBusters_Forms.Controller
         {
             return new UsuarioRepository().findbyPerfil(perfil).Select(usuario => usuario.MapUsuarioModel()).ToList();
         }
-
-
-
     }
 }
