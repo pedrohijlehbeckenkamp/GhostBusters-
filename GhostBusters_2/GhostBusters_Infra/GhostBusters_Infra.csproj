@@ -53,6 +53,7 @@
     <Compile Include="Entity\Base64ImagemEntity.cs" />
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\CategoriaEntity.cs" />
+    <Compile Include="Entity\LogEntity.cs" />
     <Compile Include="Entity\PerfilEntity.cs" />
     <Compile Include="Entity\ChamadoEntity.cs" />
     <Compile Include="Entity\UsuarioEntity.cs" />
