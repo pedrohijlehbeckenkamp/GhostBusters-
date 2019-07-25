@@ -18,22 +18,27 @@ namespace GhostBusters_Infra.Repository
             return context.Set<ChamadoEntity>().
                     Where(codigo_owner => codigo_owner.OWNER.COD_USUARIO == codigo).ToList();
         }
-
-        public List<ChamadoEntity> FindOwner()
-        {
-            //return context.Set<ChamadoEntity>().
-            //   Where(codigo_owner => codigo_owner.COD_OWNER == USUARIO).ToList();
-            return null;
-        }
         public List<ChamadoEntity> FindByTecnico(int codigo)
         {
             return context.Set<ChamadoEntity>().
                     Where(codigo_owner => codigo_owner.TECNICO.COD_USUARIO == codigo).ToList();
         }
 
+        public List<ChamadoEntity> FindByTech(int codigo)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(codigo_owner => codigo_owner.COD_TECH == codigo).ToList();
+        }
+
         public ChamadoEntity FindById(int codigo)
         {
             return context.Set<ChamadoEntity>().Find(codigo);
+        }
+
+        public List<ChamadoEntity> FindChamadoById(int id)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(x => x.COD_CHAMADO == id).ToList();
         }
 
         public List<ChamadoEntity> FindByStatus(int id)

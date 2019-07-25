@@ -185,30 +185,44 @@ namespace GhostBusters_Forms.Adm
         {
             if (cbOrderBy.Text == "Código ticket")
             {
-                int Id = Convert.ToInt32(maskedCod.Text);
+                if (maskedCod.Text != "")
+                {
+                    int Id = Convert.ToInt32(maskedCod.Text);
+                
+                    var byId = new ChamadoController().FindChamadoByID(Id);
 
-                var byId = new ChamadoController().FindByID(Id);
-
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = byId;
+                    dgVisualizar.AutoGenerateColumns = false;
+                    dgVisualizar.DataSource = byId;
+                }
+                else
+                {
+                    MessageBox.Show("Insira um Id válido.");
+                }
             }
             else if (cbOrderBy.Text == "Conteúdo")
             {
-                string padrao = tbConteudo.Text;
-
-                var Chamados = new ChamadoController().Findall();
-
-                List<ChamadoModel> lista = new List<ChamadoModel>();
-
-                for (int i = 0; i < Chamados.Count; i++)
+                if (tbConteudo.Text != "")
                 {
-                    if (Chamados[i].Descricao.Contains(padrao))
+                    string padrao = tbConteudo.Text;
+
+                    var Chamados = new ChamadoController().Findall();
+
+                    List<ChamadoModel> lista = new List<ChamadoModel>();
+
+                    for (int i = 0; i < Chamados.Count; i++)
                     {
-                        lista.Add(Chamados[i]);
+                        if (Chamados[i].Descricao.Contains(padrao))
+                        {
+                            lista.Add(Chamados[i]);
+                        }
                     }
+                    dgVisualizar.AutoGenerateColumns = false;
+                    dgVisualizar.DataSource = lista;
                 }
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = lista;
+                else
+                {
+                    MessageBox.Show("Digite algo para fazer a pesquisa.");
+                }
             }
             //else if (cbOrderBy.Text == "Data")
             //{
@@ -236,11 +250,20 @@ namespace GhostBusters_Forms.Adm
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = chamados;
 
-                loadTelaprincipal();
+                //loadTelaprincipal();
             }
             else if (cbOrderBy.Text == "Técnico")
             {
-                loadTelaprincipal();
+                var Usuarios = (Usuario)cbGeral.SelectedItem;
+                int id = Usuarios.Codigo_Usuario;
+
+                var chamados = new ChamadoController().FindByTech(id);
+                
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = chamados;
+
+                //loadTelaprincipal();
             }
             else if (cbOrderBy.Text == "Todos")
             {
@@ -257,13 +280,13 @@ namespace GhostBusters_Forms.Adm
             }
             else if (CB == "Usuário")
             {
-                //cbGeral.DataSource = new PerfilController().FindByUsuario();
+                cbGeral.DataSource = new UsuarioController().FindbyPerfil("Usuario");
                 cbGeral.DisplayMember = "NomeUsuario";
             }
             else if (CB == "Técnico")
             {
-                cbGeral.DataSource = new StatusController().FindAll();
-                cbGeral.DisplayMember = "NomeStatus";
+                cbGeral.DataSource = new UsuarioController().FindbyPerfil("Técnico");
+                cbGeral.DisplayMember = "NomeUsuario";
             }
         }
 
