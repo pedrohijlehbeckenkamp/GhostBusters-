@@ -64,6 +64,7 @@
     <Compile Include="Repository\CategoriaRepository.cs" />
     <Compile Include="Repository\ChamadoRepository.cs" />
     <Compile Include="Repository\ImagemRepository.cs" />
+    <Compile Include="Repository\LogRepository.cs" />
     <Compile Include="Repository\PerfilRepository.cs" />
     <Compile Include="Repository\StatusRepository.cs" />
     <Compile Include="Repository\UsuarioRepository.cs" />

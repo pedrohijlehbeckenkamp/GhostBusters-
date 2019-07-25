@@ -56,7 +56,16 @@
     <Compile Include="Controller\AnexoController.cs" />
     <Compile Include="Controller\CategoriaController.cs" />
     <Compile Include="Controller\ChamadoController.cs" />
+    <Compile Include="Controller\LogController.cs" />
     <Compile Include="Controller\StatusController.cs" />
+    <Compile Include="Mapper\LogMapper.cs" />
+    <Compile Include="Model\LogModel.cs" />
+    <Compile Include="View\Ticket\Observacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ticket\Observacoes.Designer.cs">
+      <DependentUpon>Observacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Utilitarios\AlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +188,9 @@
     <Compile Include="View\Utilitarios\VisualizarUsuarios.Designer.cs">
       <DependentUpon>VisualizarUsuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Ticket\Observacoes.resx">
+      <DependentUpon>Observacoes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Utilitarios\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>

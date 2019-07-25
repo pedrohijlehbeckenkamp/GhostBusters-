@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace GhostBusters_Infra.Entity
 {
     [Table("LOG_MOVIMENTACAO")]
-    public class LogEntity
+    public class LogEntity: BaseEntity
     {
         [Key]
         public int COD_LOG { get; set; }
@@ -17,7 +17,7 @@ namespace GhostBusters_Infra.Entity
         public string OBSERVACAO { get; set; }
         public DateTime DATA_LOG { get; set; }
         [ForeignKey("COD_USUARIO")]
-        public virtual UsuarioEntity USUARIO { get; set; }
+        public virtual UsuarioEntity OWNER { get; set; }
         public int COD_USUARIO { get; set; }
 
         [ForeignKey("COD_ANT_STATUS")]
@@ -29,7 +29,12 @@ namespace GhostBusters_Infra.Entity
         public int COD_NEW_STATUS { get; set; }
 
         [ForeignKey("COD_CHAMADO")]
-        public ChamadoEntity CHAMADO { get; set; }
+        public virtual ChamadoEntity CHAMADO { get; set; }
         public int COD_CHAMADO { get; set; }
+
+        public override int? EntityId()
+        {
+            return COD_LOG;
+        }
     }
 }

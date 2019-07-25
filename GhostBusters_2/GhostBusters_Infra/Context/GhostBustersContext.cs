@@ -59,7 +59,20 @@ namespace GhostBusters_Infra
                 .HasRequired(x => x.OWNER);
 
             modelBuilder.Entity<ChamadoEntity>()
-                .HasOptional(x => x.TECNICO);   
+                .HasOptional(x => x.TECNICO);
+
+            modelBuilder.Entity<LogEntity>()
+                .HasKey(x => x.COD_LOG)
+                .HasRequired(x => x.CHAMADO);
+
+            modelBuilder.Entity<LogEntity>()
+                .HasRequired(x => x.OWNER);
+
+            modelBuilder.Entity<LogEntity>()
+                .HasRequired(x => x.STATUS_ANT);
+
+            modelBuilder.Entity<LogEntity>()
+                .HasRequired(x => x.STATUS_NEW);
         }
     }
 }

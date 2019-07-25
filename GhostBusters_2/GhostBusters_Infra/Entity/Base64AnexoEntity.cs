@@ -20,7 +20,7 @@ namespace GhostBusters_Infra.Entity
        public int COD_CHAMADO { get; set; }
 
        [ForeignKey("COD_CHAMADO")]
-       public ChamadoEntity CHAMADO { get; set; }
+       public virtual ChamadoEntity CHAMADO { get; set; }
 
         public override int? EntityId()
         {

@@ -54,21 +54,24 @@ namespace GhostBusters_Infra.Repository
         protected override ChamadoEntity Cadastro(ChamadoEntity obj)//Cadastrar um novo obj 
         {
             var objCadastro = context.Set<ChamadoEntity>().Add(obj);
-            //context.Entry(obj.ANEXOS).State = System.Data.Entity.EntityState.Added;
 
             //obj.CATEGORIA = null;
+
             context.Entry(obj.CATEGORIA).State = System.Data.Entity.EntityState.Unchanged;
-            context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;           
+
             context.Entry(obj.OWNER).State = System.Data.Entity.EntityState.Unchanged;
+            context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;           
             context.Entry(obj.OWNER.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
+
+            context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
 
             if (obj.TECNICO != null)
             {
                 context.Entry(obj.TECNICO).State = System.Data.Entity.EntityState.Unchanged;
                 context.Entry(obj.TECNICO.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
                 context.Entry(obj.TECNICO.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;
-                context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
             }
+
             context.SendChanges();
             return objCadastro;
         }
