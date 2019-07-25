@@ -24,7 +24,7 @@ namespace GhostBusters_Forms.Model
         public CategoriaModel categoria { get; set; }
 
         public string NomeUsuario2 { get { return Owner.NomeUsuario;  } }
-        public string NomeTech { get { return Tech != null ? Tech.NomeUsuario : "Escolha um Tecnico"; ; } }
+        public string NomeTech { get { return Tech != null ? Tech.NomeUsuario : "Aguardando Tecnico"; ; } }
         public string NomePerfil {  get { return Owner.perfil.nomePerfil; } }
         public string Nomestatus { get { return StatusChamado != null ? StatusChamado.NomeStatus : "Aguardando Atendimento"; } }
         public string nomeCategoria { get { return categoria.NomeCategoria; } }   

@@ -19,6 +19,7 @@ namespace GhostBusters_Forms.Controller
         {
             return new StatusRepository().findbyName(nome).MapStatusModel();
         }
+
         public List<StatusModel> FinByStatusPerfil(int codigo_perfil)
         {
             return new StatusRepository().FindByStatusPerfil(codigo_perfil)

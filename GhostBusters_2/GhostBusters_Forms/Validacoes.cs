@@ -11,6 +11,7 @@ namespace GhostBusters_Forms
     {
         public static bool ValidaCamponull(string item)
         {
+            //params string[] param
             string teste = "";
           //  foreach (var item in param)
             //{

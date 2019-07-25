@@ -62,7 +62,8 @@
             this.cbOrderBy = new System.Windows.Forms.ComboBox();
             this.btnOrder = new System.Windows.Forms.Button();
             this.maskedCod = new System.Windows.Forms.MaskedTextBox();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.cbGeral = new System.Windows.Forms.ComboBox();
+            this.tbConteudo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -419,10 +420,13 @@
             // 
             this.cbOrderBy.FormattingEnabled = true;
             this.cbOrderBy.Items.AddRange(new object[] {
+            "Todos",
             "Código ticket",
             "Conteúdo",
             "Data",
-            "Status"});
+            "Status",
+            "Usuário",
+            "Técnico"});
             this.cbOrderBy.Location = new System.Drawing.Point(705, 278);
             this.cbOrderBy.Name = "cbOrderBy";
             this.cbOrderBy.Size = new System.Drawing.Size(142, 21);
@@ -453,14 +457,22 @@
             this.maskedCod.TabIndex = 58;
             this.maskedCod.ValidatingType = typeof(int);
             // 
-            // cbStatus
+            // cbGeral
             // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(705, 315);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(142, 21);
-            this.cbStatus.TabIndex = 59;
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.CbStatus_SelectedIndexChanged);
+            this.cbGeral.FormattingEnabled = true;
+            this.cbGeral.Location = new System.Drawing.Point(705, 315);
+            this.cbGeral.Name = "cbGeral";
+            this.cbGeral.Size = new System.Drawing.Size(142, 21);
+            this.cbGeral.TabIndex = 59;
+            this.cbGeral.SelectedIndexChanged += new System.EventHandler(this.CbStatus_SelectedIndexChanged);
+            // 
+            // tbConteudo
+            // 
+            this.tbConteudo.Location = new System.Drawing.Point(705, 315);
+            this.tbConteudo.Multiline = true;
+            this.tbConteudo.Name = "tbConteudo";
+            this.tbConteudo.Size = new System.Drawing.Size(142, 84);
+            this.tbConteudo.TabIndex = 60;
             // 
             // TelaPrincipalAdm
             // 
@@ -468,7 +480,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(862, 450);
-            this.Controls.Add(this.cbStatus);
+            this.Controls.Add(this.tbConteudo);
+            this.Controls.Add(this.cbGeral);
             this.Controls.Add(this.maskedCod);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.cbOrderBy);
@@ -533,6 +546,7 @@
         private System.Windows.Forms.ComboBox cbOrderBy;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.MaskedTextBox maskedCod;
-        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.ComboBox cbGeral;
+        private System.Windows.Forms.TextBox tbConteudo;
     }
 }

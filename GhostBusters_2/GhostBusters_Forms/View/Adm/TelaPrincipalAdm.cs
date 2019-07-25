@@ -23,6 +23,7 @@ namespace GhostBusters_Forms.Adm
     {
         private Usuario usuario;
         private ChamadoModel ticket;
+        string CB = "";
         public TelaPrincipalAdm(Usuario _usuario)
         {
             InitializeComponent();
@@ -46,16 +47,19 @@ namespace GhostBusters_Forms.Adm
 
         public void loadTelaprincipal()
         {
-            //cbStatus.DataSource = new StatusController().FindByName();
-            cbStatus.DisplayMember = "NomeStatus";
-            cbStatus.Visible = false;
+            AlimentarCB();
+            tbConteudo.Visible = false;
+            cbGeral.Visible = false;
             maskedCod.Visible = false;
+
             LoadImagem();
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             lblNomeAd.Text = usuario.NomeUsuario;
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
             dgVisualizar.DataSource = new ChamadoController().Findall();
+
+            
         }
         private void LoadImagem()
         {
@@ -190,18 +194,21 @@ namespace GhostBusters_Forms.Adm
             }
             else if (cbOrderBy.Text == "Conteúdo")
             {
-                //string padrao = "--(.+?)--";
-                //string replacement = "($1)";
-                //string input = "He said--decisively--that the time--whatever time it was--had come.";
-                //foreach (Match match in Regex.Matches(input, padrao))
-                //{
-                //    string result = match.Result(replacement);
-                //    Console.WriteLine(result);
-                //}
+                string padrao = tbConteudo.Text;
 
-                //MessageBox.Show("Conteúdo");
-                //dgVisualizar.AutoGenerateColumns = false;
-                //dgVisualizar.DataSource = new ChamadoController().Findall();
+                var Chamados = new ChamadoController().Findall();
+
+                List<ChamadoModel> lista = new List<ChamadoModel>();
+
+                for (int i = 0; i < Chamados.Count; i++)
+                {
+                    if (Chamados[i].Descricao.Contains(padrao))
+                    {
+                        lista.Add(Chamados[i]);
+                    }
+                }
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = lista;
             }
             //else if (cbOrderBy.Text == "Data")
             //{
@@ -211,9 +218,52 @@ namespace GhostBusters_Forms.Adm
             //}
             else if (cbOrderBy.Text == "Status")
             {
-                //MessageBox.Show("Status");
+                var Status = (StatusModel)cbGeral.SelectedItem;
+                int id = Status.codigo_status;
+
+                var chamados = new ChamadoController().FindByStatus(id);
+
                 dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = new ChamadoController().Findall();
+                dgVisualizar.DataSource = chamados;
+            }
+            else if (cbOrderBy.Text == "Usuário")
+            {
+                var Usuarios = (Usuario)cbGeral.SelectedItem;
+                int id = Usuarios.Codigo_Usuario;
+
+                var chamados = new ChamadoController().FindByUsuario(id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = chamados;
+
+                loadTelaprincipal();
+            }
+            else if (cbOrderBy.Text == "Técnico")
+            {
+                loadTelaprincipal();
+            }
+            else if (cbOrderBy.Text == "Todos")
+            {
+                loadTelaprincipal();
+            }
+        }
+        private void AlimentarCB()
+        {
+            
+            if (CB == "Status")
+            {
+                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DisplayMember = "NomeStatus";
+            }
+            else if (CB == "Usuário")
+            {
+                cbGeral.DataSource = new PerfilController().FindByUsuario();
+                cbGeral.DisplayMember = "NomeUsuario";
+            }
+            else if (CB == "Técnico")
+            {
+                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DisplayMember = "NomeStatus";
             }
         }
 
@@ -221,20 +271,57 @@ namespace GhostBusters_Forms.Adm
         {
             if (cbOrderBy.Text == "Código ticket")
             {
+                CB = "Código ticket";
                 maskedCod.Visible = true;
-            }else
+            }
+            else
             {
                 maskedCod.Visible = false;
             }
 
-
-            if (cbOrderBy.Text == "Status")
+            if (cbOrderBy.Text == "Conteúdo")
             {
-                cbStatus.Visible = true;
+                CB = "Conteúdo";
+                tbConteudo.Visible = true;
             }
             else
             {
-                cbStatus.Visible = false;
+                tbConteudo.Visible = false;
+            }
+
+            //if (cbOrderBy.Text == "Data")
+            //{
+            //    CB = "Data";
+            //    cbGeral.Visible = true;
+            //}
+            //else
+            //{
+            //    cbGeral.Visible = false;
+            //}
+
+            if (cbOrderBy.Text == "Status")
+            {
+                CB = "Status";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+
+            else if (cbOrderBy.Text == "Usuário")
+            {
+                CB = "Usuário";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+
+            else if (cbOrderBy.Text == "Técnico")
+            {
+                CB = "Técnico";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+            else
+            {
+                cbGeral.Visible = false;
             }
         }
 

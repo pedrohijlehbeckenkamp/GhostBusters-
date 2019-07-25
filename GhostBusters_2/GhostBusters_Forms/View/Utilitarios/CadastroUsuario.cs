@@ -48,7 +48,7 @@ namespace GhostBusters_Forms
         {
             if (Valida())
             {
-                //MessageBox.Show("UHUL");
+                MessageBox.Show("UHUL");
                 ImagemModel image = null;
 
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);
@@ -72,15 +72,19 @@ namespace GhostBusters_Forms
         public bool Valida()
         {
             int cont = 0;
+            var validaEmail = new UsuarioController().ValidaEmailUnique(tbEmail.Text);
             cont += ValidacoesCampos(Validacoes.ValidaNome(tbNome.Text)
                                 , tbNome, lbNomeErro, "Nome Invalido");
            
             cont += ValidacoesCampos(Validacoes.ValidaEmail(tbEmail.Text)
                                , tbEmail, lbEmailErro, "Email invalido");
-          
+            
             cont += ValidacoesCampos(Validacoes.ValidaNomesDiferentes(tbEmail.Text, tbConfirmaEmail.Text)
                               , tbConfirmaEmail, lbErroConfEmail, "Email Difrentes");
-           
+            if (validaEmail != null)
+            {
+                ValidacoesCampos(true, tbEmail, lbEmailErro, "Email Existente");
+            }  
             cont += ValidacoesCampos(Validacoes.ValidaTamanhaSenha(tbSenha.Text)
                              , tbSenha, lbErroSenha, "Senha Invalida");
 
@@ -93,6 +97,8 @@ namespace GhostBusters_Forms
             }
             return true;
         }
+
+
         private int ValidacoesCampos(bool test2, TextBox textBox, Label label, string messagem)
         {
             int cont = 0;
