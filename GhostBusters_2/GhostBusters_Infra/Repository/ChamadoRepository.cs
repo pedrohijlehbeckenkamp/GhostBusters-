@@ -18,6 +18,13 @@ namespace GhostBusters_Infra.Repository
             return context.Set<ChamadoEntity>().
                     Where(codigo_owner => codigo_owner.OWNER.COD_USUARIO == codigo).ToList();
         }
+
+        public List<ChamadoEntity> FindOwner()
+        {
+            //return context.Set<ChamadoEntity>().
+            //   Where(codigo_owner => codigo_owner.COD_OWNER == USUARIO).ToList();
+            return null;
+        }
         public List<ChamadoEntity> FindByTecnico(int codigo)
         {
             return context.Set<ChamadoEntity>().
@@ -34,7 +41,12 @@ namespace GhostBusters_Infra.Repository
             return context.Set<ChamadoEntity>().
                     Where(x => x.COD_STATUS == id).ToList();
         }
-        
+
+        public List<ChamadoEntity> FindByUsuario(int id)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(x => x.COD_OWNER == id).ToList();
+        }
 
         public override ChamadoEntity CadastroUpdate(ChamadoEntity obj)//Cadastra ou Update
         {

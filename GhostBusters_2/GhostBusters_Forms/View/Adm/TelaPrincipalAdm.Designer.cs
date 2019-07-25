@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNewTicket = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             this.cbOrderBy = new System.Windows.Forms.ComboBox();
             this.btnOrder = new System.Windows.Forms.Button();
             this.maskedCod = new System.Windows.Forms.MaskedTextBox();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.cbGeral = new System.Windows.Forms.ComboBox();
             this.tbConteudo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
@@ -240,20 +240,20 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(677, 220);
             this.dgVisualizar.TabIndex = 45;
@@ -421,10 +421,12 @@
             this.cbOrderBy.FormattingEnabled = true;
             this.cbOrderBy.Items.AddRange(new object[] {
             "Todos",
+            "Código ticket",
             "Conteúdo",
             "Data",
             "Status",
-            "Código ticket"});
+            "Usuário",
+            "Técnico"});
             this.cbOrderBy.Location = new System.Drawing.Point(705, 278);
             this.cbOrderBy.Name = "cbOrderBy";
             this.cbOrderBy.Size = new System.Drawing.Size(142, 21);
@@ -455,14 +457,14 @@
             this.maskedCod.TabIndex = 58;
             this.maskedCod.ValidatingType = typeof(int);
             // 
-            // cbStatus
+            // cbGeral
             // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Location = new System.Drawing.Point(705, 315);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(142, 21);
-            this.cbStatus.TabIndex = 59;
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.CbStatus_SelectedIndexChanged);
+            this.cbGeral.FormattingEnabled = true;
+            this.cbGeral.Location = new System.Drawing.Point(705, 315);
+            this.cbGeral.Name = "cbGeral";
+            this.cbGeral.Size = new System.Drawing.Size(142, 21);
+            this.cbGeral.TabIndex = 59;
+            this.cbGeral.SelectedIndexChanged += new System.EventHandler(this.CbStatus_SelectedIndexChanged);
             // 
             // tbConteudo
             // 
@@ -479,7 +481,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(862, 450);
             this.Controls.Add(this.tbConteudo);
-            this.Controls.Add(this.cbStatus);
+            this.Controls.Add(this.cbGeral);
             this.Controls.Add(this.maskedCod);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.cbOrderBy);
@@ -544,7 +546,7 @@
         private System.Windows.Forms.ComboBox cbOrderBy;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.MaskedTextBox maskedCod;
-        private System.Windows.Forms.ComboBox cbStatus;
+        private System.Windows.Forms.ComboBox cbGeral;
         private System.Windows.Forms.TextBox tbConteudo;
     }
 }
