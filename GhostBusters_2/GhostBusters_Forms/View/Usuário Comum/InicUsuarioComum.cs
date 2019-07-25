@@ -19,6 +19,8 @@ namespace GhostBusters_Forms.Usuário_Comum
     public partial class InicUsuarioComum : Form
     {
         private Usuario usuario;
+        private ChamadoModel ticket;
+        string CB = "";
         public InicUsuarioComum(Usuario _usuario)
         {
             InitializeComponent();
@@ -84,6 +86,43 @@ namespace GhostBusters_Forms.Usuário_Comum
         {
             this.Show();
         }
+        public void Loadtelaprincipal()
+        {
+            AlimentarCB();
+            tbConteudo.Visible = false;
+            cbGeral.Visible = false;
+            maskedCod.Visible = false;
+
+            LoadUsuario();
+
+            lblDate.Text = DateTime.Now.ToShortDateString() + "-" + DateTime.Now.ToLongTimeString();
+            lblNomeUC.Text = usuario.NomeUsuario;
+            lblEmail.Text = usuario.Email;
+            dgVisualizar.AutoGenerateColumns = false;
+            dgVisualizar.DataSource = new ChamadoController().Findall();
+
+
+        }
+
+        private void AlimentarCB()
+        {
+           if(CB == "Status")
+            {
+                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DisplayMember = "NomeStatus";
+            }
+           else if (CB == "Usuário")
+            {
+             ///  cbGeral.DataSource = new PerfilController().FindByUsuario();
+                cbGeral.DisplayMember = "NomeUsuario";
+            }
+           else if (CB == "Técnico")
+            {
+
+                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DisplayMember = "NomeSstatus";
+            }
+        }
 
         private void LoadUsuario()
         {
@@ -116,6 +155,127 @@ namespace GhostBusters_Forms.Usuário_Comum
             };
             tela.Show();
             Esconder(); ;
+        }
+
+        private void BtnOrder_Click(object sender, EventArgs e)
+        {
+            if (cbOrderBy.Text == "Código ticket")
+            {
+                int Id = Convert.ToInt32(maskedCod.Text);
+
+                var byId = new ChamadoController().FindByID(Id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = byId;
+            }
+            else if (cbOrderBy.Text == "Conteúdo")
+            {
+                string padrao = tbConteudo.Text;
+
+                var Chamados = new ChamadoController().Findall();
+
+                List<ChamadoModel> lista = new List<ChamadoModel>();
+
+                for (int i = 0; i <Chamados.Count; i++)
+                {
+                    if (Chamados[i].Descricao.Contains(padrao))
+                    {
+                        lista.Add(Chamados[i]);
+
+                    }
+
+                }
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = lista;
+            }
+            //else if (cbOrderBy.Text == "Data")
+            //{
+            //    //MessageBox.Show("Data");
+            //    dgVisualizar.AutoGenerateColumns = false;
+            //    dgVisualizar.DataSource = new ChamadoController().Findall();
+            //}
+            else if (cbOrderBy.Text == "Status")
+            {
+                var Status = (StatusModel)cbGeral.SelectedItem;
+                int id = Status.codigo_status;
+
+                var chamados = new ChamadoController().FindByStatus(id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = chamados;
+            }
+
+            else if (cbOrderBy.Text == "Usuários")
+            {
+                var Usuarios = (Usuario)cbGeral.SelectedItem;
+
+                int id = Usuarios.Codigo_Usuario;
+
+                var chamados = new ChamadoController().FindByUsuario(id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = chamados;
+               
+
+            }
+        }
+
+        private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbOrderBy.Text == "Código ticket") {
+
+                CB = "Código ticket";
+                maskedCod.Visible = true;
+
+            }
+            else
+            {
+                maskedCod.Visible = false;
+            }
+
+            if (cbOrderBy.Text == "Conteúdo")
+            {
+                CB = "Conteúdo";
+                tbConteudo.Visible = true;
+            }
+            else
+            {
+                tbConteudo.Visible = false;
+            }
+            if(cbOrderBy.Text == "Data")
+            {
+                CB = "Data";
+                cbGeral.Visible = true;
+
+            }
+            else
+            {
+                cbGeral.Visible = false;
+            }
+
+             if (cbOrderBy.Text == "Status")
+            {
+                CB = "Status";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+             else if (cbOrderBy.Text == "Usuário")
+            {
+                CB = "Usuário";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+             else if (cbOrderBy.Text == "Técnica")
+            {
+                CB = "Técnico";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+             else
+            {
+                cbGeral.Visible = false;
+            }
+
         }
     }
 }

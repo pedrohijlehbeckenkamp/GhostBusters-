@@ -257,7 +257,7 @@ namespace GhostBusters_Forms.Adm
             }
             else if (CB == "Usuário")
             {
-                cbGeral.DataSource = new PerfilController().FindByUsuario();
+                //cbGeral.DataSource = new PerfilController().FindByUsuario();
                 cbGeral.DisplayMember = "NomeUsuario";
             }
             else if (CB == "Técnico")

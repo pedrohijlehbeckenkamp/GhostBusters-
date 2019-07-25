@@ -49,6 +49,11 @@
             this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkPerfil = new System.Windows.Forms.LinkLabel();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.tbConteudo = new System.Windows.Forms.TextBox();
+            this.cbGeral = new System.Windows.Forms.ComboBox();
+            this.maskedCod = new System.Windows.Forms.MaskedTextBox();
+            this.cbOrderBy = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBase64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +62,7 @@
             // 
             this.picBase64.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picBase64.Location = new System.Drawing.Point(85, 16);
-            this.picBase64.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picBase64.Margin = new System.Windows.Forms.Padding(4);
             this.picBase64.Name = "picBase64";
             this.picBase64.Size = new System.Drawing.Size(171, 157);
             this.picBase64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,7 +169,7 @@
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVisualizar.Location = new System.Drawing.Point(16, 236);
-            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -183,7 +188,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgVisualizar.Size = new System.Drawing.Size(921, 271);
+            this.dgVisualizar.Size = new System.Drawing.Size(743, 271);
             this.dgVisualizar.TabIndex = 46;
             // 
             // Codigochamado
@@ -281,12 +286,79 @@
             this.linkPerfil.Text = "Visualizar perfil";
             this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPerfil_LinkClicked);
             // 
+            // btnOrder
+            // 
+            this.btnOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.ForeColor = System.Drawing.Color.White;
+            this.btnOrder.Location = new System.Drawing.Point(846, 181);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(101, 54);
+            this.btnOrder.TabIndex = 61;
+            this.btnOrder.Text = "Order";
+            this.btnOrder.UseVisualStyleBackColor = false;
+            this.btnOrder.Click += new System.EventHandler(this.BtnOrder_Click);
+            // 
+            // tbConteudo
+            // 
+            this.tbConteudo.Location = new System.Drawing.Point(803, 383);
+            this.tbConteudo.Margin = new System.Windows.Forms.Padding(4);
+            this.tbConteudo.Multiline = true;
+            this.tbConteudo.Name = "tbConteudo";
+            this.tbConteudo.Size = new System.Drawing.Size(188, 102);
+            this.tbConteudo.TabIndex = 65;
+            // 
+            // cbGeral
+            // 
+            this.cbGeral.FormattingEnabled = true;
+            this.cbGeral.Location = new System.Drawing.Point(803, 321);
+            this.cbGeral.Margin = new System.Windows.Forms.Padding(4);
+            this.cbGeral.Name = "cbGeral";
+            this.cbGeral.Size = new System.Drawing.Size(188, 24);
+            this.cbGeral.TabIndex = 64;
+            // 
+            // maskedCod
+            // 
+            this.maskedCod.Location = new System.Drawing.Point(879, 353);
+            this.maskedCod.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedCod.Mask = "00000";
+            this.maskedCod.Name = "maskedCod";
+            this.maskedCod.Size = new System.Drawing.Size(47, 22);
+            this.maskedCod.TabIndex = 63;
+            this.maskedCod.ValidatingType = typeof(int);
+            // 
+            // cbOrderBy
+            // 
+            this.cbOrderBy.FormattingEnabled = true;
+            this.cbOrderBy.Items.AddRange(new object[] {
+            "Todos",
+            "Código ticket",
+            "Conteúdo",
+            "Data",
+            "Status",
+            "Usuário",
+            "Técnico"});
+            this.cbOrderBy.Location = new System.Drawing.Point(803, 268);
+            this.cbOrderBy.Margin = new System.Windows.Forms.Padding(4);
+            this.cbOrderBy.Name = "cbOrderBy";
+            this.cbOrderBy.Size = new System.Drawing.Size(188, 24);
+            this.cbOrderBy.TabIndex = 62;
+            this.cbOrderBy.SelectedIndexChanged += new System.EventHandler(this.CbOrderBy_SelectedIndexChanged);
+            // 
             // InicUsuarioComum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(953, 554);
+            this.ClientSize = new System.Drawing.Size(1046, 554);
+            this.Controls.Add(this.tbConteudo);
+            this.Controls.Add(this.cbGeral);
+            this.Controls.Add(this.maskedCod);
+            this.Controls.Add(this.cbOrderBy);
+            this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.linkPerfil);
             this.Controls.Add(this.dgVisualizar);
             this.Controls.Add(this.label1);
@@ -330,5 +402,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado_finalizado;
         private System.Windows.Forms.LinkLabel linkPerfil;
+        private System.Windows.Forms.Button btnOrder;
+        private System.Windows.Forms.TextBox tbConteudo;
+        private System.Windows.Forms.ComboBox cbGeral;
+        private System.Windows.Forms.MaskedTextBox maskedCod;
+        private System.Windows.Forms.ComboBox cbOrderBy;
     }
 }
