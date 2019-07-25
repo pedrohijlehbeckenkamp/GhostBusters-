@@ -23,6 +23,7 @@ namespace GhostBusters_Forms.Adm
     {
         private Usuario usuario;
         private ChamadoModel ticket;
+        string CB = "";
         public TelaPrincipalAdm(Usuario _usuario)
         {
             InitializeComponent();
@@ -46,16 +47,19 @@ namespace GhostBusters_Forms.Adm
 
         public void loadTelaprincipal()
         {
-            tbConteudo.Visible = false;
             AlimentarCB();
-            cbStatus.Visible = false;
+            tbConteudo.Visible = false;
+            cbGeral.Visible = false;
             maskedCod.Visible = false;
+
             LoadImagem();
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             lblNomeAd.Text = usuario.NomeUsuario;
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
             dgVisualizar.DataSource = new ChamadoController().Findall();
+
+            
         }
         private void LoadImagem()
         {
@@ -192,8 +196,6 @@ namespace GhostBusters_Forms.Adm
             {
                 string padrao = tbConteudo.Text;
 
-                //var ChamadosModel = new ChamadoModel();
-
                 var Chamados = new ChamadoController().Findall();
 
                 List<ChamadoModel> lista = new List<ChamadoModel>();
@@ -216,28 +218,60 @@ namespace GhostBusters_Forms.Adm
             //}
             else if (cbOrderBy.Text == "Status")
             {
-                var Status = (StatusModel)cbStatus.SelectedItem;
+                var Status = (StatusModel)cbGeral.SelectedItem;
                 int id = Status.codigo_status;
 
                 var chamados = new ChamadoController().FindByStatus(id);
 
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = chamados;
-            } else if (cbOrderBy.Text == "Todos")
+            }
+            else if (cbOrderBy.Text == "Usuário")
+            {
+                var Usuarios = (Usuario)cbGeral.SelectedItem;
+                int id = Usuarios.Codigo_Usuario;
+
+                var chamados = new ChamadoController().FindByUsuario(id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = chamados;
+
+                loadTelaprincipal();
+            }
+            else if (cbOrderBy.Text == "Técnico")
+            {
+                loadTelaprincipal();
+            }
+            else if (cbOrderBy.Text == "Todos")
             {
                 loadTelaprincipal();
             }
         }
         private void AlimentarCB()
         {
-            cbStatus.DataSource = new StatusController().FindAll();
-            cbStatus.DisplayMember = "NomeStatus";
+            
+            if (CB == "Status")
+            {
+                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DisplayMember = "NomeStatus";
+            }
+            else if (CB == "Usuário")
+            {
+                cbGeral.DataSource = new PerfilController().FindByUsuario();
+                cbGeral.DisplayMember = "NomeUsuario";
+            }
+            else if (CB == "Técnico")
+            {
+                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DisplayMember = "NomeStatus";
+            }
         }
-        
+
         private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbOrderBy.Text == "Código ticket")
             {
+                CB = "Código ticket";
                 maskedCod.Visible = true;
             }
             else
@@ -245,22 +279,49 @@ namespace GhostBusters_Forms.Adm
                 maskedCod.Visible = false;
             }
 
-            if (cbOrderBy.Text == "Status")
-            {
-                cbStatus.Visible = true;
-            }
-            else
-            {
-                cbStatus.Visible = false;
-            }
-
             if (cbOrderBy.Text == "Conteúdo")
             {
+                CB = "Conteúdo";
                 tbConteudo.Visible = true;
             }
             else
             {
                 tbConteudo.Visible = false;
+            }
+
+            //if (cbOrderBy.Text == "Data")
+            //{
+            //    CB = "Data";
+            //    cbGeral.Visible = true;
+            //}
+            //else
+            //{
+            //    cbGeral.Visible = false;
+            //}
+
+            if (cbOrderBy.Text == "Status")
+            {
+                CB = "Status";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+
+            else if (cbOrderBy.Text == "Usuário")
+            {
+                CB = "Usuário";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+
+            else if (cbOrderBy.Text == "Técnico")
+            {
+                CB = "Técnico";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+            else
+            {
+                cbGeral.Visible = false;
             }
         }
 
