@@ -154,19 +154,25 @@ namespace GhostBusters_Forms.View.Ticket
            {
               if (Chamado != null)
               {
-                 if (Chamado.Owner.Codigo_perfil == statusitem.codigo_perfil)
+                    //if (Chamado.StatusChamado.NomeStatus != statusitem.NomeStatus)
+                    //{
+
+                    //    AddOb(statusitem);
+                    //    // MessageBox.Show("Add log");
+                    //}
+                    if (Chamado.Owner.Codigo_perfil == Chamado.StatusChamado.codigo_perfil)
                     {
                         new StatusController().Cadastro(UpdateNullStatus());
                         cont++;
                     }
-                                  
-                 new ChamadoController().Cadastro(UpdateTicket());
-                 new AnexoController().AddChamado(listaAnexo.ToList(), Chamado.Codigo_chamado);
 
-                 if (cont > 0)
-                      new StatusController().Cadastro(UpdateCodigoPrefilStatus());
-                this.Close();
-              }
+                    new ChamadoController().Cadastro(UpdateTicket());
+                    new AnexoController().AddChamado(listaAnexo.ToList(), Chamado.Codigo_chamado);
+
+                    if (cont > 0)
+                        new StatusController().Cadastro(UpdateCodigoPrefilStatus());
+                    this.Close();
+                }
               else
               {
                    new ChamadoController().Cadastro(GetChamado());
@@ -175,10 +181,28 @@ namespace GhostBusters_Forms.View.Ticket
            }
       
         }
-
+        public void AddOb(StatusModel statusitem)
+        {
+            var AddObservacao = new Observacoes();
+            AddObservacao.FormClosed += (x, y) =>
+            {
+                var observacao = AddObservacao.Observacao;
+                new LogController().Cadastro(GetLog(observacao, statusitem));
+            };
+            AddObservacao.Show();
+        }
+        public LogModel GetLog(string observacao, StatusModel statusnew) => new LogModel()
+        {
+            Observacao = observacao,
+            Data_log = DateTime.Now,
+            Chamado = Chamado,
+            Owner = usuarioLogin,
+            Status_Ant = Chamado.StatusChamado,
+            Status_New = statusnew
+        };
         private StatusModel UpdateNullStatus()
         {
-            StatusModel status = (StatusModel)cbStatus.SelectedItem;
+            StatusModel status = Chamado.StatusChamado;
             status.codigo_perfil = null;
             status.perfil = null;
             return status;
@@ -227,7 +251,7 @@ namespace GhostBusters_Forms.View.Ticket
         private ChamadoModel UpdateTicket()
         {
             ChamadoModel UpChamado = Chamado;
-            UpChamado.StatusChamado = (StatusModel)cbStatus.SelectedItem;
+            //UpChamado.StatusChamado = (StatusModel)cbStatus.SelectedItem;
             UpChamado.Titulo = tbTitulo.Text;
             UpChamado.Descricao = tbDescricao.Text;
             if (usuarioLogin.perfil.nomePerfil == "Admin")
