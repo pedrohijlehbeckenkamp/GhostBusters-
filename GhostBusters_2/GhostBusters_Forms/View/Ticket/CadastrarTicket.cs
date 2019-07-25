@@ -160,7 +160,7 @@ namespace GhostBusters_Forms.View.Ticket
                     //    AddOb(statusitem);
                     //    // MessageBox.Show("Add log");
                     //}
-                    if (Chamado.Owner.Codigo_perfil == statusitem.codigo_perfil)
+                    if (Chamado.Owner.Codigo_perfil == Chamado.StatusChamado.codigo_perfil)
                     {
                         new StatusController().Cadastro(UpdateNullStatus());
                         cont++;
@@ -202,7 +202,7 @@ namespace GhostBusters_Forms.View.Ticket
         };
         private StatusModel UpdateNullStatus()
         {
-            StatusModel status = (StatusModel)cbStatus.SelectedItem;
+            StatusModel status = Chamado.StatusChamado;
             status.codigo_perfil = null;
             status.perfil = null;
             return status;
@@ -251,7 +251,7 @@ namespace GhostBusters_Forms.View.Ticket
         private ChamadoModel UpdateTicket()
         {
             ChamadoModel UpChamado = Chamado;
-            UpChamado.StatusChamado = (StatusModel)cbStatus.SelectedItem;
+            //UpChamado.StatusChamado = (StatusModel)cbStatus.SelectedItem;
             UpChamado.Titulo = tbTitulo.Text;
             UpChamado.Descricao = tbDescricao.Text;
             if (usuarioLogin.perfil.nomePerfil == "Admin")
