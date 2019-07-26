@@ -76,7 +76,8 @@
             this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(581, 95);
+            this.btnNewTicket.Location = new System.Drawing.Point(775, 117);
+            this.btnNewTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
             this.btnNewTicket.TabIndex = 0;
@@ -91,7 +92,8 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(467, 95);
+            this.btnExcluir.Location = new System.Drawing.Point(623, 117);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(108, 44);
             this.btnExcluir.TabIndex = 1;
@@ -106,7 +108,8 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(529, 154);
+            this.btnConfig.Location = new System.Drawing.Point(705, 190);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(125, 44);
             this.btnConfig.TabIndex = 27;
@@ -131,7 +134,8 @@
             this.btnCadastrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarUsuario.Location = new System.Drawing.Point(171, 95);
+            this.btnCadastrarUsuario.Location = new System.Drawing.Point(228, 117);
+            this.btnCadastrarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
             this.btnCadastrarUsuario.Size = new System.Drawing.Size(150, 44);
             this.btnCadastrarUsuario.TabIndex = 29;
@@ -237,7 +241,8 @@
             this.Data_Chamado_finalizado});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgVisualizar.Location = new System.Drawing.Point(12, 218);
+            this.dgVisualizar.Location = new System.Drawing.Point(16, 268);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -367,7 +372,8 @@
             // pbPerfil
             // 
             this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbPerfil.Location = new System.Drawing.Point(36, 11);
+            this.pbPerfil.Location = new System.Drawing.Point(48, 14);
+            this.pbPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbPerfil.Name = "pbPerfil";
             this.pbPerfil.Size = new System.Drawing.Size(129, 128);
             this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -381,7 +387,8 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(406, 154);
+            this.btnEditar.Location = new System.Drawing.Point(541, 190);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(108, 44);
             this.btnEditar.TabIndex = 53;
@@ -396,7 +403,8 @@
             this.butAddTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butAddTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddTecnico.ForeColor = System.Drawing.Color.White;
-            this.butAddTecnico.Location = new System.Drawing.Point(200, 154);
+            this.butAddTecnico.Location = new System.Drawing.Point(267, 190);
+            this.butAddTecnico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.butAddTecnico.Name = "butAddTecnico";
             this.butAddTecnico.Size = new System.Drawing.Size(191, 44);
             this.butAddTecnico.TabIndex = 54;
@@ -411,7 +419,8 @@
             this.btnEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnEditarUsuario.Location = new System.Drawing.Point(327, 95);
+            this.btnEditarUsuario.Location = new System.Drawing.Point(436, 117);
+            this.btnEditarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(136, 44);
             this.btnEditarUsuario.TabIndex = 55;
@@ -430,7 +439,8 @@
             "Status",
             "Usuário",
             "Técnico"});
-            this.cbOrderBy.Location = new System.Drawing.Point(705, 246);
+            this.cbOrderBy.Location = new System.Drawing.Point(940, 303);
+            this.cbOrderBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbOrderBy.Name = "cbOrderBy";
             this.cbOrderBy.Size = new System.Drawing.Size(142, 21);
             this.cbOrderBy.TabIndex = 56;
@@ -443,7 +453,8 @@
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
-            this.btnOrder.Location = new System.Drawing.Point(722, 169);
+            this.btnOrder.Location = new System.Drawing.Point(962, 208);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(76, 44);
             this.btnOrder.TabIndex = 57;
@@ -453,7 +464,8 @@
             // 
             // maskedCod
             // 
-            this.maskedCod.Location = new System.Drawing.Point(762, 300);
+            this.maskedCod.Location = new System.Drawing.Point(1016, 388);
+            this.maskedCod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maskedCod.Mask = "00000";
             this.maskedCod.Name = "maskedCod";
             this.maskedCod.Size = new System.Drawing.Size(36, 20);
@@ -463,7 +475,8 @@
             // cbGeral
             // 
             this.cbGeral.FormattingEnabled = true;
-            this.cbGeral.Location = new System.Drawing.Point(705, 273);
+            this.cbGeral.Location = new System.Drawing.Point(940, 356);
+            this.cbGeral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbGeral.Name = "cbGeral";
             this.cbGeral.Size = new System.Drawing.Size(142, 21);
             this.cbGeral.TabIndex = 59;
@@ -471,7 +484,8 @@
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(705, 326);
+            this.tbConteudo.Location = new System.Drawing.Point(940, 418);
+            this.tbConteudo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
             this.tbConteudo.Size = new System.Drawing.Size(142, 84);
@@ -517,6 +531,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TelaPrincipalAdm";
             this.Text = "Perfil Adm";
             this.Load += new System.EventHandler(this.TelaPrincipalAdm_Load);

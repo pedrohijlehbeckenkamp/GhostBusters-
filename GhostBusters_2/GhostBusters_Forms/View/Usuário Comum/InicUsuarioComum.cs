@@ -50,7 +50,6 @@ namespace GhostBusters_Forms.Usuário_Comum
             };
             tela.Show();
             Esconder();
-            
         }
         private void BtnAdcTicket_Click(object sender, EventArgs e)
         {
@@ -197,26 +196,17 @@ namespace GhostBusters_Forms.Usuário_Comum
 
                     List<ChamadoModel> lista = new List<ChamadoModel>();
 
-                    for (int i = 0; i < listaUsuarios.Count; i++)
+                for (int i = 0; i <Chamados.Count; i++)
+                {
+                    if (Chamados[i].Descricao.Contains(padrao))
                     {
-                        if (listaUsuarios[i].Descricao.Contains(padrao))
-                        {
-                            lista.Add(listaUsuarios[i]);
-                        }
+                        lista.Add(Chamados[i]);
+
                     }
 
-                    //List<ChamadoModel> lista = new List<ChamadoModel>();
-
-                    //for (int i = 0; i < Chamados.Count; i++)
-                    //{
-                    //    if (Chamados[i].Descricao.Contains(padrao))
-                    //    {
-                    //        lista.Add(Chamados[i]);
-                    //    }
-                    //}
-                    dgVisualizar.AutoGenerateColumns = false;
-                    dgVisualizar.DataSource = lista;
                 }
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = lista;
             }
             //else if (cbOrderBy.Text == "Data")
             //{
@@ -235,7 +225,19 @@ namespace GhostBusters_Forms.Usuário_Comum
                 dgVisualizar.DataSource = chamados;
             }
 
-            
+            else if (cbOrderBy.Text == "Usuários")
+            {
+                var Usuarios = (Usuario)cbGeral.SelectedItem;
+
+                int id = Usuarios.Codigo_Usuario;
+
+                var chamados = new ChamadoController().FindByUsuario(id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = chamados;
+               
+
+            }
         }
 
         private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
