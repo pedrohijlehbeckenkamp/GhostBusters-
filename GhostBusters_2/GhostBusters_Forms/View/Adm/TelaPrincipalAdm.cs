@@ -378,7 +378,7 @@ namespace GhostBusters_Forms.Adm
             //}
         }
 
-        private void btAleterarStatus_Click(object sender, EventArgs e)
+        private void BtnAlteraStatus_Click(object sender, EventArgs e)
         {
             var item = dgVisualizar.CurrentRow.DataBoundItem;
 

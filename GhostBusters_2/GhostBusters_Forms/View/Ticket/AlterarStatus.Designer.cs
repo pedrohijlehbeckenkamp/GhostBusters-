@@ -54,6 +54,7 @@
             // 
             // btSave
             // 
+            this.btSave.ForeColor = System.Drawing.Color.Black;
             this.btSave.Location = new System.Drawing.Point(231, 269);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 23);
@@ -83,12 +84,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(486, 355);
             this.Controls.Add(this.lbObservacoes);
             this.Controls.Add(this.tbObservacao);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.CbStatus);
             this.Controls.Add(this.lbStatus);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "AlterarStatus";
             this.Text = "AlterarStatus";
             this.Load += new System.EventHandler(this.AlterarStatus_Load);

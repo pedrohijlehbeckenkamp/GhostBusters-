@@ -92,8 +92,11 @@ namespace GhostBusters_Infra.Repository
             context.Entry(obj.OWNER).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;           
             context.Entry(obj.OWNER.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
-
-            context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
+            if (obj._STATUS != null)
+            {
+                context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
+            }
+            //context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
 
             if (obj.TECNICO != null)
             {
@@ -114,9 +117,10 @@ namespace GhostBusters_Infra.Repository
 
 
            context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
-           // context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
+            // context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
             //context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
-
+            //context.Entry(obj._STATUS.PERFIL).State = System.Data.Entity.EntityState.Detached;
+            obj._STATUS.PERFIL = null;
             //if (obj.TECNICO != null)
             //{
             //    var techPerfil = new PerfilRepository().FindById(obj.TECNICO.PERFIL.EntityKey);

@@ -494,6 +494,7 @@
             this.btnAlteraStatus.TabIndex = 68;
             this.btnAlteraStatus.Text = "Alterar status";
             this.btnAlteraStatus.UseVisualStyleBackColor = false;
+            this.btnAlteraStatus.Click += new System.EventHandler(this.BtnAlteraStatus_Click);
             // 
             // TelaPrincipalAdm
             // 
