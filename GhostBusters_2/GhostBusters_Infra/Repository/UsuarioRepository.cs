@@ -22,6 +22,12 @@ namespace GhostBusters_Infra.Repository
             return context.Set<UsuarioEntity>().AsNoTracking().Where(x => x.PERFIL.NOME == perfil).ToList();
         }
 
+        public List<UsuarioEntity> FindByUsuario(string perfil)
+        {
+            return this.context.Set<UsuarioEntity>()
+                .Where(usuario => usuario.PERFIL.NOME == "Usuario").ToList();
+        }
+
         public override UsuarioEntity CadastroUpdate(UsuarioEntity obj)//Cadastra ou Update
         {
             if (obj == null)

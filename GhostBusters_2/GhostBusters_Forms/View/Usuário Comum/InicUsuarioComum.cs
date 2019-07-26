@@ -48,7 +48,6 @@ namespace GhostBusters_Forms.Usuário_Comum
             };
             tela.Show();
             Esconder();
-            
         }
         private void BtnAdcTicket_Click(object sender, EventArgs e)
         {
@@ -100,8 +99,6 @@ namespace GhostBusters_Forms.Usuário_Comum
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
             dgVisualizar.DataSource = new ChamadoController().Findall();
-
-
         }
 
         private void AlimentarCB()
@@ -118,7 +115,6 @@ namespace GhostBusters_Forms.Usuário_Comum
             }
            else if (CB == "Técnico")
             {
-
                 cbGeral.DataSource = new StatusController().FindAll();
                 cbGeral.DisplayMember = "NomeSstatus";
             }
@@ -181,9 +177,7 @@ namespace GhostBusters_Forms.Usuário_Comum
                     if (Chamados[i].Descricao.Contains(padrao))
                     {
                         lista.Add(Chamados[i]);
-
                     }
-
                 }
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = lista;
@@ -215,8 +209,6 @@ namespace GhostBusters_Forms.Usuário_Comum
 
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = chamados;
-               
-
             }
         }
 
