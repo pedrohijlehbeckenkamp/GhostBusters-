@@ -21,17 +21,19 @@ namespace GhostBusters_Forms.Usuário_Comum
         private Usuario usuario;
         private ChamadoModel ticket;
         string CB = "";
+
+        private List<ChamadoModel> listaUsuarios;
         public InicUsuarioComum(Usuario _usuario)
         {
             InitializeComponent();
             usuario = _usuario;
-            LoadUsuario();
+            //LoadUsuario();
             CenterToParent();
         }
 
         private void TelaUsuarioComum_Load(object sender, EventArgs e)
         {
-            LoadUsuario();
+            Loadtelaprincipal();
         }
        
         
@@ -99,7 +101,11 @@ namespace GhostBusters_Forms.Usuário_Comum
             lblNomeUC.Text = usuario.NomeUsuario;
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
-            dgVisualizar.DataSource = new ChamadoController().Findall();
+
+            listaUsuarios = new ChamadoController().FindByUsuario(usuario.Codigo_Usuario);
+            dgVisualizar.DataSource = listaUsuarios;
+
+
 
 
         }
@@ -113,13 +119,13 @@ namespace GhostBusters_Forms.Usuário_Comum
             }
            else if (CB == "Usuário")
             {
-             ///  cbGeral.DataSource = new PerfilController().FindByUsuario();
+                cbGeral.DataSource = new UsuarioController().FindbyPerfil("Usuario");
                 cbGeral.DisplayMember = "NomeUsuario";
             }
            else if (CB == "Técnico")
             {
 
-                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DataSource = new UsuarioController().FindbyPerfil("Técnico");
                 cbGeral.DisplayMember = "NomeSstatus";
             }
         }
@@ -161,32 +167,56 @@ namespace GhostBusters_Forms.Usuário_Comum
         {
             if (cbOrderBy.Text == "Código ticket")
             {
-                int Id = Convert.ToInt32(maskedCod.Text);
-
-                var byId = new ChamadoController().FindByID(Id);
-
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = byId;
-            }
-            else if (cbOrderBy.Text == "Conteúdo")
-            {
-                string padrao = tbConteudo.Text;
-
-                var Chamados = new ChamadoController().Findall();
-
-                List<ChamadoModel> lista = new List<ChamadoModel>();
-
-                for (int i = 0; i <Chamados.Count; i++)
+                if (maskedCod.Text != "")
                 {
-                    if (Chamados[i].Descricao.Contains(padrao))
-                    {
-                        lista.Add(Chamados[i]);
+                    int Id = Convert.ToInt32(maskedCod.Text);
 
+                    //var byId = new ChamadoController().FindByID(Id);
+                    List<ChamadoModel> lista = new List<ChamadoModel>();
+
+                    for (int i = 0; i < listaUsuarios.Count; i++)
+                    {
+                        if (listaUsuarios[i].Codigo_chamado == Id)
+                        {
+                            lista.Add(listaUsuarios[i]);
+                        }
                     }
 
+                    dgVisualizar.AutoGenerateColumns = false;
+                    //listaUsuarios = new ChamadoController().FindByUsuario(usuario.Codigo_Usuario);
+                    dgVisualizar.DataSource = lista;
+
                 }
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = lista;
+
+
+                else if (cbOrderBy.Text == "Conteúdo")
+                {
+                    string padrao = tbConteudo.Text;
+
+                    var Chamados = new ChamadoController().Findall();
+
+                    List<ChamadoModel> lista = new List<ChamadoModel>();
+
+                    for (int i = 0; i < listaUsuarios.Count; i++)
+                    {
+                        if (listaUsuarios[i].Descricao.Contains(padrao))
+                        {
+                            lista.Add(listaUsuarios[i]);
+                        }
+                    }
+
+                    //List<ChamadoModel> lista = new List<ChamadoModel>();
+
+                    //for (int i = 0; i < Chamados.Count; i++)
+                    //{
+                    //    if (Chamados[i].Descricao.Contains(padrao))
+                    //    {
+                    //        lista.Add(Chamados[i]);
+                    //    }
+                    //}
+                    dgVisualizar.AutoGenerateColumns = false;
+                    dgVisualizar.DataSource = lista;
+                }
             }
             //else if (cbOrderBy.Text == "Data")
             //{
@@ -205,19 +235,7 @@ namespace GhostBusters_Forms.Usuário_Comum
                 dgVisualizar.DataSource = chamados;
             }
 
-            else if (cbOrderBy.Text == "Usuários")
-            {
-                var Usuarios = (Usuario)cbGeral.SelectedItem;
-
-                int id = Usuarios.Codigo_Usuario;
-
-                var chamados = new ChamadoController().FindByUsuario(id);
-
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = chamados;
-               
-
-            }
+            
         }
 
         private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
@@ -259,23 +277,14 @@ namespace GhostBusters_Forms.Usuário_Comum
                 AlimentarCB();
                 cbGeral.Visible = true;
             }
-             else if (cbOrderBy.Text == "Usuário")
-            {
-                CB = "Usuário";
-                AlimentarCB();
-                cbGeral.Visible = true;
-            }
-             else if (cbOrderBy.Text == "Técnica")
-            {
-                CB = "Técnico";
-                AlimentarCB();
-                cbGeral.Visible = true;
-            }
+   
              else
             {
                 cbGeral.Visible = false;
             }
 
         }
+
+
     }
 }

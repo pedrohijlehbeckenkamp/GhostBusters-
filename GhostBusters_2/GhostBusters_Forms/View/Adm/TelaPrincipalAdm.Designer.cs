@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNewTicket = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -76,7 +76,7 @@
             this.btnNewTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewTicket.ForeColor = System.Drawing.Color.White;
             this.btnNewTicket.Location = new System.Drawing.Point(775, 117);
-            this.btnNewTicket.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNewTicket.Margin = new System.Windows.Forms.Padding(4);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(144, 54);
             this.btnNewTicket.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
             this.btnExcluir.Location = new System.Drawing.Point(623, 117);
-            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExcluir.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(144, 54);
             this.btnExcluir.TabIndex = 1;
@@ -108,7 +108,7 @@
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
             this.btnConfig.Location = new System.Drawing.Point(705, 190);
-            this.btnConfig.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfig.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(167, 54);
             this.btnConfig.TabIndex = 27;
@@ -135,7 +135,7 @@
             this.btnCadastrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarUsuario.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarUsuario.Location = new System.Drawing.Point(228, 117);
-            this.btnCadastrarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrarUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
             this.btnCadastrarUsuario.Size = new System.Drawing.Size(200, 54);
             this.btnCadastrarUsuario.TabIndex = 29;
@@ -238,24 +238,24 @@
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVisualizar.Location = new System.Drawing.Point(16, 268);
-            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgVisualizar.Margin = new System.Windows.Forms.Padding(4);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(903, 271);
             this.dgVisualizar.TabIndex = 45;
@@ -368,7 +368,7 @@
             // 
             this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbPerfil.Location = new System.Drawing.Point(48, 14);
-            this.pbPerfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbPerfil.Margin = new System.Windows.Forms.Padding(4);
             this.pbPerfil.Name = "pbPerfil";
             this.pbPerfil.Size = new System.Drawing.Size(171, 157);
             this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -383,7 +383,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(541, 190);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(144, 54);
             this.btnEditar.TabIndex = 53;
@@ -399,7 +399,7 @@
             this.butAddTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddTecnico.ForeColor = System.Drawing.Color.White;
             this.butAddTecnico.Location = new System.Drawing.Point(267, 190);
-            this.butAddTecnico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.butAddTecnico.Margin = new System.Windows.Forms.Padding(4);
             this.butAddTecnico.Name = "butAddTecnico";
             this.butAddTecnico.Size = new System.Drawing.Size(255, 54);
             this.butAddTecnico.TabIndex = 54;
@@ -415,7 +415,7 @@
             this.btnEditarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarUsuario.ForeColor = System.Drawing.Color.White;
             this.btnEditarUsuario.Location = new System.Drawing.Point(436, 117);
-            this.btnEditarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditarUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(181, 54);
             this.btnEditarUsuario.TabIndex = 55;
@@ -435,7 +435,7 @@
             "Usuário",
             "Técnico"});
             this.cbOrderBy.Location = new System.Drawing.Point(940, 303);
-            this.cbOrderBy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbOrderBy.Margin = new System.Windows.Forms.Padding(4);
             this.cbOrderBy.Name = "cbOrderBy";
             this.cbOrderBy.Size = new System.Drawing.Size(188, 24);
             this.cbOrderBy.TabIndex = 56;
@@ -449,7 +449,7 @@
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
             this.btnOrder.Location = new System.Drawing.Point(962, 208);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(101, 54);
             this.btnOrder.TabIndex = 57;
@@ -459,8 +459,8 @@
             // 
             // maskedCod
             // 
-            this.maskedCod.Location = new System.Drawing.Point(1016, 388);
-            this.maskedCod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedCod.Location = new System.Drawing.Point(1016, 358);
+            this.maskedCod.Margin = new System.Windows.Forms.Padding(4);
             this.maskedCod.Mask = "00000";
             this.maskedCod.Name = "maskedCod";
             this.maskedCod.Size = new System.Drawing.Size(47, 22);
@@ -471,7 +471,7 @@
             // 
             this.cbGeral.FormattingEnabled = true;
             this.cbGeral.Location = new System.Drawing.Point(940, 356);
-            this.cbGeral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbGeral.Margin = new System.Windows.Forms.Padding(4);
             this.cbGeral.Name = "cbGeral";
             this.cbGeral.Size = new System.Drawing.Size(188, 24);
             this.cbGeral.TabIndex = 59;
@@ -479,8 +479,8 @@
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(940, 418);
-            this.tbConteudo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbConteudo.Location = new System.Drawing.Point(940, 345);
+            this.tbConteudo.Margin = new System.Windows.Forms.Padding(4);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
             this.tbConteudo.Size = new System.Drawing.Size(188, 102);
@@ -515,7 +515,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TelaPrincipalAdm";
             this.Text = "Perfil Adm";
             this.Load += new System.EventHandler(this.TelaPrincipalAdm_Load);

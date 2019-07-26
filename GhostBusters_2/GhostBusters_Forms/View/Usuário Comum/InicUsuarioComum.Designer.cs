@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.picBase64 = new System.Windows.Forms.PictureBox();
             this.linkLEdit = new System.Windows.Forms.LinkLabel();
             this.btnAdcTicket = new System.Windows.Forms.Button();
@@ -124,7 +124,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(843, 9);
+            this.lblDate.Location = new System.Drawing.Point(810, 9);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(38, 17);
             this.lblDate.TabIndex = 40;
@@ -143,7 +143,7 @@
             // 
             this.label1.AllowDrop = true;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(643, 9);
+            this.label1.Location = new System.Drawing.Point(624, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 17);
             this.label1.TabIndex = 45;
@@ -173,20 +173,20 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(743, 271);
             this.dgVisualizar.TabIndex = 46;
@@ -304,7 +304,7 @@
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(803, 383);
+            this.tbConteudo.Location = new System.Drawing.Point(803, 309);
             this.tbConteudo.Margin = new System.Windows.Forms.Padding(4);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
@@ -314,7 +314,7 @@
             // cbGeral
             // 
             this.cbGeral.FormattingEnabled = true;
-            this.cbGeral.Location = new System.Drawing.Point(803, 321);
+            this.cbGeral.Location = new System.Drawing.Point(803, 323);
             this.cbGeral.Margin = new System.Windows.Forms.Padding(4);
             this.cbGeral.Name = "cbGeral";
             this.cbGeral.Size = new System.Drawing.Size(188, 24);
@@ -322,7 +322,7 @@
             // 
             // maskedCod
             // 
-            this.maskedCod.Location = new System.Drawing.Point(879, 353);
+            this.maskedCod.Location = new System.Drawing.Point(879, 323);
             this.maskedCod.Margin = new System.Windows.Forms.Padding(4);
             this.maskedCod.Mask = "00000";
             this.maskedCod.Name = "maskedCod";

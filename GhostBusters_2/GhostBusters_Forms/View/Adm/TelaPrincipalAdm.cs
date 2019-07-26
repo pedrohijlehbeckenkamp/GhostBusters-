@@ -312,15 +312,15 @@ namespace GhostBusters_Forms.Adm
                 tbConteudo.Visible = false;
             }
 
-            //if (cbOrderBy.Text == "Data")
-            //{
-            //    CB = "Data";
-            //    cbGeral.Visible = true;
-            //}
-            //else
-            //{
-            //    cbGeral.Visible = false;
-            //}
+            if (cbOrderBy.Text == "Data")
+            {
+                CB = "Data";
+                cbGeral.Visible = true;
+            }
+            else
+            {
+              cbGeral.Visible = false;
+            }
 
             if (cbOrderBy.Text == "Status")
             {
