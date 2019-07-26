@@ -154,12 +154,6 @@ namespace GhostBusters_Forms.View.Ticket
            {
               if (Chamado != null)
               {
-                    //if (Chamado.StatusChamado.NomeStatus != statusitem.NomeStatus)
-                    //{
-
-                    //    AddOb(statusitem);
-                    //    // MessageBox.Show("Add log");
-                    //}
                     if (Chamado.Owner.Codigo_perfil == Chamado.StatusChamado.codigo_perfil)
                     {
                         new StatusController().Cadastro(UpdateNullStatus());
@@ -181,25 +175,6 @@ namespace GhostBusters_Forms.View.Ticket
            }
       
         }
-        public void AddOb(StatusModel statusitem)
-        {
-            var AddObservacao = new Observacoes();
-            AddObservacao.FormClosed += (x, y) =>
-            {
-                var observacao = AddObservacao.Observacao;
-                new LogController().Cadastro(GetLog(observacao, statusitem));
-            };
-            AddObservacao.Show();
-        }
-        public LogModel GetLog(string observacao, StatusModel statusnew) => new LogModel()
-        {
-            Observacao = observacao,
-            Data_log = DateTime.Now,
-            Chamado = Chamado,
-            Owner = usuarioLogin,
-            Status_Ant = Chamado.StatusChamado,
-            Status_New = statusnew
-        };
         private StatusModel UpdateNullStatus()
         {
             StatusModel status = Chamado.StatusChamado;

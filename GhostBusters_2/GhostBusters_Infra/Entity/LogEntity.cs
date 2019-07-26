@@ -16,9 +16,11 @@ namespace GhostBusters_Infra.Entity
 
         public string OBSERVACAO { get; set; }
         public DateTime DATA_LOG { get; set; }
-        [ForeignKey("COD_USUARIO")]
-        public virtual UsuarioEntity OWNER { get; set; }
-        public int COD_USUARIO { get; set; }
+        public string NOME { get; set; }
+
+        //[ForeignKey("COD_USUARIO")]
+        //public virtual UsuarioEntity OWNER { get; set; }
+        //public int COD_USUARIO { get; set; }
 
         [ForeignKey("COD_ANT_STATUS")]
         public virtual StatusEntity STATUS_ANT { get; set; }
