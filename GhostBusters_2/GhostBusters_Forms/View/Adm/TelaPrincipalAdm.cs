@@ -356,5 +356,19 @@ namespace GhostBusters_Forms.Adm
             //    cbStatus.Visible = false;
             //}
         }
+
+        private void btAleterarStatus_Click(object sender, EventArgs e)
+        {
+            var item = dgVisualizar.CurrentRow.DataBoundItem;
+
+            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+            addTech.FormClosed += (x, y) =>
+            {
+                this.Show();
+                loadTelaprincipal();
+            };
+            addTech.Show();
+            this.Hide();
+        }
     }
 }
