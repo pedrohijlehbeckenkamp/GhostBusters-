@@ -26,6 +26,12 @@ namespace GhostBusters_Infra.Repository
                     Where(codigo_owner => codigo_owner.TECNICO.COD_USUARIO == codigo).ToList();
         }
 
+        public List<ChamadoEntity> FindByCategoria(int codigo)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(codigo_categoria => codigo_categoria.COD_CATEGORIA == codigo).ToList();
+        }
+
         public List<ChamadoEntity> FindByTech(int codigo)
         {
             return context.Set<ChamadoEntity>().

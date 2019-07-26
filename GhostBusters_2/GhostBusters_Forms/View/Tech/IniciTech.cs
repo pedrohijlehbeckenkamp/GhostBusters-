@@ -123,7 +123,6 @@ namespace GhostBusters_Forms.View.Tech
                             lista.Add(chamadoModel[i]);
                         }
                     }
-
                     dgVisualizar.AutoGenerateColumns = false;
                     dgVisualizar.DataSource = lista;
                 }
@@ -208,6 +207,23 @@ namespace GhostBusters_Forms.View.Tech
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = lista;
             }
+            else if (cbOrderBy.Text == "Categoria")
+            {
+                var Categoria = (CategoriaModel)cbGeral.SelectedItem;
+                int id = Categoria.Codigo_categoria;
+
+                List<ChamadoModel> lista = new List<ChamadoModel>();
+
+                for (int i = 0; i < chamadoModel.Count; i++)
+                {
+                    if (chamadoModel[i].codigo_categoria == id)
+                    {
+                        lista.Add(chamadoModel[i]);
+                    }
+                }
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = lista;
+            }
 
             else if (cbOrderBy.Text == "Todos")
             {
@@ -226,6 +242,11 @@ namespace GhostBusters_Forms.View.Tech
             {
                 cbGeral.DataSource = new UsuarioController().FindByUsuario("Usuario");
                 cbGeral.DisplayMember = "NomeUsuario";
+            }
+            else if (CB == "Categoria")
+            {
+                cbGeral.DataSource = new CategoriaController().FindByCategoria();
+                cbGeral.DisplayMember = "NomeCategoria";
             }
         }
 
@@ -270,6 +291,12 @@ namespace GhostBusters_Forms.View.Tech
             else if (cbOrderBy.Text == "Usuário")
             {
                 CB = "Usuário";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+            else if (cbOrderBy.Text == "Categoria")
+            {
+                CB = "Categoria";
                 AlimentarCB();
                 cbGeral.Visible = true;
             }
