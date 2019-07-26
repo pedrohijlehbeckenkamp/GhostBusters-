@@ -9,7 +9,6 @@ namespace GhostBusters_Infra.Repository
 {
     public class CategoriaRepository : BaseRepository<CategoriaEntity>
     {
-
         public override CategoriaEntity CadastroUpdate(CategoriaEntity obj)
         {
             if(obj == null)

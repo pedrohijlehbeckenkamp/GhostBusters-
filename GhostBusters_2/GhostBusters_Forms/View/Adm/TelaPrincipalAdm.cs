@@ -262,6 +262,16 @@ namespace GhostBusters_Forms.Adm
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = chamados;
             }
+            else if (cbOrderBy.Text == "Categoria")
+            {
+                var Categoria = (CategoriaModel)cbGeral.SelectedItem;
+                int id = Categoria.Codigo_categoria;
+
+                var chamados = new ChamadoController().FindByCategoria(id);
+
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = chamados;
+            }
             else if (cbOrderBy.Text == "Todos")
             {
                 loadTelaprincipal();
@@ -284,6 +294,11 @@ namespace GhostBusters_Forms.Adm
             {
                 cbGeral.DataSource = new UsuarioController().FindbyPerfil("Técnico");
                 cbGeral.DisplayMember = "NomeUsuario";
+            }
+            else if (CB == "Categoria")
+            {
+                cbGeral.DataSource = new CategoriaController().FindByCategoria();
+                cbGeral.DisplayMember = "NomeCategoria";
             }
         }
 
@@ -336,6 +351,12 @@ namespace GhostBusters_Forms.Adm
             else if (cbOrderBy.Text == "Técnico")
             {
                 CB = "Técnico";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+            else if (cbOrderBy.Text == "Categoria")
+            {
+                CB = "Categoria";
                 AlimentarCB();
                 cbGeral.Visible = true;
             }
