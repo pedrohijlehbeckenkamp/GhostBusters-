@@ -51,6 +51,8 @@ namespace GhostBusters_Forms.Adm
             tbConteudo.Visible = false;
             cbGeral.Visible = false;
             maskedCod.Visible = false;
+            dtData.Visible = false;
+            
 
             LoadImagem();
             lblDate.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
@@ -58,8 +60,6 @@ namespace GhostBusters_Forms.Adm
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
             dgVisualizar.DataSource = new ChamadoController().Findall();
-
-            
         }
         private void LoadImagem()
         {
@@ -224,12 +224,14 @@ namespace GhostBusters_Forms.Adm
                     MessageBox.Show("Digite algo para fazer a pesquisa.");
                 }
             }
-            //else if (cbOrderBy.Text == "Data")
-            //{
-            //    //MessageBox.Show("Data");
-            //    dgVisualizar.AutoGenerateColumns = false;
-            //    dgVisualizar.DataSource = new ChamadoController().Findall();
-            //}
+            else if (cbOrderBy.Text == "Data")
+            {
+                DateTime date = dtData.Value.Date;
+
+                var data = new ChamadoController().FindByDate(date);
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = data;
+            }
             else if (cbOrderBy.Text == "Status")
             {
                 var Status = (StatusModel)cbGeral.SelectedItem;
@@ -249,8 +251,6 @@ namespace GhostBusters_Forms.Adm
 
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = chamados;
-
-                //loadTelaprincipal();
             }
             else if (cbOrderBy.Text == "Técnico")
             {
@@ -259,11 +259,8 @@ namespace GhostBusters_Forms.Adm
 
                 var chamados = new ChamadoController().FindByTech(id);
                 
-
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = chamados;
-
-                //loadTelaprincipal();
             }
             else if (cbOrderBy.Text == "Todos")
             {
@@ -315,11 +312,11 @@ namespace GhostBusters_Forms.Adm
             if (cbOrderBy.Text == "Data")
             {
                 CB = "Data";
-                cbGeral.Visible = true;
+                dtData.Visible = true;
             }
             else
             {
-              cbGeral.Visible = false;
+                dtData.Visible = false;
             }
 
             if (cbOrderBy.Text == "Status")
