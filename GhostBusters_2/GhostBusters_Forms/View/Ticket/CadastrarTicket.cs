@@ -60,10 +60,10 @@ namespace GhostBusters_Forms.View.Ticket
         {
             if (usuarioLogin.perfil.nomePerfil == "Admin")
             {
-                LoadComboBox();
+                //LoadComboBox();
                 cbCategoria.DataSource = new CategoriaController().FindAll();
-                lbStatus.Visible = true;
-                cbStatus.Visible = true;
+                //lbStatus.Visible = true;
+                //cbStatus.Visible = true;
                 tbNomeCategoria.Visible = false;
                 cbCategoria.DisplayMember = "NomeCategoria";
                 cbCategoria.SelectedIndex = cbCategoria.FindStringExact(Chamado.categoria.NomeCategoria);
@@ -72,17 +72,17 @@ namespace GhostBusters_Forms.View.Ticket
         }
         private void LoadComboBox()
         {
-            cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
-            cbStatus.DisplayMember = "NomeStatus";
-            cbStatus.SelectedIndex = cbStatus.FindStringExact(Chamado.Nomestatus);
+            //cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
+            //cbStatus.DisplayMember = "NomeStatus";
+            //cbStatus.SelectedIndex = cbStatus.FindStringExact(Chamado.Nomestatus);
         }
         private void LoadOwner()
         {
             if (usuarioLogin.perfil.nomePerfil == "Usuario")
             {
-                LoadComboBox();
-                lbStatus.Visible = true;
-                cbStatus.Visible = true;
+                //LoadComboBox();
+                //lbStatus.Visible = true;
+                //cbStatus.Visible = true;
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
@@ -92,9 +92,9 @@ namespace GhostBusters_Forms.View.Ticket
         {
             if (usuarioLogin.perfil.nomePerfil == "Técnico")
             {
-                LoadComboBox();
-                lbStatus.Visible = true;
-                cbStatus.Visible = true;
+                //LoadComboBox();
+                //lbStatus.Visible = true;
+                //cbStatus.Visible = true;
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
@@ -113,8 +113,8 @@ namespace GhostBusters_Forms.View.Ticket
         private void LoadTicketCadastro()
         {
             lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
-            lbStatus.Visible = false;
-            cbStatus.Visible = false;
+            //lbStatus.Visible = false;
+            //cbStatus.Visible = false;
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
             dgAddAnexo.AutoGenerateColumns = false;
@@ -127,29 +127,12 @@ namespace GhostBusters_Forms.View.Ticket
         {
             SaveChamado();
 
-            if (Chamado.StatusChamado.NomeStatus == "Reprovado" && Chamado.NomePerfil == "Usuario")
-                EnviarEmail();
-            if (Chamado.nomeCategoria == "Aprovado" && Chamado.NomePerfil == "Usuario")
-                EnviarEmail();
-            if (Chamado.nomeCategoria == "Finalizado" && Chamado.NomePerfil == "Tecnico")
-                EnviarEmail();
         }
-        private void EnviarEmail()
-        {
-            try
-            {
-                new ChamadoController().EnviarEmail(Chamado);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Não foi enviado! " + ex);
-            }
-        }
+      
         public void SaveChamado()
         {
             int cont = 0;
-            var statusitem = (StatusModel)cbStatus.SelectedItem;
+            //var statusitem = (StatusModel)cbStatus.SelectedItem;
            if (Valida())
            {
               if (Chamado != null)
@@ -295,13 +278,18 @@ namespace GhostBusters_Forms.View.Ticket
         }
         private void DgAddAnexo_DoubleClick(object sender, EventArgs e)
         {
+            
             //Visualizar Chamado 
             var fileanexo = (Anexo)dgAddAnexo.CurrentRow.DataBoundItem;
-            byte[] bytes = Convert.FromBase64String(fileanexo.BaseData);
-            File.WriteAllBytes("C:\\Teste\\" + fileanexo.nomeAnexo, bytes);
-            System.Diagnostics.Process.Start("C:\\Teste\\" + fileanexo.nomeAnexo);
-            MessageBox.Show("Abrindo arquivo");
-            File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
+            if (fileanexo != null)
+            {                
+                byte[] bytes = Convert.FromBase64String(fileanexo.BaseData);
+                File.WriteAllBytes("C:\\Teste\\" + fileanexo.nomeAnexo, bytes);
+                System.Diagnostics.Process.Start("C:\\Teste\\" + fileanexo.nomeAnexo);
+                MessageBox.Show("Abrindo arquivo");
+                File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
+            }
+            
         }
         private void TbDescricao_TextChanged(object sender, EventArgs e)
         {

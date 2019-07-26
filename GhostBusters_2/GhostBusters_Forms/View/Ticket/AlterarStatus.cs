@@ -36,12 +36,39 @@ namespace GhostBusters_Forms.View.Adm
 
         private void BtSave_Click(object sender, EventArgs e)
         {
-            Save();
+            string nome =Save();
+
+            if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
+                EnviarEmail(nome);
+            if (chamado.nomeCategoria == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
+                EnviarEmail(nome);
+            if (chamado.nomeCategoria == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
+                EnviarEmail(nome);
         }
-        private void Save()
+        private void EnviarEmail(string nome)
+        {
+            try
+            {
+                new ChamadoController().EnviarEmail(chamado.Titulo, CorpoEmail(nome),chamado.Owner.Email);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi enviado! " + ex);
+            }
+        }
+        private string CorpoEmail(string nome)
+        {
+            var statusitem = (StatusModel)CbStatus.SelectedItem;
+            string BodyEmail = "Ghostbursters_Help\n Troca de status: \n De: "+nome+" Para: "+ chamado.StatusChamado.NomePerfil+
+                                "\nObservacao: " +tbObservacao.Text+ "\n Atenciosamente Ghostbursters_Help";
+            return BodyEmail;
+        }
+        private string Save()
         {
             var statusitem = (StatusModel)CbStatus.SelectedItem;
             var statusant = chamado.StatusChamado;
+            string nomestatus = chamado.StatusChamado.NomePerfil;
             int cont = 0;
             int cont2 = 0;
             if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil)
@@ -63,7 +90,8 @@ namespace GhostBusters_Forms.View.Adm
                 new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusitem));
             if (cont2 > 0)
                 new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusant));
-            this.Close();
+
+            return nomestatus;
         }
 
         private StatusModel UpdateNullStatus(StatusModel statusitem)

@@ -71,16 +71,16 @@ namespace GhostBusters_Forms.Controller
             new ChamadoRepository().Excluir(chamado.Codigo_chamado);
         }
 
-        public void EnviarEmail(ChamadoModel Chamado)
+        public void EnviarEmail(string titulo, string observacao, string email)
         {          
                 MailMessage mail = new MailMessage();
 
                 SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
 
                 mail.From = new MailAddress("cliente1@gmail.com");
-                mail.To.Add(Chamado.Tech.Email);
-                mail.Subject =  Chamado.Titulo;
-                mail.Body = Chamado.Descricao;
+                mail.To.Add(email);
+                mail.Subject = titulo;
+                mail.Body = observacao;
 
 
 
