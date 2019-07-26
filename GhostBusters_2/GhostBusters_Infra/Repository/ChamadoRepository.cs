@@ -1,6 +1,8 @@
 ﻿using GhostBusters_Infra.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +35,11 @@ namespace GhostBusters_Infra.Repository
         public ChamadoEntity FindById(int codigo)
         {
             return context.Set<ChamadoEntity>().Find(codigo);
+        }
+
+        public List<ChamadoEntity> FindByDate(DateTime data)
+        {
+            return context.Set<ChamadoEntity>().Where(chamado => DbFunctions.TruncateTime(chamado.DATA_CHAMADO) == data).ToList();
         }
 
         public List<ChamadoEntity> FindChamadoById(int id)

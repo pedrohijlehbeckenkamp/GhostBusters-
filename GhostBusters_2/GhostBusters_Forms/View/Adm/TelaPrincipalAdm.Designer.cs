@@ -64,7 +64,7 @@
             this.maskedCod = new System.Windows.Forms.MaskedTextBox();
             this.cbGeral = new System.Windows.Forms.ComboBox();
             this.tbConteudo = new System.Windows.Forms.TextBox();
-            this.btAleterarStatus = new System.Windows.Forms.Button();
+            this.dtData = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +76,7 @@
             this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(384, 95);
+            this.btnNewTicket.Location = new System.Drawing.Point(581, 95);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
             this.btnNewTicket.TabIndex = 0;
@@ -91,7 +91,7 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(387, 144);
+            this.btnExcluir.Location = new System.Drawing.Point(467, 95);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(108, 44);
             this.btnExcluir.TabIndex = 1;
@@ -106,7 +106,7 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(725, 6);
+            this.btnConfig.Location = new System.Drawing.Point(529, 154);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(125, 44);
             this.btnConfig.TabIndex = 27;
@@ -381,7 +381,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(501, 144);
+            this.btnEditar.Location = new System.Drawing.Point(406, 154);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(108, 44);
             this.btnEditar.TabIndex = 53;
@@ -396,7 +396,7 @@
             this.butAddTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butAddTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddTecnico.ForeColor = System.Drawing.Color.White;
-            this.butAddTecnico.Location = new System.Drawing.Point(498, 95);
+            this.butAddTecnico.Location = new System.Drawing.Point(200, 154);
             this.butAddTecnico.Name = "butAddTecnico";
             this.butAddTecnico.Size = new System.Drawing.Size(191, 44);
             this.butAddTecnico.TabIndex = 54;
@@ -411,7 +411,7 @@
             this.btnEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnEditarUsuario.Location = new System.Drawing.Point(171, 145);
+            this.btnEditarUsuario.Location = new System.Drawing.Point(327, 95);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(136, 44);
             this.btnEditarUsuario.TabIndex = 55;
@@ -443,7 +443,7 @@
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
-            this.btnOrder.Location = new System.Drawing.Point(737, 196);
+            this.btnOrder.Location = new System.Drawing.Point(722, 169);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(76, 44);
             this.btnOrder.TabIndex = 57;
@@ -453,7 +453,7 @@
             // 
             // maskedCod
             // 
-            this.maskedCod.Location = new System.Drawing.Point(762, 315);
+            this.maskedCod.Location = new System.Drawing.Point(762, 300);
             this.maskedCod.Mask = "00000";
             this.maskedCod.Name = "maskedCod";
             this.maskedCod.Size = new System.Drawing.Size(36, 20);
@@ -463,7 +463,7 @@
             // cbGeral
             // 
             this.cbGeral.FormattingEnabled = true;
-            this.cbGeral.Location = new System.Drawing.Point(705, 289);
+            this.cbGeral.Location = new System.Drawing.Point(705, 273);
             this.cbGeral.Name = "cbGeral";
             this.cbGeral.Size = new System.Drawing.Size(142, 21);
             this.cbGeral.TabIndex = 59;
@@ -471,26 +471,21 @@
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(705, 340);
+            this.tbConteudo.Location = new System.Drawing.Point(705, 326);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
             this.tbConteudo.Size = new System.Drawing.Size(142, 84);
             this.tbConteudo.TabIndex = 60;
             // 
-            // btAleterarStatus
+            // dtData
             // 
-            this.btAleterarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btAleterarStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btAleterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAleterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAleterarStatus.ForeColor = System.Drawing.Color.White;
-            this.btAleterarStatus.Location = new System.Drawing.Point(695, 95);
-            this.btAleterarStatus.Name = "btAleterarStatus";
-            this.btAleterarStatus.Size = new System.Drawing.Size(137, 44);
-            this.btAleterarStatus.TabIndex = 61;
-            this.btAleterarStatus.Text = "Alterar Status";
-            this.btAleterarStatus.UseVisualStyleBackColor = false;
-            this.btAleterarStatus.Click += new System.EventHandler(this.btAleterarStatus_Click);
+            this.dtData.CustomFormat = "yyyy - MM -dd";
+            this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtData.Location = new System.Drawing.Point(708, 416);
+            this.dtData.Name = "dtData";
+            this.dtData.Size = new System.Drawing.Size(142, 20);
+            this.dtData.TabIndex = 67;
+            this.dtData.Value = new System.DateTime(2019, 7, 25, 19, 11, 18, 0);
             // 
             // TelaPrincipalAdm
             // 
@@ -498,7 +493,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(862, 450);
-            this.Controls.Add(this.btAleterarStatus);
+            this.Controls.Add(this.dtData);
             this.Controls.Add(this.tbConteudo);
             this.Controls.Add(this.cbGeral);
             this.Controls.Add(this.maskedCod);
@@ -567,6 +562,6 @@
         private System.Windows.Forms.MaskedTextBox maskedCod;
         private System.Windows.Forms.ComboBox cbGeral;
         private System.Windows.Forms.TextBox tbConteudo;
-        private System.Windows.Forms.Button btAleterarStatus;
+        private System.Windows.Forms.DateTimePicker dtData;
     }
 }
