@@ -33,28 +33,28 @@ namespace GhostBusters_Forms.View.Ticket
 
         private void BtSave_Click(object sender, EventArgs e)
         {
-            int cont = 0;
-            try
-            {
+            //int cont = 0;
+            //try
+            //{
                 //chamado.Tech = (Usuario)cbBoxDisponiveis.SelectedItem;
                 var updateChamado = UpdateTicket();
-                if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil)//Solucao do problema do status
-                {
-                    new StatusController().Cadastro(UpdateNullStatus());
-                    cont++;
-                }
+                //if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil)//Solucao do problema do status
+                //{
+                //    new StatusController().Cadastro(UpdateNullStatus());
+                //    cont++;
+                //}
                 new ChamadoController().Cadastro(updateChamado);
 
-                if (cont > 0)
-                    new StatusController().Cadastro(UpdateCodigoPrefilStatus());
+                //if (cont > 0)
+                //    new StatusController().Cadastro(UpdateCodigoPrefilStatus());
 
                 this.Close();
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
                     
-                MessageBox.Show("" + ex.Message);
-            }
+            //    MessageBox.Show("" + ex.Message);
+            //}
         }
         private ChamadoModel UpdateTicket()
         {

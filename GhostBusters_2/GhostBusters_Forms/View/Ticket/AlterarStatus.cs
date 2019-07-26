@@ -32,43 +32,66 @@ namespace GhostBusters_Forms.View.Adm
             CbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
             CbStatus.DisplayMember = "NomeStatus";
             CbStatus.SelectedIndex = CbStatus.FindStringExact(chamado.Nomestatus);
+            
         }
 
         private void BtSave_Click(object sender, EventArgs e)
         {
-            string nome =Save();
 
-            if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
-                EnviarEmail(nome);
-            if (chamado.nomeCategoria == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
-                EnviarEmail(nome);
-            if (chamado.nomeCategoria == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
-                EnviarEmail(nome);
+            //LoadCarregador();
+
+            string nome = Save();
+
+            EnviaEmail(nome);
+
+            //if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
+            //    EnviarEmail(nome,chamado.Tech.Email);
+            //if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
+            //    EnviarEmail(nome, chamado.Tech.Email);
+            //if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
+            //    EnviarEmail(nome,chamado.Owner.NomeUsuario);
+
+            this.Close();
         }
-        private void EnviarEmail(string nome)
+        private void LoadCarregador()
+        {
+            lbStatus.Visible = false;
+            lbObservacoes.Visible = false;
+            CbStatus.Visible = false;
+            tbObservacao.Visible = false;
+            btSave.Visible = false;
+        }
+        private void EnviaEmail(string nome)
+        {
+            if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
+                EnviarEmail(nome, chamado.Tech.Email);
+            if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
+                EnviarEmail(nome, chamado.Tech.Email);
+            if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
+                EnviarEmail(nome, chamado.Owner.NomeUsuario);
+        }
+        private void EnviarEmail(string nome, string email)
         {
             try
             {
-                new ChamadoController().EnviarEmail(chamado.Titulo, CorpoEmail(nome),chamado.Owner.Email);
+               var ok = new ChamadoController().EnviarEmail(chamado.Titulo, CorpoEmail(nome), email);
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi enviado! " + ex);
+                MessageBox.Show("Email invalido:");
             }
         }
         private string CorpoEmail(string nome)
         {
-            var statusitem = (StatusModel)CbStatus.SelectedItem;
-            string BodyEmail = "Ghostbursters_Help\n Troca de status: \n De: "+nome+" Para: "+ chamado.StatusChamado.NomePerfil+
-                                "\nObservacao: " +tbObservacao.Text+ "\n Atenciosamente Ghostbursters_Help";
+            string BodyEmail = "Chamado:"+chamado.Titulo+"\n\n" +"\tTroca de status \nDe: "+nome+" \tPara: "+ chamado.StatusChamado.NomeStatus+
+                                "\nObservacao: " +tbObservacao.Text+ "\n\n\n\n\n\n Atenciosamente Ghostbursters_Help";
             return BodyEmail;
         }
         private string Save()
         {
             var statusitem = (StatusModel)CbStatus.SelectedItem;
             var statusant = chamado.StatusChamado;
-            string nomestatus = chamado.StatusChamado.NomePerfil;
             int cont = 0;
             int cont2 = 0;
             if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil)
@@ -84,14 +107,14 @@ namespace GhostBusters_Forms.View.Adm
             new LogController().Cadastro(GetLog(statusitem));
 
             new ChamadoController().Cadastro(UpdateTicket());
-           
+
 
             if (cont > 0)
                 new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusitem));
             if (cont2 > 0)
                 new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusant));
 
-            return nomestatus;
+            return statusant.NomeStatus;
         }
 
         private StatusModel UpdateNullStatus(StatusModel statusitem)
@@ -122,7 +145,7 @@ namespace GhostBusters_Forms.View.Adm
             Observacao = tbObservacao.Text,
             Data_log = DateTime.Now,
             Usuario = usuarioLogin.NomeUsuario,
-            Chamado = chamado,
+            Chamado = chamado,           
             //Owner = usuarioLogin,
             Status_Ant = chamado.StatusChamado,
             Status_New = statusnew

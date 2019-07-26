@@ -55,6 +55,7 @@
             this.tbConteudo = new System.Windows.Forms.TextBox();
             this.cbGeral = new System.Windows.Forms.ComboBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
+            this.BtAlterarStatus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +66,7 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(408, 130);
+            this.btnConfig.Location = new System.Drawing.Point(324, 130);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(188, 32);
             this.btnConfig.TabIndex = 12;
@@ -173,7 +174,7 @@
             this.Data_Chamado_finalizado});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgVisualizar.Location = new System.Drawing.Point(12, 203);
+            this.dgVisualizar.Location = new System.Drawing.Point(12, 230);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -283,7 +284,7 @@
             this.btnAdcTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdcTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnAdcTicket.ForeColor = System.Drawing.Color.White;
-            this.btnAdcTicket.Location = new System.Drawing.Point(280, 130);
+            this.btnAdcTicket.Location = new System.Drawing.Point(197, 130);
             this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdcTicket.Name = "btnAdcTicket";
             this.btnAdcTicket.Size = new System.Drawing.Size(106, 32);
@@ -298,7 +299,7 @@
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
-            this.btnOrder.Location = new System.Drawing.Point(661, 148);
+            this.btnOrder.Location = new System.Drawing.Point(663, 179);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(76, 44);
             this.btnOrder.TabIndex = 58;
@@ -317,7 +318,7 @@
             "Status",
             "Usuário",
             "Categoria"});
-            this.cbOrderBy.Location = new System.Drawing.Point(626, 203);
+            this.cbOrderBy.Location = new System.Drawing.Point(628, 234);
             this.cbOrderBy.Name = "cbOrderBy";
             this.cbOrderBy.Size = new System.Drawing.Size(142, 21);
             this.cbOrderBy.TabIndex = 59;
@@ -334,7 +335,7 @@
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(626, 256);
+            this.tbConteudo.Location = new System.Drawing.Point(628, 287);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
             this.tbConteudo.Size = new System.Drawing.Size(142, 84);
@@ -343,7 +344,7 @@
             // cbGeral
             // 
             this.cbGeral.FormattingEnabled = true;
-            this.cbGeral.Location = new System.Drawing.Point(626, 355);
+            this.cbGeral.Location = new System.Drawing.Point(628, 386);
             this.cbGeral.Name = "cbGeral";
             this.cbGeral.Size = new System.Drawing.Size(142, 21);
             this.cbGeral.TabIndex = 62;
@@ -352,18 +353,34 @@
             // 
             this.dtData.CustomFormat = "yyyy - MM -dd";
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtData.Location = new System.Drawing.Point(626, 113);
+            this.dtData.Location = new System.Drawing.Point(463, 204);
             this.dtData.Name = "dtData";
             this.dtData.Size = new System.Drawing.Size(142, 20);
             this.dtData.TabIndex = 68;
             this.dtData.Value = new System.DateTime(2019, 7, 25, 19, 11, 18, 0);
+            // 
+            // BtAlterarStatus
+            // 
+            this.BtAlterarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.BtAlterarStatus.ForeColor = System.Drawing.Color.White;
+            this.BtAlterarStatus.Location = new System.Drawing.Point(517, 130);
+            this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.BtAlterarStatus.Name = "BtAlterarStatus";
+            this.BtAlterarStatus.Size = new System.Drawing.Size(186, 32);
+            this.BtAlterarStatus.TabIndex = 71;
+            this.BtAlterarStatus.Text = "Alterar Status";
+            this.BtAlterarStatus.UseVisualStyleBackColor = false;
+            this.BtAlterarStatus.Click += new System.EventHandler(this.BtAlterarStatus_Click);
             // 
             // IniciTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(788, 388);
+            this.ClientSize = new System.Drawing.Size(825, 427);
+            this.Controls.Add(this.BtAlterarStatus);
             this.Controls.Add(this.dtData);
             this.Controls.Add(this.cbGeral);
             this.Controls.Add(this.tbConteudo);
@@ -418,5 +435,6 @@
         private System.Windows.Forms.TextBox tbConteudo;
         private System.Windows.Forms.ComboBox cbGeral;
         private System.Windows.Forms.DateTimePicker dtData;
+        private System.Windows.Forms.Button BtAlterarStatus;
     }
 }

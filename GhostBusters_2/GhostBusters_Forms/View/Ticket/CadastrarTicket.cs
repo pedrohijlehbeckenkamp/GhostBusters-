@@ -302,5 +302,10 @@ namespace GhostBusters_Forms.View.Ticket
         {
 
         }
+
+        private void DgAddAnexo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

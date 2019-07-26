@@ -13,6 +13,7 @@ using GhostBusters_Forms.View.Usuário_Comum;
 using GhostBusters_Forms.Model;
 using System.IO;
 using GhostBusters_Forms.Controller;
+using GhostBusters_Forms.View.Adm;
 
 namespace GhostBusters_Forms.Usuário_Comum
 {
@@ -303,7 +304,18 @@ namespace GhostBusters_Forms.Usuário_Comum
 
             }
 
+        private void BtAlterarStatus_Click(object sender, EventArgs e)
+        {
+            var item = dgVisualizar.CurrentRow.DataBoundItem;
 
-        
+            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+            addTech.FormClosed += (x, y) =>
+            {
+                this.Show();
+                LoadUsuario();
+            };
+            addTech.Show();
+            this.Hide();
+        }
     }
 }

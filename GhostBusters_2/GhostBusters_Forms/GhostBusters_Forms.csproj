@@ -277,5 +277,11 @@
   <ItemGroup>
     <None Include="Resources\ExcluirChamado.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregando.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bastidoresnovologogoogle_03.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

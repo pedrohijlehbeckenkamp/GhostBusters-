@@ -76,24 +76,25 @@ namespace GhostBusters_Forms.Controller
             new ChamadoRepository().Excluir(chamado.Codigo_chamado);
         }
 
-        public void EnviarEmail(string titulo, string observacao, string email)
+        public bool EnviarEmail(string titulo, string observacao, string email)
         {          
                 MailMessage mail = new MailMessage();
 
-                SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");//"smtp.mailtrap.io"
 
-                mail.From = new MailAddress("cliente1@gmail.com");
-                mail.To.Add(email);
-                mail.Subject = titulo;
-                mail.Body = observacao;
+            mail.From = new MailAddress("pedro.hijleh@gmail.com");//"cliente1@gmail.com"
+            mail.To.Add(email);
+            mail.Subject = "Ghostbursters_Help";
+            mail.Body = observacao;
 
 
 
-                SmtpServer.Port = 2525;
-                SmtpServer.Credentials = new System.Net.NetworkCredential("ac0a02e54dc47a", "b8ed85b31e2102");
-                SmtpServer.EnableSsl = true;
+            SmtpServer.Port = 587;//2525
+            SmtpServer.Credentials = new System.Net.NetworkCredential("pedro.hijleh@gmail.com", "viaflow@2019");//"ac0a02e54dc47a", "b8ed85b31e2102"
+            SmtpServer.EnableSsl = true;
 
-                SmtpServer.Send(mail); 
+                SmtpServer.Send(mail);
+            return true;
         }
     }
 }

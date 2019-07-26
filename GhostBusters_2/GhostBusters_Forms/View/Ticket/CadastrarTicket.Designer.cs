@@ -175,6 +175,7 @@
             this.dgAddAnexo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgAddAnexo.Size = new System.Drawing.Size(244, 172);
             this.dgAddAnexo.TabIndex = 5;
+            this.dgAddAnexo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgAddAnexo_CellContentClick);
             this.dgAddAnexo.DoubleClick += new System.EventHandler(this.DgAddAnexo_DoubleClick);
             // 
             // nomeAnexo

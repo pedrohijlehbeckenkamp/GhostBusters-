@@ -73,6 +73,26 @@ namespace GhostBusters_Forms.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bastidoresnovologogoogle_03 {
+            get {
+                object obj = ResourceManager.GetObject("bastidoresnovologogoogle_03", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carregando {
+            get {
+                object obj = ResourceManager.GetObject("carregando", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ExcluirChamado {
             get {
                 object obj = ResourceManager.GetObject("ExcluirChamado", resourceCulture);

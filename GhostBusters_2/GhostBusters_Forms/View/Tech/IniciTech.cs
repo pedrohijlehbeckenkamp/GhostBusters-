@@ -305,5 +305,19 @@ namespace GhostBusters_Forms.View.Tech
                 cbGeral.Visible = false;
             }
         }
+
+        private void BtAlterarStatus_Click(object sender, EventArgs e)
+        {
+            var item = dgVisualizar.CurrentRow.DataBoundItem;
+
+            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+            addTech.FormClosed += (x, y) =>
+            {
+                this.Show();
+                LoadTech();
+            };
+            addTech.Show();
+            this.Hide();
+        }
     }
 }
