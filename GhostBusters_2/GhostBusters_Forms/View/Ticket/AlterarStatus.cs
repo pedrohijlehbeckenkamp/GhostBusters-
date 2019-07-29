@@ -88,6 +88,11 @@ namespace GhostBusters_Forms.View.Adm
                                 "\nObservacao: " +tbObservacao.Text+ "\n\n\n\n\n\n Atenciosamente Ghostbursters_Help";
             return BodyEmail;
         }
+
+        //private ChamadoModel DataDeFinalizacao() => new ChamadoModel
+        //{
+            
+        //};
         private string Save()
         {
             var statusitem = (StatusModel)CbStatus.SelectedItem;
@@ -137,6 +142,10 @@ namespace GhostBusters_Forms.View.Adm
         private ChamadoModel UpdateTicket()
         {
             ChamadoModel UpChamado = chamado;
+            if (CbStatus.Text == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
+            {
+                UpChamado.Data_Chamado_finalizado = DateTime.Now;
+            }
             UpChamado.StatusChamado = (StatusModel)CbStatus.SelectedItem;
             return UpChamado;
         }
@@ -145,7 +154,7 @@ namespace GhostBusters_Forms.View.Adm
             Observacao = tbObservacao.Text,
             Data_log = DateTime.Now,
             Usuario = usuarioLogin.NomeUsuario,
-            Chamado = chamado,           
+            Chamado = chamado,
             //Owner = usuarioLogin,
             Status_Ant = chamado.StatusChamado,
             Status_New = statusnew

@@ -126,7 +126,6 @@ namespace GhostBusters_Forms.View.Ticket
         private void BtnSave_Click(object sender, EventArgs e)
         {
             SaveChamado();
-
         }
       
         public void SaveChamado()

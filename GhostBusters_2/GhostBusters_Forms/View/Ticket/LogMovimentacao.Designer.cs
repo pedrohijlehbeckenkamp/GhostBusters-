@@ -108,8 +108,9 @@
             this.ClientSize = new System.Drawing.Size(595, 297);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LogMovimentacao";
-            this.Text = "LogMovimentacao";
+            this.Text = "Log de movimentacao";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

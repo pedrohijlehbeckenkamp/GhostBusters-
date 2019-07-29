@@ -95,8 +95,9 @@
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lbNome);
             this.Controls.Add(this.tbNome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EditarUsuario";
-            this.Text = "v";
+            this.Text = "Editar usuário";
             this.ResumeLayout(false);
             this.PerformLayout();
 

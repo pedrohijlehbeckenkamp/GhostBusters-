@@ -118,8 +118,9 @@
             this.Controls.Add(this.tbNomeChamado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbBoxDisponiveis);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddTechChamado";
-            this.Text = "AddTechChamado";
+            this.Text = "Adicionar técnico ao chamado";
             this.Load += new System.EventHandler(this.AddTechChamado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
