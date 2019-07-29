@@ -27,5 +27,12 @@ namespace GhostBusters_Forms.View.Ticket
             dgLog.AutoGenerateColumns = false;
             dgLog.DataSource = new LogController().FindByLog(chamado.Codigo_chamado);
         }
+
+        private void DgLog_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var item = dgLog.CurrentRow.DataBoundItem;
+            var Logitem = (LogModel)item;
+            tbObservacao.Text = Logitem.Observacao;
+        }
     }
 }

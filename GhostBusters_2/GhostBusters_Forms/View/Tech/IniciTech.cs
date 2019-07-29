@@ -91,21 +91,47 @@ namespace GhostBusters_Forms.View.Tech
             if (chamadoModel.Count != 0)
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
-                var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
-                menu.FormClosed += (x, y) =>
+                var ChamadoItem = (ChamadoModel)linha;
+                if (ChamadoItem.Data_Chamado_finalizado == null)
                 {
-                    this.Show();
-                    LoadTech();
-                };
-                menu.Show();
-                this.Hide();
+                    var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
+                    menu.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        LoadTech();
+                    };
+                    menu.Show();
+                    this.Hide();
+                }else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
             }
             else
             {
                 MessageBox.Show("Nao existe Chamado para editar");
             }
         }
-
+        private void BtAlterarStatus_Click(object sender, EventArgs e)
+        {
+            if (chamadoModel.Count != 0)
+            {
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoItem = (ChamadoModel)item;
+                if (ChamadoItem.Data_Chamado_finalizado == null)
+                {
+                    var addTech = new AlterarStatus(usuario, ChamadoItem);
+                    addTech.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        LoadTech();
+                    };
+                    addTech.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
+                
+            }
+            else MessageBox.Show("Não Existe Chamado");
+            
+        }
         private void BtnOrder_Click(object sender, EventArgs e)
         {
             if (cbOrderBy.Text == "Código ticket")
@@ -250,7 +276,7 @@ namespace GhostBusters_Forms.View.Tech
             }
         }
 
-            private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
             {
             if (cbOrderBy.Text == "Código ticket")
             {
@@ -306,18 +332,25 @@ namespace GhostBusters_Forms.View.Tech
             }
         }
 
-        private void BtAlterarStatus_Click(object sender, EventArgs e)
+        private void DgVisualizar_DoubleClick(object sender, EventArgs e)
         {
-            var item = dgVisualizar.CurrentRow.DataBoundItem;
-
-            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
-            addTech.FormClosed += (x, y) =>
+            if (chamadoModel.Count > 0)
             {
-                this.Show();
-                LoadTech();
-            };
-            addTech.Show();
-            this.Hide();
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+                var chamadoItem = (ChamadoModel)item;
+                var Log = new LogController().FindByLog(chamadoItem.Codigo_chamado);
+                if (Log.Count > 0)
+                {
+                    var addTech = new LogMovimentacao(chamadoItem);
+                    addTech.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        LoadTech();
+                    };
+                    addTech.Show();
+                    this.Hide();
+                }
+            }
         }
     }
 }

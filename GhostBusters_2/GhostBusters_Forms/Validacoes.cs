@@ -41,6 +41,12 @@ namespace GhostBusters_Forms
                 return true;
             return false;
         }
+        public static bool ValidaSenhasIguais(string Nome, string confirmaNome)
+        {
+            if (confirmaNome == Nome)
+                return true;
+            return false;
+        }
         public static bool ValidaTamanhaSenha(string senha)
         {
             if (senha.Length <6)

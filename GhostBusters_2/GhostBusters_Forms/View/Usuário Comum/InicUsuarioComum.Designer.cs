@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.picBase64 = new System.Windows.Forms.PictureBox();
             this.linkLEdit = new System.Windows.Forms.LinkLabel();
             this.btnAdcTicket = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             this.btnAdcTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnAdcTicket.ForeColor = System.Drawing.Color.White;
             this.btnAdcTicket.Location = new System.Drawing.Point(207, 102);
-            this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdcTicket.Name = "btnAdcTicket";
             this.btnAdcTicket.Size = new System.Drawing.Size(141, 39);
             this.btnAdcTicket.TabIndex = 36;
@@ -106,7 +106,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(352, 102);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(116, 39);
             this.btnEditar.TabIndex = 38;
@@ -161,6 +161,7 @@
             // 
             // dgVisualizar
             // 
+            this.dgVisualizar.AllowUserToAddRows = false;
             this.dgVisualizar.AllowUserToDeleteRows = false;
             this.dgVisualizar.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -182,23 +183,24 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(557, 220);
             this.dgVisualizar.TabIndex = 46;
+            this.dgVisualizar.DoubleClick += new System.EventHandler(this.DgVisualizar_DoubleClick);
             // 
             // Codigochamado
             // 
@@ -338,6 +340,7 @@
             // 
             // cbOrderBy
             // 
+            this.cbOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrderBy.FormattingEnabled = true;
             this.cbOrderBy.Items.AddRange(new object[] {
             "Todos",
@@ -368,7 +371,7 @@
             this.BtAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.BtAlterarStatus.ForeColor = System.Drawing.Color.White;
             this.BtAlterarStatus.Location = new System.Drawing.Point(487, 102);
-            this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2);
             this.BtAlterarStatus.Name = "BtAlterarStatus";
             this.BtAlterarStatus.Size = new System.Drawing.Size(141, 39);
             this.BtAlterarStatus.TabIndex = 70;
@@ -400,7 +403,7 @@
             this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.picBase64);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "InicUsuarioComum";
             this.Text = "Perfil do usuário";
             this.Load += new System.EventHandler(this.TelaUsuarioComum_Load);

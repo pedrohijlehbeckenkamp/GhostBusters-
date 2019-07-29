@@ -24,6 +24,7 @@ namespace GhostBusters_Forms.Usuário_Comum
         string CB = "";
 
         private List<ChamadoModel> listaUsuarios;
+       
         public InicUsuarioComum(Usuario _usuario)
         {
             InitializeComponent();
@@ -67,16 +68,25 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            var linha = dgVisualizar.CurrentRow.DataBoundItem;
-         
-            var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
-            menu.FormClosed += (x, y) =>
+            if (listaUsuarios.Count > 0)
             {
-                this.Show();
-                LoadUsuario();
-            };
-            menu.Show();
-            this.Hide();
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoSelecionado = (ChamadoModel)linha;
+                if (ChamadoSelecionado.Data_Chamado_finalizado == null)
+                {
+                    var menu = new CadastrarTicket(usuario, ChamadoSelecionado);
+                    menu.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        LoadUsuario();
+                    };
+                    menu.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
+
+            }
+            else MessageBox.Show("Nao Existe nenhum Chamado");
         }
 
         private void Esconder()
@@ -306,16 +316,52 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void BtAlterarStatus_Click(object sender, EventArgs e)
         {
-            var item = dgVisualizar.CurrentRow.DataBoundItem;
-
-            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
-            addTech.FormClosed += (x, y) =>
+            //var DgNull = new ChamadoController().FindByOwner(usuario.Codigo_Usuario);
+            if (listaUsuarios.Count > 0)
             {
-                this.Show();
-                LoadUsuario();
-            };
-            addTech.Show();
-            this.Hide();
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoSelecionado = (ChamadoModel)item;
+                if (ChamadoSelecionado.Tech != null)
+                {
+
+                    if (ChamadoSelecionado.Data_Chamado_finalizado == null)
+                    {
+                        var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+                        addTech.FormClosed += (x, y) =>
+                        {
+                            this.Show();
+                            LoadUsuario();
+                        };
+                        addTech.Show();
+                        this.Hide();
+
+                    }else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
+
+                }else MessageBox.Show("Chamado Sem Tecnico, Nao pode ser Alterado o status");
+            }
+            else MessageBox.Show("Nao Existe nenhum Chamado");
+
+        }
+
+        private void DgVisualizar_DoubleClick(object sender, EventArgs e)
+        {
+            if (listaUsuarios.Count > 0)
+            {
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+                var chamadoItem = (ChamadoModel)item;
+                var Log = new LogController().FindByLog(chamadoItem.Codigo_chamado);
+                if (Log.Count > 0)
+                {
+                    var addTech = new LogMovimentacao(chamadoItem);
+                    addTech.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        LoadUsuario();
+                    };
+                    addTech.Show();
+                    this.Hide();
+                }
+            }
         }
     }
 }

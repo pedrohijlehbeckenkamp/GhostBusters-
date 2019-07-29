@@ -35,6 +35,8 @@
             this.Nome_Status_Ant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome_Status_New = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbObservacao = new System.Windows.Forms.TextBox();
+            this.lbObservacao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgLog)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,8 +64,10 @@
             this.dgLog.Location = new System.Drawing.Point(25, 89);
             this.dgLog.Name = "dgLog";
             this.dgLog.ReadOnly = true;
+            this.dgLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgLog.Size = new System.Drawing.Size(544, 196);
-            this.dgLog.TabIndex = 1;
+            this.dgLog.TabIndex = 0;
+            this.dgLog.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgLog_CellClick);
             // 
             // Codigo
             // 
@@ -100,12 +104,33 @@
             this.Data_log.Name = "Data_log";
             this.Data_log.ReadOnly = true;
             // 
+            // tbObservacao
+            // 
+            this.tbObservacao.Enabled = false;
+            this.tbObservacao.Location = new System.Drawing.Point(575, 133);
+            this.tbObservacao.Multiline = true;
+            this.tbObservacao.Name = "tbObservacao";
+            this.tbObservacao.Size = new System.Drawing.Size(204, 112);
+            this.tbObservacao.TabIndex = 1;
+            // 
+            // lbObservacao
+            // 
+            this.lbObservacao.AutoSize = true;
+            this.lbObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbObservacao.Location = new System.Drawing.Point(575, 89);
+            this.lbObservacao.Name = "lbObservacao";
+            this.lbObservacao.Size = new System.Drawing.Size(128, 25);
+            this.lbObservacao.TabIndex = 3;
+            this.lbObservacao.Text = "Observação";
+            // 
             // LogMovimentacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(595, 297);
+            this.ClientSize = new System.Drawing.Size(818, 303);
+            this.Controls.Add(this.lbObservacao);
+            this.Controls.Add(this.tbObservacao);
             this.Controls.Add(this.dgLog);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -127,5 +152,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Status_Ant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Status_New;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_log;
+        private System.Windows.Forms.TextBox tbObservacao;
+        private System.Windows.Forms.Label lbObservacao;
     }
 }
