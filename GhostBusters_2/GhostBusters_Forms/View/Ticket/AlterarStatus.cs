@@ -29,12 +29,7 @@ namespace GhostBusters_Forms.View.Adm
         }
         private void LoadAlterarStatus()
         {
-            if (usuarioLogin.perfil.nomePerfil != "Admin")
-            {
-                CbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
-            }
-            else
-                CbStatus.DataSource = new StatusController().FindAll();
+            CbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
             CbStatus.DisplayMember = "NomeStatus";
             CbStatus.SelectedIndex = CbStatus.FindStringExact(chamado.Nomestatus);
             
@@ -49,12 +44,12 @@ namespace GhostBusters_Forms.View.Adm
 
             EnviaEmail(nome);
 
-            if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
-                EnviarEmail(nome, chamado.Tech.Email);
-            if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
-                EnviarEmail(nome, chamado.Tech.Email);
-            if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
-                EnviarEmail(nome, chamado.Owner.NomeUsuario);
+            //if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
+            //    EnviarEmail(nome,chamado.Tech.Email);
+            //if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
+            //    EnviarEmail(nome, chamado.Tech.Email);
+            //if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
+            //    EnviarEmail(nome,chamado.Owner.NomeUsuario);
 
             this.Close();
         }
@@ -68,12 +63,12 @@ namespace GhostBusters_Forms.View.Adm
         }
         private void EnviaEmail(string nome)
         {
-            //if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
-            //    EnviarEmail(nome, chamado.Tech.Email);
-            //if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
-            //    EnviarEmail(nome, chamado.Tech.Email);
-            //if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
-            //    EnviarEmail(nome, chamado.Owner.NomeUsuario);
+            if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
+                EnviarEmail(nome, chamado.Tech.Email);
+            if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
+                EnviarEmail(nome, chamado.Tech.Email);
+            if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
+                EnviarEmail(nome, chamado.Owner.NomeUsuario);
         }
         private void EnviarEmail(string nome, string email)
         {

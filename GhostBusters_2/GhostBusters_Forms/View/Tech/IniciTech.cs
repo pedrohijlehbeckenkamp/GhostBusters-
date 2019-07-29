@@ -308,7 +308,6 @@ namespace GhostBusters_Forms.View.Tech
 
         private void BtAlterarStatus_Click(object sender, EventArgs e)
         {
-           
             var item = dgVisualizar.CurrentRow.DataBoundItem;
 
             var addTech = new AlterarStatus(usuario, (ChamadoModel)item);

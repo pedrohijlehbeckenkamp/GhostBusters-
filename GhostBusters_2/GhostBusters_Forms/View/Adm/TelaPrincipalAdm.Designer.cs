@@ -52,6 +52,7 @@
             this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkPerfil = new System.Windows.Forms.LinkLabel();
+            this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.butAddTecnico = new System.Windows.Forms.Button();
             this.btnEditarUsuario = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pbPerfil = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -257,7 +257,7 @@
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(677, 220);
             this.dgVisualizar.TabIndex = 45;
-            this.dgVisualizar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentDoubleClick);
+            this.dgVisualizar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentClick);
             // 
             // Codigochamado
             // 
@@ -336,6 +336,16 @@
             this.linkPerfil.TabStop = true;
             this.linkPerfil.Text = "Visualizar perfil";
             this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPerfil_LinkClicked);
+            // 
+            // pbPerfil
+            // 
+            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbPerfil.Location = new System.Drawing.Point(36, 11);
+            this.pbPerfil.Name = "pbPerfil";
+            this.pbPerfil.Size = new System.Drawing.Size(129, 128);
+            this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPerfil.TabIndex = 26;
+            this.pbPerfil.TabStop = false;
             // 
             // btnEditar
             // 
@@ -525,16 +535,6 @@
             this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
             this.Data_Chamado_finalizado.ReadOnly = true;
             this.Data_Chamado_finalizado.Width = 125;
-            // 
-            // pbPerfil
-            // 
-            this.pbPerfil.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pbPerfil.Location = new System.Drawing.Point(36, 11);
-            this.pbPerfil.Name = "pbPerfil";
-            this.pbPerfil.Size = new System.Drawing.Size(129, 128);
-            this.pbPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPerfil.TabIndex = 26;
-            this.pbPerfil.TabStop = false;
             // 
             // TelaPrincipalAdm
             // 

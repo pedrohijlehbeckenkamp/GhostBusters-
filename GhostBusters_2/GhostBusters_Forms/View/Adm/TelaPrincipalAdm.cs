@@ -398,24 +398,9 @@ namespace GhostBusters_Forms.Adm
             this.Hide();
         }
 
-        private void DgVisualizar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DgVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var linha = dgVisualizar.CurrentRow.DataBoundItem;
-            var chamadoitem = (ChamadoModel)linha;
-            var ListLog = new LogController().FindByCodigoChamado(chamadoitem.Codigo_chamado);
 
-            if (ListLog.Count > 0)
-            {
-                var ExibirLog = new LogMovimentacao(chamadoitem);
-                ExibirLog.Show();
-                ExibirLog.FormClosed += (x, y) =>
-                {
-                    this.Show();
-                    loadTelaprincipal();
-                };
-                ExibirLog.Show();
-                this.Hide();
-            }
         }
     }
 }

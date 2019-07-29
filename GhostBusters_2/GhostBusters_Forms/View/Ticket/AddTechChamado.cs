@@ -60,7 +60,7 @@ namespace GhostBusters_Forms.View.Ticket
         {
             ChamadoModel UpChamado = chamado;
             chamado.Tech = (Usuario)cbBoxDisponiveis.SelectedItem;
-            chamado.StatusChamado = new StatusController().FindByName("Em atendimento");
+            chamado.StatusChamado = new StatusController().FindByName("Passado para o Técnico");
             return UpChamado;
         }
         private StatusModel UpdateNullStatus()

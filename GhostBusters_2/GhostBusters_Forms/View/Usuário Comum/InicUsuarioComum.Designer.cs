@@ -56,8 +56,6 @@
             this.cbOrderBy = new System.Windows.Forms.ComboBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.BtAlterarStatus = new System.Windows.Forms.Button();
-            //this.lbNome = new System.Windows.Forms.Label();
-            //this.lbEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBase64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +91,7 @@
             this.btnAdcTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnAdcTicket.ForeColor = System.Drawing.Color.White;
             this.btnAdcTicket.Location = new System.Drawing.Point(207, 102);
-            this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAdcTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAdcTicket.Name = "btnAdcTicket";
             this.btnAdcTicket.Size = new System.Drawing.Size(141, 39);
             this.btnAdcTicket.TabIndex = 36;
@@ -108,7 +106,7 @@
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Location = new System.Drawing.Point(352, 102);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(116, 39);
             this.btnEditar.TabIndex = 38;
@@ -163,7 +161,6 @@
             // 
             // dgVisualizar
             // 
-            this.dgVisualizar.AllowUserToAddRows = false;
             this.dgVisualizar.AllowUserToDeleteRows = false;
             this.dgVisualizar.BackgroundColor = System.Drawing.SystemColors.HotTrack;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -179,7 +176,7 @@
             this.Nomestatus,
             this.Data_Chamado,
             this.Data_Chamado_finalizado});
-            this.dgVisualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgVisualizar.Location = new System.Drawing.Point(12, 192);
             this.dgVisualizar.Name = "dgVisualizar";
@@ -202,7 +199,6 @@
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(557, 220);
             this.dgVisualizar.TabIndex = 46;
-            this.dgVisualizar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentDoubleClick);
             // 
             // Codigochamado
             // 
@@ -365,38 +361,14 @@
             this.dtData.TabIndex = 69;
             this.dtData.Value = new System.DateTime(2019, 7, 25, 19, 11, 18, 0);
             // 
-            // BtFinalizarChamado
-            // 
-            this.BtAlterarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.BtAlterarStatus.ForeColor = System.Drawing.Color.White;
-            this.BtAlterarStatus.Location = new System.Drawing.Point(472, 102);
-            this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2);
-            this.BtAlterarStatus.Name = "BtFinalizarChamado";
-            this.BtAlterarStatus.Size = new System.Drawing.Size(141, 39);
-            this.BtAlterarStatus.TabIndex = 70;
-            this.BtAlterarStatus.Text = "Finalizar chamado";
-            this.BtAlterarStatus.UseVisualStyleBackColor = false;
-            this.BtAlterarStatus.Click += new System.EventHandler(this.BtAlterarStatus_Click);
-            // 
-            // lbNome
-            // 
-            //this.lbNome.AutoSize = true;
-            //this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            //this.lbNome.Location = new System.Drawing.Point(262, 25);
-            //this.lbNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            //this.lbNome.Name = "lbNome";
-            //this.lbNome.Size = new System.Drawing.Size(55, 20);
-            //this.lbNome.TabIndex = 71;
-            //this.lbNome.Text = "Nome:";
+            // BtAlterarStatus
             // 
             this.BtAlterarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.BtAlterarStatus.ForeColor = System.Drawing.Color.White;
             this.BtAlterarStatus.Location = new System.Drawing.Point(487, 102);
-            this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BtAlterarStatus.Name = "BtAlterarStatus";
             this.BtAlterarStatus.Size = new System.Drawing.Size(141, 39);
             this.BtAlterarStatus.TabIndex = 70;
@@ -404,27 +376,12 @@
             this.BtAlterarStatus.UseVisualStyleBackColor = false;
             this.BtAlterarStatus.Click += new System.EventHandler(this.BtAlterarStatus_Click);
             // 
-            // btnExcluir
-            // 
-            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(634, 102);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(119, 39);
-            this.btnExcluir.TabIndex = 71;
-            this.btnExcluir.Text = "Excluir ticket";
-            this.btnExcluir.UseVisualStyleBackColor = false;
-            this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
-            // 
             // InicUsuarioComum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(784, 450);
-            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.BtAlterarStatus);
             this.Controls.Add(this.dtData);
             this.Controls.Add(this.tbConteudo);
@@ -443,7 +400,7 @@
             this.Controls.Add(this.linkLEdit);
             this.Controls.Add(this.picBase64);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "InicUsuarioComum";
             this.Text = "Perfil do usuário";
             this.Load += new System.EventHandler(this.TelaUsuarioComum_Load);
@@ -482,6 +439,5 @@
         private System.Windows.Forms.ComboBox cbOrderBy;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Button BtAlterarStatus;
-        private System.Windows.Forms.Button btnExcluir;
     }
 }

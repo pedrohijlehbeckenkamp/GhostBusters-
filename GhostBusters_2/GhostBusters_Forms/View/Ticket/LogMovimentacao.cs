@@ -1,6 +1,4 @@
-﻿using GhostBusters_Forms.Controller;
-using GhostBusters_Forms.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,18 +12,9 @@ namespace GhostBusters_Forms.View.Ticket
 {
     public partial class LogMovimentacao : Form
     {
-        private ChamadoModel chamado;
-        public LogMovimentacao(ChamadoModel _chamado)
+        public LogMovimentacao()
         {
             InitializeComponent();
-            CenterToParent();
-            chamado = _chamado;
-        }
-
-        private void LogMovimentacao_Load(object sender, EventArgs e)
-        {
-            DgLogs.AutoGenerateColumns = false;
-            DgLogs.DataSource = new LogController().FindByCodigoChamado(chamado.Codigo_chamado);
         }
     }
 }
