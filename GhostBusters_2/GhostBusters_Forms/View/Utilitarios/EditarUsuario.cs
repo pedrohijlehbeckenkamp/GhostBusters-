@@ -26,7 +26,7 @@ namespace GhostBusters_Forms.View
         private void ButSave_Click(object sender, EventArgs e)
         {
                 new UsuarioController().Cadastro(Update());
-                MessageBox.Show("Categoria cadastrada!");
+                MessageBox.Show("Usuário editado com sucesso!");
                 this.Close();
         }
 

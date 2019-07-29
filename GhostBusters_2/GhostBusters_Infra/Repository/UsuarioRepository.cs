@@ -25,7 +25,7 @@ namespace GhostBusters_Infra.Repository
         public List<UsuarioEntity> FindByUsuario(string perfil)
         {
             return this.context.Set<UsuarioEntity>()
-                .Where(usuario => usuario.PERFIL.NOME == "Usuario").ToList();
+                .Where(usuario => usuario.PERFIL.NOME == perfil).ToList();
         }
 
         public override UsuarioEntity CadastroUpdate(UsuarioEntity obj)//Cadastra ou Update

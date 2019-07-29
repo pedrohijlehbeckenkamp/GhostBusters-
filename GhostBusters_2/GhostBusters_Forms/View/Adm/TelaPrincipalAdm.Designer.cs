@@ -58,6 +58,7 @@
             this.tbConteudo = new System.Windows.Forms.TextBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.btnAlteraStatus = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -71,7 +72,7 @@
             this.btnNewTicket.Location = new System.Drawing.Point(594, 95);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
-            this.btnNewTicket.TabIndex = 0;
+            this.btnNewTicket.TabIndex = 3;
             this.btnNewTicket.Text = "Abrir ticket";
             this.btnNewTicket.UseVisualStyleBackColor = false;
             this.btnNewTicket.Click += new System.EventHandler(this.BtnNewTicket_Click);
@@ -85,7 +86,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(475, 95);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(108, 44);
-            this.btnExcluir.TabIndex = 1;
+            this.btnExcluir.TabIndex = 2;
             this.btnExcluir.Text = "Excluir ticket";
             this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.BtnExcluir_Click);
@@ -99,7 +100,7 @@
             this.btnConfig.Location = new System.Drawing.Point(529, 154);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(125, 44);
-            this.btnConfig.TabIndex = 27;
+            this.btnConfig.TabIndex = 9;
             this.btnConfig.Text = "Configurações";
             this.btnConfig.UseVisualStyleBackColor = false;
             this.btnConfig.Click += new System.EventHandler(this.BtnConfig_Click);
@@ -107,10 +108,11 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(603, 11);
+            this.lblDate.Location = new System.Drawing.Point(601, 13);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
+            this.lblDate.Size = new System.Drawing.Size(37, 16);
             this.lblDate.TabIndex = 28;
             this.lblDate.Text = "Date";
             // 
@@ -123,7 +125,7 @@
             this.btnCadastrarUsuario.Location = new System.Drawing.Point(171, 95);
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
             this.btnCadastrarUsuario.Size = new System.Drawing.Size(150, 44);
-            this.btnCadastrarUsuario.TabIndex = 29;
+            this.btnCadastrarUsuario.TabIndex = 0;
             this.btnCadastrarUsuario.Text = "Cadastro Usuario";
             this.btnCadastrarUsuario.UseVisualStyleBackColor = false;
             this.btnCadastrarUsuario.Click += new System.EventHandler(this.BtnCadastrarUsuario_Click);
@@ -132,12 +134,13 @@
             // 
             this.linkLEdit.AutoSize = true;
             this.linkLEdit.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLEdit.LinkColor = System.Drawing.Color.Navy;
             this.linkLEdit.Location = new System.Drawing.Point(34, 141);
             this.linkLEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLEdit.Name = "linkLEdit";
-            this.linkLEdit.Size = new System.Drawing.Size(58, 13);
-            this.linkLEdit.TabIndex = 36;
+            this.linkLEdit.Size = new System.Drawing.Size(65, 15);
+            this.linkLEdit.TabIndex = 5;
             this.linkLEdit.TabStop = true;
             this.linkLEdit.Text = "Alterar foto";
             this.linkLEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLEdit_LinkClicked);
@@ -145,22 +148,24 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.Black;
             this.lblEmail.Location = new System.Drawing.Point(178, 59);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(39, 13);
+            this.lblEmail.Size = new System.Drawing.Size(58, 20);
             this.lblEmail.TabIndex = 43;
             this.lblEmail.Text = "EMAIL";
             // 
             // lblNomeAd
             // 
             this.lblNomeAd.AutoSize = true;
+            this.lblNomeAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeAd.ForeColor = System.Drawing.Color.Black;
             this.lblNomeAd.Location = new System.Drawing.Point(178, 23);
             this.lblNomeAd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomeAd.Name = "lblNomeAd";
-            this.lblNomeAd.Size = new System.Drawing.Size(39, 13);
+            this.lblNomeAd.Size = new System.Drawing.Size(56, 20);
             this.lblNomeAd.TabIndex = 42;
             this.lblNomeAd.Text = "NOME";
             // 
@@ -168,11 +173,12 @@
             // 
             this.label1.AllowDrop = true;
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(464, 11);
+            this.label1.Location = new System.Drawing.Point(435, 13);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.Size = new System.Drawing.Size(148, 16);
             this.label1.TabIndex = 44;
             this.label1.Text = "Data e hora do acesso:";
             // 
@@ -180,6 +186,7 @@
             // 
             this.dgVisualizar.AllowUserToAddRows = false;
             this.dgVisualizar.AllowUserToDeleteRows = false;
+            this.dgVisualizar.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -212,7 +219,7 @@
             this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(677, 220);
-            this.dgVisualizar.TabIndex = 45;
+            this.dgVisualizar.TabIndex = 11;
             this.dgVisualizar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentDoubleClick);
             // 
             // Codigochamado
@@ -274,12 +281,13 @@
             // 
             this.linkPerfil.AutoSize = true;
             this.linkPerfil.DisabledLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkPerfil.LinkColor = System.Drawing.Color.Navy;
             this.linkPerfil.Location = new System.Drawing.Point(34, 162);
             this.linkPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkPerfil.Name = "linkPerfil";
-            this.linkPerfil.Size = new System.Drawing.Size(76, 13);
-            this.linkPerfil.TabIndex = 52;
+            this.linkPerfil.Size = new System.Drawing.Size(90, 15);
+            this.linkPerfil.TabIndex = 6;
             this.linkPerfil.TabStop = true;
             this.linkPerfil.Text = "Visualizar perfil";
             this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkPerfil_LinkClicked);
@@ -303,7 +311,7 @@
             this.btnEditar.Location = new System.Drawing.Point(406, 154);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(108, 44);
-            this.btnEditar.TabIndex = 53;
+            this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar ticket";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
@@ -317,7 +325,7 @@
             this.butAddTecnico.Location = new System.Drawing.Point(200, 154);
             this.butAddTecnico.Name = "butAddTecnico";
             this.butAddTecnico.Size = new System.Drawing.Size(191, 44);
-            this.butAddTecnico.TabIndex = 54;
+            this.butAddTecnico.TabIndex = 7;
             this.butAddTecnico.Text = "Adicionar Tecnico ticket";
             this.butAddTecnico.UseVisualStyleBackColor = false;
             this.butAddTecnico.Click += new System.EventHandler(this.ButAddTecnico_Click);
@@ -331,13 +339,14 @@
             this.btnEditarUsuario.Location = new System.Drawing.Point(330, 95);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Size = new System.Drawing.Size(136, 44);
-            this.btnEditarUsuario.TabIndex = 55;
+            this.btnEditarUsuario.TabIndex = 1;
             this.btnEditarUsuario.Text = "Editar Usuario";
             this.btnEditarUsuario.UseVisualStyleBackColor = false;
             this.btnEditarUsuario.Click += new System.EventHandler(this.BtnEditarUsuario_Click);
             // 
             // cbOrderBy
             // 
+            this.cbOrderBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbOrderBy.FormattingEnabled = true;
             this.cbOrderBy.Items.AddRange(new object[] {
             "Todos",
@@ -348,11 +357,11 @@
             "Usuário",
             "Técnico",
             "Categoria"});
-            this.cbOrderBy.Location = new System.Drawing.Point(705, 247);
+            this.cbOrderBy.Location = new System.Drawing.Point(705, 276);
             this.cbOrderBy.Margin = new System.Windows.Forms.Padding(2);
             this.cbOrderBy.Name = "cbOrderBy";
-            this.cbOrderBy.Size = new System.Drawing.Size(142, 21);
-            this.cbOrderBy.TabIndex = 56;
+            this.cbOrderBy.Size = new System.Drawing.Size(142, 23);
+            this.cbOrderBy.TabIndex = 13;
             this.cbOrderBy.SelectedIndexChanged += new System.EventHandler(this.CbOrderBy_SelectedIndexChanged);
             // 
             // btnOrder
@@ -361,48 +370,52 @@
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
-            this.btnOrder.Location = new System.Drawing.Point(739, 196);
+            this.btnOrder.Location = new System.Drawing.Point(738, 218);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.Size = new System.Drawing.Size(76, 44);
-            this.btnOrder.TabIndex = 57;
+            this.btnOrder.TabIndex = 12;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // maskedCod
             // 
-            this.maskedCod.Location = new System.Drawing.Point(759, 282);
+            this.maskedCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedCod.Location = new System.Drawing.Point(757, 304);
             this.maskedCod.Mask = "00000";
             this.maskedCod.Name = "maskedCod";
-            this.maskedCod.Size = new System.Drawing.Size(36, 20);
-            this.maskedCod.TabIndex = 58;
+            this.maskedCod.Size = new System.Drawing.Size(36, 21);
+            this.maskedCod.TabIndex = 14;
             this.maskedCod.ValidatingType = typeof(int);
             // 
             // cbGeral
             // 
+            this.cbGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGeral.FormattingEnabled = true;
-            this.cbGeral.Location = new System.Drawing.Point(705, 282);
+            this.cbGeral.Location = new System.Drawing.Point(705, 304);
             this.cbGeral.Name = "cbGeral";
-            this.cbGeral.Size = new System.Drawing.Size(142, 21);
-            this.cbGeral.TabIndex = 59;
+            this.cbGeral.Size = new System.Drawing.Size(142, 23);
+            this.cbGeral.TabIndex = 16;
             this.cbGeral.SelectedIndexChanged += new System.EventHandler(this.CbStatus_SelectedIndexChanged);
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(705, 282);
+            this.tbConteudo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbConteudo.Location = new System.Drawing.Point(705, 304);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
             this.tbConteudo.Size = new System.Drawing.Size(142, 84);
-            this.tbConteudo.TabIndex = 60;
+            this.tbConteudo.TabIndex = 17;
             // 
             // dtData
             // 
             this.dtData.CustomFormat = "yyyy - MM -dd";
+            this.dtData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtData.Location = new System.Drawing.Point(705, 283);
+            this.dtData.Location = new System.Drawing.Point(705, 304);
             this.dtData.Name = "dtData";
-            this.dtData.Size = new System.Drawing.Size(142, 20);
-            this.dtData.TabIndex = 67;
+            this.dtData.Size = new System.Drawing.Size(142, 21);
+            this.dtData.TabIndex = 15;
             this.dtData.Value = new System.DateTime(2019, 7, 25, 19, 11, 18, 0);
             // 
             // btnAlteraStatus
@@ -414,10 +427,24 @@
             this.btnAlteraStatus.Location = new System.Drawing.Point(711, 95);
             this.btnAlteraStatus.Name = "btnAlteraStatus";
             this.btnAlteraStatus.Size = new System.Drawing.Size(139, 44);
-            this.btnAlteraStatus.TabIndex = 68;
+            this.btnAlteraStatus.TabIndex = 4;
             this.btnAlteraStatus.Text = "Alterar status";
             this.btnAlteraStatus.UseVisualStyleBackColor = false;
             this.btnAlteraStatus.Click += new System.EventHandler(this.BtnAlteraStatus_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Location = new System.Drawing.Point(668, 154);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(125, 44);
+            this.btnUsuarios.TabIndex = 10;
+            this.btnUsuarios.Text = "Usuários";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.BtnUsuarios_Click);
             // 
             // TelaPrincipalAdm
             // 
@@ -425,6 +452,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(862, 450);
+            this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnAlteraStatus);
             this.Controls.Add(this.dtData);
             this.Controls.Add(this.tbConteudo);
@@ -493,5 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeTech;
         //private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado_finalizado;
+        private System.Windows.Forms.Button btnUsuarios;
     }
 }

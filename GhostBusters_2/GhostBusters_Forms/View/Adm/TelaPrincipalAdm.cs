@@ -132,7 +132,7 @@ namespace GhostBusters_Forms.Adm
                 excluir.Show();
                 this.Hide();
             }
-            else MessageBox.Show("Nao Pode excluir nenhum Chamado");
+            else MessageBox.Show("Não Pode excluir nenhum chamado");
            
         }
 
@@ -391,6 +391,7 @@ namespace GhostBusters_Forms.Adm
                 var item = dgVisualizar.CurrentRow.DataBoundItem;
 
                 var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+
                 addTech.FormClosed += (x, y) =>
                 {
                     this.Show();
@@ -400,7 +401,6 @@ namespace GhostBusters_Forms.Adm
                 this.Hide();
             }
         }
-
         private void DgVisualizar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgVisualizar != null)
@@ -420,6 +420,17 @@ namespace GhostBusters_Forms.Adm
                     this.Hide();
                 }
             }
+        }
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            var menu = new Editar();
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+            };
+            menu.Show();
+            this.Hide();
         }
     }
 }

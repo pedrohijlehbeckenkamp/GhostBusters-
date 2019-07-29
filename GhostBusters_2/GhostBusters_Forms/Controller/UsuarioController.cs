@@ -36,5 +36,10 @@ namespace GhostBusters_Forms.Controller
         {
             return new UsuarioRepository().FindByUsuario(usu).Select(usuario => usuario.MapUsuarioModel()).ToList();
         }
+
+        public void Excluir (Usuario usuario)
+        {
+            new UsuarioRepository().Excluir(usuario.MapUsuarioEntity().COD_USUARIO);
+        }
     }
 }

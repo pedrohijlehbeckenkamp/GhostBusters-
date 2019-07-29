@@ -1,4 +1,5 @@
-﻿using GhostBusters_Forms.Model;
+﻿using GhostBusters_Forms.Controller;
+using GhostBusters_Forms.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,30 +14,78 @@ namespace GhostBusters_Forms.View.Adm
 {
     public partial class Editar : Form
     {
-        
-        public Editar(Usuario usuario)
+        string dg = "";
+
+        public Editar()
         {
             InitializeComponent();
         }
 
-        private void BtnTecnicos_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Editar_Load(object sender, EventArgs e)
         {
-            // GridUsuarios();
+            AlimentarDg();
         }
 
-        /*private void GridUsuarios() {
+        private void BtnTecnicos_Click(object sender, EventArgs e)
+        {
+            dg = "Técnico";
+            AlimentarDg();
+        }
 
-            var menu = new Usuario().Codigo_perfil;
-            menu.FormClosed += (x, y) =>
-        
-                   
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            dg = "Usuario";
+            AlimentarDg();
+        }
+
+        private void BtnAdms_Click(object sender, EventArgs e)
+        {
+            dg = "Admin";
+            AlimentarDg();
+        }
+
+        private void AlimentarDg()
+        {
+
+            if (dg == "Admin")
+            {
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = new UsuarioController().FindByUsuario("Admin"); ;
+            }
             
+            else if (dg == "Usuario")
+            {
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = new UsuarioController().FindByUsuario("Usuario");
+            }
 
-        }*/
+            else if (dg == "Técnico")
+            {
+                dgVisualizar.AutoGenerateColumns = false;
+                dgVisualizar.DataSource = new UsuarioController().FindByUsuario("Técnico");
+            }
+        }
+
+        private void BtnEditar_Click(object sender, EventArgs e)
+        {
+            var linha = dgVisualizar.CurrentRow.DataBoundItem;
+
+            var menu = new EditarUsuario((Usuario)linha);
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+                this.AlimentarDg();
+            };
+            menu.Show();
+            this.Hide();
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            var linha = dgVisualizar.CurrentRow.DataBoundItem;
+
+            new UsuarioController().Excluir((Usuario)linha);
+            AlimentarDg();
+        }
     }
 }

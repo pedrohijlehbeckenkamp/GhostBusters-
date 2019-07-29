@@ -40,9 +40,16 @@ namespace GhostBusters_Forms.View.Adm
 
             //LoadCarregador();
 
-            string nome = Save();
-
-            EnviaEmail(nome);
+            if (chamado.codigo_tech != null)
+            {
+                string nome = Save();
+                EnviaEmail(nome);
+            }
+            else
+            {
+                MessageBox.Show("Defina um técnico para alterar o status!");
+                this.Close();
+            }
 
             //if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
             //    EnviarEmail(nome,chamado.Tech.Email);
@@ -104,10 +111,18 @@ namespace GhostBusters_Forms.View.Adm
                 new StatusController().Cadastro(UpdateNullStatus(statusitem));
                 cont++;
             }
-            if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil)
+            if (chamado.codigo_tech != null)
             {
-                new StatusController().Cadastro(UpdateNullStatus(chamado.StatusChamado));
-                cont2++;
+                if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil)
+                {
+                    new StatusController().Cadastro(UpdateNullStatus(chamado.StatusChamado));
+                    cont2++;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Não existe técnico para este chamado!");
+                //this.Close();
             }
             new LogController().Cadastro(GetLog(statusitem));
 

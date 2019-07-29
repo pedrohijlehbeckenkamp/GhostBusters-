@@ -48,14 +48,13 @@ namespace GhostBusters_Forms
         {
             if (Valida())
             {
-                MessageBox.Show("UHUL");
                 ImagemModel image = null;
 
                 FileInfo file = new FileInfo(pictureImagem.ImageLocation);
                 image = new ImagemController().Cadastro(SalvarImagemBase64(file));
 
                 new UsuarioController().Cadastro(GetUsuario(image));
-                MessageBox.Show("Casdastro feito com sucesso");
+                MessageBox.Show("Casdastro realizado com sucesso!!");
                 this.Close();
             }
         }
