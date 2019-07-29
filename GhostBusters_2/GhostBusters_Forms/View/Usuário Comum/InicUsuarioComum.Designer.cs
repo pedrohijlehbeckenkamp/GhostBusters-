@@ -55,9 +55,9 @@
             this.maskedCod = new System.Windows.Forms.MaskedTextBox();
             this.cbOrderBy = new System.Windows.Forms.ComboBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
-            this.BtFinalizarChamado = new System.Windows.Forms.Button();
-            this.lbNome = new System.Windows.Forms.Label();
-            this.lbEmail = new System.Windows.Forms.Label();
+            this.BtAlterarStatus = new System.Windows.Forms.Button();
+            //this.lbNome = new System.Windows.Forms.Label();
+            //this.lbEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBase64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -367,29 +367,29 @@
             // 
             // BtFinalizarChamado
             // 
-            this.BtFinalizarChamado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BtFinalizarChamado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtFinalizarChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.BtFinalizarChamado.ForeColor = System.Drawing.Color.White;
-            this.BtFinalizarChamado.Location = new System.Drawing.Point(472, 102);
-            this.BtFinalizarChamado.Margin = new System.Windows.Forms.Padding(2);
-            this.BtFinalizarChamado.Name = "BtFinalizarChamado";
-            this.BtFinalizarChamado.Size = new System.Drawing.Size(141, 39);
-            this.BtFinalizarChamado.TabIndex = 70;
-            this.BtFinalizarChamado.Text = "Finalizar chamado";
-            this.BtFinalizarChamado.UseVisualStyleBackColor = false;
-            this.BtFinalizarChamado.Click += new System.EventHandler(this.BtAlterarStatus_Click);
+            this.BtAlterarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.BtAlterarStatus.ForeColor = System.Drawing.Color.White;
+            this.BtAlterarStatus.Location = new System.Drawing.Point(472, 102);
+            this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2);
+            this.BtAlterarStatus.Name = "BtFinalizarChamado";
+            this.BtAlterarStatus.Size = new System.Drawing.Size(141, 39);
+            this.BtAlterarStatus.TabIndex = 70;
+            this.BtAlterarStatus.Text = "Finalizar chamado";
+            this.BtAlterarStatus.UseVisualStyleBackColor = false;
+            this.BtAlterarStatus.Click += new System.EventHandler(this.BtAlterarStatus_Click);
             // 
             // lbNome
             // 
-            this.lbNome.AutoSize = true;
-            this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(262, 25);
-            this.lbNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNome.Name = "lbNome";
-            this.lbNome.Size = new System.Drawing.Size(55, 20);
-            this.lbNome.TabIndex = 71;
-            this.lbNome.Text = "Nome:";
+            //this.lbNome.AutoSize = true;
+            //this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            //this.lbNome.Location = new System.Drawing.Point(262, 25);
+            //this.lbNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            //this.lbNome.Name = "lbNome";
+            //this.lbNome.Size = new System.Drawing.Size(55, 20);
+            //this.lbNome.TabIndex = 71;
+            //this.lbNome.Text = "Nome:";
             // 
             this.BtAlterarStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BtAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
