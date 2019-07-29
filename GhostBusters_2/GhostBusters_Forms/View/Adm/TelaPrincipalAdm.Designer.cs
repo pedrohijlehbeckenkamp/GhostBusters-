@@ -44,16 +44,6 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
-            this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkPerfil = new System.Windows.Forms.LinkLabel();
             this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -66,6 +56,13 @@
             this.tbConteudo = new System.Windows.Forms.TextBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.btnAlteraStatus = new System.Windows.Forms.Button();
+            this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -217,20 +214,18 @@
             // 
             // dgVisualizar
             // 
+            this.dgVisualizar.AllowUserToAddRows = false;
             this.dgVisualizar.AllowUserToDeleteRows = false;
             this.dgVisualizar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgVisualizar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgVisualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgVisualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigochamado,
-            this.Titulo,
-            this.Descricao,
             this.NomeUsuario,
-            this.NomeTech,
-            this.NomePerfil,
-            this.nomeCategoria,
-            this.Nomestatus,
             this.Data_Chamado,
+            this.Titulo,
+            this.NomeTech,
+            this.Nomestatus,
             this.Data_Chamado_finalizado});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -255,97 +250,7 @@
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(677, 220);
             this.dgVisualizar.TabIndex = 45;
-            // 
-            // Codigochamado
-            // 
-            this.Codigochamado.DataPropertyName = "Codigo_chamado";
-            this.Codigochamado.HeaderText = "Codigo chamado";
-            this.Codigochamado.MinimumWidth = 6;
-            this.Codigochamado.Name = "Codigochamado";
-            this.Codigochamado.ReadOnly = true;
-            this.Codigochamado.Width = 125;
-            // 
-            // Titulo
-            // 
-            this.Titulo.DataPropertyName = "Titulo";
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.MinimumWidth = 6;
-            this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
-            this.Titulo.Width = 125;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "Descricao";
-            this.Descricao.HeaderText = "Descricao";
-            this.Descricao.MinimumWidth = 6;
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 125;
-            // 
-            // NomeUsuario
-            // 
-            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
-            this.NomeUsuario.HeaderText = "Usuario";
-            this.NomeUsuario.MinimumWidth = 6;
-            this.NomeUsuario.Name = "NomeUsuario";
-            this.NomeUsuario.ReadOnly = true;
-            this.NomeUsuario.Width = 125;
-            // 
-            // NomeTech
-            // 
-            this.NomeTech.DataPropertyName = "NomeTech";
-            this.NomeTech.HeaderText = "Tecnico";
-            this.NomeTech.MinimumWidth = 6;
-            this.NomeTech.Name = "NomeTech";
-            this.NomeTech.ReadOnly = true;
-            this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NomeTech.Width = 125;
-            // 
-            // NomePerfil
-            // 
-            this.NomePerfil.DataPropertyName = "NomePerfil";
-            this.NomePerfil.HeaderText = "Nome Perfil";
-            this.NomePerfil.MinimumWidth = 6;
-            this.NomePerfil.Name = "NomePerfil";
-            this.NomePerfil.ReadOnly = true;
-            this.NomePerfil.Width = 125;
-            // 
-            // nomeCategoria
-            // 
-            this.nomeCategoria.DataPropertyName = "nomeCategoria";
-            this.nomeCategoria.HeaderText = "Categoria";
-            this.nomeCategoria.MinimumWidth = 6;
-            this.nomeCategoria.Name = "nomeCategoria";
-            this.nomeCategoria.ReadOnly = true;
-            this.nomeCategoria.Width = 125;
-            // 
-            // Nomestatus
-            // 
-            this.Nomestatus.DataPropertyName = "Nomestatus";
-            this.Nomestatus.HeaderText = "Status";
-            this.Nomestatus.MinimumWidth = 6;
-            this.Nomestatus.Name = "Nomestatus";
-            this.Nomestatus.ReadOnly = true;
-            this.Nomestatus.Width = 125;
-            // 
-            // Data_Chamado
-            // 
-            this.Data_Chamado.DataPropertyName = "Data_Chamado";
-            this.Data_Chamado.HeaderText = "Data Chamado";
-            this.Data_Chamado.MinimumWidth = 6;
-            this.Data_Chamado.Name = "Data_Chamado";
-            this.Data_Chamado.ReadOnly = true;
-            this.Data_Chamado.Width = 125;
-            // 
-            // Data_Chamado_finalizado
-            // 
-            this.Data_Chamado_finalizado.DataPropertyName = "Data_Chamado_finalizado";
-            this.Data_Chamado_finalizado.HeaderText = "Finalizado ";
-            this.Data_Chamado_finalizado.MinimumWidth = 6;
-            this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
-            this.Data_Chamado_finalizado.ReadOnly = true;
-            this.Data_Chamado_finalizado.Width = 125;
+            this.dgVisualizar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentClick);
             // 
             // linkPerfil
             // 
@@ -426,7 +331,7 @@
             "Técnico",
             "Categoria"});
             this.cbOrderBy.Location = new System.Drawing.Point(705, 247);
-            this.cbOrderBy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbOrderBy.Margin = new System.Windows.Forms.Padding(2);
             this.cbOrderBy.Name = "cbOrderBy";
             this.cbOrderBy.Size = new System.Drawing.Size(142, 21);
             this.cbOrderBy.TabIndex = 56;
@@ -496,6 +401,70 @@
             this.btnAlteraStatus.UseVisualStyleBackColor = false;
             this.btnAlteraStatus.Click += new System.EventHandler(this.BtnAlteraStatus_Click);
             // 
+            // Codigochamado
+            // 
+            this.Codigochamado.DataPropertyName = "Codigo_chamado";
+            this.Codigochamado.HeaderText = "Codigo chamado";
+            this.Codigochamado.MinimumWidth = 6;
+            this.Codigochamado.Name = "Codigochamado";
+            this.Codigochamado.ReadOnly = true;
+            this.Codigochamado.Width = 125;
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
+            this.NomeUsuario.HeaderText = "Usuario";
+            this.NomeUsuario.MinimumWidth = 6;
+            this.NomeUsuario.Name = "NomeUsuario";
+            this.NomeUsuario.ReadOnly = true;
+            this.NomeUsuario.Width = 125;
+            // 
+            // Data_Chamado
+            // 
+            this.Data_Chamado.DataPropertyName = "Data_Chamado";
+            this.Data_Chamado.HeaderText = "Data Chamado";
+            this.Data_Chamado.MinimumWidth = 6;
+            this.Data_Chamado.Name = "Data_Chamado";
+            this.Data_Chamado.ReadOnly = true;
+            this.Data_Chamado.Width = 125;
+            // 
+            // Titulo
+            // 
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            this.Titulo.Width = 125;
+            // 
+            // NomeTech
+            // 
+            this.NomeTech.DataPropertyName = "NomeTech";
+            this.NomeTech.HeaderText = "Tecnico";
+            this.NomeTech.MinimumWidth = 6;
+            this.NomeTech.Name = "NomeTech";
+            this.NomeTech.ReadOnly = true;
+            this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NomeTech.Width = 125;
+            // 
+            // Nomestatus
+            // 
+            this.Nomestatus.DataPropertyName = "Nomestatus";
+            this.Nomestatus.HeaderText = "Status";
+            this.Nomestatus.MinimumWidth = 6;
+            this.Nomestatus.Name = "Nomestatus";
+            this.Nomestatus.ReadOnly = true;
+            this.Nomestatus.Width = 125;
+            // 
+            // Data_Chamado_finalizado
+            // 
+            this.Data_Chamado_finalizado.DataPropertyName = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.HeaderText = "Finalizado ";
+            this.Data_Chamado_finalizado.MinimumWidth = 6;
+            this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.ReadOnly = true;
+            this.Data_Chamado_finalizado.Width = 125;
+            // 
             // TelaPrincipalAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,16 +524,6 @@
         private System.Windows.Forms.LinkLabel linkPerfil;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button butAddTecnico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomeTech;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NomePerfil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeCategoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado_finalizado;
         private System.Windows.Forms.Button btnEditarUsuario;
         private System.Windows.Forms.ComboBox cbOrderBy;
         private System.Windows.Forms.Button btnOrder;
@@ -573,5 +532,12 @@
         private System.Windows.Forms.TextBox tbConteudo;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Button btnAlteraStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeTech;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado_finalizado;
     }
 }

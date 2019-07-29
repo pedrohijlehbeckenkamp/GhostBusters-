@@ -23,7 +23,7 @@ namespace GhostBusters_Forms.View.Ticket
         public void loadExcluirChamado()
         {
             dgVisualizar.AutoGenerateColumns = false;
-            dgVisualizar.DataSource = new ChamadoController().Findall(); 
+            dgVisualizar.DataSource = new ChamadoController().FindByExcluir();
         }
 
         private void ExcluirChamado_Load(object sender, EventArgs e)

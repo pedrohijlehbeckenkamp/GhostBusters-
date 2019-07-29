@@ -66,6 +66,12 @@
     <Compile Include="View\Ticket\AlterarStatus.Designer.cs">
       <DependentUpon>AlterarStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Ticket\LogMovimentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ticket\LogMovimentacao.Designer.cs">
+      <DependentUpon>LogMovimentacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Utilitarios\AlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="View\Ticket\AlterarStatus.resx">
       <DependentUpon>AlterarStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ticket\LogMovimentacao.resx">
+      <DependentUpon>LogMovimentacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Utilitarios\CadastroUsuario.resx">
       <DependentUpon>CadastroUsuario.cs</DependentUpon>

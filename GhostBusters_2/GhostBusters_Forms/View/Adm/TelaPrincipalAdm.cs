@@ -119,15 +119,21 @@ namespace GhostBusters_Forms.Adm
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            ExcluirChamado excluir = new ExcluirChamado();
-            excluir.Show();
-            excluir.FormClosed += (x, y) =>
+            var listExcluir = new ChamadoController().FindByExcluir();
+            if (listExcluir.Count > 0)
             {
-                this.Show();
-                loadTelaprincipal();
-            };
-            excluir.Show();
-            this.Hide();
+                ExcluirChamado excluir = new ExcluirChamado();
+                excluir.Show();
+                excluir.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    loadTelaprincipal();
+                };
+                excluir.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Nao Pode excluir nenhum Chamado");
+           
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -390,6 +396,11 @@ namespace GhostBusters_Forms.Adm
             };
             addTech.Show();
             this.Hide();
+        }
+
+        private void DgVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

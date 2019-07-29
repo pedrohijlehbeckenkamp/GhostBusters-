@@ -66,7 +66,10 @@ namespace GhostBusters_Forms.Controller
         {
             return new ChamadoRepository().FindByTech(codigo_tecnico).Select(tecnico => tecnico.MapChamadaModel()).ToList();
         }
-
+        public List<ChamadoModel> FindByExcluir()
+        {
+            return new ChamadoRepository().FindByExcluirChamado().Select(Chamado => Chamado.MapChamadaModel()).ToList();
+        }
         public void ExcluirChamado(ChamadoModel chamado)
         {
             for (int i = 0; i < chamado.anexos.Count; i++)

@@ -66,6 +66,12 @@ namespace GhostBusters_Infra.Repository
                     Where(x => x.COD_OWNER == id).ToList();
         }
 
+        public List<ChamadoEntity> FindByExcluirChamado()
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(x => x.COD_TECH == null).ToList();
+        }
+
         public override ChamadoEntity CadastroUpdate(ChamadoEntity obj)//Cadastra ou Update
         {
             if (obj == null)

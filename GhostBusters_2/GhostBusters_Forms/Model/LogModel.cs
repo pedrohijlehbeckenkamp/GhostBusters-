@@ -23,5 +23,7 @@ namespace GhostBusters_Forms.Model
         public virtual StatusModel Status_New { get; set; }
         public virtual ChamadoModel Chamado { get; set; }
 
+        public string Nome_Status_Ant { get { return Status_Ant.NomeStatus; } }
+        public string Nome_Status_New { get { return Status_New.NomeStatus; } }
     }
 }
