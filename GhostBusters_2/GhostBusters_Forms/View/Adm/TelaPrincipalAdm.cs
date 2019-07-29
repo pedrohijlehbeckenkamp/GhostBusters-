@@ -386,21 +386,40 @@ namespace GhostBusters_Forms.Adm
 
         private void BtnAlteraStatus_Click(object sender, EventArgs e)
         {
-            var item = dgVisualizar.CurrentRow.DataBoundItem;
-
-            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
-            addTech.FormClosed += (x, y) =>
+            if (dgVisualizar != null)
             {
-                this.Show();
-                loadTelaprincipal();
-            };
-            addTech.Show();
-            this.Hide();
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+
+                var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+                addTech.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    loadTelaprincipal();
+                };
+                addTech.Show();
+                this.Hide();
+            }
         }
 
-        private void DgVisualizar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgVisualizar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dgVisualizar != null)
+            {
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+                var chamadoItem = (ChamadoModel)item;
+                var Log = new LogController().FindByLog(chamadoItem.Codigo_chamado);
+                if (Log.Count > 0)
+                {
+                    var addTech = new LogMovimentacao(chamadoItem);
+                    addTech.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        loadTelaprincipal();
+                    };
+                    addTech.Show();
+                    this.Hide();
+                }
+            }
         }
     }
 }

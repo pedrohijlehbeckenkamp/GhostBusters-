@@ -9,6 +9,11 @@ namespace GhostBusters_Infra.Repository
 {
     public class LogRepository: BaseRepository<LogEntity>
     {
+        public List<LogEntity> FindByLog(int codigo_chamado)
+        {
+            return context.Set<LogEntity>().
+                    Where(codigo => codigo.COD_CHAMADO == codigo_chamado).ToList();
+        }
         //public override LogEntity CadastroUpdate(LogEntity obj)
         //{
         //    obj.COD_CHAMADO = obj.CHAMADO.COD_CHAMADO;

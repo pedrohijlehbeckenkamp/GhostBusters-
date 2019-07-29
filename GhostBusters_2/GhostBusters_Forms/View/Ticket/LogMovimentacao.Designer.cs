@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgLog = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome_Status_Ant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome_Status_New = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLog)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -48,22 +48,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Log De Movimentação";
             // 
-            // dataGridView1
+            // dgLog
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgLog.AllowUserToAddRows = false;
+            this.dgLog.AllowUserToDeleteRows = false;
+            this.dgLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Usuario,
             this.Nome_Status_Ant,
             this.Nome_Status_New,
             this.Data_log});
-            this.dataGridView1.Location = new System.Drawing.Point(25, 89);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 196);
-            this.dataGridView1.TabIndex = 1;
+            this.dgLog.Location = new System.Drawing.Point(25, 89);
+            this.dgLog.Name = "dgLog";
+            this.dgLog.ReadOnly = true;
+            this.dgLog.Size = new System.Drawing.Size(544, 196);
+            this.dgLog.TabIndex = 1;
             // 
             // Codigo
             // 
@@ -106,12 +106,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(595, 297);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgLog);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LogMovimentacao";
             this.Text = "LogMovimentacao";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.LogMovimentacao_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgLog)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,7 +121,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgLog;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome_Status_Ant;
