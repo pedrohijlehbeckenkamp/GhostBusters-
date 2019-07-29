@@ -234,6 +234,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lbTitulo);
             this.Controls.Add(this.tbTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CadastrarTicket";
             this.Text = "Cadastrar ticket";
             this.Load += new System.EventHandler(this.CadastrarTicket_Load);

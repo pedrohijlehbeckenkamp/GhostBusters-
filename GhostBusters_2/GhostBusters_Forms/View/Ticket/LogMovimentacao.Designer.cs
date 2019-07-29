@@ -108,6 +108,7 @@
             this.ClientSize = new System.Drawing.Size(595, 297);
             this.Controls.Add(this.DgLogs);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "LogMovimentacao";
             this.Text = "LogMovimentacao";
             this.Load += new System.EventHandler(this.LogMovimentacao_Load);

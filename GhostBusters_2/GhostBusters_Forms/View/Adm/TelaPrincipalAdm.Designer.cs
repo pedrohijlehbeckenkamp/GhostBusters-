@@ -44,6 +44,13 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
+            this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkPerfil = new System.Windows.Forms.LinkLabel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.butAddTecnico = new System.Windows.Forms.Button();
@@ -252,6 +259,70 @@
             this.dgVisualizar.TabIndex = 45;
             this.dgVisualizar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentDoubleClick);
             // 
+            // Codigochamado
+            // 
+            this.Codigochamado.DataPropertyName = "Codigo_chamado";
+            this.Codigochamado.HeaderText = "Codigo chamado";
+            this.Codigochamado.MinimumWidth = 6;
+            this.Codigochamado.Name = "Codigochamado";
+            this.Codigochamado.ReadOnly = true;
+            this.Codigochamado.Width = 125;
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
+            this.NomeUsuario.HeaderText = "Usuario";
+            this.NomeUsuario.MinimumWidth = 6;
+            this.NomeUsuario.Name = "NomeUsuario";
+            this.NomeUsuario.ReadOnly = true;
+            this.NomeUsuario.Width = 125;
+            // 
+            // Data_Chamado
+            // 
+            this.Data_Chamado.DataPropertyName = "Data_Chamado";
+            this.Data_Chamado.HeaderText = "Data Chamado";
+            this.Data_Chamado.MinimumWidth = 6;
+            this.Data_Chamado.Name = "Data_Chamado";
+            this.Data_Chamado.ReadOnly = true;
+            this.Data_Chamado.Width = 125;
+            // 
+            // Titulo
+            // 
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            this.Titulo.Width = 125;
+            // 
+            // NomeTech
+            // 
+            this.NomeTech.DataPropertyName = "NomeTech";
+            this.NomeTech.HeaderText = "Tecnico";
+            this.NomeTech.MinimumWidth = 6;
+            this.NomeTech.Name = "NomeTech";
+            this.NomeTech.ReadOnly = true;
+            this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NomeTech.Width = 125;
+            // 
+            // Nomestatus
+            // 
+            this.Nomestatus.DataPropertyName = "Nomestatus";
+            this.Nomestatus.HeaderText = "Status";
+            this.Nomestatus.MinimumWidth = 6;
+            this.Nomestatus.Name = "Nomestatus";
+            this.Nomestatus.ReadOnly = true;
+            this.Nomestatus.Width = 125;
+            // 
+            // Data_Chamado_finalizado
+            // 
+            this.Data_Chamado_finalizado.DataPropertyName = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.HeaderText = "Finalizado ";
+            this.Data_Chamado_finalizado.MinimumWidth = 6;
+            this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.ReadOnly = true;
+            this.Data_Chamado_finalizado.Width = 125;
+            // 
             // linkPerfil
             // 
             this.linkPerfil.AutoSize = true;
@@ -343,7 +414,7 @@
             // 
             // maskedCod
             // 
-            this.maskedCod.Location = new System.Drawing.Point(762, 300);
+            this.maskedCod.Location = new System.Drawing.Point(759, 282);
             this.maskedCod.Mask = "00000";
             this.maskedCod.Name = "maskedCod";
             this.maskedCod.Size = new System.Drawing.Size(36, 20);
@@ -353,7 +424,7 @@
             // cbGeral
             // 
             this.cbGeral.FormattingEnabled = true;
-            this.cbGeral.Location = new System.Drawing.Point(705, 273);
+            this.cbGeral.Location = new System.Drawing.Point(705, 282);
             this.cbGeral.Name = "cbGeral";
             this.cbGeral.Size = new System.Drawing.Size(142, 21);
             this.cbGeral.TabIndex = 59;
@@ -361,7 +432,7 @@
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(705, 326);
+            this.tbConteudo.Location = new System.Drawing.Point(705, 282);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
             this.tbConteudo.Size = new System.Drawing.Size(142, 84);
@@ -371,7 +442,7 @@
             // 
             this.dtData.CustomFormat = "yyyy - MM -dd";
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtData.Location = new System.Drawing.Point(708, 416);
+            this.dtData.Location = new System.Drawing.Point(705, 283);
             this.dtData.Name = "dtData";
             this.dtData.Size = new System.Drawing.Size(142, 20);
             this.dtData.TabIndex = 67;
@@ -496,7 +567,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TelaPrincipalAdm";
-            this.Text = "Perfil Adm";
+            this.Text = "Perfil do adm";
             this.Load += new System.EventHandler(this.TelaPrincipalAdm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();

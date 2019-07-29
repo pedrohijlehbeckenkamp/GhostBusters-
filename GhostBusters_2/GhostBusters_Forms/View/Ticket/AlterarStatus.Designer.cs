@@ -92,8 +92,9 @@
             this.Controls.Add(this.CbStatus);
             this.Controls.Add(this.lbStatus);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AlterarStatus";
-            this.Text = "AlterarStatus";
+            this.Text = "Alterar status";
             this.Load += new System.EventHandler(this.AlterarStatus_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

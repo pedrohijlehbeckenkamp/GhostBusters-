@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
-            this.lbInstrucao = new System.Windows.Forms.Label();
             this.Codigo_Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomePerfil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbInstrucao = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,34 +57,24 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(352, 220);
             this.dgVisualizar.TabIndex = 47;
             this.dgVisualizar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentDoubleClick);
-            // 
-            // lbInstrucao
-            // 
-            this.lbInstrucao.AutoSize = true;
-            this.lbInstrucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInstrucao.Location = new System.Drawing.Point(76, 49);
-            this.lbInstrucao.Name = "lbInstrucao";
-            this.lbInstrucao.Size = new System.Drawing.Size(341, 20);
-            this.lbInstrucao.TabIndex = 48;
-            this.lbInstrucao.Text = "Clique duas vezes no usuário que deseja editar";
             // 
             // Codigo_Usuario
             // 
@@ -118,6 +108,16 @@
             this.NomePerfil.ReadOnly = true;
             this.NomePerfil.Width = 50;
             // 
+            // lbInstrucao
+            // 
+            this.lbInstrucao.AutoSize = true;
+            this.lbInstrucao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInstrucao.Location = new System.Drawing.Point(76, 49);
+            this.lbInstrucao.Name = "lbInstrucao";
+            this.lbInstrucao.Size = new System.Drawing.Size(341, 20);
+            this.lbInstrucao.TabIndex = 48;
+            this.lbInstrucao.Text = "Clique duas vezes no usuário que deseja editar";
+            // 
             // VisualizarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +126,7 @@
             this.ClientSize = new System.Drawing.Size(491, 369);
             this.Controls.Add(this.lbInstrucao);
             this.Controls.Add(this.dgVisualizar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "VisualizarUsuarios";
             this.Text = "Visualizar usuarios";
             this.Load += new System.EventHandler(this.VisualizarUsuarios_Load);

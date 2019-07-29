@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnConfig = new System.Windows.Forms.Button();
             this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.lblTextD = new System.Windows.Forms.Label();
@@ -56,6 +56,8 @@
             this.cbGeral = new System.Windows.Forms.ComboBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.BtAlterarStatus = new System.Windows.Forms.Button();
+            this.lbNome = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(324, 130);
+            this.btnConfig.Location = new System.Drawing.Point(197, 185);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(188, 32);
             this.btnConfig.TabIndex = 12;
@@ -87,43 +89,47 @@
             // 
             this.lblTextD.AllowDrop = true;
             this.lblTextD.AutoSize = true;
+            this.lblTextD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextD.ForeColor = System.Drawing.Color.Black;
-            this.lblTextD.Location = new System.Drawing.Point(446, 19);
+            this.lblTextD.Location = new System.Drawing.Point(427, 19);
             this.lblTextD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTextD.Name = "lblTextD";
-            this.lblTextD.Size = new System.Drawing.Size(118, 13);
+            this.lblTextD.Size = new System.Drawing.Size(133, 15);
             this.lblTextD.TabIndex = 48;
             this.lblTextD.Text = "Data e hora do acesso:";
             // 
             // lblEmailTec
             // 
             this.lblEmailTec.AutoSize = true;
+            this.lblEmailTec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmailTec.ForeColor = System.Drawing.Color.Black;
-            this.lblEmailTec.Location = new System.Drawing.Point(194, 71);
+            this.lblEmailTec.Location = new System.Drawing.Point(272, 70);
             this.lblEmailTec.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmailTec.Name = "lblEmailTec";
-            this.lblEmailTec.Size = new System.Drawing.Size(39, 13);
+            this.lblEmailTec.Size = new System.Drawing.Size(58, 20);
             this.lblEmailTec.TabIndex = 47;
             this.lblEmailTec.Text = "EMAIL";
             // 
             // lblNomeTec
             // 
             this.lblNomeTec.AutoSize = true;
+            this.lblNomeTec.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNomeTec.ForeColor = System.Drawing.Color.Black;
-            this.lblNomeTec.Location = new System.Drawing.Point(193, 34);
+            this.lblNomeTec.Location = new System.Drawing.Point(272, 30);
             this.lblNomeTec.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomeTec.Name = "lblNomeTec";
-            this.lblNomeTec.Size = new System.Drawing.Size(39, 13);
+            this.lblNomeTec.Size = new System.Drawing.Size(56, 20);
             this.lblNomeTec.TabIndex = 46;
             this.lblNomeTec.Text = "NOME";
             // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(568, 19);
+            this.lblDate.Location = new System.Drawing.Point(572, 19);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
+            this.lblDate.Size = new System.Drawing.Size(33, 15);
             this.lblDate.TabIndex = 45;
             this.lblDate.Text = "Date";
             // 
@@ -178,20 +184,20 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(593, 173);
             this.dgVisualizar.TabIndex = 52;
@@ -299,9 +305,9 @@
             this.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
-            this.btnOrder.Location = new System.Drawing.Point(663, 179);
+            this.btnOrder.Location = new System.Drawing.Point(647, 185);
             this.btnOrder.Name = "btnOrder";
-            this.btnOrder.Size = new System.Drawing.Size(76, 44);
+            this.btnOrder.Size = new System.Drawing.Size(102, 32);
             this.btnOrder.TabIndex = 58;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = false;
@@ -318,7 +324,7 @@
             "Status",
             "Usuário",
             "Categoria"});
-            this.cbOrderBy.Location = new System.Drawing.Point(628, 234);
+            this.cbOrderBy.Location = new System.Drawing.Point(628, 230);
             this.cbOrderBy.Name = "cbOrderBy";
             this.cbOrderBy.Size = new System.Drawing.Size(142, 21);
             this.cbOrderBy.TabIndex = 59;
@@ -326,7 +332,7 @@
             // 
             // maskedCod
             // 
-            this.maskedCod.Location = new System.Drawing.Point(681, 230);
+            this.maskedCod.Location = new System.Drawing.Point(685, 280);
             this.maskedCod.Mask = "00000";
             this.maskedCod.Name = "maskedCod";
             this.maskedCod.Size = new System.Drawing.Size(36, 20);
@@ -335,7 +341,7 @@
             // 
             // tbConteudo
             // 
-            this.tbConteudo.Location = new System.Drawing.Point(628, 287);
+            this.tbConteudo.Location = new System.Drawing.Point(628, 281);
             this.tbConteudo.Multiline = true;
             this.tbConteudo.Name = "tbConteudo";
             this.tbConteudo.Size = new System.Drawing.Size(142, 84);
@@ -344,7 +350,7 @@
             // cbGeral
             // 
             this.cbGeral.FormattingEnabled = true;
-            this.cbGeral.Location = new System.Drawing.Point(628, 386);
+            this.cbGeral.Location = new System.Drawing.Point(628, 280);
             this.cbGeral.Name = "cbGeral";
             this.cbGeral.Size = new System.Drawing.Size(142, 21);
             this.cbGeral.TabIndex = 62;
@@ -353,7 +359,7 @@
             // 
             this.dtData.CustomFormat = "yyyy - MM -dd";
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtData.Location = new System.Drawing.Point(463, 204);
+            this.dtData.Location = new System.Drawing.Point(628, 281);
             this.dtData.Name = "dtData";
             this.dtData.Size = new System.Drawing.Size(142, 20);
             this.dtData.TabIndex = 68;
@@ -365,7 +371,7 @@
             this.BtAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.BtAlterarStatus.ForeColor = System.Drawing.Color.White;
-            this.BtAlterarStatus.Location = new System.Drawing.Point(517, 130);
+            this.BtAlterarStatus.Location = new System.Drawing.Point(400, 185);
             this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2);
             this.BtAlterarStatus.Name = "BtAlterarStatus";
             this.BtAlterarStatus.Size = new System.Drawing.Size(186, 32);
@@ -374,12 +380,38 @@
             this.BtAlterarStatus.UseVisualStyleBackColor = false;
             this.BtAlterarStatus.Click += new System.EventHandler(this.BtAlterarStatus_Click);
             // 
+            // lbNome
+            // 
+            this.lbNome.AutoSize = true;
+            this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.ForeColor = System.Drawing.Color.Black;
+            this.lbNome.Location = new System.Drawing.Point(213, 30);
+            this.lbNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(55, 20);
+            this.lbNome.TabIndex = 72;
+            this.lbNome.Text = "Nome:";
+            // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmail.ForeColor = System.Drawing.Color.Black;
+            this.lbEmail.Location = new System.Drawing.Point(213, 70);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(52, 20);
+            this.lbEmail.TabIndex = 73;
+            this.lbEmail.Text = "Email:";
+            // 
             // IniciTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(825, 427);
+            this.ClientSize = new System.Drawing.Size(795, 414);
+            this.Controls.Add(this.lbEmail);
+            this.Controls.Add(this.lbNome);
             this.Controls.Add(this.BtAlterarStatus);
             this.Controls.Add(this.dtData);
             this.Controls.Add(this.cbGeral);
@@ -397,9 +429,10 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.pbPerfil);
             this.Controls.Add(this.btnConfig);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "IniciTech";
-            this.Text = "Perfil Tecnico";
+            this.Text = "Perfil do técnico";
             this.Load += new System.EventHandler(this.InciTechcs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).EndInit();
@@ -436,5 +469,7 @@
         private System.Windows.Forms.ComboBox cbGeral;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Button BtAlterarStatus;
+        private System.Windows.Forms.Label lbNome;
+        private System.Windows.Forms.Label lbEmail;
     }
 }

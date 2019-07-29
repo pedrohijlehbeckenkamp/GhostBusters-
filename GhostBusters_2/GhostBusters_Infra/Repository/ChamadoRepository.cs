@@ -122,7 +122,7 @@ namespace GhostBusters_Infra.Repository
             //var FindStatus = new PerfilRepository().FindById(obj._STATUS.PERFIL.EntityKey);
 
 
-           context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
+            context.Entry(finded).State = System.Data.Entity.EntityState.Detached;
             // context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
             //context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
             //context.Entry(obj._STATUS.PERFIL).State = System.Data.Entity.EntityState.Detached;

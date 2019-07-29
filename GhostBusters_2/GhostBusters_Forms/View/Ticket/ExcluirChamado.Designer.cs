@@ -213,6 +213,7 @@
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.dgVisualizar);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ExcluirChamado";
             this.Text = "ExcluirChamado";
             this.Load += new System.EventHandler(this.ExcluirChamado_Load);
