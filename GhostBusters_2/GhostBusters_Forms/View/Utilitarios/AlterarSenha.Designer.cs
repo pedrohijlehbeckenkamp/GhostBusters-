@@ -42,6 +42,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lbSenhaPrinc = new System.Windows.Forms.Label();
+            this.lbInsiraSenha = new System.Windows.Forms.Label();
+            this.lbConfSenha = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // butSave
@@ -49,7 +52,7 @@
             this.butSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.butSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butSave.ForeColor = System.Drawing.Color.White;
-            this.butSave.Location = new System.Drawing.Point(329, 215);
+            this.butSave.Location = new System.Drawing.Point(323, 253);
             this.butSave.Name = "butSave";
             this.butSave.Size = new System.Drawing.Size(79, 44);
             this.butSave.TabIndex = 6;
@@ -82,9 +85,9 @@
             this.tbNovaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNovaSenha.Location = new System.Drawing.Point(198, 207);
             this.tbNovaSenha.Name = "tbNovaSenha";
-            this.tbNovaSenha.PasswordChar = '*';
             this.tbNovaSenha.Size = new System.Drawing.Size(116, 26);
             this.tbNovaSenha.TabIndex = 41;
+            this.tbNovaSenha.Text = " ";
             // 
             // tbSenha
             // 
@@ -136,7 +139,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 245);
+            this.label2.Location = new System.Drawing.Point(3, 242);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 20);
             this.label2.TabIndex = 51;
@@ -145,7 +148,7 @@
             // tbConfSenha
             // 
             this.tbConfSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbConfSenha.Location = new System.Drawing.Point(198, 242);
+            this.tbConfSenha.Location = new System.Drawing.Point(198, 239);
             this.tbConfSenha.Name = "tbConfSenha";
             this.tbConfSenha.PasswordChar = '*';
             this.tbConfSenha.Size = new System.Drawing.Size(116, 26);
@@ -181,12 +184,45 @@
             this.label6.TabIndex = 55;
             this.label6.Text = "Email:";
             // 
+            // lbSenhaPrinc
+            // 
+            this.lbSenhaPrinc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSenhaPrinc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbSenhaPrinc.Location = new System.Drawing.Point(320, 166);
+            this.lbSenhaPrinc.Name = "lbSenhaPrinc";
+            this.lbSenhaPrinc.Size = new System.Drawing.Size(97, 23);
+            this.lbSenhaPrinc.TabIndex = 56;
+            this.lbSenhaPrinc.Text = "Senha incorreta!";
+            // 
+            // lbInsiraSenha
+            // 
+            this.lbInsiraSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInsiraSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbInsiraSenha.Location = new System.Drawing.Point(320, 211);
+            this.lbInsiraSenha.Name = "lbInsiraSenha";
+            this.lbInsiraSenha.Size = new System.Drawing.Size(97, 23);
+            this.lbInsiraSenha.TabIndex = 57;
+            this.lbInsiraSenha.Text = "senha incorreta!";
+            // 
+            // lbConfSenha
+            // 
+            this.lbConfSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbConfSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbConfSenha.Location = new System.Drawing.Point(206, 269);
+            this.lbConfSenha.Name = "lbConfSenha";
+            this.lbConfSenha.Size = new System.Drawing.Size(97, 23);
+            this.lbConfSenha.TabIndex = 58;
+            this.lbConfSenha.Text = "Senha incorreta!";
+            // 
             // AlterarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(429, 301);
+            this.Controls.Add(this.lbConfSenha);
+            this.Controls.Add(this.lbInsiraSenha);
+            this.Controls.Add(this.lbSenhaPrinc);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -227,5 +263,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbSenhaPrinc;
+        private System.Windows.Forms.Label lbInsiraSenha;
+        private System.Windows.Forms.Label lbConfSenha;
     }
 }

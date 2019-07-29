@@ -99,12 +99,12 @@ namespace GhostBusters_Forms.View.Adm
             var statusant = chamado.StatusChamado;
             int cont = 0;
             int cont2 = 0;
-            if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil)
+            if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil || chamado.Tech.Codigo_perfil == statusitem.codigo_perfil)
             {
                 new StatusController().Cadastro(UpdateNullStatus(statusitem));
                 cont++;
             }
-            if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil)
+            if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil || chamado.Tech.Codigo_perfil == chamado.StatusChamado.codigo_perfil)
             {
                 new StatusController().Cadastro(UpdateNullStatus(chamado.StatusChamado));
                 cont2++;

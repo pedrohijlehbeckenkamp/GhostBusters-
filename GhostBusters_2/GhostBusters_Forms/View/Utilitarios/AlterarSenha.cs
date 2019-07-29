@@ -26,77 +26,83 @@ namespace GhostBusters_Forms
 
         private void EditarUsuarios_Load(object sender, EventArgs e)
         {
-            ValidaSenha();
-
-            if (usuario.perfil.nomePerfil == "Técnico")
-            {
-                lbNome.Text = usuario.NomeUsuario;
-                lbPerfil.Text = usuario.NomePerfil;
-                lbEmail.Text = usuario.Email;
-            }
-            else if (usuario.perfil.nomePerfil == "Usuario")
-            {
-                lbNome.Text = usuario.NomeUsuario;
-                lbPerfil.Text = usuario.NomePerfil;
-                lbEmail.Text = usuario.Email;
-            }
-            else if (usuario.perfil.nomePerfil == "Admin")
-            {
-                lbNome.Text = usuario.NomeUsuario;
-                lbPerfil.Text = usuario.NomePerfil;
-                lbEmail.Text = usuario.Email;
-            };
+            //ValidaSenha();
+            LoadEditarSenha();
         }
 
-        private void TbSenha_TextChanged(object sender, EventArgs e)
+        private void LoadEditarSenha()
         {
-            if (((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == usuario.Email))
-                || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == usuario.Email)
-                || (usuario.perfil.nomePerfil == "Admin") && (usuario.Senha == usuario.Email))
-            {
-                //tb
-                //MessageBox.Show("merdaaaa");
-            }
-
+            lbSenhaPrinc.Visible = false;
+            lbInsiraSenha.Visible = false;
+            lbConfSenha.Visible = false;
+            lbNome.Text = usuario.NomeUsuario;
+            lbPerfil.Text = usuario.NomePerfil;
+            lbEmail.Text = usuario.Email;
         }
 
         private bool ValidaSenha()
         {
-            if(string.IsNullOrEmpty(tbNovaSenha.Text) || string.IsNullOrEmpty(tbConfSenha.Text) || tbNovaSenha.Text != tbConfSenha.Text || tbNovaSenha.Text.Length <6)
-            {
-                tbConfSenha.BackColor = Color.White;
-                tbNovaSenha.BackColor = Color.White;
-            }
-            else
-            {
-                tbConfSenha.BackColor = Color.White;
-                tbNovaSenha.BackColor = Color.White;
-            }
-            return true;
-        }
+            int cont = 0;
 
-        private void ButSave_Click(object sender, EventArgs e)
-        {
-            if ((usuario.perfil.nomePerfil == "Técnico") && (usuario.Senha == tbSenha.Text)
-               || (usuario.perfil.nomePerfil == "Usuario") && (usuario.Senha == tbSenha.Text)
-               || (usuario.perfil.nomePerfil == "Admin") && (usuario.Senha == tbSenha.Text))
+            cont += ValidacoesCampos(Validacoes.ValidaNomesDiferentes(usuario.Senha, tbSenha.Text), 
+                                            tbSenha,lbSenhaPrinc, "Insira sua senha atual");
+
+            cont += ValidacoesCampos(Validacoes.ValidaTamanhaSenha(tbNovaSenha.Text)
+                                 , tbNovaSenha, lbInsiraSenha, "Senha Invalida");
+
+            cont += ValidacoesCampos(Validacoes.ValidaNomesDiferentes(tbNovaSenha.Text, tbConfSenha.Text),
+                                           tbConfSenha, lbConfSenha, "Senha Diferentes");
+
+            cont += ValidacoesCampos(Validacoes.ValidaNomesDiferentes(tbNovaSenha.Text, tbConfSenha.Text),
+                                           tbConfSenha, lbConfSenha, "Senha Diferentes");
+            cont += ValidacoesCampos(Validacoes.ValidaSenhasIguais(tbConfSenha.Text, tbSenha.Text), tbConfSenha, lbConfSenha, "Insira uma nova Senha");
+
+            if (cont > 0)
             {
-                if (tbNovaSenha.Text == tbConfSenha.Text)
+                return false;
+            }
+            return true;      
+        }
+        private int ValidacoesCampos(bool test2, TextBox textBox, Label label, string messagem)
+        {
+            int cont = 0;
+            if (!Validacoes.ValidaCamponull(textBox.Text))
+            {
+                if (test2)
                 {
-                    new UsuarioController().Cadastro(Update());
-                    
-                    MessageBox.Show("Senha alterada!!!");
+                    textBox.BackColor = Color.Red;
+                    label.Visible = true;
+                    label.Text = messagem;
+                    cont++;
                 }
                 else
                 {
-                    MessageBox.Show("Insira os dados corretamente");
+                    textBox.BackColor = Color.White;
+                    label.Visible = false;
                 }
             }
             else
             {
-                MessageBox.Show("Senha incorreta");
-                tbSenha.BackColor = Color.Red;
+                textBox.BackColor = Color.Red;
+                label.Visible = true;
+                label.Text = "Campo Null";
+                cont++;
             }
+            return cont;
+        }
+        private void ButSave_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+        private void Save()
+        {           
+             if (ValidaSenha())
+             {
+               new UsuarioController().Cadastro(Update());
+
+               MessageBox.Show("Senha alterada!!!");
+               this.Close();
+             }         
         }
 
         private Usuario Update() 
@@ -105,5 +111,6 @@ namespace GhostBusters_Forms
             Upusuario.Senha = tbConfSenha.Text;
             return Upusuario;
         }
+
     }
 }
