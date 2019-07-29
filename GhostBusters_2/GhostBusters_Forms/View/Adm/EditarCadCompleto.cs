@@ -19,6 +19,7 @@ namespace GhostBusters_Forms.View.Adm
         public Editar()
         {
             InitializeComponent();
+            CenterToParent();
         }
 
         private void Editar_Load(object sender, EventArgs e)
@@ -82,10 +83,10 @@ namespace GhostBusters_Forms.View.Adm
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            var linha = dgVisualizar.CurrentRow.DataBoundItem;
+            //var linha = dgVisualizar.CurrentRow.DataBoundItem;
 
-            new UsuarioController().Excluir((Usuario)linha);
-            AlimentarDg();
+            //new UsuarioController().Excluir((Usuario)linha);
+            //AlimentarDg();
         }
     }
 }

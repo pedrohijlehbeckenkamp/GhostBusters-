@@ -188,12 +188,6 @@
     <Compile Include="Controller\UsuarioController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\Utilitarios\VisualizarUsuarios.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Utilitarios\VisualizarUsuarios.Designer.cs">
-      <DependentUpon>VisualizarUsuarios.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="View\Ticket\AlterarStatus.resx">
       <DependentUpon>AlterarStatus.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,9 +251,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Ticket\CadastrarTicket.resx">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Utilitarios\VisualizarUsuarios.resx">
-      <DependentUpon>VisualizarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
