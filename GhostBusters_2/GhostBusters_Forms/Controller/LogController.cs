@@ -14,6 +14,10 @@ namespace GhostBusters_Forms.Controller
         public LogModel Cadastro(LogModel log)
         {
             return new LogRepository().CadastroLog(log.MapLogEntity()).MapLogModel();
-        } 
+        }
+        public List<LogModel> FindByCodigoChamado(int id)
+        {
+            return new LogRepository().FindByLog(id).Select(Log => Log.MapLogModel()).ToList();
+        }
     }
 }

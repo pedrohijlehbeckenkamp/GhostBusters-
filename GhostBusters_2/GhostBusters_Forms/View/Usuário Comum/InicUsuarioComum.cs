@@ -307,15 +307,59 @@ namespace GhostBusters_Forms.Usuário_Comum
         private void BtAlterarStatus_Click(object sender, EventArgs e)
         {
             var item = dgVisualizar.CurrentRow.DataBoundItem;
-
-            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
-            addTech.FormClosed += (x, y) =>
+            var Chamadoitem = (ChamadoModel)item;
+            if (Chamadoitem.StatusChamado != null)
             {
-                this.Show();
-                LoadUsuario();
-            };
-            addTech.Show();
-            this.Hide();
+                var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+                addTech.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    LoadUsuario();
+                };
+                addTech.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Nao Pode Alterar Status");
+            
+        }
+
+        private void BtnExcluir_Click(object sender, EventArgs e)
+        {
+            var listExcluir = new ChamadoController().FindByExcluir();
+            if (listExcluir.Count > 0)
+            {
+                ExcluirChamado excluir = new ExcluirChamado();
+                excluir.Show();
+                excluir.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    LoadUsuario();
+                };
+                excluir.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Nao Pode excluir nenhum Chamado");
+
+        }
+
+        private void DgVisualizar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var linha = dgVisualizar.CurrentRow.DataBoundItem;
+            var chamadoitem = (ChamadoModel)linha;
+            var ListLog = new LogController().FindByCodigoChamado(chamadoitem.Codigo_chamado);
+
+            if (ListLog.Count > 0)
+            {
+                var ExibirLog = new LogMovimentacao(chamadoitem);
+                ExibirLog.Show();
+                ExibirLog.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    LoadUsuario();
+                };
+                ExibirLog.Show();
+                this.Hide();
+            }
         }
     }
 }
