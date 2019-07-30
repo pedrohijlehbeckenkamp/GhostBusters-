@@ -27,9 +27,8 @@ namespace GhostBusters_Forms.View.Status
             InitializeComponent();
             CenterToParent();
             Status = _status;
-            //perfil = _perfil;
             tbNomeS.Text = Status.NomeStatus;
-            CbListarPerfil.Text = Status.perfil.nomePerfil;
+           
         }
         public StatusModel GetCadastrarStatus() => new StatusModel
         {
@@ -82,12 +81,12 @@ namespace GhostBusters_Forms.View.Status
         private void CadastrarStatus_Load(object sender, EventArgs e)
         {
             MostrarPerfil();
-            CbListarPerfil.SelectedItem = new PerfilController().FindAll();
         }
         private void MostrarPerfil()
         {
             CbListarPerfil.DataSource = new PerfilController().FindAll();
             CbListarPerfil.DisplayMember = "nomePerfil";
+            CbListarPerfil.SelectedIndex = CbListarPerfil.FindStringExact(Status.perfil.nomePerfil);
         }
     }
 }

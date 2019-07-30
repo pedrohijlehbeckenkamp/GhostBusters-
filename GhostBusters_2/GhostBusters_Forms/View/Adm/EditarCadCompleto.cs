@@ -86,7 +86,7 @@ namespace GhostBusters_Forms.View.Adm
             var itemSelecionado = dgVisualizar.CurrentRow.DataBoundItem;
             var UsuarioSelecionado = (Usuario)itemSelecionado;
             var validacaoExcluir = new ChamadoController().FindByExcluirOwner(UsuarioSelecionado.Codigo_Usuario);
-            string message = "Deseija excluir esse Usuario: " + UsuarioSelecionado.NomeUsuario;
+            string message = "Deseja excluir esse Usuario: " + UsuarioSelecionado.NomeUsuario;
             const string caption = "Form Closing";
             if (validacaoExcluir == null)
             {

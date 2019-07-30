@@ -35,8 +35,6 @@ namespace GhostBusters_Forms.View.Adm
                 CbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
                 cont = CbStatus.FindStringExact(chamado.Nomestatus);
                 CbStatus.SelectedIndex = cont;
-
-
             }
             else
             {
@@ -103,7 +101,7 @@ namespace GhostBusters_Forms.View.Adm
             if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
                 EnviarEmail(nome, chamado.Tech.Email);
             if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Técnico")
-                EnviarEmail(nome, chamado.Owner.NomeUsuario);
+                EnviarEmail(nome, chamado.Owner.Email);
         }
         private void EnviarEmail(string nome, string email)
         {
