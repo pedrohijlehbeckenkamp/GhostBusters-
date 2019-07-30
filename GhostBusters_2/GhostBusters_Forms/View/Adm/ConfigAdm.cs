@@ -17,11 +17,12 @@ namespace GhostBusters_Forms.View.Adm
 {
     public partial class ConfigAdm : Form
     {
-        String operacao = "";
+        string operacao = "";
         //private PerfilModel Perfil;
         public ConfigAdm(Usuario usuario)
         {
             InitializeComponent();
+            CenterToParent();
 
             if (usuario.perfil.nomePerfil == "Técnico")
             {
@@ -40,7 +41,6 @@ namespace GhostBusters_Forms.View.Adm
         //    public int codigo_status { get; set; }
         //    public int NomeStatus { get; set; }
         //    public int perfil { get; set; }
-
         //}
 
         private void loadDataGrid()
@@ -51,6 +51,8 @@ namespace GhostBusters_Forms.View.Adm
                 EsconderColunasStatus();
                 EsconderColunasPerfil();
                 MostrarColunasCategoria();
+
+
                 var lista = new CategoriaController().FindAll();
 
                 dgVisualizar.AutoGenerateColumns = false;
@@ -243,23 +245,66 @@ namespace GhostBusters_Forms.View.Adm
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            var linha = dgVisualizar.CurrentRow.DataBoundItem;
-
             if (operacao == "Categoria")
             {
-                new CategoriaController().Excluir((CategoriaModel)linha);
-                loadDataGrid();
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var menu = new ExcluirCSP((CategoriaModel)linha);
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    this.loadDataGrid();
+                };
+                menu.Show();
+                this.Hide();
             }
             else if (operacao == "Status")
             {
-                new StatusController().Excluir((StatusModel)linha);
-                loadDataGrid();
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var menu = new ExcluirCSP((StatusModel)linha);
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    this.loadDataGrid();
+                };
+                menu.Show();
+                this.Hide();
             }
             else if (operacao == "Perfil")
             {
-                new PerfilController().Excluir((PerfilModel)linha);
-                loadDataGrid();
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var menu = new ExcluirCSP((PerfilModel)linha);
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    this.loadDataGrid();
+                };
+                menu.Show();
+                this.Hide();
             }
+            else if (operacao == "")
+            {
+                MessageBox.Show("Escolha o tipo de visualização e depois clique na operação desejada!");
+            }
+
+            //var linha = dgVisualizar.CurrentRow.DataBoundItem;
+
+            //if (operacao == "Categoria")
+            //{
+                
+
+            //    new CategoriaController().Excluir((CategoriaModel)linha);
+            //    loadDataGrid();
+            //}
+            //else if (operacao == "Status")
+            //{
+            //    new StatusController().Excluir((StatusModel)linha);
+            //    loadDataGrid();
+            //}
+            //else if (operacao == "Perfil")
+            //{
+            //    new PerfilController().Excluir((PerfilModel)linha);
+            //    loadDataGrid();
+            //}
         }
     }
 }
