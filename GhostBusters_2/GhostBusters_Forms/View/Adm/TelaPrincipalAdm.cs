@@ -97,8 +97,14 @@ namespace GhostBusters_Forms.Adm
 
         private void BtnConfig_Click(object sender, EventArgs e) /// MUDEEEEI
         {
-            ConfigAdm formaC = new ConfigAdm(usuario);
-            formaC.Show();
+            var menu = new ConfigAdm(usuario);
+            menu.FormClosed += (x, y) =>
+            {
+                this.Show();
+                loadTelaprincipal();
+            };
+            menu.Show();
+            this.Hide();
         }
 
         private void LinkLEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
