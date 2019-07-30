@@ -47,6 +47,16 @@ namespace GhostBusters_Forms.Controller
             return new ChamadoRepository().FindById(codigo_chamado).MapChamadaModel();
         }
 
+        public ChamadoModel FindCategoria(int codigo_categoria)
+        {
+            return new ChamadoRepository().FindCategoria(codigo_categoria).MapChamadaModel();
+        }
+
+        public ChamadoModel FindStatus(int codigo_status)
+        {
+            return new ChamadoRepository().FindStatus(codigo_status).MapChamadaModel();
+        }
+
         public List<ChamadoModel> FindByDate(DateTime data)
         {
             return new ChamadoRepository().FindByDate(data).Select(owner => owner.MapChamadaModel()).ToList();

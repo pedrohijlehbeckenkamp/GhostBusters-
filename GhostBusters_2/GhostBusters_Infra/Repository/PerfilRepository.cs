@@ -45,9 +45,6 @@ namespace GhostBusters_Infra.Repository
                 context.Set<PerfilEntity>().Remove(obj);
                 context.SaveChanges();
             }
-
         }
-
-
     }
 }
