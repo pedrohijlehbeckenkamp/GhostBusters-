@@ -15,7 +15,7 @@ namespace GhostBusters_Forms.View.Status
 {
     public partial class CadastrarStatus : Form
     {
-        private StatusModel status;
+        private StatusModel Status;
         //private PerfilModel perfil;
         public CadastrarStatus()
         {
@@ -26,10 +26,10 @@ namespace GhostBusters_Forms.View.Status
         {
             InitializeComponent();
             CenterToParent();
-            status = _status;
+            Status = _status;
             //perfil = _perfil;
-            tbNomeS.Text = status.NomeStatus;
-            CbListarPerfil.Text = status.perfil.nomePerfil;
+            tbNomeS.Text = Status.NomeStatus;
+            CbListarPerfil.Text = Status.perfil.nomePerfil;
         }
         public StatusModel GetCadastrarStatus() => new StatusModel
         {
@@ -40,37 +40,42 @@ namespace GhostBusters_Forms.View.Status
         public bool ValidarStatus()
         {
             Regex validaNomeStatus = new Regex(@"[0-9]");
-            if (string.IsNullOrEmpty(tbNomeS.Text) || validaNomeStatus.IsMatch(tbNomeS.Text)) {
-
+            if(string.IsNullOrEmpty(tbNomeS.Text) || validaNomeStatus.IsMatch(tbNomeS.Text))
+            {
                 tbNomeS.BackColor = Color.Red;
                 MessageBox.Show("Erro ao inserir status!");
+                return false;
             }
             return true;
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            if (ValidarStatus())
+            if (Status != null)
             {
-                if (status != null)
+                if (ValidarStatus())
                 {
                     new StatusController().Cadastro(UpDateS());
-                    this.Close();
-                }
-                else
-                {
-                    new StatusController().Cadastro(GetCadastrarStatus());
-                    MessageBox.Show("Status cadastrado!");
+                    MessageBox.Show("Status atualizado com cucesso!");
                     this.Close();
                 }
             }
             else
             {
-                MessageBox.Show("Erro");
+                if (tbNomeS.Text != "")
+                {
+                    new StatusController().Cadastro(GetCadastrarStatus());
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Insira um nome para o Status");
+                }
             }
         }
+        
         private StatusModel UpDateS() => new StatusModel()
         {
-            codigo_status = status.codigo_status,
+            codigo_status = Status.codigo_status,
             NomeStatus = tbNomeS.Text,
             perfil = (PerfilModel)CbListarPerfil.SelectedItem
         };

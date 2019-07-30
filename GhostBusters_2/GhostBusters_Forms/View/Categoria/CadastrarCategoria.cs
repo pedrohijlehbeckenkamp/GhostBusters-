@@ -35,7 +35,6 @@ namespace GhostBusters_Forms.View.Categoria
 
         public bool ValidaCategoria()
         {
-            
             Regex validaNomeCategoria = new Regex(@"[0-9]");
             if(string.IsNullOrEmpty(tbNomeCateg.Text) || validaNomeCategoria.IsMatch(tbNomeCateg.Text))
             {
@@ -53,14 +52,21 @@ namespace GhostBusters_Forms.View.Categoria
                 if (ValidaCategoria())
                 {
                     new CategoriaController().Cadastro(UpDateC());
-                    MessageBox.Show("Categoria cadastrada!");
+                    MessageBox.Show("Categoria atualizada com sucesso!");
                     this.Close();
                 }
             }
             else
             {
-                new CategoriaController().Cadastro(Cadastrar());
-                this.Close();
+                if (tbNomeCateg.Text != "")
+                {
+                    new CategoriaController().Cadastro(Cadastrar());
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Insira um nome para categoria!");
+                }
             }
         }
         private CategoriaModel Cadastrar() => new CategoriaModel()
