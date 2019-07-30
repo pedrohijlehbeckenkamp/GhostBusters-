@@ -83,10 +83,22 @@ namespace GhostBusters_Forms.View.Adm
 
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
-            //var linha = dgVisualizar.CurrentRow.DataBoundItem;
-
-            //new UsuarioController().Excluir((Usuario)linha);
-            //AlimentarDg();
+            var itemSelecionado = dgVisualizar.CurrentRow.DataBoundItem;
+            var UsuarioSelecionado = (Usuario)itemSelecionado;
+            var validacaoExcluir = new ChamadoController().FindByExcluirOwner(UsuarioSelecionado.Codigo_Usuario);
+            string message = "Deseija excluir esse Usuario: " + UsuarioSelecionado.NomeUsuario;
+            const string caption = "Form Closing";
+            if (validacaoExcluir == null)
+            {
+                var resultado = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    new UsuarioController().Excluir(UsuarioSelecionado);
+                    new ImagemController().ExcluirImagem(UsuarioSelecionado.Foto.codigo_imagem);
+                }
+            }
+            else MessageBox.Show("Não Pode Excluir o Usuario");
+            AlimentarDg();
         }
     }
 }

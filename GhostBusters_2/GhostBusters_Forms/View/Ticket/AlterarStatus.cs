@@ -29,9 +29,23 @@ namespace GhostBusters_Forms.View.Adm
         }
         private void LoadAlterarStatus()
         {
-            CbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
+            int cont = 0;
+            if (usuarioLogin.NomePerfil != "Admin")
+            {
+                CbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
+                cont = CbStatus.FindStringExact(chamado.Nomestatus);
+                CbStatus.SelectedIndex = cont;
+
+
+            }
+            else
+            {
+                CbStatus.DataSource = new StatusController().FindAll();
+                cont = CbStatus.FindStringExact(chamado.Nomestatus);
+                CbStatus.SelectedIndex = cont;
+            } 
+
             CbStatus.DisplayMember = "NomeStatus";
-            CbStatus.SelectedIndex = CbStatus.FindStringExact(chamado.Nomestatus);
             
         }
 

@@ -82,6 +82,11 @@ namespace GhostBusters_Infra.Repository
                     Where(x => x.COD_TECH == null).ToList();
         }
 
+        public ChamadoEntity FindByOwnerChamado(int Codigo_usuario)
+        {
+            return context.Set<ChamadoEntity>().FirstOrDefault(usuario => usuario.COD_OWNER == Codigo_usuario || usuario.COD_TECH == Codigo_usuario);
+        }
+
         public override ChamadoEntity CadastroUpdate(ChamadoEntity obj)//Cadastra ou Update
         {
             if (obj == null)
