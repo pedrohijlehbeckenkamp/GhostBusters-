@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNewTicket = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -50,7 +50,6 @@
             this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.butAddTecnico = new System.Windows.Forms.Button();
-            this.btnEditarUsuario = new System.Windows.Forms.Button();
             this.cbOrderBy = new System.Windows.Forms.ComboBox();
             this.btnOrder = new System.Windows.Forms.Button();
             this.maskedCod = new System.Windows.Forms.MaskedTextBox();
@@ -69,7 +68,7 @@
             this.btnNewTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewTicket.ForeColor = System.Drawing.Color.White;
-            this.btnNewTicket.Location = new System.Drawing.Point(594, 95);
+            this.btnNewTicket.Location = new System.Drawing.Point(415, 147);
             this.btnNewTicket.Name = "btnNewTicket";
             this.btnNewTicket.Size = new System.Drawing.Size(108, 44);
             this.btnNewTicket.TabIndex = 3;
@@ -83,7 +82,7 @@
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(475, 95);
+            this.btnExcluir.Location = new System.Drawing.Point(643, 145);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(108, 44);
             this.btnExcluir.TabIndex = 2;
@@ -97,7 +96,7 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(529, 154);
+            this.btnConfig.Location = new System.Drawing.Point(725, 11);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(125, 44);
             this.btnConfig.TabIndex = 9;
@@ -110,7 +109,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(601, 13);
+            this.lblDate.Location = new System.Drawing.Point(505, 9);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(37, 16);
             this.lblDate.TabIndex = 28;
@@ -122,7 +121,7 @@
             this.btnCadastrarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarUsuario.Location = new System.Drawing.Point(171, 95);
+            this.btnCadastrarUsuario.Location = new System.Drawing.Point(171, 141);
             this.btnCadastrarUsuario.Name = "btnCadastrarUsuario";
             this.btnCadastrarUsuario.Size = new System.Drawing.Size(150, 44);
             this.btnCadastrarUsuario.TabIndex = 0;
@@ -175,7 +174,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(435, 13);
+            this.label1.Location = new System.Drawing.Point(359, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(148, 16);
@@ -199,28 +198,28 @@
             this.Data_Chamado_finalizado});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgVisualizar.Location = new System.Drawing.Point(12, 218);
+            this.dgVisualizar.Location = new System.Drawing.Point(22, 218);
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(677, 220);
             this.dgVisualizar.TabIndex = 11;
-            this.dgVisualizar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgVisualizar_CellContentDoubleClick);
+            this.dgVisualizar.DoubleClick += new System.EventHandler(this.DgVisualizar_DoubleClick);
             // 
             // Codigochamado
             // 
@@ -308,7 +307,7 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(406, 154);
+            this.btnEditar.Location = new System.Drawing.Point(529, 145);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(108, 44);
             this.btnEditar.TabIndex = 8;
@@ -322,27 +321,13 @@
             this.butAddTecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butAddTecnico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butAddTecnico.ForeColor = System.Drawing.Color.White;
-            this.butAddTecnico.Location = new System.Drawing.Point(200, 154);
+            this.butAddTecnico.Location = new System.Drawing.Point(415, 95);
             this.butAddTecnico.Name = "butAddTecnico";
             this.butAddTecnico.Size = new System.Drawing.Size(191, 44);
             this.butAddTecnico.TabIndex = 7;
             this.butAddTecnico.Text = "Adicionar Tecnico ticket";
             this.butAddTecnico.UseVisualStyleBackColor = false;
             this.butAddTecnico.Click += new System.EventHandler(this.ButAddTecnico_Click);
-            // 
-            // btnEditarUsuario
-            // 
-            this.btnEditarUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnEditarUsuario.Location = new System.Drawing.Point(330, 95);
-            this.btnEditarUsuario.Name = "btnEditarUsuario";
-            this.btnEditarUsuario.Size = new System.Drawing.Size(136, 44);
-            this.btnEditarUsuario.TabIndex = 1;
-            this.btnEditarUsuario.Text = "Editar Usuario";
-            this.btnEditarUsuario.UseVisualStyleBackColor = false;
-            this.btnEditarUsuario.Click += new System.EventHandler(this.BtnEditarUsuario_Click);
             // 
             // cbOrderBy
             // 
@@ -424,7 +409,7 @@
             this.btnAlteraStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlteraStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlteraStatus.ForeColor = System.Drawing.Color.White;
-            this.btnAlteraStatus.Location = new System.Drawing.Point(711, 95);
+            this.btnAlteraStatus.Location = new System.Drawing.Point(612, 95);
             this.btnAlteraStatus.Name = "btnAlteraStatus";
             this.btnAlteraStatus.Size = new System.Drawing.Size(139, 44);
             this.btnAlteraStatus.TabIndex = 4;
@@ -438,9 +423,9 @@
             this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(668, 154);
+            this.btnUsuarios.Location = new System.Drawing.Point(171, 95);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(125, 44);
+            this.btnUsuarios.Size = new System.Drawing.Size(150, 44);
             this.btnUsuarios.TabIndex = 10;
             this.btnUsuarios.Text = "Usuários";
             this.btnUsuarios.UseVisualStyleBackColor = false;
@@ -460,7 +445,6 @@
             this.Controls.Add(this.maskedCod);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.cbOrderBy);
-            this.Controls.Add(this.btnEditarUsuario);
             this.Controls.Add(this.butAddTecnico);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.linkPerfil);
@@ -506,7 +490,6 @@
         private System.Windows.Forms.LinkLabel linkPerfil;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button butAddTecnico;
-        private System.Windows.Forms.Button btnEditarUsuario;
         private System.Windows.Forms.ComboBox cbOrderBy;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.MaskedTextBox maskedCod;

@@ -22,7 +22,7 @@ namespace GhostBusters_Forms.Adm
     public partial class TelaPrincipalAdm : Form
     {
         private Usuario usuario;
-        private ChamadoModel ticket;
+        private List<ChamadoModel> ListChamado;
         string CB = "";
         public TelaPrincipalAdm(Usuario _usuario)
         {
@@ -59,7 +59,8 @@ namespace GhostBusters_Forms.Adm
             lblNomeAd.Text = usuario.NomeUsuario;
             lblEmail.Text = usuario.Email;
             dgVisualizar.AutoGenerateColumns = false;
-            dgVisualizar.DataSource = new ChamadoController().Findall();
+            ListChamado = new ChamadoController().Findall();
+            dgVisualizar.DataSource = ListChamado;
         }
         private void LoadImagem()
         {
@@ -144,32 +145,75 @@ namespace GhostBusters_Forms.Adm
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            var linha = dgVisualizar.CurrentRow.DataBoundItem;
-
-            var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
-            menu.FormClosed += (x, y) => 
+            if (ListChamado.Count > 0)
             {
-                this.Show();
-                loadTelaprincipal();
-            };
-            menu.Show();
-            this.Hide();
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoItem = (ChamadoModel)linha;
+
+                if (ChamadoItem.Data_Chamado_finalizado == null)
+                {
+                    var menu = new CadastrarTicket(usuario, ChamadoItem);
+                    menu.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        loadTelaprincipal();
+                    };
+                    menu.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
+                
+            }
+            else MessageBox.Show("Nao Existe Chamdo Para alterar");
+
         }
 
         private void ButAddTecnico_Click(object sender, EventArgs e)
         {
-            var item = dgVisualizar.CurrentRow.DataBoundItem;
-
-            AddTechChamado addTech = new AddTechChamado((ChamadoModel)item);
-            addTech.FormClosed += (x, y) =>
+            if (ListChamado.Count > 0)
             {
-                this.Show();
-                loadTelaprincipal();
-            };
-            addTech.Show();
-            this.Hide();
-        }
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoItem = (ChamadoModel)item;
+                if (ChamadoItem.Data_Chamado_finalizado == null)
+                {
+                    AddTechChamado addTech = new AddTechChamado(ChamadoItem);
+                    addTech.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        loadTelaprincipal();
+                    };
+                    addTech.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
 
+            }
+            else MessageBox.Show("Nao Existe Chamdo Para alterar");
+
+        }
+        private void BtnAlteraStatus_Click(object sender, EventArgs e)
+        {
+            if (ListChamado.Count > 0)
+            {
+                var item = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoItem = (ChamadoModel)item;
+
+                if (ChamadoItem.Data_Chamado_finalizado == null)
+                {
+                    var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+                    addTech.FormClosed += (x, y) =>
+                    {
+                        this.Show();
+                        loadTelaprincipal();
+                    };
+                    addTech.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
+
+            }
+            else MessageBox.Show("Nao Existe Chamdo Para alterar");
+        }
         private void LinkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var tela = new AlterarSenha(usuario);
@@ -182,16 +226,6 @@ namespace GhostBusters_Forms.Adm
             Esconder(); ;
         }
 
-        private void BtnEditarUsuario_Click(object sender, EventArgs e)
-        {
-            var menu = new VisualizarUsuarios();
-            menu.FormClosed += (x, y) =>
-            {
-                this.Show();
-            };
-            menu.Show();
-            this.Hide();
-        }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
@@ -390,29 +424,24 @@ namespace GhostBusters_Forms.Adm
             //}
         }
 
-        private void BtnAlteraStatus_Click(object sender, EventArgs e)
+        private void BtnUsuarios_Click(object sender, EventArgs e)
         {
-            if (dgVisualizar != null)
+            var menu = new Editar();
+            menu.FormClosed += (x, y) =>
             {
-                var item = dgVisualizar.CurrentRow.DataBoundItem;
-
-                var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
-
-                addTech.FormClosed += (x, y) =>
-                {
-                    this.Show();
-                    loadTelaprincipal();
-                };
-                addTech.Show();
-                this.Hide();
-            }
+                this.Show();
+            };
+            menu.Show();
+            this.Hide();
         }
-        private void DgVisualizar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void DgVisualizar_DoubleClick(object sender, EventArgs e)
         {
-            if (dgVisualizar != null)
+            if (ListChamado.Count > 0)
             {
                 var item = dgVisualizar.CurrentRow.DataBoundItem;
                 var chamadoItem = (ChamadoModel)item;
+
                 var Log = new LogController().FindByLog(chamadoItem.Codigo_chamado);
                 if (Log.Count > 0)
                 {
@@ -426,17 +455,6 @@ namespace GhostBusters_Forms.Adm
                     this.Hide();
                 }
             }
-        }
-
-        private void BtnUsuarios_Click(object sender, EventArgs e)
-        {
-            var menu = new Editar();
-            menu.FormClosed += (x, y) =>
-            {
-                this.Show();
-            };
-            menu.Show();
-            this.Hide();
         }
     }
 }
