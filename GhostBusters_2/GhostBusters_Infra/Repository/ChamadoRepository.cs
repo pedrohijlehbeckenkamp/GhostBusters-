@@ -43,6 +43,16 @@ namespace GhostBusters_Infra.Repository
             return context.Set<ChamadoEntity>().Find(codigo);
         }
 
+        public ChamadoEntity FindCategoria(int codigo)
+        {
+            return context.Set<ChamadoEntity>().FirstOrDefault(categoria => categoria.COD_CATEGORIA == codigo);
+        }
+
+        public ChamadoEntity FindStatus(int codigo)
+        {
+            return context.Set<ChamadoEntity>().FirstOrDefault(status => status.COD_STATUS == codigo);
+        }
+
         public List<ChamadoEntity> FindByDate(DateTime data)
         {
             return context.Set<ChamadoEntity>().Where(chamado => DbFunctions.TruncateTime(chamado.DATA_CHAMADO) == data).ToList();

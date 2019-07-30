@@ -22,7 +22,6 @@ namespace GhostBusters_Forms.View.Adm
             InitializeComponent();
             CenterToParent();
             LoadDataGrid();
-            //MessageBox.Show(operacao);
         }
 
         public ExcluirCSP(StatusModel Status)
@@ -31,21 +30,10 @@ namespace GhostBusters_Forms.View.Adm
             InitializeComponent();
             CenterToParent();
             LoadDataGrid();
-            //MessageBox.Show(operacao);
-        }
-
-        public ExcluirCSP(PerfilModel Perfil)
-        {
-            operacao = "Perfil";
-            InitializeComponent();
-            CenterToParent();
-            LoadDataGrid();
-            //MessageBox.Show(operacao);
         }
 
         private void LoadDataGrid()
         {
-            //EsconderColunas();
             if (operacao == "Categoria")
             {
                 EsconderColunasStatus();
@@ -57,67 +45,52 @@ namespace GhostBusters_Forms.View.Adm
                 var lista = new CategoriaController().FindAll();
                 for (int i = 0; i < lista.Count; i++)
                 {
-                    var Chamados = new ChamadoController().FindByCategoria(lista[i].Codigo_categoria);
-                    if (Chamados != null)
+                    var Chamados = new ChamadoController().FindCategoria(lista[i].Codigo_categoria);
+                    if (Chamados == null)
                     {
                         Dg.Add(lista[i]);
                     }
+                }
+
+                if (Dg.Count == 0)
+                {
+                    MessageBox.Show("Não existem categorias disponíveis para excluir!");
+                    this.Close();
+                }
+                else
+                {
                     dgVisualizar.AutoGenerateColumns = false;
                     dgVisualizar.DataSource = Dg;
                 }
-
-                //var lista = new CategoriaController().FindAll();
-                //for (int i = 0; i < lista.Count; i++)
-                //{
-                //    var Chamados = new ChamadoController().FindByCategoria(i);
-                //    if (Chamados == null)
-                //    {
-                //        Dg.Add(Chamados[i]);
-                //    }
-                //}
-                
-
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = lista;
-            }
-            else if (operacao == "Perfil")
-            {
-                EsconderColunasStatus();
-                EsconderColunasCategoria();
-                MostrarColunasPerfil();
-                var lista = new PerfilController().FindAll();
-
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = lista;
             }
             else if (operacao == "Status")
             {
                 EsconderColunasCategoria();
                 EsconderColunasPerfil();
                 MostrarColunasStatus();
+
+                List<StatusModel> Dg = new List<StatusModel>();
+
                 var lista = new StatusController().FindAll();
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    var Chamados = new ChamadoController().FindStatus(lista[i].codigo_status);
+                    if (Chamados == null)
+                    {
+                        Dg.Add(lista[i]);
+                    }
+                }
 
-                dgVisualizar.AutoGenerateColumns = false;
-                dgVisualizar.DataSource = lista;
-
-                //var minhaLista = new List<StatusDoGrid>();
-                //foreach (var item in lista)
-                //{
-                //    var statusDoGrid = new StatusDoGrid
-                //    {
-                //        codigo_status = lista.codigo_status,
-                //        NomeStatus = lista.NomeStatus,
-                //        perfil = lista.Perfil.nomePerfil,
-                //    };
-                //    minhaLista.Add(statusDoGrid);
-                //}
-
-                //var meuNovoCara = lista.Select(x => new
-                //{
-                //    codigo_status = x.codigo_status,
-                //    NomeStatus = x.NomeStatus,
-                //    perfil = x.perfil.nomePerfil
-                //}).ToList();
+                if (Dg.Count == 0)
+                {
+                    MessageBox.Show("Não existem status disponíveis para excluir!");
+                    this.Close();
+                }
+                else
+                {
+                    dgVisualizar.AutoGenerateColumns = false;
+                    dgVisualizar.DataSource = Dg;
+                }
             }
         }
 

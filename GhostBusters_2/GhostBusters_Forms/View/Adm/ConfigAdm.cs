@@ -18,7 +18,6 @@ namespace GhostBusters_Forms.View.Adm
     public partial class ConfigAdm : Form
     {
         string operacao = "";
-        //private PerfilModel Perfil;
         public ConfigAdm(Usuario usuario)
         {
             InitializeComponent();
@@ -77,25 +76,6 @@ namespace GhostBusters_Forms.View.Adm
 
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = lista;
-
-                //var minhaLista = new List<StatusDoGrid>();
-                //foreach (var item in lista)
-                //{
-                //    var statusDoGrid = new StatusDoGrid
-                //    {
-                //        codigo_status = lista.codigo_status,
-                //        NomeStatus = lista.NomeStatus,
-                //        perfil = lista.Perfil.nomePerfil,
-                //    };
-                //    minhaLista.Add(statusDoGrid);
-                //}
-
-                //var meuNovoCara = lista.Select(x => new
-                //{
-                //    codigo_status = x.codigo_status,
-                //    NomeStatus = x.NomeStatus,
-                //    perfil = x.perfil.nomePerfil
-                //}).ToList();
             }
         }
 
@@ -142,18 +122,37 @@ namespace GhostBusters_Forms.View.Adm
         private void BtnCategoria_Click(object sender, EventArgs e)
         {
             operacao = "Categoria";
+            BotoesPerfil();
             loadDataGrid();
         }
 
         private void BtnStatus_Click(object sender, EventArgs e)
         {
             operacao = "Status";
+            BotoesPerfil();
             loadDataGrid();
         }
         private void BtnPerfil_Click(object sender, EventArgs e)
         {
             operacao = "Perfil";
+            BotoesPerfil();
             loadDataGrid();
+        }
+
+        private void BotoesPerfil()
+        {
+            if (operacao == "Perfil")
+            {
+                btnCadastrar.Enabled = false;
+                btnExcluir.Enabled = false;
+                btnEditar.Enabled = false;
+            }
+            else if (operacao != "Perfil")
+            {
+                btnCadastrar.Enabled = true;
+                btnExcluir.Enabled = true;
+                btnEditar.Enabled = true;
+            }
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
@@ -268,22 +267,6 @@ namespace GhostBusters_Forms.View.Adm
                 };
                 menu.Show();
                 this.Hide();
-            }
-            else if (operacao == "Perfil")
-            {
-                var linha = dgVisualizar.CurrentRow.DataBoundItem;
-                var menu = new ExcluirCSP((PerfilModel)linha);
-                menu.FormClosed += (x, y) =>
-                {
-                    this.Show();
-                    this.loadDataGrid();
-                };
-                menu.Show();
-                this.Hide();
-            }
-            else if (operacao == "")
-            {
-                MessageBox.Show("Escolha o tipo de visualização e depois clique na operação desejada!");
             }
 
             //var linha = dgVisualizar.CurrentRow.DataBoundItem;

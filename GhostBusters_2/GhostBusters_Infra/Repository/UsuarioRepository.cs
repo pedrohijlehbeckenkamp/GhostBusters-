@@ -28,6 +28,11 @@ namespace GhostBusters_Infra.Repository
                 .Where(usuario => usuario.PERFIL.NOME == perfil).ToList();
         }
 
+        public UsuarioEntity FindUsuario(int codigo)
+        {
+            return context.Set<UsuarioEntity>().FirstOrDefault(perfil => perfil.COD_PERFIL == codigo);
+        }
+
         public override UsuarioEntity CadastroUpdate(UsuarioEntity obj)//Cadastra ou Update
         {
             if (obj == null)
