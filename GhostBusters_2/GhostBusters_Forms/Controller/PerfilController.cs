@@ -29,5 +29,9 @@ namespace GhostBusters_Forms.Controller
         {
             new PerfilRepository().Excluir(perfil.MapPerfilEntity().COD_PERFIL);
         }
+        public PerfilModel FindById(int codigo)
+        {
+            return new PerfilRepository().FindById(codigo).MapPerfilModel();
+        }
     }
 }

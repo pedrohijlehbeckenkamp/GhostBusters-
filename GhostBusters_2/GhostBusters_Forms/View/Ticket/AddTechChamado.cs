@@ -34,8 +34,6 @@ namespace GhostBusters_Forms.View.Ticket
         private void BtSave_Click(object sender, EventArgs e)
         {
             //int cont = 0;
-            //try
-            //{
                 //chamado.Tech = (Usuario)cbBoxDisponiveis.SelectedItem;
                 var updateChamado = UpdateTicket();
                 //if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil)//Solucao do problema do status
@@ -49,33 +47,27 @@ namespace GhostBusters_Forms.View.Ticket
                 //    new StatusController().Cadastro(UpdateCodigoPrefilStatus());
 
                 this.Close();
-            //}
-            //catch (Exception ex)
-            //{
-                    
-            //    MessageBox.Show("" + ex.Message);
-            //}
         }
         private ChamadoModel UpdateTicket()
         {
             ChamadoModel UpChamado = chamado;
             chamado.Tech = (Usuario)cbBoxDisponiveis.SelectedItem;
-            chamado.StatusChamado = new StatusController().FindByName("Passado para o Técnico");
+            chamado.StatusChamado = new StatusController().FindByName("Em atendimento");
             return UpChamado;
         }
-        private StatusModel UpdateNullStatus()
-        {
-            StatusModel status = chamado.StatusChamado;
-            status.codigo_perfil = null;
-            status.perfil = null;
-            return status;
-        }
-        private StatusModel UpdateCodigoPrefilStatus()
-        {
-            StatusModel status = chamado.StatusChamado;
-            status.codigo_perfil = chamado.Owner.Codigo_perfil;
-            status.perfil = chamado.Owner.perfil;
-            return status;
-        }
+        //private StatusModel UpdateNullStatus()
+        //{
+        //    StatusModel status = chamado.StatusChamado;
+        //    status.codigo_perfil = null;
+        //    status.perfil = null;
+        //    return status;
+        //}
+        //private StatusModel UpdateCodigoPrefilStatus()
+        //{
+        //    StatusModel status = chamado.StatusChamado;
+        //    status.codigo_perfil = chamado.Owner.Codigo_perfil;
+        //    status.perfil = chamado.Owner.perfil;
+        //    return status;
+        //}
     }
 }

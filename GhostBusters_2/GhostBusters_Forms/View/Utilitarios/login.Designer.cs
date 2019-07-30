@@ -96,9 +96,9 @@ namespace GhostBusters_Forms
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsuario.Location = new System.Drawing.Point(350, 187);
             this.tbUsuario.Name = "tbUsuario";
-            this.tbUsuario.Size = new System.Drawing.Size(221, 35);
+            this.tbUsuario.Size = new System.Drawing.Size(217, 35);
             this.tbUsuario.TabIndex = 0;
-            this.tbUsuario.Text = "pedro@tecnico.com";
+            this.tbUsuario.Text = "ped.321@hotmail.com";
             this.tbUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbUsuario_KeyUp);
             // 
             // lbApresentacao
