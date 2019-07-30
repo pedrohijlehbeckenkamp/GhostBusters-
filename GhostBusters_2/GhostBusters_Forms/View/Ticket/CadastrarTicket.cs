@@ -265,7 +265,8 @@ namespace GhostBusters_Forms.View.Ticket
             
             if (resultado == DialogResult.Yes)
             {
-                if (anexo.Codigo_Anexo == 0) listaAnexo.Remove(anexo);
+                if (anexo.Codigo_Anexo == 0)
+                    listaAnexo.Remove(anexo);
                 else
                 {
                     new AnexoController().ExcluirAnexo(anexo.Codigo_Anexo);

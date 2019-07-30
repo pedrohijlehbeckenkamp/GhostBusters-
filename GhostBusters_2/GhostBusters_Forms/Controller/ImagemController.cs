@@ -23,5 +23,9 @@ namespace GhostBusters_Forms.Controller
         {
             return new ImagemRepository().FindById(id).MapImagemModel();
         }
+        public void ExcluirImagem(int codigo)
+        {
+            new ImagemRepository().Excluir(codigo);
+        }
     }
 }
