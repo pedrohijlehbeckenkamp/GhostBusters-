@@ -88,7 +88,7 @@ namespace GhostBusters_Forms.View.Adm
                 EnviarEmail(nome, chamado.Tech.Email);
             if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
                 EnviarEmail(nome, chamado.Tech.Email);
-            if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
+            if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Técnico")
                 EnviarEmail(nome, chamado.Owner.NomeUsuario);
         }
         private void EnviarEmail(string nome, string email)
@@ -117,7 +117,9 @@ namespace GhostBusters_Forms.View.Adm
         private string Save()
         {
             var statusitem = (StatusModel)CbStatus.SelectedItem;
+            var itemPerfil = statusitem.perfil.Codigo;
             var statusant = chamado.StatusChamado;
+            var AntPerfil = statusant.perfil.Codigo;
             int cont = 0;
             int cont2 = 0;
             if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil || chamado.Tech.Codigo_perfil == statusitem.codigo_perfil)
@@ -136,9 +138,9 @@ namespace GhostBusters_Forms.View.Adm
 
 
             if (cont > 0)
-                new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusitem));
+                new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusitem, itemPerfil));
             if (cont2 > 0)
-                new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusant));
+                new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusant, AntPerfil));
 
             return statusant.NomeStatus;
         }
@@ -151,11 +153,11 @@ namespace GhostBusters_Forms.View.Adm
             return status;
         }
 
-        private StatusModel UpdateCodigoPrefilStatus(StatusModel statusitem)
+        private StatusModel UpdateCodigoPrefilStatus(StatusModel statusitem,int codigo)
         {
             StatusModel status = statusitem;
-            status.codigo_perfil = chamado.Owner.Codigo_perfil;
-            status.perfil = chamado.Owner.perfil;
+            status.codigo_perfil = codigo;
+            status.perfil = new PerfilController().FindById(codigo);
             return status;
         }
 

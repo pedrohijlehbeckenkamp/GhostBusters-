@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pictureImagem = new System.Windows.Forms.PictureBox();
-            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btClear = new System.Windows.Forms.Button();
             this.btnSaveBase = new System.Windows.Forms.Button();
             this.btnOpenBase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
@@ -45,19 +45,19 @@
             this.pictureImagem.TabIndex = 35;
             this.pictureImagem.TabStop = false;
             // 
-            // btnAlterar
+            // btClear
             // 
-            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlterar.ForeColor = System.Drawing.Color.White;
-            this.btnAlterar.Location = new System.Drawing.Point(272, 293);
-            this.btnAlterar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(100, 44);
-            this.btnAlterar.TabIndex = 39;
-            this.btnAlterar.Text = "Clear";
-            this.btnAlterar.UseVisualStyleBackColor = false;
-            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            this.btClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btClear.ForeColor = System.Drawing.Color.White;
+            this.btClear.Location = new System.Drawing.Point(272, 293);
+            this.btClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btClear.Name = "btClear";
+            this.btClear.Size = new System.Drawing.Size(100, 44);
+            this.btClear.TabIndex = 39;
+            this.btClear.Text = "Clear";
+            this.btClear.UseVisualStyleBackColor = false;
+            this.btClear.Click += new System.EventHandler(this.btClear_Click);
             // 
             // btnSaveBase
             // 
@@ -93,7 +93,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(400, 366);
-            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btClear);
             this.Controls.Add(this.btnSaveBase);
             this.Controls.Add(this.btnOpenBase);
             this.Controls.Add(this.pictureImagem);
@@ -110,7 +110,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureImagem;
-        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btClear;
         private System.Windows.Forms.Button btnSaveBase;
         private System.Windows.Forms.Button btnOpenBase;
     }

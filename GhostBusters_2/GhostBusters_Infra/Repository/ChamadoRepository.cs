@@ -131,7 +131,11 @@ namespace GhostBusters_Infra.Repository
             // context.Entry(Findowner).State = System.Data.Entity.EntityState.Detached;
             //context.Entry(FindStatus).State = System.Data.Entity.EntityState.Unchanged;
             //context.Entry(obj._STATUS.PERFIL).State = System.Data.Entity.EntityState.Detached;
-            obj._STATUS.PERFIL = null;
+            if (obj._STATUS != null)
+            {
+                obj._STATUS.PERFIL = null;
+            }
+            //obj._STATUS.PERFIL = null;
             //if (obj.TECNICO != null)
             //{
             //    var techPerfil = new PerfilRepository().FindById(obj.TECNICO.PERFIL.EntityKey);

@@ -164,10 +164,6 @@ namespace GhostBusters_Forms
             File.WriteAllBytes("C:\\Teste\\" + imagem.nomeImagem, bytes);
             pictureImagem.ImageLocation = ("C:\\Teste\\" + imagem.nomeImagem);
 
-            // using (MemoryStream ms = new MemoryStream(bytes))
-            // {
-            //  pictureImagem.Image = Image.FromStream(ms);
-            //}  
         }
         private void ClearImagem_Click(object sender, EventArgs e)
         {

@@ -37,6 +37,7 @@ namespace GhostBusters_Forms.View.Ticket
 
         private void CadastrarTicket_Load(object sender, EventArgs e)
         {
+            lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             if (Chamado != null)
                 LoadTicketEditar();
             else
@@ -53,36 +54,23 @@ namespace GhostBusters_Forms.View.Ticket
             AddListaAnexo();
             dgAddAnexo.AutoGenerateColumns = false;
             dgAddAnexo.DataSource = listaAnexo;
-            //tbTitulo.Visible = false;
-
         }
         private void LoadAdmin()
         {
             if (usuarioLogin.perfil.nomePerfil == "Admin")
             {
-                //LoadComboBox();
                 cbCategoria.DataSource = new CategoriaController().FindAll();
-                //lbStatus.Visible = true;
-                //cbStatus.Visible = true;
+
                 tbNomeCategoria.Visible = false;
                 cbCategoria.DisplayMember = "NomeCategoria";
                 cbCategoria.SelectedIndex = cbCategoria.FindStringExact(Chamado.categoria.NomeCategoria);
                 tbTitulo.Enabled = true;
             }
         }
-        private void LoadComboBox()
-        {
-            //cbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
-            //cbStatus.DisplayMember = "NomeStatus";
-            //cbStatus.SelectedIndex = cbStatus.FindStringExact(Chamado.Nomestatus);
-        }
         private void LoadOwner()
         {
             if (usuarioLogin.perfil.nomePerfil == "Usuario")
             {
-                //LoadComboBox();
-                //lbStatus.Visible = true;
-                //cbStatus.Visible = true;
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
@@ -92,9 +80,6 @@ namespace GhostBusters_Forms.View.Ticket
         {
             if (usuarioLogin.perfil.nomePerfil == "Técnico")
             {
-                //LoadComboBox();
-                //lbStatus.Visible = true;
-                //cbStatus.Visible = true;
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
@@ -111,10 +96,7 @@ namespace GhostBusters_Forms.View.Ticket
             }          
         }
         private void LoadTicketCadastro()
-        {
-            lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
-            //lbStatus.Visible = false;
-            //cbStatus.Visible = false;
+        {            
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
             dgAddAnexo.AutoGenerateColumns = false;
@@ -136,17 +118,17 @@ namespace GhostBusters_Forms.View.Ticket
            {
               if (Chamado != null)
               {
-                    if (Chamado.Owner.Codigo_perfil == Chamado.StatusChamado.codigo_perfil)
-                    {
-                        new StatusController().Cadastro(UpdateNullStatus());
-                        cont++;
-                    }
+                    //if (Chamado.Owner.Codigo_perfil == Chamado.StatusChamado.codigo_perfil)
+                    //{
+                    //    new StatusController().Cadastro(UpdateNullStatus());
+                    //    cont++;
+                    //}
 
                     new ChamadoController().Cadastro(UpdateTicket());
                     new AnexoController().AddChamado(listaAnexo.ToList(), Chamado.Codigo_chamado);
 
-                    if (cont > 0)
-                        new StatusController().Cadastro(UpdateCodigoPrefilStatus());
+                    //if (cont > 0)
+                    //    new StatusController().Cadastro(UpdateCodigoPrefilStatus());
                     this.Close();
                 }
               else
@@ -157,20 +139,20 @@ namespace GhostBusters_Forms.View.Ticket
            }
       
         }
-        private StatusModel UpdateNullStatus()
-        {
-            StatusModel status = Chamado.StatusChamado;
-            status.codigo_perfil = null;
-            status.perfil = null;
-            return status;
-        }
-        private StatusModel UpdateCodigoPrefilStatus()
-        {
-            StatusModel status = Chamado.StatusChamado;
-            status.codigo_perfil = Chamado.Owner.Codigo_perfil;
-            status.perfil = Chamado.Owner.perfil;
-            return status;
-        }
+        //private StatusModel UpdateNullStatus()
+        //{
+        //    StatusModel status = Chamado.StatusChamado;
+        //    status.codigo_perfil = null;
+        //    status.perfil = null;
+        //    return status;
+        //}
+        //private StatusModel UpdateCodigoPrefilStatus()
+        //{
+        //    StatusModel status = Chamado.StatusChamado;
+        //    status.codigo_perfil = Chamado.Owner.Codigo_perfil;
+        //    status.perfil = Chamado.Owner.perfil;
+        //    return status;
+        //}
         private bool Valida()
         {
             int cont = 0; 
@@ -178,7 +160,6 @@ namespace GhostBusters_Forms.View.Ticket
             {
                 cont++;
                 tbTitulo.BackColor = Color.Red;
-                //MessageBox.Show("Campo Titulo vazio");
             }
             else tbTitulo.BackColor = Color.White;
 
@@ -186,7 +167,6 @@ namespace GhostBusters_Forms.View.Ticket
             {
                 cont++;
                 tbDescricao.BackColor = Color.Red;
-                MessageBox.Show("Campo Titulo vazio");
             }
             else tbDescricao.BackColor = Color.White;
 
@@ -203,12 +183,12 @@ namespace GhostBusters_Forms.View.Ticket
             Descricao = tbDescricao.Text,
             anexos = listaAnexo.ToList(),
             categoria = (CategoriaModel)cbCategoria.SelectedItem,
+            StatusChamado = new StatusController().FindByName("Aguardando Atendimento"),
             Owner = usuarioLogin            
         };
         private ChamadoModel UpdateTicket()
         {
             ChamadoModel UpChamado = Chamado;
-            //UpChamado.StatusChamado = (StatusModel)cbStatus.SelectedItem;
             UpChamado.Titulo = tbTitulo.Text;
             UpChamado.Descricao = tbDescricao.Text;
             if (usuarioLogin.perfil.nomePerfil == "Admin")
@@ -296,16 +276,6 @@ namespace GhostBusters_Forms.View.Ticket
             if (tbDescricao.TextLength <= 300)
                 tbResultado.Text = tbDescricao.TextLength.ToString();
             else MessageBox.Show("Maximo de caracteres atingido");
-        }
-
-        private void TbTitulo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DgAddAnexo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

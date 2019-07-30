@@ -33,7 +33,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.lbDescricao = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
-            this.lbData = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.butAddAnexo = new System.Windows.Forms.Button();
             this.butClearAnexo = new System.Windows.Forms.Button();
@@ -44,6 +43,7 @@
             this.Extensao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbResultado = new System.Windows.Forms.Label();
             this.tbNomeCategoria = new System.Windows.Forms.TextBox();
+            this.lbData = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgAddAnexo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +65,6 @@
             this.tbTitulo.Name = "tbTitulo";
             this.tbTitulo.Size = new System.Drawing.Size(226, 26);
             this.tbTitulo.TabIndex = 0;
-            this.tbTitulo.TextChanged += new System.EventHandler(this.TbTitulo_TextChanged);
             // 
             // btnSave
             // 
@@ -97,16 +96,6 @@
             this.tbDescricao.Size = new System.Drawing.Size(256, 99);
             this.tbDescricao.TabIndex = 2;
             this.tbDescricao.TextChanged += new System.EventHandler(this.TbDescricao_TextChanged);
-            // 
-            // lbData
-            // 
-            this.lbData.AutoSize = true;
-            this.lbData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbData.Location = new System.Drawing.Point(12, 387);
-            this.lbData.Name = "lbData";
-            this.lbData.Size = new System.Drawing.Size(116, 20);
-            this.lbData.TabIndex = 30;
-            this.lbData.Text = "Aqui vai a Data";
             // 
             // cbCategoria
             // 
@@ -175,7 +164,6 @@
             this.dgAddAnexo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgAddAnexo.Size = new System.Drawing.Size(244, 172);
             this.dgAddAnexo.TabIndex = 5;
-            this.dgAddAnexo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgAddAnexo_CellContentClick);
             this.dgAddAnexo.DoubleClick += new System.EventHandler(this.DgAddAnexo_DoubleClick);
             // 
             // nomeAnexo
@@ -214,6 +202,16 @@
             this.tbNomeCategoria.Size = new System.Drawing.Size(226, 26);
             this.tbNomeCategoria.TabIndex = 42;
             // 
+            // lbData
+            // 
+            this.lbData.AutoSize = true;
+            this.lbData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbData.Location = new System.Drawing.Point(12, 387);
+            this.lbData.Name = "lbData";
+            this.lbData.Size = new System.Drawing.Size(116, 20);
+            this.lbData.TabIndex = 30;
+            this.lbData.Text = "Aqui vai a Data";
+            // 
             // CadastrarTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -251,7 +249,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lbDescricao;
         private System.Windows.Forms.TextBox tbDescricao;
-        private System.Windows.Forms.Label lbData;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Button butAddAnexo;
         private System.Windows.Forms.Button butClearAnexo;
@@ -262,5 +259,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Extensao;
         private System.Windows.Forms.Label tbResultado;
         private System.Windows.Forms.TextBox tbNomeCategoria;
+        private System.Windows.Forms.Label lbData;
     }
 }
