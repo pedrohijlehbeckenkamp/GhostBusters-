@@ -25,6 +25,12 @@ namespace GhostBusters_Forms.Controller
             return new StatusRepository().FindByStatusPerfil(codigo_perfil)
                             .Select(status => status.MapStatusModel()).ToList();
         }
+
+        public List<StatusModel> FindStatusPerfil(int statusT, int statusU)
+        {
+            return new StatusRepository().FindStatusPerfil(statusT, statusU)
+                            .Select(status => status.MapStatusModel()).ToList();
+        }
         internal StatusModel Cadastro(StatusModel statusModel)
         {
             return new StatusRepository().CadastroUpdate(statusModel.MapStatusEntity()).MapStatusModel();
