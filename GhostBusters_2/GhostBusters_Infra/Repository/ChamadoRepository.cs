@@ -113,11 +113,14 @@ namespace GhostBusters_Infra.Repository
             context.Entry(obj.OWNER).State = System.Data.Entity.EntityState.Unchanged;
             context.Entry(obj.OWNER.IMAGEM).State = System.Data.Entity.EntityState.Unchanged;           
             context.Entry(obj.OWNER.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
+
             if (obj._STATUS != null)
             {
                 context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
+                //obj._STATUS.PERFIL = null;
+                context.Entry(obj._STATUS.PERFIL).State = System.Data.Entity.EntityState.Unchanged;
+
             }
-            //context.Entry(obj._STATUS).State = System.Data.Entity.EntityState.Unchanged;
 
             if (obj.TECNICO != null)
             {

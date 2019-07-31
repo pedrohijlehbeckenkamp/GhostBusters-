@@ -97,17 +97,17 @@ namespace GhostBusters_Forms.Controller
         {          
                 MailMessage mail = new MailMessage();
 
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");//"smtp.mailtrap.io"
+                SmtpClient SmtpServer = new SmtpClient("smtp.mailtrap.io");//"smtp.mailtrap.io"
 
-            mail.From = new MailAddress("pedro.hijleh@gmail.com");//"cliente1@gmail.com"
+            mail.From = new MailAddress("ghostbusters@Help.com");//"cliente1@gmail.com"
             mail.To.Add(email);
             mail.Subject = "Ghostbursters_Help";
             mail.Body = observacao;
 
 
 
-            SmtpServer.Port = 587;//2525
-            SmtpServer.Credentials = new System.Net.NetworkCredential("pedro.hijleh@gmail.com", "viaflow@2019");//"ac0a02e54dc47a", "b8ed85b31e2102"
+            SmtpServer.Port = 2525;//2525
+            SmtpServer.Credentials = new System.Net.NetworkCredential("34df19e33dd4ab", "21a5742843ccb2");//"ac0a02e54dc47a", "b8ed85b31e2102"
             SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);

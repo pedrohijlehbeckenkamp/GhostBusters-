@@ -35,8 +35,6 @@ namespace GhostBusters_Forms.View.Adm
                 CbStatus.DataSource = new StatusController().FinByStatusPerfil(usuarioLogin.Codigo_perfil);
                 cont = CbStatus.FindStringExact(chamado.Nomestatus);
                 CbStatus.SelectedIndex = cont;
-
-
             }
             else
             {
@@ -52,27 +50,41 @@ namespace GhostBusters_Forms.View.Adm
         private void BtSave_Click(object sender, EventArgs e)
         {
 
-            //LoadCarregador();
-
-            if (chamado.codigo_tech != null)
+            if (validacao())
             {
-                string nome = Save();
-                EnviaEmail(nome);
+                if (chamado.codigo_tech != null)
+                {
+                    string nome = Save();
+                    EnviaEmail(nome);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Defina um técnico para alterar o status!");
+                    this.Close();
+                }
             }
-            else
+        }
+        private bool validacao()
+        {
+            var statusNew= (StatusModel)CbStatus.SelectedItem;
+            var statusAnt = chamado.StatusChamado;
+            int cont = 0;
+            if (statusNew.codigo_status == statusAnt.codigo_status)
             {
-                MessageBox.Show("Defina um técnico para alterar o status!");
-                this.Close();
+                MessageBox.Show("Mesmo status do anterior");
+                cont++;
             }
-
-            //if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
-            //    EnviarEmail(nome,chamado.Tech.Email);
-            //if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
-            //    EnviarEmail(nome, chamado.Tech.Email);
-            //if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Tecnico")
-            //    EnviarEmail(nome,chamado.Owner.NomeUsuario);
-
-            this.Close();
+            if (Validacoes.ValidaCamponull(tbObservacao.Text))
+            {
+                MessageBox.Show("Campo Observacao Nulo");
+                cont++;
+            }
+            if (cont > 0)
+            {
+                return false;
+            }
+            return true;
         }
         private void LoadCarregador()
         {
@@ -89,7 +101,7 @@ namespace GhostBusters_Forms.View.Adm
             if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
                 EnviarEmail(nome, chamado.Tech.Email);
             if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Técnico")
-                EnviarEmail(nome, chamado.Owner.NomeUsuario);
+                EnviarEmail(nome, chamado.Owner.Email);
         }
         private void EnviarEmail(string nome, string email)
         {
@@ -114,7 +126,7 @@ namespace GhostBusters_Forms.View.Adm
         //{
             
         //};
-        private string Save()
+        private string Save() 
         {
             var statusitem = (StatusModel)CbStatus.SelectedItem;
             var itemPerfil = statusitem.perfil.Codigo;

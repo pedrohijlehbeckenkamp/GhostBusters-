@@ -1,5 +1,5 @@
-Default
-	Aguardando atendimento
+﻿Default
+	
 
 Técnico
 	Em atendimento
@@ -11,4 +11,5 @@ Usuário
 	Cancelado
 
 Admin
-	Recusado
+	Aguardando atendimento
+	All

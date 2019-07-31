@@ -326,18 +326,23 @@ namespace GhostBusters_Forms.Usuário_Comum
 
                     if (ChamadoSelecionado.Data_Chamado_finalizado == null)
                     {
-                        var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
-                        addTech.FormClosed += (x, y) =>
+                        if (ChamadoSelecionado.StatusChamado.NomeStatus != "Em atendimento")
                         {
-                            this.Show();
-                            LoadUsuario();
-                        };
-                        addTech.Show();
-                        this.Hide();
+                            var addTech = new AlterarStatus(usuario, (ChamadoModel)item);
+                            addTech.FormClosed += (x, y) =>
+                            {
+                                this.Show();
+                                LoadUsuario();
+                            };
+                            addTech.Show();
+                            this.Hide();
+                        }
+                        else MessageBox.Show("Chamado em Atendimento, Nao pode ser Alterado");
 
-                    }else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
+                    }
+                    else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
 
-                }else MessageBox.Show("Chamado Sem Tecnico, Nao pode ser Alterado o status");
+                }else MessageBox.Show("Chamado Sem Tecnico, Nao pode ser Alterado");
             }
             else MessageBox.Show("Nao Existe nenhum Chamado");
 
