@@ -53,7 +53,7 @@
             this.butSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.butSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butSave.ForeColor = System.Drawing.Color.White;
-            this.butSave.Location = new System.Drawing.Point(217, 318);
+            this.butSave.Location = new System.Drawing.Point(220, 319);
             this.butSave.Name = "butSave";
             this.butSave.Size = new System.Drawing.Size(79, 44);
             this.butSave.TabIndex = 6;
@@ -65,7 +65,7 @@
             // 
             this.lbPerfil.AutoSize = true;
             this.lbPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPerfil.Location = new System.Drawing.Point(182, 51);
+            this.lbPerfil.Location = new System.Drawing.Point(255, 51);
             this.lbPerfil.Name = "lbPerfil";
             this.lbPerfil.Size = new System.Drawing.Size(44, 20);
             this.lbPerfil.TabIndex = 48;
@@ -94,7 +94,7 @@
             // 
             this.lbEmail.AutoSize = true;
             this.lbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmail.Location = new System.Drawing.Point(178, 84);
+            this.lbEmail.Location = new System.Drawing.Point(255, 84);
             this.lbEmail.Name = "lbEmail";
             this.lbEmail.Size = new System.Drawing.Size(48, 20);
             this.lbEmail.TabIndex = 43;
@@ -104,7 +104,7 @@
             // 
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNome.Location = new System.Drawing.Point(182, 17);
+            this.lbNome.Location = new System.Drawing.Point(253, 18);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(51, 20);
             this.lbNome.TabIndex = 42;
@@ -115,7 +115,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
             this.panel1.Location = new System.Drawing.Point(-73, 116);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 25);
+            this.panel1.Size = new System.Drawing.Size(592, 25);
             this.panel1.TabIndex = 49;
             // 
             // label3
@@ -151,7 +151,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(116, 17);
+            this.label4.Location = new System.Drawing.Point(189, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 53;
@@ -161,7 +161,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(122, 51);
+            this.label5.Location = new System.Drawing.Point(195, 51);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 20);
             this.label5.TabIndex = 54;
@@ -171,7 +171,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(118, 84);
+            this.label6.Location = new System.Drawing.Point(191, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 20);
             this.label6.TabIndex = 55;
@@ -235,7 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(429, 374);
+            this.ClientSize = new System.Drawing.Size(519, 386);
             this.Controls.Add(this.tbNovaSenha);
             this.Controls.Add(this.BtVisSenha);
             this.Controls.Add(this.lbConfSenha);

@@ -54,6 +54,7 @@ namespace GhostBusters_Forms.View.Ticket
         }
         private void LoadVisualizar()
         {
+            lbUsuario.Text = "Visualizar Chamado";
             tbTitulo.Text = Chamado.Titulo;
             tbDescricao.Text = Chamado.Descricao;
             LoadTecnico();
@@ -66,6 +67,7 @@ namespace GhostBusters_Forms.View.Ticket
         }
         private void LoadTicketEditar()
         {
+            lbUsuario.Text = "Editar Chamado";
             tbTitulo.Text = Chamado.Titulo;
             tbDescricao.Text = Chamado.Descricao;
             LoadTecnico();
@@ -116,7 +118,8 @@ namespace GhostBusters_Forms.View.Ticket
             }          
         }
         private void LoadTicketCadastro()
-        {            
+        {
+            lbUsuario.Text = "Cadastro Chamado";
             cbCategoria.DataSource = new CategoriaController().FindAll();
             cbCategoria.DisplayMember = "NomeCategoria";
             dgAddAnexo.AutoGenerateColumns = false;

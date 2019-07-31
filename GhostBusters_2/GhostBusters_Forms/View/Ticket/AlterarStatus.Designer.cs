@@ -33,21 +33,23 @@
             this.btSave = new System.Windows.Forms.Button();
             this.tbObservacao = new System.Windows.Forms.TextBox();
             this.lbObservacoes = new System.Windows.Forms.Label();
+            this.lbAlterarStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbStatus
             // 
             this.lbStatus.AutoSize = true;
-            this.lbStatus.Location = new System.Drawing.Point(123, 110);
+            this.lbStatus.Location = new System.Drawing.Point(60, 114);
             this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(37, 13);
+            this.lbStatus.Size = new System.Drawing.Size(40, 13);
             this.lbStatus.TabIndex = 0;
-            this.lbStatus.Text = "Status";
+            this.lbStatus.Text = "Status:";
             // 
             // CbStatus
             // 
+            this.CbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbStatus.FormattingEnabled = true;
-            this.CbStatus.Location = new System.Drawing.Point(185, 110);
+            this.CbStatus.Location = new System.Drawing.Point(122, 111);
             this.CbStatus.Name = "CbStatus";
             this.CbStatus.Size = new System.Drawing.Size(192, 21);
             this.CbStatus.TabIndex = 1;
@@ -55,7 +57,7 @@
             // btSave
             // 
             this.btSave.ForeColor = System.Drawing.Color.Black;
-            this.btSave.Location = new System.Drawing.Point(231, 269);
+            this.btSave.Location = new System.Drawing.Point(168, 270);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 23);
             this.btSave.TabIndex = 2;
@@ -65,7 +67,7 @@
             // 
             // tbObservacao
             // 
-            this.tbObservacao.Location = new System.Drawing.Point(185, 162);
+            this.tbObservacao.Location = new System.Drawing.Point(122, 163);
             this.tbObservacao.Multiline = true;
             this.tbObservacao.Name = "tbObservacao";
             this.tbObservacao.Size = new System.Drawing.Size(192, 87);
@@ -74,18 +76,29 @@
             // lbObservacoes
             // 
             this.lbObservacoes.AutoSize = true;
-            this.lbObservacoes.Location = new System.Drawing.Point(90, 165);
+            this.lbObservacoes.Location = new System.Drawing.Point(27, 166);
             this.lbObservacoes.Name = "lbObservacoes";
-            this.lbObservacoes.Size = new System.Drawing.Size(70, 13);
+            this.lbObservacoes.Size = new System.Drawing.Size(73, 13);
             this.lbObservacoes.TabIndex = 4;
-            this.lbObservacoes.Text = "Observacoes";
+            this.lbObservacoes.Text = "Observacoes:";
+            // 
+            // lbAlterarStatus
+            // 
+            this.lbAlterarStatus.AutoSize = true;
+            this.lbAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAlterarStatus.Location = new System.Drawing.Point(89, 32);
+            this.lbAlterarStatus.Name = "lbAlterarStatus";
+            this.lbAlterarStatus.Size = new System.Drawing.Size(212, 37);
+            this.lbAlterarStatus.TabIndex = 5;
+            this.lbAlterarStatus.Text = "Alterar Status";
             // 
             // AlterarStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(486, 355);
+            this.ClientSize = new System.Drawing.Size(375, 308);
+            this.Controls.Add(this.lbAlterarStatus);
             this.Controls.Add(this.lbObservacoes);
             this.Controls.Add(this.tbObservacao);
             this.Controls.Add(this.btSave);
@@ -108,5 +121,6 @@
         private System.Windows.Forms.Button btSave;
         private System.Windows.Forms.TextBox tbObservacao;
         private System.Windows.Forms.Label lbObservacoes;
+        private System.Windows.Forms.Label lbAlterarStatus;
     }
 }
