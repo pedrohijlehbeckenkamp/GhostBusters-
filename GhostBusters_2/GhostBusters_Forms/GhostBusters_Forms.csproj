@@ -277,7 +277,6 @@
     <EmbeddedResource Include="View\Ticket\CadastrarTicket.resx">
       <DependentUpon>CadastrarTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="GhostBusters_Forms_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
