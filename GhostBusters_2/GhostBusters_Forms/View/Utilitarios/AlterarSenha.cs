@@ -112,5 +112,14 @@ namespace GhostBusters_Forms
             return Upusuario;
         }
 
+        private void BtVisSenha_MouseEnter(object sender, EventArgs e)
+        {
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+        }
+
+        private void BtVisSenha_MouseLeave(object sender, EventArgs e)
+        {
+            tbSenha.PasswordChar = tbSenha.PasswordChar == char.MinValue ? tbSenha.PasswordChar = '*' : char.MinValue;
+        }
     }
 }

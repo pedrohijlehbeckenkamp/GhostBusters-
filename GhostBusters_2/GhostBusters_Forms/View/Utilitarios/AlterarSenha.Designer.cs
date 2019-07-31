@@ -31,7 +31,6 @@
             this.butSave = new System.Windows.Forms.Button();
             this.lbPerfil = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbNovaSenha = new System.Windows.Forms.TextBox();
             this.tbSenha = new System.Windows.Forms.TextBox();
             this.lbEmail = new System.Windows.Forms.Label();
             this.lbNome = new System.Windows.Forms.Label();
@@ -45,6 +44,8 @@
             this.lbSenhaPrinc = new System.Windows.Forms.Label();
             this.lbInsiraSenha = new System.Windows.Forms.Label();
             this.lbConfSenha = new System.Windows.Forms.Label();
+            this.BtVisSenha = new System.Windows.Forms.Button();
+            this.tbNovaSenha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // butSave
@@ -52,7 +53,7 @@
             this.butSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.butSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butSave.ForeColor = System.Drawing.Color.White;
-            this.butSave.Location = new System.Drawing.Point(323, 253);
+            this.butSave.Location = new System.Drawing.Point(217, 318);
             this.butSave.Name = "butSave";
             this.butSave.Size = new System.Drawing.Size(79, 44);
             this.butSave.TabIndex = 6;
@@ -80,20 +81,12 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Insira a  nova senha:";
             // 
-            // tbNovaSenha
-            // 
-            this.tbNovaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNovaSenha.Location = new System.Drawing.Point(198, 207);
-            this.tbNovaSenha.Name = "tbNovaSenha";
-            this.tbNovaSenha.Size = new System.Drawing.Size(116, 26);
-            this.tbNovaSenha.TabIndex = 41;
-            this.tbNovaSenha.Text = " ";
-            // 
             // tbSenha
             // 
             this.tbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbSenha.Location = new System.Drawing.Point(198, 163);
             this.tbSenha.Name = "tbSenha";
+            this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(116, 26);
             this.tbSenha.TabIndex = 40;
             // 
@@ -208,18 +201,43 @@
             // 
             this.lbConfSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbConfSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbConfSenha.Location = new System.Drawing.Point(206, 269);
+            this.lbConfSenha.Location = new System.Drawing.Point(320, 242);
             this.lbConfSenha.Name = "lbConfSenha";
             this.lbConfSenha.Size = new System.Drawing.Size(97, 23);
             this.lbConfSenha.TabIndex = 58;
             this.lbConfSenha.Text = "Senha incorreta!";
+            // 
+            // BtVisSenha
+            // 
+            this.BtVisSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BtVisSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtVisSenha.ForeColor = System.Drawing.Color.White;
+            this.BtVisSenha.Location = new System.Drawing.Point(198, 271);
+            this.BtVisSenha.Name = "BtVisSenha";
+            this.BtVisSenha.Size = new System.Drawing.Size(116, 25);
+            this.BtVisSenha.TabIndex = 59;
+            this.BtVisSenha.Text = "Visualizar Senha ";
+            this.BtVisSenha.UseVisualStyleBackColor = false;
+            this.BtVisSenha.MouseEnter += new System.EventHandler(this.BtVisSenha_MouseEnter);
+            this.BtVisSenha.MouseLeave += new System.EventHandler(this.BtVisSenha_MouseLeave);
+            // 
+            // tbNovaSenha
+            // 
+            this.tbNovaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNovaSenha.Location = new System.Drawing.Point(198, 203);
+            this.tbNovaSenha.Name = "tbNovaSenha";
+            this.tbNovaSenha.PasswordChar = '*';
+            this.tbNovaSenha.Size = new System.Drawing.Size(116, 26);
+            this.tbNovaSenha.TabIndex = 60;
             // 
             // AlterarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(429, 301);
+            this.ClientSize = new System.Drawing.Size(429, 374);
+            this.Controls.Add(this.tbNovaSenha);
+            this.Controls.Add(this.BtVisSenha);
             this.Controls.Add(this.lbConfSenha);
             this.Controls.Add(this.lbInsiraSenha);
             this.Controls.Add(this.lbSenhaPrinc);
@@ -232,7 +250,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbPerfil);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbNovaSenha);
             this.Controls.Add(this.tbSenha);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbNome);
@@ -252,7 +269,6 @@
         private System.Windows.Forms.Button butSave;
         private System.Windows.Forms.Label lbPerfil;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbNovaSenha;
         private System.Windows.Forms.TextBox tbSenha;
         private System.Windows.Forms.Label lbEmail;
         private System.Windows.Forms.Label lbNome;
@@ -266,5 +282,7 @@
         private System.Windows.Forms.Label lbSenhaPrinc;
         private System.Windows.Forms.Label lbInsiraSenha;
         private System.Windows.Forms.Label lbConfSenha;
+        private System.Windows.Forms.Button BtVisSenha;
+        private System.Windows.Forms.TextBox tbNovaSenha;
     }
 }

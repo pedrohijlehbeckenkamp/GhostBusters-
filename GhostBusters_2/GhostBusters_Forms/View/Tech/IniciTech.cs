@@ -261,7 +261,7 @@ namespace GhostBusters_Forms.View.Tech
         {
             if (CB == "Status")
             {
-                cbGeral.DataSource = new StatusController().FinByStatusPerfil(usuario.Codigo_perfil);
+                cbGeral.DataSource = new StatusController().FindStatusPerfil(2, 3);
                 cbGeral.DisplayMember = "NomeStatus";
             }
             else if (CB == "Usuário")

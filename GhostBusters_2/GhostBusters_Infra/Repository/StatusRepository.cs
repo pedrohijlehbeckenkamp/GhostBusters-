@@ -20,6 +20,12 @@ namespace GhostBusters_Infra.Repository
                 .Where(status => status.COD_PERFIL == codigo_perfil || status.COD_PERFIL == null).ToList();
         }
 
+        public List<StatusEntity> FindStatusPerfil(int statusT, int statusU)
+        {
+            return this.context.Set<StatusEntity>()
+                .Where(status => status.COD_PERFIL == statusT || status.COD_PERFIL == statusU).ToList();
+        }
+
         public override StatusEntity CadastroUpdate(StatusEntity obj)
         {
             if(obj == null)
