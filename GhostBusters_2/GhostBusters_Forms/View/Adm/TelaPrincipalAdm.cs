@@ -127,7 +127,7 @@ namespace GhostBusters_Forms.Adm
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             var listExcluir = new ChamadoController().FindByExcluir();
-            if (listExcluir.Count > 0)
+            if (listExcluir.Count >= 0)
             {
                 ExcluirChamado excluir = new ExcluirChamado();
                 excluir.Show();
@@ -145,14 +145,14 @@ namespace GhostBusters_Forms.Adm
 
         private void BtnEditar_Click(object sender, EventArgs e)
         {
-            if (ListChamado.Count > 0)
+            if (ListChamado.Count >= 0)
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
                 var ChamadoItem = (ChamadoModel)linha;
 
                 if (ChamadoItem.Data_Chamado_finalizado == null)
                 {
-                    var menu = new CadastrarTicket(usuario, ChamadoItem);
+                    var menu = new CadastrarTicket(usuario, ChamadoItem, "Editar");
                     menu.FormClosed += (x, y) =>
                     {
                         this.Show();
@@ -193,7 +193,7 @@ namespace GhostBusters_Forms.Adm
         }
         private void BtnAlteraStatus_Click(object sender, EventArgs e)
         {
-            if (ListChamado.Count > 0)
+            if (ListChamado.Count >= 0)
             {
                 var item = dgVisualizar.CurrentRow.DataBoundItem;
                 var ChamadoItem = (ChamadoModel)item;

@@ -52,9 +52,11 @@ namespace GhostBusters_Forms.View
 
             cont += ValidacoesCampos(Validacoes.ValidaNome(tbNome.Text)
                                 , tbNome, lbNomeInvalido, "Nome Invalido");
-            if (validaEmail != null)
-                 cont += ValidacoesCampos(true, tbEmail, lbEmailExistente, "Email Existente");
-
+            if (Validacoes.ValidaNomesDiferentes(tbEmail.Text, usuario.Email))
+            {
+                if (validaEmail != null)
+                    cont += ValidacoesCampos(true, tbEmail, lbEmailExistente, "Email Existente");
+            }          
             cont += ValidacoesCampos(Validacoes.ValidaEmail(tbEmail.Text)
                           , tbEmail, lbEmailInvalido, "Email invalido");
 

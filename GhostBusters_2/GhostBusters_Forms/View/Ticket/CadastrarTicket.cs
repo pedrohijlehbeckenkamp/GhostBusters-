@@ -20,6 +20,7 @@ namespace GhostBusters_Forms.View.Ticket
         private Usuario usuarioLogin;
         private ChamadoModel Chamado;
         private BindingList<Anexo> listaAnexo = new BindingList<Anexo>();
+        private string Tipo;
         public CadastrarTicket(Usuario _usuario)
         {
             InitializeComponent();
@@ -27,22 +28,41 @@ namespace GhostBusters_Forms.View.Ticket
             usuarioLogin = _usuario;
         }
 
-        public CadastrarTicket(Usuario _usuario, ChamadoModel _ticket)
+        public CadastrarTicket(Usuario _usuario, ChamadoModel _ticket, string tipo)
         {
             InitializeComponent();
             CenterToParent();
             usuarioLogin = _usuario;
             Chamado = _ticket;
+            Tipo = tipo;
         }
 
         private void CadastrarTicket_Load(object sender, EventArgs e)
         {
             lbData.Text = DateTime.Now.ToShortDateString() + " - " + DateTime.Now.ToLongTimeString();
             if (Chamado != null)
-                LoadTicketEditar();
+            {
+                if (Tipo == "Editar")
+                {
+                    LoadTicketEditar();
+                }
+                else LoadVisualizar();
+            }
             else
                 LoadTicketCadastro();
 
+        }
+        private void LoadVisualizar()
+        {
+            tbTitulo.Text = Chamado.Titulo;
+            tbDescricao.Text = Chamado.Descricao;
+            LoadTecnico();
+            butAddAnexo.Visible = false;
+            butDeleteAnexo.Visible = false;
+            btnSave.Visible = false;
+            AddListaAnexo();
+            dgAddAnexo.AutoGenerateColumns = false;
+            dgAddAnexo.DataSource = listaAnexo;
         }
         private void LoadTicketEditar()
         {
@@ -78,13 +98,13 @@ namespace GhostBusters_Forms.View.Ticket
         }
         private void LoadTecnico()
         {
-            if (usuarioLogin.perfil.nomePerfil == "Técnico")
+            if (usuarioLogin.perfil.nomePerfil == "Técnico" || Tipo == "Visualizar")
             {
                 tbNomeCategoria.Text = Chamado.categoria.NomeCategoria;
                 cbCategoria.Visible = false;
                 tbTitulo.Enabled = false;
                 tbDescricao.Enabled = false;
-                butClearAnexo.Enabled = false;
+                butDeleteAnexo.Enabled = false;
             }
         }
         private void AddListaAnexo()
@@ -258,17 +278,21 @@ namespace GhostBusters_Forms.View.Ticket
         }
         private void DgAddAnexo_DoubleClick(object sender, EventArgs e)
         {
-            
+
             //Visualizar Chamado 
-            var fileanexo = (Anexo)dgAddAnexo.CurrentRow.DataBoundItem;
-            if (fileanexo != null)
-            {                
-                byte[] bytes = Convert.FromBase64String(fileanexo.BaseData);
-                File.WriteAllBytes("C:\\Teste\\" + fileanexo.nomeAnexo, bytes);
-                System.Diagnostics.Process.Start("C:\\Teste\\" + fileanexo.nomeAnexo);
-                MessageBox.Show("Abrindo arquivo");
-                File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
+            if (listaAnexo.Count > 0)
+            {
+                var fileanexo = (Anexo)dgAddAnexo.CurrentRow.DataBoundItem;
+                if (fileanexo != null)
+                {
+                    byte[] bytes = Convert.FromBase64String(fileanexo.BaseData);
+                    File.WriteAllBytes("C:\\Teste\\" + fileanexo.nomeAnexo, bytes);
+                    System.Diagnostics.Process.Start("C:\\Teste\\" + fileanexo.nomeAnexo);
+                    MessageBox.Show("Abrindo arquivo");
+                    File.Delete("C:\\Teste\\" + fileanexo.nomeAnexo);
+                }
             }
+            
             
         }
         private void TbDescricao_TextChanged(object sender, EventArgs e)

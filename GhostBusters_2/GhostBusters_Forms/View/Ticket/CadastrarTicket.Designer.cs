@@ -35,7 +35,7 @@
             this.tbDescricao = new System.Windows.Forms.TextBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.butAddAnexo = new System.Windows.Forms.Button();
-            this.butClearAnexo = new System.Windows.Forms.Button();
+            this.butDeleteAnexo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.dgAddAnexo = new System.Windows.Forms.DataGridView();
@@ -117,15 +117,15 @@
             this.butAddAnexo.UseVisualStyleBackColor = true;
             this.butAddAnexo.Click += new System.EventHandler(this.ButAddAnexo_Click);
             // 
-            // butClearAnexo
+            // butDeleteAnexo
             // 
-            this.butClearAnexo.Location = new System.Drawing.Point(687, 118);
-            this.butClearAnexo.Name = "butClearAnexo";
-            this.butClearAnexo.Size = new System.Drawing.Size(88, 26);
-            this.butClearAnexo.TabIndex = 4;
-            this.butClearAnexo.Text = "Deleta Anexo";
-            this.butClearAnexo.UseVisualStyleBackColor = true;
-            this.butClearAnexo.Click += new System.EventHandler(this.ButExcluirAnexo_Click);
+            this.butDeleteAnexo.Location = new System.Drawing.Point(687, 118);
+            this.butDeleteAnexo.Name = "butDeleteAnexo";
+            this.butDeleteAnexo.Size = new System.Drawing.Size(88, 26);
+            this.butDeleteAnexo.TabIndex = 4;
+            this.butDeleteAnexo.Text = "Deleta Anexo";
+            this.butDeleteAnexo.UseVisualStyleBackColor = true;
+            this.butDeleteAnexo.Click += new System.EventHandler(this.ButExcluirAnexo_Click);
             // 
             // label1
             // 
@@ -222,7 +222,7 @@
             this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.dgAddAnexo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.butClearAnexo);
+            this.Controls.Add(this.butDeleteAnexo);
             this.Controls.Add(this.butAddAnexo);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.lbUsuario);
@@ -251,7 +251,7 @@
         private System.Windows.Forms.TextBox tbDescricao;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.Button butAddAnexo;
-        private System.Windows.Forms.Button butClearAnexo;
+        private System.Windows.Forms.Button butDeleteAnexo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.DataGridView dgAddAnexo;

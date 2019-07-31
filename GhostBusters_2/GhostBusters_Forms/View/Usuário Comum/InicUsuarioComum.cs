@@ -68,13 +68,13 @@ namespace GhostBusters_Forms.Usuário_Comum
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (listaUsuarios.Count > 0)
+            if (listaUsuarios.Count >= 0)
             {
                 var linha = dgVisualizar.CurrentRow.DataBoundItem;
                 var ChamadoSelecionado = (ChamadoModel)linha;
                 if (ChamadoSelecionado.Data_Chamado_finalizado == null)
                 {
-                    var menu = new CadastrarTicket(usuario, ChamadoSelecionado);
+                    var menu = new CadastrarTicket(usuario, ChamadoSelecionado, "Editar");
                     menu.FormClosed += (x, y) =>
                     {
                         this.Show();
@@ -317,7 +317,7 @@ namespace GhostBusters_Forms.Usuário_Comum
         private void BtAlterarStatus_Click(object sender, EventArgs e)
         {
             //var DgNull = new ChamadoController().FindByOwner(usuario.Codigo_Usuario);
-            if (listaUsuarios.Count > 0)
+            if (listaUsuarios.Count >= 0)
             {
                 var item = dgVisualizar.CurrentRow.DataBoundItem;
                 var ChamadoSelecionado = (ChamadoModel)item;
@@ -366,6 +366,27 @@ namespace GhostBusters_Forms.Usuário_Comum
                     addTech.Show();
                     this.Hide();
                 }
+            }
+        }
+
+        private void BtVisChamado_Click(object sender, EventArgs e)
+        {
+            if (listaUsuarios.Count != 0)
+            {
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoItem = (ChamadoModel)linha;
+                var menu = new CadastrarTicket(usuario, (ChamadoModel)linha, "Visualizar");
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    LoadUsuario(); 
+                };
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Nao existe Chamado para Visualizar");
             }
         }
     }

@@ -56,6 +56,7 @@
             this.cbOrderBy = new System.Windows.Forms.ComboBox();
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.BtAlterarStatus = new System.Windows.Forms.Button();
+            this.btVisChamado = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBase64)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             this.SuspendLayout();
@@ -370,7 +371,7 @@
             this.BtAlterarStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtAlterarStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.BtAlterarStatus.ForeColor = System.Drawing.Color.White;
-            this.BtAlterarStatus.Location = new System.Drawing.Point(487, 102);
+            this.BtAlterarStatus.Location = new System.Drawing.Point(471, 102);
             this.BtAlterarStatus.Margin = new System.Windows.Forms.Padding(2);
             this.BtAlterarStatus.Name = "BtAlterarStatus";
             this.BtAlterarStatus.Size = new System.Drawing.Size(141, 39);
@@ -379,12 +380,28 @@
             this.BtAlterarStatus.UseVisualStyleBackColor = false;
             this.BtAlterarStatus.Click += new System.EventHandler(this.BtAlterarStatus_Click);
             // 
+            // btVisChamado
+            // 
+            this.btVisChamado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btVisChamado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btVisChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btVisChamado.ForeColor = System.Drawing.Color.White;
+            this.btVisChamado.Location = new System.Drawing.Point(616, 101);
+            this.btVisChamado.Margin = new System.Windows.Forms.Padding(2);
+            this.btVisChamado.Name = "btVisChamado";
+            this.btVisChamado.Size = new System.Drawing.Size(159, 40);
+            this.btVisChamado.TabIndex = 75;
+            this.btVisChamado.Text = "Visualizar Chamado";
+            this.btVisChamado.UseVisualStyleBackColor = false;
+            this.btVisChamado.Click += new System.EventHandler(this.BtVisChamado_Click);
+            // 
             // InicUsuarioComum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(784, 450);
+            this.Controls.Add(this.btVisChamado);
             this.Controls.Add(this.BtAlterarStatus);
             this.Controls.Add(this.dtData);
             this.Controls.Add(this.tbConteudo);
@@ -442,5 +459,6 @@
         private System.Windows.Forms.ComboBox cbOrderBy;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Button BtAlterarStatus;
+        private System.Windows.Forms.Button btVisChamado;
     }
 }

@@ -85,7 +85,7 @@ namespace GhostBusters_Forms.View.Tech
             this.Hide();
         }
 
-        private void BtnAdcTicket_Click(object sender, EventArgs e)
+        private void BtnEditarChamado_Click(object sender, EventArgs e)
         {
             // var linha = dgVisualizar.CurrentRow.DataBoundItem;
             if (chamadoModel.Count != 0)
@@ -94,7 +94,7 @@ namespace GhostBusters_Forms.View.Tech
                 var ChamadoItem = (ChamadoModel)linha;
                 if (ChamadoItem.Data_Chamado_finalizado == null)
                 {
-                    var menu = new CadastrarTicket(usuario, (ChamadoModel)linha);
+                    var menu = new CadastrarTicket(usuario, (ChamadoModel)linha, "Editar");
                     menu.FormClosed += (x, y) =>
                     {
                         this.Show();
@@ -334,7 +334,7 @@ namespace GhostBusters_Forms.View.Tech
 
         private void DgVisualizar_DoubleClick(object sender, EventArgs e)
         {
-            if (chamadoModel.Count > 0)
+            if (chamadoModel.Count >= 0)
             {
                 var item = dgVisualizar.CurrentRow.DataBoundItem;
                 var chamadoItem = (ChamadoModel)item;
@@ -350,6 +350,27 @@ namespace GhostBusters_Forms.View.Tech
                     addTech.Show();
                     this.Hide();
                 }
+            }
+        }
+
+        private void BtVisChamado_Click(object sender, EventArgs e)
+        {
+            if (chamadoModel.Count != 0)
+            {
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoItem = (ChamadoModel)linha;
+                var menu = new CadastrarTicket(usuario, (ChamadoModel)linha, "Visualizar");
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    LoadTech();
+                };
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Nao existe Chamado para Visualizar");
             }
         }
     }
