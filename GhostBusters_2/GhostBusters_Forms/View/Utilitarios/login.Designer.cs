@@ -76,7 +76,6 @@ namespace GhostBusters_Forms
             this.tbSenha.PasswordChar = '*';
             this.tbSenha.Size = new System.Drawing.Size(221, 35);
             this.tbSenha.TabIndex = 1;
-            this.tbSenha.Text = "123456";
             this.tbSenha.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbSenha_KeyUp);
             // 
             // lbUsuario
@@ -98,7 +97,6 @@ namespace GhostBusters_Forms
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(221, 35);
             this.tbUsuario.TabIndex = 0;
-            this.tbUsuario.Text = "ped.321@hotmail.com";
             this.tbUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TbUsuario_KeyUp);
             // 
             // lbApresentacao
