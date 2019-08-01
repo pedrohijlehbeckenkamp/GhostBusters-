@@ -24,50 +24,52 @@ namespace GhostBusters_Forms.View.Ticket
 
         private void AddTechChamado_Load(object sender, EventArgs e)
         {
+            LoadAddTech();
+        }
+        private void LoadAddTech()
+        {
             cbBoxDisponiveis.DataSource = new UsuarioController().FindbyPerfil("Técnico");
             cbBoxDisponiveis.DisplayMember = "NomeUsuario";
             tbNomeChamado.Text = chamado.Titulo;
             tbNomeChamado.Enabled = false;
-
         }
 
         private void BtSave_Click(object sender, EventArgs e)
         {
-            //int cont = 0;
-                //chamado.Tech = (Usuario)cbBoxDisponiveis.SelectedItem;
-                var updateChamado = UpdateTicket();
-                //if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil)//Solucao do problema do status
-                //{
-                //    new StatusController().Cadastro(UpdateNullStatus());
-                //    cont++;
-                //}
-                new ChamadoController().Cadastro(updateChamado);
-
-                //if (cont > 0)
-                //    new StatusController().Cadastro(UpdateCodigoPrefilStatus());
-
-                this.Close();
+            Save();
         }
-        private ChamadoModel UpdateTicket()
+
+        private void Save()
+        {
+
+            var statusAnt = chamado.StatusChamado;
+            var statusNew = new StatusController().FindByName("Em atendimento");
+            string menssagem = "Add Tech";
+            if (chamado.Tech == null)
+                new LogController().Cadastro(GetLog(statusAnt, menssagem, statusNew));
+            var updateChamado = UpdateTicket(statusNew);
+            new ChamadoController().Cadastro(updateChamado);
+
+            this.Close();
+        }
+
+        public LogModel GetLog(StatusModel statusAnt, string mensagem, StatusModel statusNew) => new LogModel()
+        {
+            Observacao = mensagem,
+            Data_log = DateTime.Now,
+            Usuario = "Adm",
+            Chamado = chamado,
+            //Owner = usuarioLogin,
+            Status_Ant = statusAnt,
+            Status_New = statusNew
+        };
+
+        private ChamadoModel UpdateTicket(StatusModel statusNew)
         {
             ChamadoModel UpChamado = chamado;
             chamado.Tech = (Usuario)cbBoxDisponiveis.SelectedItem;
-            chamado.StatusChamado = new StatusController().FindByName("Em atendimento");
+            chamado.StatusChamado = statusNew;
             return UpChamado;
         }
-        //private StatusModel UpdateNullStatus()
-        //{
-        //    StatusModel status = chamado.StatusChamado;
-        //    status.codigo_perfil = null;
-        //    status.perfil = null;
-        //    return status;
-        //}
-        //private StatusModel UpdateCodigoPrefilStatus()
-        //{
-        //    StatusModel status = chamado.StatusChamado;
-        //    status.codigo_perfil = chamado.Owner.Codigo_perfil;
-        //    status.perfil = chamado.Owner.perfil;
-        //    return status;
-        //}
     }
 }
