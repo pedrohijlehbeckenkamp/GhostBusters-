@@ -62,8 +62,16 @@ namespace GhostBusters_Forms.View.Status
             {
                 if (tbNomeS.Text != "")
                 {
-                    new StatusController().Cadastro(GetCadastrarStatus());
-                    this.Close();
+                    var consultarNome = new StatusController().FindByName(tbNomeS.Text);
+                    if (consultarNome.NomeStatus == tbNomeS.Text)
+                    {
+                        MessageBox.Show("Status já existente!");
+                    }
+                    else
+                    {
+                        new StatusController().Cadastro(GetCadastrarStatus());
+                        this.Close();
+                    }
                 }
                 else
                 {

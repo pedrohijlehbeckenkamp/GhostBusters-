@@ -19,6 +19,11 @@ namespace GhostBusters_Infra.Repository
             return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
         }
 
+        public CategoriaEntity findbyName(string name)
+        {
+            return this.context.Set<CategoriaEntity>().FirstOrDefault(x => x.NOME == name);
+        }
+
         protected override CategoriaEntity Cadastro(CategoriaEntity obj)
         {
             var objCadastro = context.Set<CategoriaEntity>().Add(obj);

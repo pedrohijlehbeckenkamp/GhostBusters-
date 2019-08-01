@@ -60,8 +60,16 @@ namespace GhostBusters_Forms.View.Categoria
             {
                 if (tbNomeCateg.Text != "")
                 {
-                    new CategoriaController().Cadastro(Cadastrar());
-                    this.Close();
+                    var consultarNome = new CategoriaController().FindByName(tbNomeCateg.Text);
+                    if (consultarNome.NomeCategoria == tbNomeCateg.Text)
+                    {
+                        MessageBox.Show("Categoria já existente!");
+                    }
+                    else
+                    {
+                        new CategoriaController().Cadastro(Cadastrar());
+                        this.Close();
+                    }
                 }
                 else
                 {
@@ -73,7 +81,6 @@ namespace GhostBusters_Forms.View.Categoria
         {
             NomeCategoria = tbNomeCateg.Text,
         };
-
 
         private CategoriaModel UpDateC() => new CategoriaModel()
         {

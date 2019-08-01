@@ -30,5 +30,10 @@ namespace GhostBusters_Forms.Controller
         {
             new CategoriaRepository().Excluir(categoria.MapCategoriaEntity().COD_CATEGORIA);
         }
+
+        public CategoriaModel FindByName(string nome)
+        {
+            return new CategoriaRepository().findbyName(nome).MApCategoriaModel();
+        }
     }
 }

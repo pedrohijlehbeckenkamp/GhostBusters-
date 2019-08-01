@@ -257,7 +257,7 @@ namespace GhostBusters_Forms.Adm
 
                     for (int i = 0; i < Chamados.Count; i++)
                     {
-                        if (Chamados[i].Descricao.Contains(padrao))
+                        if (Chamados[i].Descricao.ToLower().Contains(padrao))
                         {
                             lista.Add(Chamados[i]);
                         }
