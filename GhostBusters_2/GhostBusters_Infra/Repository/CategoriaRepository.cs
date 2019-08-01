@@ -44,11 +44,6 @@ namespace GhostBusters_Infra.Repository
             return objUpdateC;
         }
 
-        public virtual List<CategoriaEntity> Consultar()
-        {
-            return context.Set<CategoriaEntity>().ToList();
-        }
-
         public virtual List<CategoriaEntity> FindAll()
         {
             return context.Set<CategoriaEntity>().ToList();

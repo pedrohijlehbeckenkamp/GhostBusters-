@@ -30,9 +30,6 @@ namespace GhostBusters_Infra.Entity
 
         [ForeignKey("COD_IMAGEM")]
         public virtual Base64ImagemEntity IMAGEM { get; set; }
-
-
-
         public override int? EntityId()
         {
             return COD_USUARIO;

@@ -54,6 +54,7 @@
             // 
             this.dgLog.AllowUserToAddRows = false;
             this.dgLog.AllowUserToDeleteRows = false;
+            this.dgLog.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,

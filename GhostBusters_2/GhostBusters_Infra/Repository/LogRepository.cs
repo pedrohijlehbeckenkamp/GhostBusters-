@@ -25,16 +25,6 @@ namespace GhostBusters_Infra.Repository
             return context.Set<LogEntity>().FirstOrDefault(status => status.COD_ANT_STATUS == codigo_status_new || status.COD_NEW_STATUS == codigo_status_new);
         }
 
-        //public override LogEntity CadastroUpdate(LogEntity obj)
-        //{
-        //    obj.COD_CHAMADO = obj.CHAMADO.COD_CHAMADO;
-        //    obj.COD_USUARIO = obj.OWNER.COD_USUARIO;
-        //    obj.COD_ANT_STATUS = obj.STATUS_ANT.COD_STATUS;
-        //    obj.COD_NEW_STATUS = obj.STATUS_NEW.COD_STATUS;
-
-        //    return obj.EntityId().HasValue && FindById(obj.EntityKey) != null ? Update(obj) : Cadastro(obj);
-        //}
-
         public LogEntity CadastroLog(LogEntity obj)
         {
             obj.COD_CHAMADO = obj.CHAMADO.COD_CHAMADO;

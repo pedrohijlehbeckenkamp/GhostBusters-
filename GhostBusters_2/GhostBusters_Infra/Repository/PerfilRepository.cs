@@ -14,11 +14,6 @@ namespace GhostBusters_Infra.Repository
             return this.context.Set<PerfilEntity>().FirstOrDefault(x => x.NOME == name);
         }
 
-        //public virtual PerfilEntity FindById(int id)
-        //{
-        //    return context.Set<PerfilEntity>().Find(id);
-        //}
-
         protected override PerfilEntity Cadastro(PerfilEntity obj)
         {
             var objCadastro = context.Set<PerfilEntity>().Add(obj);

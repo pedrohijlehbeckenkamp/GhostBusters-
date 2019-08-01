@@ -11,10 +11,7 @@ namespace GhostBusters_Forms.Controller
 {
     public class UsuarioController
     {
-        public List<Usuario> FindAll()
-        {
-            return new UsuarioRepository().FindALL().Select(usuario => usuario.MapUsuarioModel()).ToList();
-        }
+
         public Usuario Cadastro(Usuario usuario)
         {
             return new UsuarioRepository().CadastroUpdate(usuario.MapUsuarioEntity()).MapUsuarioModel();
@@ -31,17 +28,10 @@ namespace GhostBusters_Forms.Controller
         {
             return new UsuarioRepository().findbyPerfil(perfil).Select(usuario => usuario.MapUsuarioModel()).ToList();
         }
-
         public List<Usuario> FindByUsuario(string usu)
         {
             return new UsuarioRepository().FindByUsuario(usu).Select(usuario => usuario.MapUsuarioModel()).ToList();
         }
-
-        public Usuario FindUsuario(int cod_perfil)
-        {
-            return new UsuarioRepository().FindUsuario(cod_perfil).MapUsuarioModel();
-        }
-
         public void Excluir (Usuario usuario)
         {
             new UsuarioRepository().Excluir(usuario.MapUsuarioEntity().COD_USUARIO);

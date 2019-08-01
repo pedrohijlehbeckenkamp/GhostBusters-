@@ -233,7 +233,7 @@ namespace GhostBusters_Forms.Usuário_Comum
                 var Status = (StatusModel)cbGeral.SelectedItem;
                 int id = Status.codigo_status;
 
-                var chamados = new ChamadoController().FindByStatus(id);
+                var chamados = new ChamadoController().FindByStatusUsuario(id, usuario.Codigo_Usuario);
 
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = chamados;

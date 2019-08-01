@@ -64,12 +64,16 @@ namespace GhostBusters_Infra.Repository
                     Where(x => x.COD_CHAMADO == id).ToList();
         }
 
+        public List<ChamadoEntity> FindByStatusUsuario(int id, int codigo_Owner)
+        {
+            return context.Set<ChamadoEntity>().
+                    Where(x => x.COD_STATUS == id && x.OWNER.COD_USUARIO == codigo_Owner).ToList();
+        }
         public List<ChamadoEntity> FindByStatus(int id)
         {
             return context.Set<ChamadoEntity>().
                     Where(x => x.COD_STATUS == id).ToList();
         }
-
         public List<ChamadoEntity> FindByUsuario(int id)
         {
             return context.Set<ChamadoEntity>().

@@ -109,7 +109,7 @@ namespace GhostBusters_Forms
             else
             {
                 HabilitarErro();
-                LimparLogin();
+                //LimparLogin();
             }
         }
         public void LimparLogin()

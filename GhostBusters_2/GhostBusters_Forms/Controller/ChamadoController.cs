@@ -22,6 +22,11 @@ namespace GhostBusters_Forms.Controller
             return new ChamadoRepository().FindALL().Select(Chamado => Chamado.MapChamadaModel()).ToList();
         }
 
+        public List<ChamadoModel> FindByStatusUsuario(int id, int codigo_owner)
+        {
+            return new ChamadoRepository().FindByStatusUsuario(id, codigo_owner).Select(Chamado => Chamado.MapChamadaModel()).ToList();
+        }
+
         public List<ChamadoModel> FindByStatus(int id)
         {
             return new ChamadoRepository().FindByStatus(id).Select(Chamado => Chamado.MapChamadaModel()).ToList();
@@ -42,20 +47,11 @@ namespace GhostBusters_Forms.Controller
             return new ChamadoRepository().FindByUsuario(codigo_owner).Select(owner => owner.MapChamadaModel()).ToList();
         }
 
-        public ChamadoModel FindByID(int codigo_chamado)
-        {
-            return new ChamadoRepository().FindById(codigo_chamado).MapChamadaModel();
-        }
-
         public ChamadoModel FindCategoria(int codigo_categoria)
         {
             return new ChamadoRepository().FindCategoria(codigo_categoria).MapChamadaModel();
         }
 
-        public ChamadoModel FindStatus(int codigo_status)
-        {
-            return new ChamadoRepository().FindStatus(codigo_status).MapChamadaModel();
-        }
 
         public List<ChamadoModel> FindByDate(DateTime data)
         {

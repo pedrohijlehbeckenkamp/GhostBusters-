@@ -127,7 +127,7 @@ namespace GhostBusters_Forms.Adm
         private void BtnExcluir_Click(object sender, EventArgs e)
         {
             var listExcluir = new ChamadoController().FindByExcluir();
-            if (listExcluir.Count >= 0)
+            if (listExcluir.Count != 0)
             {
                 ExcluirChamado excluir = new ExcluirChamado();
                 excluir.Show();
