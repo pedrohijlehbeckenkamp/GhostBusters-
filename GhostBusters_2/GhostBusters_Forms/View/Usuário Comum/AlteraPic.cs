@@ -15,7 +15,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
 {
     public partial class AlteraPic : Form
     {
-      
+
         OpenFileDialog openFileDialog = new OpenFileDialog();
 
         private Usuario usuario;
@@ -34,7 +34,7 @@ namespace GhostBusters_Forms.View.Usuário_Comum
                 byte[] bytes = Convert.FromBase64String(imagem.BaseData);
                 using (MemoryStream memory = new MemoryStream(bytes))
                 {
-                    pictureImagem.Image = Image.FromStream(memory); 
+                    pictureImagem.Image = Image.FromStream(memory);
                 }
             }
         }

@@ -14,17 +14,18 @@ using GhostBusters_Forms.Model;
 using System.IO;
 using GhostBusters_Forms.Controller;
 using GhostBusters_Forms.View.Adm;
+using System.Text.RegularExpressions;
 
 namespace GhostBusters_Forms.Usuário_Comum
 {
     public partial class InicUsuarioComum : Form
     {
         private Usuario usuario;
-       // private ChamadoModel ticket;
+        // private ChamadoModel ticket;
         string CB = "";
 
         private List<ChamadoModel> listaUsuarios;
-       
+
         public InicUsuarioComum(Usuario _usuario)
         {
             InitializeComponent();
@@ -100,7 +101,7 @@ namespace GhostBusters_Forms.Usuário_Comum
         }
         public void Loadtelaprincipal()
         {
-           // AlimentarCB();
+            // AlimentarCB();
             tbConteudo.Visible = false;
             cbGeral.Visible = false;
             maskedCod.Visible = false;
@@ -122,7 +123,7 @@ namespace GhostBusters_Forms.Usuário_Comum
         {
             if (CB == "Status")
             {
-                cbGeral.DataSource = new StatusController().FindAll();
+                cbGeral.DataSource = new StatusController().FinByStatusPerfil(2);
                 cbGeral.DisplayMember = "NomeStatus";
             }
             else if (CB == "Usuário")
@@ -144,7 +145,7 @@ namespace GhostBusters_Forms.Usuário_Comum
             tbConteudo.Visible = false;
             cbGeral.Visible = false;
             dtData.Visible = false;
-         
+
             dgVisualizar.ReadOnly = true;
             dgVisualizar.AutoGenerateColumns = false;
             dgVisualizar.DataSource = new ChamadoController().FindByOwner(usuario.Codigo_Usuario);
@@ -198,10 +199,7 @@ namespace GhostBusters_Forms.Usuário_Comum
                     dgVisualizar.AutoGenerateColumns = false;
                     //listaUsuarios = new ChamadoController().FindByUsuario(usuario.Codigo_Usuario);
                     dgVisualizar.DataSource = lista;
-
-
                 }
-
             }
             else if (cbOrderBy.Text == "Conteúdo")
             {
@@ -209,16 +207,16 @@ namespace GhostBusters_Forms.Usuário_Comum
                 {
                     string padrao = tbConteudo.Text;
 
-                    // var Chamados = new ChamadoController().Findall();
-
                     List<ChamadoModel> lista = new List<ChamadoModel>();
 
                     for (int i = 0; i < listaUsuarios.Count; i++)
                     {
-                        if (listaUsuarios[i].Descricao.Contains(padrao))
+                        var DescricaoIgnoreCase = Regex.IsMatch(listaUsuarios[i].Descricao, Regex.Escape(padrao), RegexOptions.IgnoreCase);
+                        var TituloIgnoreCase = Regex.IsMatch(listaUsuarios[i].Titulo, Regex.Escape(padrao), RegexOptions.IgnoreCase);
+
+                        if (DescricaoIgnoreCase || TituloIgnoreCase)
                         {
                             lista.Add(listaUsuarios[i]);
-
                         }
                     }
                     dgVisualizar.AutoGenerateColumns = false;
@@ -228,8 +226,6 @@ namespace GhostBusters_Forms.Usuário_Comum
                 {
                     MessageBox.Show("Digite algo para fazer a pesquisa");
                 }
-
-
             }
 
             else if (cbOrderBy.Text == "Status")
@@ -253,10 +249,8 @@ namespace GhostBusters_Forms.Usuário_Comum
                     if (listaUsuarios[i].Data_Chamado.Date == date)
                     {
                         lista.Add(listaUsuarios[i]);
-
                     }
                 }
-
                 dgVisualizar.AutoGenerateColumns = false;
                 dgVisualizar.DataSource = lista;
             }
@@ -264,55 +258,51 @@ namespace GhostBusters_Forms.Usuário_Comum
             {
                 LoadUsuario();
             }
-
-               
-            
         }
 
-            private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbOrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbOrderBy.Text == "Código ticket")
             {
-                if (cbOrderBy.Text == "Código ticket") {
 
-                    CB = "Código ticket";
-                    maskedCod.Visible = true;
-                }
-                else
-                {
-                    maskedCod.Visible = false;
-                }
-
-                if (cbOrderBy.Text == "Conteúdo")
-                {
-                    CB = "Conteúdo";
-                    tbConteudo.Visible = true;
-                }
-                else
-                {
-                    tbConteudo.Visible = false;
-                }
-                if (cbOrderBy.Text == "Data")
-                {
-                    CB = "Data";
-                    dtData.Visible = true;
-                }
-                else
-                {
-                    dtData.Visible = false;
-                }
-
-                if (cbOrderBy.Text == "Status")
-                {
-                    CB = "Status";
-                    AlimentarCB();
-                    cbGeral.Visible = true;
-                }
-
-                else
-                {
-                    cbGeral.Visible = false;
-                }
-
+                CB = "Código ticket";
+                maskedCod.Visible = true;
             }
+            else
+            {
+                maskedCod.Visible = false;
+            }
+
+            if (cbOrderBy.Text == "Conteúdo")
+            {
+                CB = "Conteúdo";
+                tbConteudo.Visible = true;
+            }
+            else
+            {
+                tbConteudo.Visible = false;
+            }
+            if (cbOrderBy.Text == "Data")
+            {
+                CB = "Data";
+                dtData.Visible = true;
+            }
+            else
+            {
+                dtData.Visible = false;
+            }
+
+            if (cbOrderBy.Text == "Status")
+            {
+                CB = "Status";
+                AlimentarCB();
+                cbGeral.Visible = true;
+            }
+            else
+            {
+                cbGeral.Visible = false;
+            }
+        }
 
         private void BtAlterarStatus_Click(object sender, EventArgs e)
         {
@@ -323,7 +313,6 @@ namespace GhostBusters_Forms.Usuário_Comum
                 var ChamadoSelecionado = (ChamadoModel)item;
                 if (ChamadoSelecionado.Tech != null)
                 {
-
                     if (ChamadoSelecionado.Data_Chamado_finalizado == null)
                     {
                         if (ChamadoSelecionado.StatusChamado.NomeStatus != "Em atendimento")
@@ -338,14 +327,12 @@ namespace GhostBusters_Forms.Usuário_Comum
                             this.Hide();
                         }
                         else MessageBox.Show("Chamado em Atendimento, Nao pode ser Alterado");
-
                     }
                     else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
-
-                }else MessageBox.Show("Chamado Sem Tecnico, Nao pode ser Alterado");
+                }
+                else MessageBox.Show("Chamado Sem Tecnico, Nao pode ser Alterado");
             }
             else MessageBox.Show("Nao Existe nenhum Chamado");
-
         }
 
         private void DgVisualizar_DoubleClick(object sender, EventArgs e)
@@ -379,7 +366,7 @@ namespace GhostBusters_Forms.Usuário_Comum
                 menu.FormClosed += (x, y) =>
                 {
                     this.Show();
-                    LoadUsuario(); 
+                    LoadUsuario();
                 };
                 menu.Show();
                 this.Hide();

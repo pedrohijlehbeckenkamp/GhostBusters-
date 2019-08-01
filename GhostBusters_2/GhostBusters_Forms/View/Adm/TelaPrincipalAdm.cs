@@ -257,8 +257,12 @@ namespace GhostBusters_Forms.Adm
 
                     for (int i = 0; i < Chamados.Count; i++)
                     {
-                        if (Chamados[i].Descricao.ToLower().Contains(padrao))
+                        var DescricaoIgnoreCase = Regex.IsMatch(Chamados[i].Descricao, Regex.Escape(padrao), RegexOptions.IgnoreCase);
+                        var TituloIgnoreCase = Regex.IsMatch(Chamados[i].Titulo, Regex.Escape(padrao), RegexOptions.IgnoreCase);
+
+                        if (DescricaoIgnoreCase || TituloIgnoreCase)
                         {
+                            //(Chamados[i].Descricao.Contains(padrao))
                             lista.Add(Chamados[i]);
                         }
                     }

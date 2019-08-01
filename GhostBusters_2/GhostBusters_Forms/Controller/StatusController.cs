@@ -26,7 +26,7 @@ namespace GhostBusters_Forms.Controller
                             .Select(status => status.MapStatusModel()).ToList();
         }
 
-        public List<StatusModel> FindStatusPerfil(int statusT, int statusU)
+        public List<StatusModel> FindStatusTech(int statusT, int statusU)
         {
             return new StatusRepository().FindStatusPerfil(statusT, statusU)
                             .Select(status => status.MapStatusModel()).ToList();

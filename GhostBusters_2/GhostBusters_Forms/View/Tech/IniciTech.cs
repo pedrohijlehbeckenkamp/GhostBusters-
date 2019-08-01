@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GhostBusters_Forms.Controller;
@@ -174,7 +175,10 @@ namespace GhostBusters_Forms.View.Tech
 
                     for (int i = 0; i < chamadoModel.Count; i++)
                     {
-                        if (chamadoModel[i].Descricao.Contains(padrao))
+                        var DescricaoIgnoreCase = Regex.IsMatch(chamadoModel[i].Descricao, Regex.Escape(padrao), RegexOptions.IgnoreCase);
+                        var TituloIgnoreCase = Regex.IsMatch(chamadoModel[i].Titulo, Regex.Escape(padrao), RegexOptions.IgnoreCase);
+
+                        if (DescricaoIgnoreCase || TituloIgnoreCase)
                         {
                             lista.Add(chamadoModel[i]);
                         }
@@ -266,7 +270,7 @@ namespace GhostBusters_Forms.View.Tech
         {
             if (CB == "Status")
             {
-                cbGeral.DataSource = new StatusController().FindStatusPerfil(2, 3);
+                cbGeral.DataSource = new StatusController().FindStatusTech(2, 3);
                 cbGeral.DisplayMember = "NomeStatus";
             }
             else if (CB == "Usuário")
