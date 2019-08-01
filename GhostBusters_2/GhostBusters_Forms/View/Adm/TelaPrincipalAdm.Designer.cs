@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNewTicket = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnConfig = new System.Windows.Forms.Button();
@@ -40,12 +40,6 @@
             this.lblNomeAd = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgVisualizar = new System.Windows.Forms.DataGridView();
-            this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.linkPerfil = new System.Windows.Forms.LinkLabel();
             this.pbPerfil = new System.Windows.Forms.PictureBox();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -59,6 +53,14 @@
             this.btnAlteraStatus = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btVisChamado = new System.Windows.Forms.Button();
+            this.Codigochamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeTech = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nomestatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data_Chamado_finalizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPerfil)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +99,7 @@
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfig.ForeColor = System.Drawing.Color.White;
-            this.btnConfig.Location = new System.Drawing.Point(725, 11);
+            this.btnConfig.Location = new System.Drawing.Point(725, 9);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(125, 44);
             this.btnConfig.TabIndex = 9;
@@ -196,6 +198,7 @@
             this.Data_Chamado,
             this.Titulo,
             this.NomeTech,
+            this.Nomestatus,
             this.Data_Chamado_finalizado});
             this.dgVisualizar.EnableHeadersVisualStyles = false;
             this.dgVisualizar.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -203,79 +206,24 @@
             this.dgVisualizar.Name = "dgVisualizar";
             this.dgVisualizar.ReadOnly = true;
             this.dgVisualizar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgVisualizar.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgVisualizar.RowHeadersVisible = false;
             this.dgVisualizar.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgVisualizar.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgVisualizar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualizar.Size = new System.Drawing.Size(677, 220);
             this.dgVisualizar.TabIndex = 11;
             this.dgVisualizar.DoubleClick += new System.EventHandler(this.DgVisualizar_DoubleClick);
-            // 
-            // Codigochamado
-            // 
-            this.Codigochamado.DataPropertyName = "Codigo_chamado";
-            this.Codigochamado.HeaderText = "Codigo chamado";
-            this.Codigochamado.MinimumWidth = 6;
-            this.Codigochamado.Name = "Codigochamado";
-            this.Codigochamado.ReadOnly = true;
-            this.Codigochamado.Width = 125;
-            // 
-            // NomeUsuario
-            // 
-            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
-            this.NomeUsuario.HeaderText = "Usuario";
-            this.NomeUsuario.MinimumWidth = 6;
-            this.NomeUsuario.Name = "NomeUsuario";
-            this.NomeUsuario.ReadOnly = true;
-            this.NomeUsuario.Width = 125;
-            // 
-            // Data_Chamado
-            // 
-            this.Data_Chamado.DataPropertyName = "Data_Chamado";
-            this.Data_Chamado.HeaderText = "Data Chamado";
-            this.Data_Chamado.MinimumWidth = 6;
-            this.Data_Chamado.Name = "Data_Chamado";
-            this.Data_Chamado.ReadOnly = true;
-            this.Data_Chamado.Width = 125;
-            // 
-            // Titulo
-            // 
-            this.Titulo.DataPropertyName = "Titulo";
-            this.Titulo.HeaderText = "Titulo";
-            this.Titulo.MinimumWidth = 6;
-            this.Titulo.Name = "Titulo";
-            this.Titulo.ReadOnly = true;
-            this.Titulo.Width = 125;
-            // 
-            // NomeTech
-            // 
-            this.NomeTech.DataPropertyName = "NomeTech";
-            this.NomeTech.HeaderText = "Tecnico";
-            this.NomeTech.MinimumWidth = 6;
-            this.NomeTech.Name = "NomeTech";
-            this.NomeTech.ReadOnly = true;
-            this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NomeTech.Width = 125;
-            // 
-            // Data_Chamado_finalizado
-            // 
-            this.Data_Chamado_finalizado.DataPropertyName = "Data_Chamado_finalizado";
-            this.Data_Chamado_finalizado.HeaderText = "Finalizado ";
-            this.Data_Chamado_finalizado.MinimumWidth = 6;
-            this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
-            this.Data_Chamado_finalizado.ReadOnly = true;
-            this.Data_Chamado_finalizado.Width = 125;
             // 
             // linkPerfil
             // 
@@ -443,12 +391,90 @@
             this.label2.TabIndex = 45;
             this.label2.Text = "Dois Clicks para ver o Log de Movimentação";
             // 
+            // btVisChamado
+            // 
+            this.btVisChamado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btVisChamado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btVisChamado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btVisChamado.ForeColor = System.Drawing.Color.White;
+            this.btVisChamado.Location = new System.Drawing.Point(756, 95);
+            this.btVisChamado.Margin = new System.Windows.Forms.Padding(2);
+            this.btVisChamado.Name = "btVisChamado";
+            this.btVisChamado.Size = new System.Drawing.Size(94, 61);
+            this.btVisChamado.TabIndex = 76;
+            this.btVisChamado.Text = "Visualizar Chamado";
+            this.btVisChamado.UseVisualStyleBackColor = false;
+            this.btVisChamado.Click += new System.EventHandler(this.BtVisChamado_Click);
+            // 
+            // Codigochamado
+            // 
+            this.Codigochamado.DataPropertyName = "Codigo_chamado";
+            this.Codigochamado.HeaderText = "Codigo chamado";
+            this.Codigochamado.MinimumWidth = 6;
+            this.Codigochamado.Name = "Codigochamado";
+            this.Codigochamado.ReadOnly = true;
+            this.Codigochamado.Width = 125;
+            // 
+            // NomeUsuario
+            // 
+            this.NomeUsuario.DataPropertyName = "NomeUsuario2";
+            this.NomeUsuario.HeaderText = "Usuario";
+            this.NomeUsuario.MinimumWidth = 6;
+            this.NomeUsuario.Name = "NomeUsuario";
+            this.NomeUsuario.ReadOnly = true;
+            this.NomeUsuario.Width = 125;
+            // 
+            // Data_Chamado
+            // 
+            this.Data_Chamado.DataPropertyName = "Data_Chamado";
+            this.Data_Chamado.HeaderText = "Data Chamado";
+            this.Data_Chamado.MinimumWidth = 6;
+            this.Data_Chamado.Name = "Data_Chamado";
+            this.Data_Chamado.ReadOnly = true;
+            this.Data_Chamado.Width = 125;
+            // 
+            // Titulo
+            // 
+            this.Titulo.DataPropertyName = "Titulo";
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.ReadOnly = true;
+            this.Titulo.Width = 125;
+            // 
+            // NomeTech
+            // 
+            this.NomeTech.DataPropertyName = "NomeTech";
+            this.NomeTech.HeaderText = "Tecnico";
+            this.NomeTech.MinimumWidth = 6;
+            this.NomeTech.Name = "NomeTech";
+            this.NomeTech.ReadOnly = true;
+            this.NomeTech.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NomeTech.Width = 125;
+            // 
+            // Nomestatus
+            // 
+            this.Nomestatus.DataPropertyName = "Nomestatus";
+            this.Nomestatus.HeaderText = "Status";
+            this.Nomestatus.Name = "Nomestatus";
+            this.Nomestatus.ReadOnly = true;
+            // 
+            // Data_Chamado_finalizado
+            // 
+            this.Data_Chamado_finalizado.DataPropertyName = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.HeaderText = "Finalizado ";
+            this.Data_Chamado_finalizado.MinimumWidth = 6;
+            this.Data_Chamado_finalizado.Name = "Data_Chamado_finalizado";
+            this.Data_Chamado_finalizado.ReadOnly = true;
+            this.Data_Chamado_finalizado.Width = 125;
+            // 
             // TelaPrincipalAdm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(862, 450);
+            this.ClientSize = new System.Drawing.Size(860, 440);
+            this.Controls.Add(this.btVisChamado);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnUsuarios);
             this.Controls.Add(this.btnAlteraStatus);
@@ -510,14 +536,15 @@
         private System.Windows.Forms.TextBox tbConteudo;
         private System.Windows.Forms.DateTimePicker dtData;
         private System.Windows.Forms.Button btnAlteraStatus;
+        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btVisChamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigochamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeTech;
-        //private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nomestatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Chamado_finalizado;
-        private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Label label2;
     }
 }

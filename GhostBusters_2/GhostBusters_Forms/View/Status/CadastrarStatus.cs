@@ -86,7 +86,11 @@ namespace GhostBusters_Forms.View.Status
         {
             CbListarPerfil.DataSource = new PerfilController().FindAll();
             CbListarPerfil.DisplayMember = "nomePerfil";
-            CbListarPerfil.SelectedIndex = CbListarPerfil.FindStringExact(Status.perfil.nomePerfil);
+            if (Status != null)
+            {
+                CbListarPerfil.SelectedIndex = CbListarPerfil.FindStringExact(Status.perfil.nomePerfil);
+            }
+            
         }
     }
 }
