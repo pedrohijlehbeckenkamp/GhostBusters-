@@ -456,5 +456,26 @@ namespace GhostBusters_Forms.Adm
                 }
             }
         }
+
+        private void BtVisChamado_Click(object sender, EventArgs e)
+        {
+            if (ListChamado.Count != 0)
+            {
+                var linha = dgVisualizar.CurrentRow.DataBoundItem;
+                var ChamadoItem = (ChamadoModel)linha;
+                var menu = new CadastrarTicket(usuario, (ChamadoModel)linha, "Visualizar");
+                menu.FormClosed += (x, y) =>
+                {
+                    this.Show();
+                    loadTelaprincipal();
+                };
+                menu.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Nao existe Chamado para Visualizar");
+            }
+        }
     }
 }

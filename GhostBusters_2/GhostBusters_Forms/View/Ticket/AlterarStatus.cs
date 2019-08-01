@@ -134,25 +134,25 @@ namespace GhostBusters_Forms.View.Adm
             var AntPerfil = statusant.perfil.Codigo;
             int cont = 0;
             int cont2 = 0;
-            if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil || chamado.Tech.Codigo_perfil == statusitem.codigo_perfil)
-            {
-                new StatusController().Cadastro(UpdateNullStatus(statusitem));
-                cont++;
-            }
-            if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil || chamado.Tech.Codigo_perfil == chamado.StatusChamado.codigo_perfil)
-            {
-                new StatusController().Cadastro(UpdateNullStatus(chamado.StatusChamado));
-                cont2++;
-            }
+            //if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil || chamado.Tech.Codigo_perfil == statusitem.codigo_perfil)
+            //{
+            //    new StatusController().Cadastro(UpdateNullStatus(statusitem));
+            //    cont++;
+            //}
+            //if (chamado.Owner.Codigo_perfil == chamado.StatusChamado.codigo_perfil || chamado.Tech.Codigo_perfil == chamado.StatusChamado.codigo_perfil)
+            //{
+            //    new StatusController().Cadastro(UpdateNullStatus(chamado.StatusChamado));
+            //    cont2++;
+            //}
             new LogController().Cadastro(GetLog(statusitem));
 
             new ChamadoController().Cadastro(UpdateTicket());
 
 
-            if (cont > 0)
-                new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusitem, itemPerfil));
-            if (cont2 > 0)
-                new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusant, AntPerfil));
+            //if (cont > 0)
+            //    new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusitem, itemPerfil));
+            //if (cont2 > 0)
+            //    new StatusController().Cadastro(UpdateCodigoPrefilStatus(statusant, AntPerfil));
 
             return statusant.NomeStatus;
         }
