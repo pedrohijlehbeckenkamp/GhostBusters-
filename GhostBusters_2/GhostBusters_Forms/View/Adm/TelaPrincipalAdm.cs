@@ -176,7 +176,7 @@ namespace GhostBusters_Forms.Adm
                 var ChamadoItem = (ChamadoModel)item;
                 if (ChamadoItem.Data_Chamado_finalizado == null)
                 {
-                    AddTechChamado addTech = new AddTechChamado(ChamadoItem);
+                    AddTechChamado addTech = new AddTechChamado(ChamadoItem, usuario);
                     addTech.FormClosed += (x, y) =>
                     {
                         this.Show();

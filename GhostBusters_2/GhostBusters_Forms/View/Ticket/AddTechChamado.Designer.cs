@@ -40,6 +40,7 @@
             // 
             // cbBoxDisponiveis
             // 
+            this.cbBoxDisponiveis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBoxDisponiveis.FormattingEnabled = true;
             this.cbBoxDisponiveis.Location = new System.Drawing.Point(340, 95);
             this.cbBoxDisponiveis.Name = "cbBoxDisponiveis";

@@ -86,19 +86,19 @@ namespace GhostBusters_Forms.View.Adm
             }
             return true;
         }
-        private void LoadCarregador()
-        {
-            lbStatus.Visible = false;
-            lbObservacoes.Visible = false;
-            CbStatus.Visible = false;
-            tbObservacao.Visible = false;
-            btSave.Visible = false;
-        }
+        //private void LoadCarregador()//Imagem de Load Email
+        //{
+        //    lbStatus.Visible = false;
+        //    lbObservacoes.Visible = false;
+        //    CbStatus.Visible = false;
+        //    tbObservacao.Visible = false;
+        //    btSave.Visible = false;
+        //}
         private void EnviaEmail(string nome)
         {
-            if (chamado.StatusChamado.NomeStatus == "Reprovado" && usuarioLogin.NomePerfil == "Usuario")
+            if (chamado.StatusChamado.NomeStatus == "Reprovado" )
                 EnviarEmail(nome, chamado.Tech.Email);
-            if (chamado.StatusChamado.NomeStatus == "Aprovado" && usuarioLogin.NomePerfil == "Usuario")
+            if (chamado.StatusChamado.NomeStatus == "Aprovado" )
                 EnviarEmail(nome, chamado.Tech.Email);
             if (chamado.StatusChamado.NomeStatus == "Finalizado" && usuarioLogin.NomePerfil == "Técnico")
                 EnviarEmail(nome, chamado.Owner.Email);
@@ -110,7 +110,7 @@ namespace GhostBusters_Forms.View.Adm
                var ok = new ChamadoController().EnviarEmail(chamado.Titulo, CorpoEmail(nome), email);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Email invalido:");
             }
@@ -129,11 +129,11 @@ namespace GhostBusters_Forms.View.Adm
         private string Save() 
         {
             var statusitem = (StatusModel)CbStatus.SelectedItem;
-            var itemPerfil = statusitem.perfil.Codigo;
+           // var itemPerfil = statusitem.perfil.Codigo;
             var statusant = chamado.StatusChamado;
-            var AntPerfil = statusant.perfil.Codigo;
-            int cont = 0;
-            int cont2 = 0;
+            //var AntPerfil = statusant.perfil.Codigo;
+            //int cont = 0;
+            //int cont2 = 0;
             //if (chamado.Owner.Codigo_perfil == statusitem.codigo_perfil || chamado.Tech.Codigo_perfil == statusitem.codigo_perfil)
             //{
             //    new StatusController().Cadastro(UpdateNullStatus(statusitem));
@@ -157,21 +157,21 @@ namespace GhostBusters_Forms.View.Adm
             return statusant.NomeStatus;
         }
 
-        private StatusModel UpdateNullStatus(StatusModel statusitem)
-        {
-            StatusModel status = statusitem;
-            status.codigo_perfil = null;
-            status.perfil = null;
-            return status;
-        }
+        //private StatusModel UpdateNullStatus(StatusModel statusitem)
+        //{
+        //    StatusModel status = statusitem;
+        //    status.codigo_perfil = null;
+        //    status.perfil = null;
+        //    return status;
+        //}
 
-        private StatusModel UpdateCodigoPrefilStatus(StatusModel statusitem,int codigo)
-        {
-            StatusModel status = statusitem;
-            status.codigo_perfil = codigo;
-            status.perfil = new PerfilController().FindById(codigo);
-            return status;
-        }
+        //private StatusModel UpdateCodigoPrefilStatus(StatusModel statusitem,int codigo)
+        //{
+        //    StatusModel status = statusitem;
+        //    status.codigo_perfil = codigo;
+        //    status.perfil = new PerfilController().FindById(codigo);
+        //    return status;
+        //}
 
 
         private ChamadoModel UpdateTicket()

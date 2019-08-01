@@ -117,16 +117,21 @@ namespace GhostBusters_Forms.View.Tech
                 var ChamadoItem = (ChamadoModel)item;
                 if (ChamadoItem.Data_Chamado_finalizado == null)
                 {
-                    var addTech = new AlterarStatus(usuario, ChamadoItem);
-                    addTech.FormClosed += (x, y) =>
+                    if (ChamadoItem.StatusChamado.NomeStatus != "Finalizado")
                     {
-                        this.Show();
-                        LoadTech();
-                    };
-                    addTech.Show();
-                    this.Hide();
+                        var addTech = new AlterarStatus(usuario, ChamadoItem);
+                        addTech.FormClosed += (x, y) =>
+                        {
+                            this.Show();
+                            LoadTech();
+                        };
+                        addTech.Show();
+                        this.Hide();
+                    }
+                    else MessageBox.Show("Status Finalizado, Nao pode ser Alterado");
+
                 }
-                else MessageBox.Show("Chamado Finalizado, Nao pode ser Alterado");
+                else MessageBox.Show("Chamado Aprovado Nao pode ser Alterado");
                 
             }
             else MessageBox.Show("Não Existe Chamado");
