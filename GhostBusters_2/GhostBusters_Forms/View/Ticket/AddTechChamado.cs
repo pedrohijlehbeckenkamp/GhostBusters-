@@ -15,11 +15,13 @@ namespace GhostBusters_Forms.View.Ticket
     public partial class AddTechChamado : Form
     {
         private ChamadoModel chamado;
-        public AddTechChamado(ChamadoModel _chamado)
+        private Usuario UsuarioLogin;
+        public AddTechChamado(ChamadoModel _chamado, Usuario _usuario)
         {
             InitializeComponent();
             CenterToParent();
             chamado = _chamado;
+            UsuarioLogin = _usuario;
         }
 
         private void AddTechChamado_Load(object sender, EventArgs e)
@@ -57,9 +59,9 @@ namespace GhostBusters_Forms.View.Ticket
         {
             Observacao = mensagem,
             Data_log = DateTime.Now,
-            Usuario = "Adm",
-            Chamado = chamado,
+            Usuario = UsuarioLogin.NomeUsuario,
             //Owner = usuarioLogin,
+            Chamado = chamado,
             Status_Ant = statusAnt,
             Status_New = statusNew
         };
