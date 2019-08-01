@@ -73,5 +73,29 @@ namespace GhostBusters_Infra.Repository
 
             return objUpdate;
         }
+
+        public bool PodeExcluir(StatusEntity statusEntity)
+        {
+            var qntdChamado = context.Set<ChamadoEntity>().Any(x => x.COD_STATUS == statusEntity.COD_STATUS);
+            var qntdLogs = context.Set<LogEntity>().Any(x => x.COD_ANT_STATUS == statusEntity.COD_STATUS 
+                                                            || x.COD_NEW_STATUS == statusEntity.COD_STATUS);
+            return !qntdChamado && !qntdLogs;
+        }
+
+        public IEnumerable<StatusEntity> StatusExcluiveis()
+        {
+            var dbSetStatus = context.Set<StatusEntity>();
+            var dbSetChamado = context.Set<ChamadoEntity>();
+            var dbSetLog = context.Set<LogEntity>();
+
+            var resultList = from status in dbSetStatus
+                    where
+                    !dbSetChamado.Any(x => x.COD_STATUS == status.COD_STATUS)
+                    && !dbSetLog.Any(x => x.COD_ANT_STATUS == status.COD_STATUS
+                                       || x.COD_NEW_STATUS == status.COD_STATUS)
+                   select status;
+
+            return resultList.ToList();
+        }
     }
 }

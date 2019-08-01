@@ -39,5 +39,11 @@ namespace GhostBusters_Forms.Controller
         {
             new StatusRepository().Excluir(status.MapStatusEntity().COD_STATUS);
         }
+
+        public List<StatusModel> StatusExcluiveis()
+        {
+            return new 
+                StatusRepository().StatusExcluiveis().Select(x => x.MapStatusModel()).ToList();
+        }
     }
  }

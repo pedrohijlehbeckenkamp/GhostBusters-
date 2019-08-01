@@ -69,17 +69,7 @@ namespace GhostBusters_Forms.View.Adm
                 EsconderColunasPerfil();
                 MostrarColunasStatus();
 
-                List<StatusModel> Dg = new List<StatusModel>();
-
-                var lista = new StatusController().FindAll();
-                for (int i = 0; i < lista.Count; i++)
-                {
-                    var Chamados = new ChamadoController().FindStatus(lista[i].codigo_status);
-                    if (Chamados == null)
-                    {
-                        Dg.Add(lista[i]);
-                    }
-                }
+                List<StatusModel> Dg = new StatusController().StatusExcluiveis();
 
                 if (Dg.Count == 0)
                 {
