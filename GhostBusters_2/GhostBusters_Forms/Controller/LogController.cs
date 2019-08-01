@@ -19,5 +19,20 @@ namespace GhostBusters_Forms.Controller
         {
             return new LogRepository().FindByLog(IdChamado).Select(id => id.MapLogModel()).ToList();
         }
+
+        public List<LogModel> FindAll()
+        {
+            return new LogRepository().FindALL().Select(logmodel => logmodel.MapLogModel()).ToList();
+        }
+
+        public LogModel FindStatusAnt(int codigo_status_ant)
+        {
+            return new LogRepository().FindStatusAnt(codigo_status_ant).MapLogModel();
+        }
+
+        public LogModel FindStatusNew(int codigo_status_new)
+        {
+            return new LogRepository().FindStatusNew(codigo_status_new).MapLogModel();
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace GhostBusters_Forms.Mapper
                 codigo_status = statusEntity.COD_STATUS,
                 codigo_perfil = statusEntity.COD_PERFIL,
                 NomeStatus = statusEntity.NOME,
-                perfil = statusEntity.PERFIL.MapPerfilModel()
+                perfil = statusEntity.PERFIL?.MapPerfilModel()
             };
         }
     }

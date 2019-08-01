@@ -14,6 +14,17 @@ namespace GhostBusters_Infra.Repository
             return context.Set<LogEntity>().
                     Where(codigo => codigo.COD_CHAMADO == codigo_chamado).ToList();
         }
+
+        public LogEntity FindStatusAnt(int codigo_status_ant)
+        {
+            return context.Set<LogEntity>().FirstOrDefault(status => status.COD_ANT_STATUS == codigo_status_ant || status.COD_NEW_STATUS == codigo_status_ant);
+        }
+
+        public LogEntity FindStatusNew(int codigo_status_new)
+        {
+            return context.Set<LogEntity>().FirstOrDefault(status => status.COD_ANT_STATUS == codigo_status_new || status.COD_NEW_STATUS == codigo_status_new);
+        }
+
         //public override LogEntity CadastroUpdate(LogEntity obj)
         //{
         //    obj.COD_CHAMADO = obj.CHAMADO.COD_CHAMADO;
